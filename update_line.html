@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+div {
+  padding-left: 50px;
+  padding-top: 15px;
+  width: 50%;
+  margin: 0 auto;
+  font: 14px;
+}
+
+input {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  text-align: center;
+  font: 14px;
+  width: 60px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+</style>
+<body>
+  <div>
+    Number of Lines:
+    <input id="linecount" name="lines" value="7" onkeyup="render()"></input>
+    Points per Line:
+    <input id="pointcount" name="points" value="3" onkeyup="render()"></input>
+  </div>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+
+const width = 960;
+const height = 500;
+
+const margin = {top: 20, right: 20, bottom: 20, left: 50};
+
+const svg = d3.select("body").append("svg")
+  .attr("height", height).attr("width", width)
+  .append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.right})`) 
+
+const xScale = d3.scaleLinear()
+  .range([0, width - margin.left - margin.right]);
+
+const yScale = d3.scaleLinear()
+  .range([height - margin.top - margin.bottom, 0]);
+
+const line = d3.line()
+  .x(d => xScale(d.x))
+  .y(d => yScale(d.y))
+  .curve(d3.curveMonotoneX);
+
+function newData(lineNumber, numPoints) {
+  return d3.range(lineNumber).map(() =>
+    d3.range(numPoints).map((item, index) =>
+      ({x: index / (numPoints - 1), y: Math.random() * 100})
+    )
+  );
+}
+
+function render(){
+  // generate new data
+	const data = newData(
+  	+document.getElementById("linecount").value, 
+   	+document.getElementById("pointcount").value
+	);
+
+  // obtain absolute min and max
+  const yMin = data.reduce((pv,cv) => {
+    const currentMin = cv.reduce((pv,cv) => Math.min(pv,cv.y), 100);
+    return Math.min(pv, currentMin);
+  }, 100);
+  const yMax = data.reduce((pv,cv) => {
+    const currentMax = cv.reduce((pv,cv) => Math.max(pv,cv.y), 0)
+    return Math.max(pv, currentMax);
+  }, 0);
+
+  // set domain for axis
+  yScale.domain([yMin, yMax]);
+
+  // create axis scale
+	const yAxis = d3.axisLeft().scale(yScale);
+
+  // if no axis exists, create one, otherwise update it
+  if (svg.selectAll(".y.axis").empty()){
+    svg.append("g")
+        .attr("class","y axis")
+        .call(yAxis);
+  } else {
+    svg.selectAll(".y.axis")
+      .transition().duration(1500)
+      .call(yAxis);
+  }
+  
+  // generate line paths
+	const lines = svg.selectAll(".line")
+  	.data(data)
+    	.attr("class", "line");
+
+  // exit
+  lines.exit()
+    .remove();
+  
+  // enter any new data
+  lines.enter()
+    .append("path")
+      .attr("class", "line")
+      .attr("d", line)
+      .style("stroke", () =>
+        '#' + Math.floor(Math.random() * 16777215).toString(16)
+      )
+    // Update new data
+    .merge(lines)
+      .transition().duration(1500)
+      .attr("d", line)
+      .style("stroke", () =>
+        '#' + Math.floor(Math.random() * 16777215).toString(16)
+      );
+  
+//   // transition from previous paths to new paths
+//   lines.transition().duration(1500)
+//     .attr("d",line)
+//     .attr("stroke", () =>
+//       '#' + Math.floor(Math.random() * 16777215).toString(16)
+//     );
+
+}
+
+// initial page render
+render();
+
+// continuous page render
+setInterval(render, 5500);
+
+</script>
+</body>
+
+</html>
