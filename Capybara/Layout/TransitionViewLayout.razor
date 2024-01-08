@@ -1,0 +1,13 @@
+@inherits TransitionableLayoutComponent
+
+<div class="@transitioningClass">
+    @Body
+</div>
+
+@code {
+    private string transitioningDirection => Transition.Backwards ? "Up" : "Down";
+
+    private string transitioningClass => Transition.FirstRender ? "" : Transition.IntoView
+        ? $"animate__fadeIn{transitioningDirection} animate__faster animate__animated"
+         : $"animate__fadeOut{transitioningDirection} animate__faster animate__animated";
+}
