@@ -1,1 +1,0 @@
-C:\Users\yish\source\repos\felixyangyicheng.github.io\Capybara\bin\Release\net8.0\publish\web.config

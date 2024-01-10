@@ -4,5 +4,3 @@ obj/
 riderModule.iml
 /_ReSharper.Caches/
 .idea/
-bin/*
-obj/*
