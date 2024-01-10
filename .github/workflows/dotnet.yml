@@ -17,7 +17,7 @@ jobs:
         dotnet-version: 8.0.x
 
     - name: Publish .NET Core Project
-      run: dotnet publish ../Capybara/Capybara.csproj -c Release -o release --nologo
+      run: dotnet publish [REPOSITORY_NAME].csproj -c Release -o release --nologo
       
     - name: Commit wwwroot to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.3.3
