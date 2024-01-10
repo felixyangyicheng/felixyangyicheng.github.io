@@ -1,0 +1,26 @@
+name: .NET
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy-to-github-pages:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Publish .NET Core Project
+      run: dotnet publish -c Release -o release --nologo
+      
+    - name: Commit wwwroot to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4.3.3
+      with:
+          BRANCH: gh-pages
+          FOLDER: release/wwwroot
