@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Capybara",
   "resources": {
-    "hash": "sha256-ZSf5ajCpyaVTcZZIVLe0kcY6diRB+c8N/wtEQXpwLKY=",
+    "hash": "sha256-A7XJ0aM9VdQwOBTcHFaflSGcQBbDgXvOu3rHfwNtibA=",
     "jsModuleNative": {
       "dotnet.native.8.0.1.ahpp78valh.js": "sha256-SGOlISx+3G4kkvpC9Uq3qoPGsnjxGmW61QBev0lyI5U="
     },
@@ -20,7 +20,7 @@
       "BlazorComponentUtilities.wasm": "sha256-oQvSWR3JOlm+ohv4ovIcQkgLnBzz+q8hRIwWOFZCd9I=",
       "BlazorPro.Spinkit.wasm": "sha256-IQlANxXKe2MbUR2gXAqzX+z6JMbE7zAfl7+HV2shzGc=",
       "BlazorTransitionableRoute.wasm": "sha256-dGLvSRO8mgSf94ugBB7nF90ORjTgfllrVZ7xn2JLVwE=",
-      "Capybara.wasm": "sha256-klM2nk559LlLmHV8/2StGaPHAZlW8nZYFbnVTsoQBxU=",
+      "Capybara.wasm": "sha256-24zwP6GsztW8vgFlCAfzGNygnvPlnev4nDwF7zyE1fk=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-2nTE7xIjIqqDRFhRSyD/0OaBW4xvomBEGMZPKpzy7gY=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-sJcV9QYaw31BBh/Z1zU3oKPHP+Ggvxsyg099D/APdg0=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-yVxaSuKG4ekjkVdkcFzN8Uwbo8i6vheyqERViV4NMwE=",
