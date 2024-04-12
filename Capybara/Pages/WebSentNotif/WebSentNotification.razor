@@ -1,4 +1,48 @@
 ﻿@page "/PWANotif"
+@inject HttpClient _httpClient
+@inject IJSRuntime JSRuntime
+<button class="btn btn-primary" @onclick="Send">Send Notification</button>
 @code {
+    protected override void OnInitialized()
+    {
+        _ = RequestNotificationSubscriptionAsync();
+    }
+    private async Task RequestNotificationSubscriptionAsync()
+    {
+        var subscription = await JSRuntime.InvokeAsync<NotificationSubscription>("blazorPushNotifications.requestSubscription");
+        if (subscription != null)
+        {
+            try
+            {
+                await SubscribeToNotification(subscription);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
 
+    private async Task Send()
+    {
+        try
+        {
+            await SendNotification();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+    protected async Task SubscribeToNotification(NotificationSubscription subscription)
+    {
+        var response = await _httpClient.PutAsJsonAsync("notifications/subscription", subscription);
+        response.EnsureSuccessStatusCode();
+    }
+
+    protected async Task SendNotification()
+    {
+        var response = await _httpClient.PostAsync("notifications/send", null);
+        response.EnsureSuccessStatusCode();
+    }
 }

@@ -1,20 +1,27 @@
-using Microsoft.AspNetCore.Components.Web;
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Capybara;
- using MudBlazor.Services;
- using MudBlazor;
-
-using Toolbelt.Blazor.Extensions.DependencyInjection;
-using Tewr.Blazor.FileReader;
+using Microsoft.Extensions.DependencyInjection;
 
 
-using Toolbelt.Blazor.Extensions.DependencyInjection;
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-        builder.Services.AddSpeechSynthesis();
+#if DEBUG
+    builder.Services.AddHttpClient("notification.push.srv.local", client =>
+    {
+        client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("notification.push.srv.local") ?? throw new ArgumentException());
+    });
+#else
+    builder.Services.AddHttpClient("notification.push.srv", client =>
+    {
+        client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("notification.push.srv") ?? throw new ArgumentException());
+    });
+#endif
+builder.Services.AddSpeechSynthesis();
 
         builder.Services.AddMudServices(config =>
         {

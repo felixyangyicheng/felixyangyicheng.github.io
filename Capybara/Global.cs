@@ -1,0 +1,17 @@
+﻿global using System;
+global using System.Collections.Generic;
+global using System.Diagnostics.CodeAnalysis;
+global using System.Linq;
+global using System.Threading.Tasks;
+global using Microsoft.AspNetCore.Components;
+global using Toolbelt.Blazor.SpeechSynthesis;
+global using System.Runtime.InteropServices;
+global using Microsoft.AspNetCore.Components.Web;
+global using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+global using Capybara;
+global using MudBlazor.Services;
+global using MudBlazor;
+global using Toolbelt.Blazor.Extensions.DependencyInjection;
+global using Tewr.Blazor.FileReader;
+global using Capybara.Models;
+global using System.Net.Http.Json;

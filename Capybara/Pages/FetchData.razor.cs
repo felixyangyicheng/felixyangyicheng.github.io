@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components;
-using Toolbelt.Blazor.SpeechSynthesis;
-
+﻿
 namespace Capybara.Pages
 {
     public partial class FetchData
     {
-        [Inject] SpeechSynthesis SpeechSynthesis { get; set; }
+        [Inject, NotNull] SpeechSynthesis? SpeechSynthesis { get; set; }
         [SupplyParameterFromQuery, Parameter]
         public string? Text { get; set; }
 

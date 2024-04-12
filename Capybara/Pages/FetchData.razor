@@ -1,8 +1,7 @@
 ﻿@page "/fetchdata"
 
+
 @inject HttpClient Http
-@using Toolbelt.Blazor.SpeechSynthesis
-@using System.Runtime.InteropServices
 
 @inject NavigationManager NavigationManager
 <br/>
@@ -55,10 +54,10 @@
                 <section class="status">
                     <p>Status</p>
                     <div class="indicators">
-                        <div class="@CssClass(new { Active = this.Available })">Available</div>
-                        <div class="@CssClass(new { Active = this.SpeechSynthesis.Speaking })">Speaking</div>
-                        <div class="@CssClass(new { Active = this.SpeechSynthesis.Pending })">Pending</div>
-                        <div class="@CssClass(new { Active = this.SpeechSynthesis.Paused })">Paused</div>
+                        <div class="@V2.CssClass(new { Active = this.Available })">Available</div>
+                        <div class="@V2.CssClass(new { Active = this.SpeechSynthesis.Speaking })">Speaking</div>
+                        <div class="@V2.CssClass(new { Active = this.SpeechSynthesis.Pending })">Pending</div>
+                        <div class="@V2.CssClass(new { Active = this.SpeechSynthesis.Paused })">Paused</div>
                     </div>
                 </section>
     </MudItem>

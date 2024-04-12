@@ -1,20 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>       
+	    <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="BlazorTransitionableRoute" Version="4.0.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.3" />
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.3" PrivateAssets="all" />
-    <PackageReference Include="MudBlazor" Version="6.19.1" />
-    <PackageReference Include="BlazorPro.Spinkit" Version="1.2.0" />
-    <PackageReference Include="Tewr.Blazor.FileReader" Version="3.3.2.23201" />
-    <PackageReference Include="ToolBelt.Blazor.SpeechSynthesis" Version="10.3.0" />
-    <PackageReference Include="ToolBelt.Web.CssClassInlineBuilder" Version="2.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.4" PrivateAssets="all" />
+	    <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />    
+		<PackageReference Include="MudBlazor" Version="6.19.1" />
+        <PackageReference Include="BlazorPro.Spinkit" Version="1.2.0" />
+        <PackageReference Include="Tewr.Blazor.FileReader" Version="3.3.2.23201" />
+        <PackageReference Include="ToolBelt.Blazor.SpeechSynthesis" Version="10.3.1" />
+        <PackageReference Include="ToolBelt.Web.CssClassInlineBuilder" Version="3.1.0.1" />
+	    <PackageReference Include="Toolbelt.Blazor.PWA.Updater" Version="2.1.0.1" />
     </ItemGroup>
-
+  <ItemGroup>
+    <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+  </ItemGroup>
 </Project>
