@@ -10,8 +10,12 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+builder.Services.AddSingleton<IConfiguration>(new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+    .Build());
 #if DEBUG
-    builder.Services.AddHttpClient("notification.push.srv.local", client =>
+builder.Services.AddHttpClient("notification.push.srv.local", client =>
     {
         client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("notification.push.srv.local") ?? throw new ArgumentException());
     });

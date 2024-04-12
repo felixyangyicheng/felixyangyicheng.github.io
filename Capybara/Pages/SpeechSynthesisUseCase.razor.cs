@@ -1,7 +1,7 @@
 ﻿
 namespace Capybara.Pages
 {
-    public partial class FetchData
+    public partial class SpeechSynthesisUseCase
     {
         [Inject, NotNull] SpeechSynthesis? SpeechSynthesis { get; set; }
         [SupplyParameterFromQuery, Parameter]
