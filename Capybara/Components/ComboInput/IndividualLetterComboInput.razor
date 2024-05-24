@@ -1,0 +1,19 @@
+﻿@if (StringInit.Any())
+{   
+    @foreach (char letter in StringInit)
+    {
+        if (char.IsWhiteSpace(letter))
+        {
+            <MudInputString Disabled></MudInputString>
+        }
+        else
+        {
+            <MudInputString ></MudInputString>
+        }
+
+    }
+}
+
+@code {
+
+}
