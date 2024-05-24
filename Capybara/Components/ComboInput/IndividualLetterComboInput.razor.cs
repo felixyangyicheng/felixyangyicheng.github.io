@@ -4,5 +4,7 @@
     {
         [Parameter]
         public string StringInit { get; set; } = "";
+        public string StringToCheck { get; set; } = "";
+
     }
 }

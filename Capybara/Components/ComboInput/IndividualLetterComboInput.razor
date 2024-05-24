@@ -10,7 +10,17 @@
         {
             <MudInputString ></MudInputString>
         }
-
+    }
+    @for (int i = 0; i < StringInit.Length; i++)
+    {
+        if (char.IsWhiteSpace(StringInit[i]))
+        {
+            <MudInputString Disabled></MudInputString>
+        }
+        else
+        {
+            <MudInputString ></MudInputString>
+        }
     }
 }
 
