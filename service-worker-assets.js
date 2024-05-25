@@ -81,8 +81,8 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-Na95YiTdlrijTN2gHCmWMwBbmJMFv5E96XTLstEpLNk=",
-      "url": "public\/place_flags.json"
+      "hash": "sha256-JyQ09cn6MJ3l1kCofdRwlKp9q3A2yvDC1Uw\/t2mLF+E=",
+      "url": "place_flags.json"
     },
     {
       "hash": "sha256-riVhQU3\/HTazEYid8B3auJor2BrDROH4H31skTkRLvA=",
@@ -125,7 +125,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-+d5v+4Q232mqytMYveQfdHfhyz3AuKa3XSFCWwhRIe0=",
+      "hash": "sha256-3mz2ETCNDguK0756p0zIEhrzyGqW6itEFIvNHgmOIrg=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -141,7 +141,7 @@
       "url": "_framework\/BlazorTransitionableRoute.wasm"
     },
     {
-      "hash": "sha256-4pUY2g\/72Hi3\/vc3Hn4NTyYb9O3R5gtle6pjPGi6KQk=",
+      "hash": "sha256-9A03MTpo+Ez4T\/eIj\/DQaPOa9wI4SHI1cx4egFcIjkE=",
       "url": "_framework\/Capybara.wasm"
     },
     {
@@ -333,7 +333,7 @@
       "url": "_framework\/System.ObjectModel.wasm"
     },
     {
-      "hash": "sha256-9RCP23Fb7Mh5N6GAvWaw7azPx+3e+qUOwfTMp1B1dn0=",
+      "hash": "sha256-tM19LLpXKZcpQKFGaFVIe8uOMSDlQbQr5YGYl7vjTcE=",
       "url": "_framework\/System.Private.CoreLib.wasm"
     },
     {
@@ -349,7 +349,7 @@
       "url": "_framework\/System.Runtime.InteropServices.RuntimeInformation.wasm"
     },
     {
-      "hash": "sha256-B9qQ0uGRZeQOoYVVJ\/ZmD7fl5B\/XjxyccMKN1cjMOmA=",
+      "hash": "sha256-hLR7ON9jg0TYNWCnVvR\/22RYXei9bArbZkyvBYsv4e4=",
       "url": "_framework\/System.Runtime.wasm"
     },
     {
@@ -445,5 +445,5 @@
       "url": "_content\/Toolbelt.Blazor.PWA.Updater\/Toolbelt.Blazor.PWA.Updater.bundle.scp.css"
     }
   ],
-  "version": "vBM9bR1k"
+  "version": "Sk9NxfUj"
 };
