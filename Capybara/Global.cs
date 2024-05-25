@@ -9,6 +9,8 @@ global using System.Runtime.InteropServices;
 global using Microsoft.AspNetCore.Components.Web;
 global using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 global using Capybara;
+global using Capybara.Components;
+global using Capybara.Components.ComboInput;
 global using MudBlazor.Services;
 global using MudBlazor;
 global using Toolbelt.Blazor.Extensions.DependencyInjection;
