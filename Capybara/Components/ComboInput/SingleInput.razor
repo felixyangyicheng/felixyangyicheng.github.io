@@ -1,0 +1,90 @@
+﻿@page "/word-input"
+@using Microsoft.AspNetCore.Components.Web
+
+@code {
+    [Parameter]
+    public string Word { get; set; } = "word";
+
+    private string[] InputValues { get; set; }
+    private ElementReference[] InputRefs { get; set; }
+
+    protected override void OnInitialized()
+    {
+        InputValues = new string[Word.Length];
+        InputRefs = new ElementReference[Word.Length];
+    }
+    private async Task HandleRemove(KeyboardEventArgs e, int index)
+    {
+        Console.WriteLine(e.Key);
+        if (index > 0 && InputValues[index]!=null && e.Key == "Backspace")
+        {
+            Console.WriteLine(e.Code);
+            
+           // await InputRefs[index - 1].FocusAsync();
+        }
+    }
+
+    
+    private async Task HandleInput(ChangeEventArgs e, int index)
+    {
+        var input = e.Value.ToString();
+        if (input.Length>0)
+        {
+            Console.WriteLine(input);
+            Console.WriteLine(input[0]);
+            Console.WriteLine(index);
+        }
+
+        if (input.Length == 1 && input[0] == Word[index])
+        {
+            InputValues[index] = input;
+
+            if (index < Word.Length - 1)
+            {
+                await InputRefs[index + 1].FocusAsync();
+            }
+        }
+  
+        else
+        {
+            InputValues[index] = string.Empty; // Clear the input if incorrect
+        }
+
+        StateHasChanged();
+    }
+}
+
+<div class="grid text-center" style="  display: flex;">
+
+    @foreach (var item in Word.Select((value, i) => (value, i)))
+{
+    if (char.IsWhiteSpace(item.value))
+    {
+        <div>
+            <input MaxLength="1" disabled />
+        </div>
+
+    }
+    if (char.ToString(item.value).Equals("-"))
+    {
+            <div>
+
+        <p>-</p>
+            </div>
+
+    }
+    else
+    {
+            <div>
+
+        <input @key="@item.i" 
+        @ref="InputRefs[item.i]" maxlength="1" 
+        @oninput="@(e => HandleInput(e, item.i))"
+        @onkeyup="@(e=>HandleRemove(e, item.i))"
+               type="text" class="form-control" style="width:50px" />
+        </div>
+
+
+    }
+}
+</div>
