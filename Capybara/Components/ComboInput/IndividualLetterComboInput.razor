@@ -1,25 +1,24 @@
-﻿@if (StringInit.Any())
+﻿@inject IJSRuntime JSRuntime
+@if (StringInit.Any())
 {   
-    @foreach (char letter in StringInit)
+    @foreach (var item in StringInit.Select((value, i) => (value, i)))
     {
-        if (char.IsWhiteSpace(letter))
+        if (char.IsWhiteSpace(item.value))
         {
-            <MudInputString Disabled></MudInputString>
+            <input MaxLength="1"  disabled/>
+            <p>@item.i</p>
+        }
+        if (char.ToString(item.value).Equals("-"))
+        {
+            <p>-</p>
+            <p>@item.i</p>
         }
         else
         {
-            <MudInputString ></MudInputString>
-        }
-    }
-    @for (int i = 0; i < StringInit.Length; i++)
-    {
-        if (char.IsWhiteSpace(StringInit[i]))
-        {
-            <MudInputString Disabled></MudInputString>
-        }
-        else
-        {
-            <MudInputString ></MudInputString>
+
+            <input @key="@item.i" @ref="inputRefs[item.i]" maxlength="1" @oninput="@(e => OnInputChanged(e, item.i))"
+                   type="text" class="form-control" style="width:50px" />
+            <p>@item.i</p>
         }
     }
 }

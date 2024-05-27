@@ -1,7 +1,5 @@
 ﻿@page "/guessflag"
-
+@inject HttpClient _httpClient
+@inject IJSRuntime JSRuntime
 <h3>GuessFlag</h3>
 <IndividualLetterComboInput StringInit="@RegionToGuess.Region"></IndividualLetterComboInput>
-@code {
-
-}
