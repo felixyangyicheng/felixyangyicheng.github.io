@@ -1,58 +1,150 @@
 ﻿@page "/word-input"
 @using Microsoft.AspNetCore.Components.Web
+<style>
+    .default {
+        border: 2px solid blue;
+    }
+    .correct {
+        border: 2px solid green;
+        background-color: rgba(37, 195, 61, 0.34);
+    }
 
+    .all-correct {
+        background-color: rgba(37, 195, 61, 0.34);
+        border: 5px solid green;
+    }
+    .incorrect {
+        border: 2px solid red;
+        background-color: rgba(255, 47, 70, 0.45);
+    }
+</style>
 @code {
     [Parameter]
     public string Word { get; set; } = "word";
 
-    private string[] InputValues { get; set; }
-    private ElementReference[] InputRefs { get; set; }
-
+    private string[] InputValues { get; set; } = new string[0];
+    private ElementReference[] InputRefs { get; set; } = new ElementReference[0];
+    private string[] InputClasses { get; set; } = new string[0];
+    private bool[] InputDisabled { get; set; } = new bool[0];
+    private bool AllInputsCorrect { get; set; }
+    private bool FirstRender { get; set; } = true;
     protected override void OnInitialized()
     {
         InputValues = new string[Word.Length];
-        InputRefs = new ElementReference[Word.Length];
+        InputRefs = new ElementReference[Word.Length+1];
+        InputDisabled = Enumerable.Repeat(false, Word.Length).ToArray();
+        InputClasses = Enumerable.Repeat("default", Word.Length).ToArray();
+        AllInputsCorrect = false;
     }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await InputRefs[0].FocusAsync();
+            FirstRender = false;
+        }
+    }
+
     private async Task HandleRemove(KeyboardEventArgs e, int index)
     {
         Console.WriteLine(e.Key);
         if (index > 0 && InputValues[index]!=null && e.Key == "Backspace")
         {
             Console.WriteLine(e.Code);
-            
-           // await InputRefs[index - 1].FocusAsync();
+             await InputRefs[index - 1].FocusAsync();
         }
     }
 
-    
     private async Task HandleInput(ChangeEventArgs e, int index)
     {
-        var input = e.Value.ToString();
-        if (input.Length>0)
-        {
-            Console.WriteLine(input);
-            Console.WriteLine(input[0]);
-            Console.WriteLine(index);
-        }
-
-        if (input.Length == 1 && input[0] == Word[index])
+        var input = e.Value?.ToString();
+        if (input?.Length == 1 && (input[0] == Word[index] || char.ToLower(input[0]) == char.ToLower(Word[index])))
         {
             InputValues[index] = input;
+            InputClasses[index] = "correct";
+            InputDisabled[index] = true;
+
+            if (index == Word.Length - 1)
+            {
+                AllInputsCorrect = true;
+                foreach (var val in InputValues)
+                {
+                    if (string.IsNullOrEmpty(val))
+                    {
+                        AllInputsCorrect = false;
+                        break;
+                    }
+                }
+
+                if (AllInputsCorrect)
+                {
+                    StateHasChanged();
+                    return;
+                }
+                else
+                {
+                    await FocusFirstEmptyInput();
+                    return;
+                }
+            }
 
             if (index < Word.Length - 1)
             {
                 await InputRefs[index + 1].FocusAsync();
             }
         }
-  
         else
         {
-            InputValues[index] = string.Empty; // Clear the input if incorrect
+            InputValues[index] = string.Empty;
+            InputClasses[index] = "incorrect";
         }
 
         StateHasChanged();
     }
+
+    private string GetInputClass(int index)
+    {
+        if (AllInputsCorrect)
+        {
+            return "all-correct";
+        }
+        return InputClasses[index];
+    }
+    private async Task FocusFirstEmptyInput()
+    {
+        for (int i = 0; i < InputValues.Length; i++)
+        {
+            if (string.IsNullOrEmpty(InputValues[i]) && !InputDisabled[i])
+            {
+                await InputRefs[i].FocusAsync();
+                break;
+            }
+        }
+    }
+    private void ProvideHint()
+    {
+        // Get indices of inputs that are not yet correct and not disabled
+        var availableIndices = Enumerable.Range(0, Word.Length)
+                                         .Where(i => InputValues[i] == null || InputValues[i] == string.Empty)
+                                         .Where(i => !InputDisabled[i])
+                                         .ToList();
+
+        if (availableIndices.Count > 0)
+        {
+            Random rnd = new Random();
+            var randomIndex = availableIndices[rnd.Next(availableIndices.Count)];
+
+            // Set the correct letter at this index
+            InputValues[randomIndex] = Word[randomIndex].ToString();
+            InputClasses[randomIndex] = "correct";
+            InputDisabled[randomIndex] = true;
+
+            // Disable the input
+            StateHasChanged();
+        }
+    }
 }
+<MudContainer>
 
 <div class="grid text-center" style="  display: flex;">
 
@@ -69,7 +161,7 @@
     {
             <div>
 
-        <p>-</p>
+                <p>-</p>
             </div>
 
     }
@@ -81,10 +173,17 @@
         @ref="InputRefs[item.i]" maxlength="1" 
         @oninput="@(e => HandleInput(e, item.i))"
         @onkeyup="@(e=>HandleRemove(e, item.i))"
-               type="text" class="form-control" style="width:50px" />
+                           disabled="@InputDisabled[item.i]"
+                       value="@InputValues[item.i]"
+                       type="text" class="form-control @(GetInputClass(item.i))" style="width:50px" />
         </div>
 
 
     }
 }
+
+        <input type="text" class="form-control" name="name" value="@Word" />
+        <button @onclick="ProvideHint">Demander de l'aide</button>
 </div>
+
+</MudContainer>

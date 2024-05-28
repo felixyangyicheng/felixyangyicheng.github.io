@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Net.Http;
 using System.Text.Json;
+using static MudBlazor.Colors;
 
 namespace Capybara.Pages.GuessFlags
 {
@@ -15,7 +16,7 @@ namespace Capybara.Pages.GuessFlags
 
         public FlagModel RegionToGuess { get; set; } = new();
 
-
+        public int Points { get; set; } = 10;
         protected override async Task OnInitializedAsync()
         {
 #if DEBUG
@@ -33,6 +34,22 @@ namespace Capybara.Pages.GuessFlags
                 //Console.WriteLine(RegionToGuess.Region);
             }
             await base.OnInitializedAsync();
+        }
+
+        private void nextFlag(bool ok)
+        {
+            Points = Points + 10;
+            Random rnd = new Random();
+            if (ok) {
+                RegionToGuess = regionAndFlags[rnd.Next(regionAndFlags.Count)];
+            }
+            StateHasChanged();
+        }
+
+        private void Decrement()
+        {
+            Points = Points - 10;
+            StateHasChanged();
         }
     }
 }

@@ -1,28 +1,77 @@
-﻿@inject IJSRuntime JSRuntime
+﻿@implements IDisposable
 @if (StringInit.Any())
-{   
-    @foreach (var item in StringInit.Select((value, i) => (value, i)))
-    {
-        if (char.IsWhiteSpace(item.value))
-        {
-            <input MaxLength="1"  disabled/>
-            <p>@item.i</p>
-        }
-        if (char.ToString(item.value).Equals("-"))
-        {
-            <p>-</p>
-            <p>@item.i</p>
-        }
-        else
-        {
+{
+    <MudContainer>
 
-            <input @key="@item.i" @ref="inputRefs[item.i]" maxlength="1" @oninput="@(e => OnInputChanged(e, item.i))"
-                   type="text" class="form-control" style="width:50px" />
-            <p>@item.i</p>
-        }
+        <div class="grid text-center combocase">
+
+            @foreach (var item in StringInit.Select((value, i) => (value, i)))
+            {
+                if (char.IsWhiteSpace(item.value))
+                {
+                    <div>
+                        <input MaxLength="1" class="form-control case" disabled="@InputDisabled[item.i]" @key="@item" @ref="InputRefs[item.i]"  />
+                    </div>
+
+                }
+                if (char.ToString(item.value).Equals("-"))
+                {
+                    <div>
+
+                        <input class="form-control case" value="-" disabled="@InputDisabled[item.i]" @key="@item" @ref="InputRefs[item.i]"  />
+                    </div>
+
+                }
+                else
+                {
+                    <div>
+
+                        <input @key="@item"
+                               @ref="InputRefs[item.i]" maxlength="1"
+                               @oninput="@(e => HandleInput(e, item.i))"
+                               
+                               disabled="@InputDisabled[item.i]"
+                               value="@InputValues[item.i]"
+                               type="text" class="form-control case @(GetInputClass(item.i))" />
+                    </div>
+
+
+                }
+            }
+        </div>
+
+        <input type="text" class="form-control" name="name" value="@StringInit" />
+        <MudButton OnClick="ProvideHint" Disabled="(HintAvaiable!=true)">Demander de l'aide</MudButton>
+
+    </MudContainer>
+}
+
+<style>
+    .case {
+        width: 40px;
+        height: 40px;
     }
-}
 
-@code {
+    .combocase {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .default {
+        border: 2px solid blue;
+    }
 
-}
+    .correct {
+        border: 2px solid green;
+        background-color: rgba(37, 195, 61, 0.34);
+    }
+
+    .all-correct {
+        background-color: rgba(37, 195, 61, 0.34);
+        border: 5px solid green;
+    }
+
+    .incorrect {
+        border: 2px solid red;
+        background-color: rgba(255, 47, 70, 0.45);
+    }
+</style>
