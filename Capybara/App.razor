@@ -14,10 +14,10 @@
 <Router AppAssembly="@typeof(Program).Assembly">
     <Found Context="routeData">
         <LayoutView Layout="@typeof(MainLayout)">
-            <TransitionableRoutePrimary RouteData="@routeData" ForgetStateOnTransition="false">
+            <TransitionableRoutePrimary RouteData="@routeData" ForgetStateOnTransition="true">
                 <TransitionableRouteView DefaultLayout="@typeof(TransitionViewLayout)" />
             </TransitionableRoutePrimary>
-            <TransitionableRouteSecondary RouteData="@routeData" ForgetStateOnTransition="false">
+            <TransitionableRouteSecondary RouteData="@routeData" ForgetStateOnTransition="true">
                 <TransitionableRouteView DefaultLayout="@typeof(TransitionViewLayout)" />
             </TransitionableRouteSecondary>
         </LayoutView>
