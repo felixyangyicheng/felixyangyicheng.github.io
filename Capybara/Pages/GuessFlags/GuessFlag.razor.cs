@@ -13,8 +13,12 @@ namespace Capybara.Pages.GuessFlags
         [NotNull]
         public List<FlagModel>? regionAndFlags { get; set; }
         [NotNull]
+        public List<FlagModel>? ListToGuess { get; set; }
+        [NotNull]
 
         public FlagModel RegionToGuess { get; set; } = new();
+        public Random rnd { get; set; } = new Random();
+        public IndividualLetterComboInput input { get; set; } = new();
 
         public int Points { get; set; } = 10;
         protected override async Task OnInitializedAsync()
@@ -27,7 +31,7 @@ namespace Capybara.Pages.GuessFlags
             var response = _httpClient.GetFromJsonAsync<List<FlagModel>>($"{rootPath}/place_flags.json");
 
             regionAndFlags =await response;
-            Random rnd = new Random();
+            
             if (regionAndFlags!=null)
             {
                 RegionToGuess = regionAndFlags[rnd.Next(regionAndFlags.Count)];
@@ -39,7 +43,7 @@ namespace Capybara.Pages.GuessFlags
         private void nextFlag(bool ok)
         {
             Points = Points + 10;
-            Random rnd = new Random();
+             rnd = new Random();
             if (ok) {
                 RegionToGuess = regionAndFlags[rnd.Next(regionAndFlags.Count)];
             }

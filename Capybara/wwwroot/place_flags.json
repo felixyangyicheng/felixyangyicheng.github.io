@@ -216,7 +216,7 @@
     "Details": []
   },
   {
-    "Region": "",
+    "Region": "Pacardie",
     "Official": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Flag_of_the_former_Region_of_Picardie.svg/100px-Flag_of_the_former_Region_of_Picardie.svg.png"
     ],
@@ -232,7 +232,7 @@
     "Details": []
   },
   {
-    "Region": "",
+    "Region": "Pays-de-la-Loire",
     "Official": [],
     "Proposed": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Unofficial_flag_of_Pays-de-la-Loire.svg/100px-Unofficial_flag_of_Pays-de-la-Loire.svg.png"
@@ -248,7 +248,7 @@
     "Details": []
   },
   {
-    "Region": "",
+    "Region": "Basse-Normandie",
     "Official": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Flag_of_the_former_Region_of_Basse-Normandie.svg/100px-Flag_of_the_former_Region_of_Basse-Normandie.svg.png"
     ],
@@ -264,7 +264,7 @@
     "Details": []
   },
   {
-    "Region": "",
+    "Region": "Haute-Normandie",
     "Official": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_the_former_Region_of_Haute-Normandie.svg/100px-Flag_of_the_former_Region_of_Haute-Normandie.svg.png"
     ],
