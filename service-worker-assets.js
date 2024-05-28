@@ -129,7 +129,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-IuIKG8UPrGbG1YNeZxQuP5CwofHo\/S3II7xPJ4osuCo=",
+      "hash": "sha256-SL1Iqj0uGJEm+VIRj87AU4N5ONLhdzQOps5QMJmySLA=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -145,7 +145,7 @@
       "url": "_framework\/BlazorTransitionableRoute.wasm"
     },
     {
-      "hash": "sha256-1B0hvIXy0lD5SRPduU0UlZd1VBqFBnwjMlXHw\/X3lIQ=",
+      "hash": "sha256-HJ0mhJ2fa9wfJUkJMQtR21UKjk3YttOXUPZNY1QKMas=",
       "url": "_framework\/Capybara.wasm"
     },
     {
@@ -249,7 +249,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.wasm"
     },
     {
-      "hash": "sha256-5m\/htaCinGQbZTKc4eidOUOHDNoc6IxLZbvbCWXMyP4=",
+      "hash": "sha256-pM3asW0Zcp83ZjpzJAh2PyDK7nogqiO3OxCwKXB7Lrw=",
       "url": "_framework\/MudBlazor.wasm"
     },
     {
@@ -293,7 +293,7 @@
       "url": "_framework\/System.ComponentModel.wasm"
     },
     {
-      "hash": "sha256-XthEluGXzsSTBrRWeqVsmP1G8JkbWkJAZ1GYSPF55ok=",
+      "hash": "sha256-r0pWVo9z\/ulMoCk+S\/cAsvsfVsLKgrpAQE28d60EHlM=",
       "url": "_framework\/System.Console.wasm"
     },
     {
@@ -313,7 +313,7 @@
       "url": "_framework\/System.Linq.Expressions.wasm"
     },
     {
-      "hash": "sha256-B912cBHsuQKnpB8fbR+aZzhmp6iei4qwcn8RemHy1EU=",
+      "hash": "sha256-WUwIljabcmA8v+NU1WxyCKR1B9rYWLuH4sgApn+f7hs=",
       "url": "_framework\/System.Linq.wasm"
     },
     {
@@ -337,7 +337,7 @@
       "url": "_framework\/System.ObjectModel.wasm"
     },
     {
-      "hash": "sha256-\/TsinkLyFNmX4jT6kgWEr4NYAr0Sor3MnMOlv1UqtQc=",
+      "hash": "sha256-Vqd\/X\/TbZi17s40aiFQXnuzT6jw0wI6K6MxaAXFdp2Q=",
       "url": "_framework\/System.Private.CoreLib.wasm"
     },
     {
@@ -353,7 +353,7 @@
       "url": "_framework\/System.Runtime.InteropServices.RuntimeInformation.wasm"
     },
     {
-      "hash": "sha256-MIM4gf8bWqk6\/No9y6rUSUinZ0ADlRTIlbRTiwAWij8=",
+      "hash": "sha256-iwt2jIxi7cIZiSMYCCSpCg1WhzHIh1BBLYT9yvgLNOY=",
       "url": "_framework\/System.Runtime.wasm"
     },
     {
@@ -449,5 +449,5 @@
       "url": "_content\/Toolbelt.Blazor.PWA.Updater\/Toolbelt.Blazor.PWA.Updater.bundle.scp.css"
     }
   ],
-  "version": "6YamsRHZ"
+  "version": "5mZEa8Xz"
 };
