@@ -85,7 +85,7 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-JyQ09cn6MJ3l1kCofdRwlKp9q3A2yvDC1Uw\/t2mLF+E=",
+      "hash": "sha256-DHoVOddMdtzw0dITLn++xTSqn3wjnmXKhKYDTPTDiFA=",
       "url": "place_flags.json"
     },
     {
@@ -129,7 +129,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-SL1Iqj0uGJEm+VIRj87AU4N5ONLhdzQOps5QMJmySLA=",
+      "hash": "sha256-XDul4C1vtZk+TU9IGhQbetFUAIErTDxogfVanXBp46M=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -145,7 +145,7 @@
       "url": "_framework\/BlazorTransitionableRoute.wasm"
     },
     {
-      "hash": "sha256-HJ0mhJ2fa9wfJUkJMQtR21UKjk3YttOXUPZNY1QKMas=",
+      "hash": "sha256-HItICoJkORKOv4jP9vaftZ1yCGc5ErmM1IKML9CcKBs=",
       "url": "_framework\/Capybara.wasm"
     },
     {
@@ -249,7 +249,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.wasm"
     },
     {
-      "hash": "sha256-pM3asW0Zcp83ZjpzJAh2PyDK7nogqiO3OxCwKXB7Lrw=",
+      "hash": "sha256-RC0tzevSir4ZoyIdqF+h4Cxhbb83CTbuX8ZhPYe3Kao=",
       "url": "_framework\/MudBlazor.wasm"
     },
     {
@@ -293,7 +293,7 @@
       "url": "_framework\/System.ComponentModel.wasm"
     },
     {
-      "hash": "sha256-r0pWVo9z\/ulMoCk+S\/cAsvsfVsLKgrpAQE28d60EHlM=",
+      "hash": "sha256-XIpGj7oOSUGHwgYFDKeHzPENnK87sZuQmDdB5YEEr5g=",
       "url": "_framework\/System.Console.wasm"
     },
     {
@@ -313,7 +313,7 @@
       "url": "_framework\/System.Linq.Expressions.wasm"
     },
     {
-      "hash": "sha256-WUwIljabcmA8v+NU1WxyCKR1B9rYWLuH4sgApn+f7hs=",
+      "hash": "sha256-VlzAGjcSzuYRAC6rSNNALuRA81\/okxb\/up3yvwQpxAI=",
       "url": "_framework\/System.Linq.wasm"
     },
     {
@@ -337,7 +337,7 @@
       "url": "_framework\/System.ObjectModel.wasm"
     },
     {
-      "hash": "sha256-Vqd\/X\/TbZi17s40aiFQXnuzT6jw0wI6K6MxaAXFdp2Q=",
+      "hash": "sha256-iJHXw0ikUxzlRglBP\/ofi0MgRVmSibCTJlEF7R09NpE=",
       "url": "_framework\/System.Private.CoreLib.wasm"
     },
     {
@@ -449,5 +449,5 @@
       "url": "_content\/Toolbelt.Blazor.PWA.Updater\/Toolbelt.Blazor.PWA.Updater.bundle.scp.css"
     }
   ],
-  "version": "5mZEa8Xz"
+  "version": "wGA9lG53"
 };
