@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.JSInterop;
 using System.Collections;
 using System.Net.Http;
 using System.Text.Json;
@@ -13,7 +14,7 @@ namespace Capybara.Pages.GuessFlags
         [NotNull]
         public List<FlagModel>? regionAndFlags { get; set; }
         [NotNull]
-        public List<FlagModel>? ListToGuess { get; set; }
+        public List<FlagModel>? ListToGuess { get; set; } = new List<FlagModel>();
         public List<FlagModel>? FlagsViewed { get; set; }=new List<FlagModel>();
         [NotNull]
 
@@ -21,7 +22,7 @@ namespace Capybara.Pages.GuessFlags
         public Random rnd { get; set; } = new Random();
         public IndividualLetterComboInput input { get; set; } = new();
 
-        public int Points { get; set; } = 10;
+        public int Points { get; set; } = 0;
         protected override async Task OnInitializedAsync()
         {
 #if DEBUG
@@ -32,30 +33,57 @@ namespace Capybara.Pages.GuessFlags
             var response = _httpClient.GetFromJsonAsync<List<FlagModel>>($"{rootPath}/place_flags.json");
 
             regionAndFlags =await response;
-            
-            if (regionAndFlags!=null)
+            FlagsViewed = new();
+            if (regionAndFlags != null)
             {
-                RegionToGuess = regionAndFlags[rnd.Next(regionAndFlags.Count)];
-                //Console.WriteLine(RegionToGuess.Region);
+                ListToGuess = regionAndFlags.OrderBy(x => Random.Shared.Next()).Take(10).ToList();
+                if (ListToGuess.Count > 0)
+                {
+                    RegionToGuess = ListToGuess[0];
+                }
             }
             await base.OnInitializedAsync();
         }
-
-        private void nextFlag(bool ok)
+        private async Task NewGame()
         {
-            Points = Points + 10;
-             rnd = new Random();
-            if (ok) {
-                FlagsViewed.Add(RegionToGuess);
-                RegionToGuess = regionAndFlags[rnd.Next(regionAndFlags.Count)];
+            await OnInitializedAsync();
+        }
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("ScrollToBottom", "viewed");
 
+        }
+        private async Task NextFlag(bool correctGuess)
+        {
+            if (correctGuess)
+            {
+                Points += 10;
+                if (ListToGuess != null && ListToGuess.Count > 0)
+                {
+                    FlagsViewed.Add(RegionToGuess);
+                    ListToGuess.RemoveAt(0);
+                    StateHasChanged();
+                    if (ListToGuess.Count > 0)
+                    {
+                        RegionToGuess = ListToGuess[0];
+                    }
+                    else
+                    {
+                        RegionToGuess = new FlagModel(); // Or handle end of list case
+                    }
+                }
             }
+            else
+            {
+                Decrement();
+            }
+
             StateHasChanged();
         }
 
         private void Decrement()
         {
-            Points = Points - 10;
+            Points -= 10;
             StateHasChanged();
         }
     }
