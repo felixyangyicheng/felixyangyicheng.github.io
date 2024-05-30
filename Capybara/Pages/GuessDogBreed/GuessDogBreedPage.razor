@@ -1,0 +1,71 @@
+﻿@page "/GuessDogBreed"
+@inject HttpClient _httpClient
+@inject IJSRuntime JSRuntime
+
+<style>
+    .viewed {
+        overflow-y: scroll;
+        height: 80vh;
+    }
+</style>
+<MudContainer>
+
+    <h3>GuessFlag</h3>
+    <MudGrid>
+        <MudItem xs="12" md="8">
+            @if (ListToGuess == null)
+            {
+                <p>loading..</p>
+            }
+            @if (ListToGuess?.Count == 0)
+            {
+
+                <MudButton Color="Color.Secondary" OnClick="NewGame">New game ?</MudButton>
+            }
+            else
+            {
+                <MudGrid>
+                    <MudItem xs="12" lg="4">
+
+                        <MudImage Width="250" Src="@DogBreedToGuess.ImageUrl"></MudImage>
+                    </MudItem>
+                    <MudItem xs="12" lg="8">
+
+                        <QuaternarySelection OnBreedSelected="NextDogBreed" Quaternary="DogBreedQuaternary"></QuaternarySelection>
+                    </MudItem>
+          
+                </MudGrid>
+            }
+        </MudItem>
+        <MudItem xs="12" md="4">
+
+            <div class="viewed" id="viewed">
+
+                @foreach (var i in DogBreedsViewed)
+                {
+                    <MudGrid>
+                        <MudItem xs="8">
+
+                            <MudImage Height="100" Src="@i.ImageUrl" ></MudImage>
+
+                        </MudItem>
+                        <MudItem xs="4">
+                            @if (i.Correct==false)
+                            {
+                                <MudChip Color="Color.Error" Icon="@Icons.Material.Filled.Close">KO</MudChip>
+                            }
+                            else
+                            {                              
+                                <MudChip Color="Color.Success"  Icon="@Icons.Material.Filled.Check">OK</MudChip>
+                            }
+                      
+                            <p>@i.BreedName</p>
+                        </MudItem>
+                    </MudGrid>
+                }
+
+            </div>
+        </MudItem>
+
+    </MudGrid>
+</MudContainer>
