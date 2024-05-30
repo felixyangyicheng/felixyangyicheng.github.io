@@ -1,4 +1,7 @@
-﻿namespace Capybara.Components.Selections
+﻿using MudBlazor.Charts;
+using System;
+
+namespace Capybara.Components.Selections
 {
     public partial class QuaternarySelection
     {
@@ -8,6 +11,15 @@
         public EventCallback<bool> OnBreedSelected { get; set; }
 
         public string ButtonHeightWidth { get; set; } = "height: 12vh;";
+        public Color Color { get; set; } = Color.Info;
+
+        protected override async Task OnParametersSetAsync()
+        {
+            Random rnd = new Random();
+            Color = (Color)rnd.Next(0, 8);
+           
+        }
+
 
     }
 }

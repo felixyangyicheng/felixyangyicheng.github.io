@@ -89,7 +89,7 @@ namespace Capybara.Pages.GuessDogBreed
         {
             DogBreedQuaternary.DogBreedProposes = new();
             DogBreedToGuess = ListToGuess[0];
-            List<DogBreedModel> wrong = DogBreeds.OrderBy(x => Random.Shared.Next()).Take(3).ToList();
+            List<DogBreedModel> wrong = DogBreeds.OrderBy(x => Random.Shared.Next()).Where(a => a.BreedName!= DogBreedToGuess.BreedName).Take(3).ToList();
             foreach (var i in wrong)
             {
                 DogBreedPropose dogBreedPropose = new();

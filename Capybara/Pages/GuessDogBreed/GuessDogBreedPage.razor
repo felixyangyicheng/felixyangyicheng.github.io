@@ -10,7 +10,8 @@
 </style>
 <MudContainer>
 
-    <h3>GuessFlag</h3>
+    <h3>Learn about thier breed</h3>
+    <br/>
     <MudGrid>
         <MudItem xs="12" md="8">
             @if (ListToGuess == null)
@@ -19,7 +20,6 @@
             }
             @if (ListToGuess?.Count == 0)
             {
-
                 <MudButton Color="Color.Secondary" OnClick="NewGame">New game ?</MudButton>
             }
             else
@@ -43,13 +43,11 @@
 
                 @foreach (var i in DogBreedsViewed)
                 {
-                    <MudGrid>
-                        <MudItem xs="8">
-
+                    <MudGrid id="view">
+                        <MudItem xs="6">
                             <MudImage Height="100" Src="@i.ImageUrl" ></MudImage>
-
                         </MudItem>
-                        <MudItem xs="4">
+                        <MudItem xs="6">
                             @if (i.Correct==false)
                             {
                                 <MudChip Color="Color.Error" Icon="@Icons.Material.Filled.Close">KO</MudChip>
@@ -57,8 +55,7 @@
                             else
                             {                              
                                 <MudChip Color="Color.Success"  Icon="@Icons.Material.Filled.Check">OK</MudChip>
-                            }
-                      
+                            }                      
                             <p>@i.BreedName</p>
                         </MudItem>
                     </MudGrid>
