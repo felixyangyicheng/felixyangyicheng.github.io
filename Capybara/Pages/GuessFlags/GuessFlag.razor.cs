@@ -14,6 +14,7 @@ namespace Capybara.Pages.GuessFlags
         public List<FlagModel>? regionAndFlags { get; set; }
         [NotNull]
         public List<FlagModel>? ListToGuess { get; set; }
+        public List<FlagModel>? FlagsViewed { get; set; }=new List<FlagModel>();
         [NotNull]
 
         public FlagModel RegionToGuess { get; set; } = new();
@@ -45,7 +46,9 @@ namespace Capybara.Pages.GuessFlags
             Points = Points + 10;
              rnd = new Random();
             if (ok) {
+                FlagsViewed.Add(RegionToGuess);
                 RegionToGuess = regionAndFlags[rnd.Next(regionAndFlags.Count)];
+
             }
             StateHasChanged();
         }

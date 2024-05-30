@@ -11,13 +11,13 @@
     else 
     {
         
-    @if (rnd.Next(regionAndFlags.Count()) % 2 == 0&&RegionToGuess.Official.Count>0)
-{
+        @if (rnd.Next(regionAndFlags.Count()) % 2 == 0&&RegionToGuess.Official.Count>0)
+        {
 
-        <MudImage Width="150" src="@RegionToGuess.Official[0]" />
-}
+            <MudImage Width="150" src="@RegionToGuess.Official[0]" />
+        }
         else if (RegionToGuess.Proposed.Count > 0)
-{
+        {
     
             <MudImage  Width="150" src="@RegionToGuess.Proposed[0]" />
         }
@@ -26,7 +26,17 @@
             <MudImage Width="150" src="@RegionToGuess.Official[0]" />
 
         }
-        <IndividualLetterComboInput OnHintAsked="Decrement" OnWordOk="nextFlag" HintAvaiable="@(Points>0)" StringInit="@RegionToGuess.Region"></IndividualLetterComboInput>
-<h2>Points: @Points</h2>
-    }
+            <IndividualLetterComboInput OnHintAsked="Decrement" OnWordOk="nextFlag" HintAvaiable="@(Points>0)" StringInit="@RegionToGuess.Region"></IndividualLetterComboInput>
+            <h2>Points: @Points</h2>
+        }
+        @if (FlagsViewed.Count>1)
+        {
+        @foreach (var item in FlagsViewed)
+        {
+
+            <MudImage Src="@item.Proposed[0]" />
+            <MudImage Src="@item.Official[0]" />
+            <p>@item.Region</p>
+        }
+        }
 </MudContainer>
