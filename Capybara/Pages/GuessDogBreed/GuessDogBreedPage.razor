@@ -11,6 +11,11 @@
 <MudContainer>
 
     <h3>Learn about thier breed</h3>
+    @if (loading)
+    {
+
+        <Pulse />
+    }
     <br/>
     <MudGrid>
         <MudItem xs="12" md="8">

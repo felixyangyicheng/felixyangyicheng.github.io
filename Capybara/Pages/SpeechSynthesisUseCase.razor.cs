@@ -26,9 +26,10 @@ namespace Capybara.Pages
         private readonly SpeechSynthesisUtterance CachedUtterancet = new();
 
         private bool Available;
-
+ 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
+          
             this.Available = await this.SpeechSynthesis.AvailableAsync;
 
             if (firstRender)
@@ -47,6 +48,8 @@ namespace Capybara.Pages
                 this.SpeechSynthesis.UtteranceEnded += this.OnEnd;
                 this.SpeechSynthesis.UtteranceError += this.OnError;
             }
+     
+
         }
 
         private void UpdateUrl()

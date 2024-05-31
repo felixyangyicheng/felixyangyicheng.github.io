@@ -21,8 +21,10 @@ namespace Capybara.Pages.GuessDogBreed
         public IndividualLetterComboInput input { get; set; } = new();
  
         public int Points { get; set; } = 0;
+        public bool loading { get; set; }
         protected override async Task OnInitializedAsync()
         {
+            loading=true;
 #if DEBUG
             string rootPath = configuration.GetValue<string>("rootPath") ?? throw new ArgumentNullException(nameof(rootPath));
 #else
@@ -41,6 +43,8 @@ namespace Capybara.Pages.GuessDogBreed
                     NewQuaternary();
                 }
             }
+            loading = false;
+
             await base.OnInitializedAsync();
         }
         private async Task NewGame()

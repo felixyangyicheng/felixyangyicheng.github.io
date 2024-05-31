@@ -1,0 +1,90 @@
+﻿@page "/interops"
+@inject IJSRuntime JS
+@implements IAsyncDisposable
+
+<h1>Hello, Interop!</h1>
+<br />
+<h4 style="background-color:aliceblue; padding:20px">JavaScript Interop</h4>
+@Message
+<hr />
+
+<button class="btn btn-primary" @onclick="@Prompt">Prompt</button>
+<button class="btn btn-primary" @onclick="@ScriptPrompt">Script Prompt</button>
+<button class="btn btn-primary" @onclick="@ScriptAlert">Script Alert</button>
+<hr>
+
+<button class="btn btn-primary" @onclick="@ModulelPrompt">Module Prompt</button>
+<button class="btn btn-primary" @onclick="@ModulelAlert">Module Alert</button>
+<hr>
+
+<h4 style="background-color:aliceblue; padding:20px">TypeScript Interop</h4>
+<hr>
+<button class="btn btn-primary" @onclick="@HelloAlert">Hello Alert</button>
+
+@code {
+    private IJSObjectReference module;
+    private IJSObjectReference hello;
+
+    string Message { get; set; } = string.Empty;
+
+    string Version { get => $"?v={DateTime.Now.Ticks.ToString()}"; }
+
+
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        if (module is not null)
+            await module.DisposeAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            module = await JS.InvokeAsync<IJSObjectReference>("import", $"./js/script.module.js{Version}");
+            hello = await JS.InvokeAsync<IJSObjectReference>("import", $"./js/ts/hello.js{Version}");
+        }
+    }
+
+    async void ModulelAlert()
+    {
+        await module.InvokeVoidAsync("ModulAlert", "Modulel Alert");
+    }
+
+    async void ModulelPrompt()
+    {
+        string answer = await module.InvokeAsync<string>("ModulePrompt", "Module Prompt say what?");
+        Message = $"Prompt:{(string.IsNullOrEmpty(answer) ? "nothing" : answer)}";
+        StateHasChanged();
+    }
+
+    async void Prompt()
+    {
+
+        string answer = await JS.InvokeAsync<string>("prompt", "say what?");
+        Message = $"Prompt:{(string.IsNullOrEmpty(answer) ? "nothing" : answer)}";
+
+        StateHasChanged();
+    }
+
+
+    async void ScriptPrompt()
+    {
+        string answer = await JS.InvokeAsync<string>("ScriptPrompt", "say what?");
+        Message = $"Prompt:{(string.IsNullOrEmpty(answer) ? "nothing" : answer)}";
+
+        StateHasChanged();
+    }
+
+    async void ScriptAlert()
+    {
+        await JS.InvokeVoidAsync("ScriptAlert", "Script Alert");
+    }
+
+
+    async void HelloAlert()
+    {
+        await hello.InvokeVoidAsync("HelloInstance.hello");
+        await hello.InvokeVoidAsync("Hello.goodbye");
+    }
+
+}
