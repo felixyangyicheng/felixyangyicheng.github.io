@@ -1,4 +1,4 @@
-﻿@page "/GuessDogBreed"
+﻿@page "/GuessBreed"
 @inject HttpClient _httpClient
 @inject IJSRuntime JSRuntime
 
@@ -51,7 +51,7 @@
                 {
                     <MudGrid id="view">
                         <MudItem xs="6">
-                            <MudImage Height="85" Src="@i.ImageUrl" ></MudImage>
+                            <MudImage Width="100"  Src="@i.ImageUrl" ></MudImage>
                         </MudItem>
                         <MudItem xs="5">
                             @if (i.Correct==false)
