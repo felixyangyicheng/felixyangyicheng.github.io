@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "z1EMAgfB",
+  "version": "ZJDHLwpl",
   "assets": [
     {
       "hash": "sha256-qb/HJtKnALFWD9fSkddslmYn2NmMU7JK1SNoKZf8wSY=",
@@ -78,7 +78,7 @@ self.assetsManifest = {
       "url": "_framework/BlazorTransitionableRoute.wasm"
     },
     {
-      "hash": "sha256-PTr0e15DpgkLBgeYCIuEk2BvLqTvcczalT3BOfAGKoY=",
+      "hash": "sha256-AWvgF1eQTpzDQl/xg5eBafJd4t2+8f/PJo74AOhI4AQ=",
       "url": "_framework/Capybara.wasm"
     },
     {
@@ -338,7 +338,7 @@ self.assetsManifest = {
       "url": "_framework/Toolbelt.Web.CssClassInlineBuilder.wasm"
     },
     {
-      "hash": "sha256-cVybDL/1TjGPAZNE6+7HZO7StSacR+bc6mNjdyGkAOc=",
+      "hash": "sha256-YDz7D2PUqYewOvRUeJ67qTD0902SKpnaHfdIUqkciBY=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -498,7 +498,7 @@ self.assetsManifest = {
       "url": "pushNotifications.js"
     },
     {
-      "hash": "sha256-PyTWdkl6ur233EkJs3tPj0vQNk/JGV5v6VkNEewP2nM=",
+      "hash": "sha256-scYjv+7MREgPZGkkUccZdT/vEcY7eXqa+RyckdCoAv0=",
       "url": "races_chien.json"
     },
     {
