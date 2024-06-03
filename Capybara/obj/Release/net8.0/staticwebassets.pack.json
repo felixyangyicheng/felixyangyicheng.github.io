@@ -1,0 +1,169 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\.nuget\\packages\\blazortransitionableroute\\4.0.0\\contentFiles\\any\\net6.0\\wwwroot\\jsInterop.js",
+      "PackagePath": "staticwebassets\\jsInterop.js"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\bin\\Release\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\obj\\Release\\net8.0\\scopedcss\\bundle\\Capybara.styles.css",
+      "PackagePath": "staticwebassets\\Capybara.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\404.html",
+      "PackagePath": "staticwebassets\\404.html"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\appsettings.json",
+      "PackagePath": "staticwebassets\\appsettings.json"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\dog_breeds.json",
+      "PackagePath": "staticwebassets\\dog_breeds.json"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\img\\bike.svg",
+      "PackagePath": "staticwebassets\\img\\bike.svg"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\img\\icon-512.png",
+      "PackagePath": "staticwebassets\\img\\icon-512.png"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\img\\logo.svg",
+      "PackagePath": "staticwebassets\\img\\logo.svg"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\img\\pizza-slice.svg",
+      "PackagePath": "staticwebassets\\img\\pizza-slice.svg"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\img\\pizzas\\bacon.jpg",
+      "PackagePath": "staticwebassets\\img\\pizzas\\bacon.jpg"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\img\\pizzas\\brit.jpg",
+      "PackagePath": "staticwebassets\\img\\pizzas\\brit.jpg"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\img\\pizzas\\cheese.jpg",
+      "PackagePath": "staticwebassets\\img\\pizzas\\cheese.jpg"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\img\\pizzas\\margherita.jpg",
+      "PackagePath": "staticwebassets\\img\\pizzas\\margherita.jpg"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\img\\pizzas\\meaty.jpg",
+      "PackagePath": "staticwebassets\\img\\pizzas\\meaty.jpg"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\img\\pizzas\\mushroom.jpg",
+      "PackagePath": "staticwebassets\\img\\pizzas\\mushroom.jpg"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\img\\pizzas\\pepperoni.jpg",
+      "PackagePath": "staticwebassets\\img\\pizzas\\pepperoni.jpg"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\img\\pizzas\\salad.jpg",
+      "PackagePath": "staticwebassets\\img\\pizzas\\salad.jpg"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\img\\user.svg",
+      "PackagePath": "staticwebassets\\img\\user.svg"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\js\\script.module.js",
+      "PackagePath": "staticwebassets\\js\\script.module.js"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\js\\scroll.js",
+      "PackagePath": "staticwebassets\\js\\scroll.js"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\js\\ts\\hello.js",
+      "PackagePath": "staticwebassets\\js\\ts\\hello.js"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\js\\ts\\hello.js.map",
+      "PackagePath": "staticwebassets\\js\\ts\\hello.js.map"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\js\\ts\\scrollTestInTs.js",
+      "PackagePath": "staticwebassets\\js\\ts\\scrollTestInTs.js"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\js\\ts\\scrollTestInTs.js.map",
+      "PackagePath": "staticwebassets\\js\\ts\\scrollTestInTs.js.map"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\manifest.json",
+      "PackagePath": "staticwebassets\\manifest.json"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\place_flags.json",
+      "PackagePath": "staticwebassets\\place_flags.json"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\pushNotifications.js",
+      "PackagePath": "staticwebassets\\pushNotifications.js"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\races_chien.json",
+      "PackagePath": "staticwebassets\\races_chien.json"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\ts\\hello.ts",
+      "PackagePath": "staticwebassets\\ts\\hello.ts"
+    },
+    {
+      "Id": "C:\\Users\\admin-fr06ab\\source\\felixyangyicheng.github.io\\Capybara\\wwwroot\\ts\\scrollTestInTs.ts",
+      "PackagePath": "staticwebassets\\ts\\scrollTestInTs.ts"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.Capybara.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.Capybara.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.Capybara.props",
+      "PackagePath": "build\\Capybara.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Capybara.props",
+      "PackagePath": "buildMultiTargeting\\Capybara.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.Capybara.props",
+      "PackagePath": "buildTransitive\\Capybara.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
