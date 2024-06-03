@@ -69,22 +69,7 @@
 
             </div>
         </MudItem>
-        <MudItem>
-            @if (DogBreedsViewed.Count>0)
-            {
-                <ApexChart TItem="List<DogBreedResult>"
-                           Title="Temp C"
-                           Options=options Debug>
 
-                    <ApexPointSeries TItem="DogBreedResult"
-                                     Items="DogBreedsViewed"
-                                     Name="Ok"
-                                     XValue="@(e => e.Correct)"
-                                     YValue="@(e => e.Order)"
-                                     SeriesType="SeriesType.Donut" />
-                </ApexChart>
-            }
-        </MudItem>
     </MudGrid>
 
 </MudContainer>
