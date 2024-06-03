@@ -1,4 +1,12 @@
-bin/
+
+bin/Debug
+bin/Release/net8.0/browser-
+bin/Release/net8.0/wwwroot
+bin/Release/net8.0/*.dll
+bin/Release/net8.0/*.js
+bin/Release/net8.0/*.wasm
+bin/Release/net8.0/*.map
+bin/Release/net8.0/*.json
 obj/
 /packages/
 riderModule.iml

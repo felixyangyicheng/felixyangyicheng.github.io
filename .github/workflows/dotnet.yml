@@ -23,4 +23,4 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4.3.3
       with:
           BRANCH: gh-pages
-          FOLDER: ../Capybara/bin/Release/net8.0/publish/wwwroot
+          FOLDER: .../../Capybara/bin/Release/net8.0/publish/wwwroot

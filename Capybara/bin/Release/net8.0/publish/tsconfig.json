@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es6",
+    "rootDir": "./wwwroot",
+    "outDir": "wwwroot/js"
+  },
+
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "assets",
+    "node_modules",
+    "bower_components",
+    "jspm_packages"
+  ]
+}
