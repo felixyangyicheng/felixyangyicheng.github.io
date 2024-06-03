@@ -1,3 +1,0 @@
-C:\Users\admin-fr06ab\source\felixyangyicheng.github.io\Capybara\bin\Release\net8.0\publish\tsconfig.json
-C:\Users\admin-fr06ab\source\felixyangyicheng.github.io\Capybara\bin\Release\net8.0\publish\emcc-props.json
-C:\Users\admin-fr06ab\source\felixyangyicheng.github.io\Capybara\bin\Release\net8.0\publish\web.config
