@@ -99,9 +99,17 @@ namespace Capybara.Pages.GuessDogBreed
 
         private void NewQuaternary()
         {
+
             DogBreedQuaternary.DogBreedProposes = new();
             DogBreedToGuess = ListToGuess[0];
-            List<DogBreedModel> wrong = DogBreeds.OrderBy(x => Random.Shared.Next()).Where(a => a.BreedName!= DogBreedToGuess.BreedName).Take(3).ToList();
+            DogBreedPropose dogBreedProposeCorrect = new();
+            dogBreedProposeCorrect.Correct = true;
+            dogBreedProposeCorrect.BreedName = DogBreedToGuess.BreedName;
+      
+            List<DogBreedModel> wrong = DogBreeds.OrderBy(x => Random.Shared.Next())
+                .Where(a => a.BreedName!= DogBreedToGuess.BreedName&&a.Type==DogBreedToGuess.Type)
+                .Take(3)
+                .ToList();
             foreach (var i in wrong)
             {
                 DogBreedPropose dogBreedPropose = new();
@@ -110,9 +118,7 @@ namespace Capybara.Pages.GuessDogBreed
                 
                 DogBreedQuaternary.DogBreedProposes.Add(dogBreedPropose);
             }
-            DogBreedPropose dogBreedProposeCorrect = new();
-            dogBreedProposeCorrect.Correct = true;
-            dogBreedProposeCorrect.BreedName = DogBreedToGuess.BreedName;
+
      
             DogBreedQuaternary.DogBreedProposes.Add(dogBreedProposeCorrect);
             DogBreedQuaternary.DogBreedProposes.OrderBy(x => Random.Shared.Next()).ToList();
