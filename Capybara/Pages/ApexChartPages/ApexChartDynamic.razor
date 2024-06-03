@@ -1,54 +1,37 @@
-﻿@inject HttpClient _httpClient
+﻿@page "/chart"
+@inject HttpClient _httpClient
 @inject IJSRuntime JSRuntime
-    <MudButton class="mb-2" OnClick=UpdateChartSeries Color="Color.Primary">Update Series</MudButton>
+<ApexChart TItem="MyData"
+           Title="Sample Data">
 
-    @if (forecasts != null)
-    {
-    <ApexChart TItem="DogBreedModel"
-                   Title="Temp C"
-        @ref="chart">
+    <ApexPointSeries TItem="MyData"
+                     Items="Data"
+                     Name="Net Profit"
+                     SeriesType="SeriesType.Bar"
+                     XValue="e => e.Category"
+                     YValue="e=> e.NetProfit" />
 
-        <ApexPointSeries TItem="DogBreedModel"
-                             Items="forecasts"
-                             Name="Temp C"
-                             XValue="@(e => e.BreedName)"
-                             YValue="@(e =>e.BreedName.Length)"
-                             SeriesType="SeriesType.Donut" />
-        </ApexChart>
-    }
-
+    <ApexPointSeries TItem="MyData"
+                     Items="Data"
+                     Name="Revenue"
+                     SeriesType="SeriesType.Bar"
+                     XValue="e => e.Category"
+                     YValue="e=> e.Revenue" />
+</ApexChart>
 
 @code {
-    [Inject, NotNull] IConfiguration? configuration { get; set; }
-    private List<DogBreedModel> forecasts { get; set; }
-    private ApexChart<DogBreedModel> chart;
-
-    protected override async Task OnInitializedAsync()
+    private List<MyData> Data { get; set; } = new();
+    protected override void OnInitialized()
     {
-        await LoadDataAsync(2); // get small sample first
-
-        await base.OnInitializedAsync();
+        Data.Add(new MyData { Category = "Jan", NetProfit = 12, Revenue = 33 });
+        Data.Add(new MyData { Category = "Feb", NetProfit = 43, Revenue = 42 });
+        Data.Add(new MyData { Category = "Mar", NetProfit = 112, Revenue = 23 });
     }
 
-    private async Task LoadDataAsync(int? limit)
+    public class MyData
     {
-#if DEBUG
-        string rootPath = configuration.GetValue<string>("rootPath") ?? throw new ArgumentNullException(nameof(rootPath));
-#else
-        string rootPath = configuration.GetValue<string>("githubLink") ?? throw new ArgumentNullException(nameof(rootPath));
-#endif
-        var response =await _httpClient.GetFromJsonAsync<List<DogBreedModel>>($"{rootPath}/races_chien.json");
-
-   
-
-        var groupedData = response.GroupBy(x => x.BreedName)               
-                          .ToList();
-
-    }
-
-    private async Task UpdateChartSeries()
-    {
-        await LoadDataAsync(null); // get full sample on update
-        await chart.UpdateOptionsAsync(true, true, false);
+        public string Category { get; set; }
+        public int NetProfit { get; set; }
+        public int Revenue { get; set; }
     }
 }
