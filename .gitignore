@@ -4,6 +4,13 @@ obj/
 riderModule.iml
 /_ReSharper.Caches/
 .idea/
-Capybara/bin/
+Capybara/bin/Debug
+Capybara/bin/Release/net8.0/browser-wasm
+Capybara/bin/Release/net8.0/wwwroot
+Capybara/bin/Release/net8.0/*.dll
+Capybara/bin/Release/net8.0/*.js
+Capybara/bin/Release/net8.0/*.wasm
+Capybara/bin/Release/net8.0/*.map
+Capybara/bin/Release/net8.0/*.json
 Capybara/obj/
 .vs/
