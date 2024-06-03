@@ -60,7 +60,7 @@ namespace Capybara.Pages.GuessFlags
                 Points += 10;
                 if (ListToGuess != null && ListToGuess.Count > 0)
                 {
-                    FlagsViewed.Add(RegionToGuess);
+                    FlagsViewed?.Add(RegionToGuess);
                     ListToGuess.RemoveAt(0);
                     StateHasChanged();
                     if (ListToGuess.Count > 0)

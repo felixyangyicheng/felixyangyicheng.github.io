@@ -50,6 +50,7 @@ namespace Capybara.Components.ComboInput
        
                 ElementsRendered = false;
             Console.WriteLine(ElementsRendered);
+            await base.OnParametersSetAsync();
         }
 
 

@@ -17,7 +17,7 @@ namespace Capybara.Components.Selections
         {
             Random rnd = new Random();
             Color = (Color)rnd.Next(0, 8);
-           
+            await base.OnParametersSetAsync();
         }
 
 

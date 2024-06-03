@@ -1,0 +1,62 @@
+﻿@using Color =MudBlazor.Color  ;
+
+<MudDialog>
+    <TitleContent>
+        <MudText Typo="Typo.h6">
+
+
+                @if (Result.Correct == false)
+                {
+                    <MudChip Color="Color.Error" Icon="@Icons.Material.Filled.Close">KO</MudChip>
+                }
+                else
+                {
+                    <MudChip Color="Color.Success" Icon="@Icons.Material.Filled.Check">OK</MudChip>
+                }
+                @Result.BreedName
+  
+        </MudText>
+    </TitleContent>
+    <DialogContent>
+
+            <MudImage Height="100" Src="@Result.ImageUrl"></MudImage>
+
+
+    </DialogContent>
+
+</MudDialog>
+
+@code{
+    [NotNull, CascadingParameter] MudDialogInstance? MudDialog { get; set; }
+
+    [Parameter] public DogBreedResult Result { get; set; } = new DogBreedResult();
+    private static System.Timers.Timer aTimer { get; set; } = new();
+    private double counter = 0.5;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        StartTimer();
+        await base.OnParametersSetAsync();
+    }
+    public void StartTimer()
+    {
+        aTimer = new System.Timers.Timer(500);
+        aTimer.Elapsed += CountDownTimer;
+        aTimer.Enabled = true;
+    }
+
+    public void CountDownTimer(Object source, System.Timers.ElapsedEventArgs e)
+    {
+        if (counter > 0)
+        {
+            counter -= 0.5;
+        }
+        else
+        {
+            aTimer.Enabled = false;
+            MudDialog.Close();
+
+        }
+        InvokeAsync(StateHasChanged);
+    }
+}

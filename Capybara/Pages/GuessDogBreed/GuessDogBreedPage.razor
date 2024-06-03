@@ -5,7 +5,8 @@
 <style>
     .viewed {
         overflow-y: scroll;
-        height: 80vh;
+        overflow-x: hidden;
+        height: 65vh;
     }
 </style>
 <MudContainer>
@@ -52,14 +53,14 @@
                         <MudItem xs="6">
                             <MudImage Height="100" Src="@i.ImageUrl" ></MudImage>
                         </MudItem>
-                        <MudItem xs="6">
+                        <MudItem xs="5">
                             @if (i.Correct==false)
                             {
-                                <MudChip Color="Color.Error" Icon="@Icons.Material.Filled.Close">KO</MudChip>
+                                <MudChip Color="MudBlazor.Color.Error" Icon="@Icons.Material.Filled.Close">KO</MudChip>
                             }
                             else
-                            {                              
-                                <MudChip Color="Color.Success"  Icon="@Icons.Material.Filled.Check">OK</MudChip>
+                            {
+                                <MudChip Color="MudBlazor.Color.Success" Icon="@Icons.Material.Filled.Check">OK</MudChip>
                             }                      
                             <p>@i.BreedName</p>
                         </MudItem>
@@ -68,6 +69,22 @@
 
             </div>
         </MudItem>
+        <MudItem>
+            @if (DogBreedsViewed.Count>0)
+            {
+                <ApexChart TItem="List<DogBreedResult>"
+                           Title="Temp C"
+                           Options=options Debug>
 
+                    <ApexPointSeries TItem="DogBreedResult"
+                                     Items="DogBreedsViewed"
+                                     Name="Ok"
+                                     XValue="@(e => e.Correct)"
+                                     YValue="@(e => e.Order)"
+                                     SeriesType="SeriesType.Donut" />
+                </ApexChart>
+            }
+        </MudItem>
     </MudGrid>
+
 </MudContainer>
