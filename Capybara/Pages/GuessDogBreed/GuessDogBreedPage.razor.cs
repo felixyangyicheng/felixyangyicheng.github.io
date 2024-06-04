@@ -24,10 +24,19 @@ namespace Capybara.Pages.GuessDogBreed
         public Random rnd { get; set; } = new Random();
 
         private ApexChart<List<DogBreedResult>> chart { get; set; } = new();
+        private DogBreedResult[] _radialData = default!;
+        private ApexChart<DogBreedResult> _radialChart = default!;
+
         private ApexChartOptions<List<DogBreedResult>> options { get; set; } = new();
         public bool loading { get; set; }
 
+        public class StatisticModel
+        {
+            public decimal Percentage { get; set; }
+            public string Title { get; set; } = "";
+        }
 
+        public StatisticModel statistic { get; set; } = new();
         protected override async Task OnInitializedAsync()
         {
             loading=true;
@@ -37,7 +46,7 @@ namespace Capybara.Pages.GuessDogBreed
         string rootPath = configuration.GetValue<string>("githubLink") ?? throw new ArgumentNullException(nameof(rootPath));
 #endif
             var response = _httpClient.GetFromJsonAsync<List<DogBreedModel>>($"{rootPath}/races_chien.json");
-
+            _radialData = new DogBreedResult[1] {new()};
             DogBreeds = await response;
             DogBreedsViewed = new();
             if (DogBreeds != null)
@@ -45,7 +54,6 @@ namespace Capybara.Pages.GuessDogBreed
                 ListToGuess = DogBreeds.OrderBy(x => Random.Shared.Next()).Take(15).ToList();
                 if (ListToGuess.Count > 0)
                 {
-
                     NewQuaternary();
                 }
             }
@@ -60,7 +68,7 @@ namespace Capybara.Pages.GuessDogBreed
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             // await JSRuntime.InvokeVoidAsync("ScrollToBottom", "viewed");
-            await chart.UpdateOptionsAsync(true, true, false);
+           // await chart.UpdateOptionsAsync(true, true, false);
 
             await base.OnAfterRenderAsync(firstRender);
         }
@@ -82,6 +90,14 @@ namespace Capybara.Pages.GuessDogBreed
                 var r = await dialog.Result;
                 DogBreedsViewed?.Add(result);
                 DogBreedsViewed=DogBreedsViewed?.OrderBy(x => x.Order).ToList();
+
+ /// chart does not update !!!!
+                _radialData.Append( result);
+                await _radialChart.UpdateSeriesAsync();
+                await _radialChart.UpdateOptionsAsync(true, true, false);
+
+/// chart does not update !!!!
+//todo update chart
                 ListToGuess.RemoveAt(0);
                 StateHasChanged();
                 if (ListToGuess.Count > 0)
@@ -99,7 +115,6 @@ namespace Capybara.Pages.GuessDogBreed
 
         private void NewQuaternary()
         {
-
             DogBreedQuaternary.DogBreedProposes = new();
             DogBreedToGuess = ListToGuess[0];
             DogBreedPropose dogBreedProposeCorrect = new();
@@ -125,7 +140,34 @@ namespace Capybara.Pages.GuessDogBreed
             StateHasChanged();
         }
 
+        private ApexChartOptions<DogBreedResult> _radialChartOptions = new ApexChartOptions<DogBreedResult>
+        {
+            PlotOptions = new()
+            {
 
-  
+                RadialBar = new()
+                {
+                    StartAngle = -135,
+                    EndAngle = 135
+                }
+            },
+            Stroke = new()
+            {
+                DashArray = 4
+            },
+            Chart = new Chart
+            {
+                Animations = new()
+                {
+                    Enabled = true,
+                    Easing = Easing.Linear,
+                    DynamicAnimation = new()
+                    {
+                        Speed = 1100
+                    }
+                }
+            }
+        };
+
     }
 }

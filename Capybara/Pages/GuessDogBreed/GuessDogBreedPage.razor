@@ -69,7 +69,21 @@
 
             </div>
         </MudItem>
+   
+    <div class="radial-chart">
+            <ApexChart TItem="DogBreedResult"
+                   Title="Correct"
+                   Options="@_radialChartOptions"
+                   @ref="_radialChart">
 
+                    <ApexPointSeries TItem="DogBreedResult"
+                             Items="_radialData"
+                             SeriesType="SeriesType.RadialBar"
+                             Name="Result"
+                                 XValue="@(e => "Result")"
+                             YAggregate="@(e => e.GroupBy(e=>e.Correct).Count())" />
+        </ApexChart>
+    </div>
     </MudGrid>
 
 </MudContainer>
