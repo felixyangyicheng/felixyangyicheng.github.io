@@ -73,7 +73,7 @@
             </div>
         </MudItem>
    
-    <div class="radial-chart">
+@*     <div class="radial-chart">
             <ApexChart TItem="DogBreedResult"
                    Title="Correct"
                    Options="@_radialChartOptions"
@@ -86,7 +86,7 @@
                                  XValue="@(e => "Result")"
                              YAggregate="@(e => e.GroupBy(e=>e.Correct).Count())" />
         </ApexChart>
-    </div>
+    </div> *@
     </MudGrid>
 
 </MudContainer>
