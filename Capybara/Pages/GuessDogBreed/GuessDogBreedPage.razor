@@ -73,20 +73,30 @@
             </div>
         </MudItem>
    
-@*     <div class="radial-chart">
-            <ApexChart TItem="DogBreedResult"
-                   Title="Correct"
-                   Options="@_radialChartOptions"
-                   @ref="_radialChart">
+    <div class="radial-chart">
 
-                    <ApexPointSeries TItem="DogBreedResult"
-                             Items="_radialData"
-                             SeriesType="SeriesType.RadialBar"
-                             Name="Result"
-                                 XValue="@(e => "Result")"
-                             YAggregate="@(e => e.GroupBy(e=>e.Correct).Count())" />
-        </ApexChart>
-    </div> *@
+            <h1>Ok: @_radialData.Count(x => x.Correct == true)</h1>
+            <h1>Ko: @_radialData.Count(x => x.Correct != true)</h1>
+            <ApexChart TItem="DogBreedResult"
+                       Title="Ok"
+                     
+                       @ref="_barChart">
+
+                <ApexPointSeries TItem="DogBreedResult"
+                                 Items="_radialData"
+                                 Name="Ok"
+                                 SeriesType="SeriesType.Bar"
+                                 XValue="@(e => e.Correct)"
+                                 YAggregate="@(e => e.Count(e => e.Correct))" />
+
+                <ApexPointSeries TItem="DogBreedResult"
+                                 Items="_radialData"
+                                 Name="Ko"
+                                 SeriesType="SeriesType.Bar"
+                                 XValue="@(e => e.Correct)"
+                                 YAggregate="@(e => e.Count(e => e.Correct==false))" />
+            </ApexChart>
+    </div>
     </MudGrid>
 
 </MudContainer>

@@ -24,10 +24,12 @@ namespace Capybara.Pages.GuessDogBreed
         public Random rnd { get; set; } = new Random();
 
         private ApexChart<List<DogBreedResult>> chart { get; set; } = new();
-        private DogBreedResult[] _radialData = default!;
+        private List<DogBreedResult> _radialData = default!;
         private ApexChart<DogBreedResult> _radialChart = default!;
+        private ApexChart<DogBreedResult> _barChart = default!;
 
         private ApexChartOptions<List<DogBreedResult>> options { get; set; } = new();
+
         public bool loading { get; set; }
 
         public class StatisticModel
@@ -46,7 +48,7 @@ namespace Capybara.Pages.GuessDogBreed
         string rootPath = configuration.GetValue<string>("githubLink") ?? throw new ArgumentNullException(nameof(rootPath));
 #endif
             var response = _httpClient.GetFromJsonAsync<List<DogBreedModel>>($"{rootPath}/races_chien.json");
-            _radialData = new DogBreedResult[1] {new()};
+            _radialData = new List<DogBreedResult> ();
             DogBreeds = await response;
             DogBreedsViewed = new();
             if (DogBreeds != null)
@@ -92,12 +94,12 @@ namespace Capybara.Pages.GuessDogBreed
                 DogBreedsViewed=DogBreedsViewed?.OrderBy(x => x.Order).ToList();
 
  /// chart does not update !!!!
-                _radialData.Append( result);
-                //await _radialChart.UpdateSeriesAsync();
-                //await _radialChart.UpdateOptionsAsync(true, true, false);
+                _radialData.Add( result);
 
-/// chart does not update !!!!
-//todo update chart
+                await _barChart.RenderAsync();
+
+                /// chart does not update !!!!
+                //todo update chart
                 ListToGuess.RemoveAt(0);
                 StateHasChanged();
                 if (ListToGuess.Count > 0)
@@ -139,35 +141,9 @@ namespace Capybara.Pages.GuessDogBreed
             DogBreedQuaternary.DogBreedProposes.OrderBy(x => Random.Shared.Next()).ToList();
             StateHasChanged();
         }
+ 
 
-        private ApexChartOptions<DogBreedResult> _radialChartOptions = new ApexChartOptions<DogBreedResult>
-        {
-            PlotOptions = new()
-            {
 
-                RadialBar = new()
-                {
-                    StartAngle = -135,
-                    EndAngle = 135
-                }
-            },
-            Stroke = new()
-            {
-                DashArray = 4
-            },
-            Chart = new Chart
-            {
-                Animations = new()
-                {
-                    Enabled = true,
-                    Easing = Easing.Linear,
-                    DynamicAnimation = new()
-                    {
-                        Speed = 1100
-                    }
-                }
-            }
-        };
 
     }
 }
