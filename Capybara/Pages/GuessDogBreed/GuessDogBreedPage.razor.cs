@@ -93,8 +93,8 @@ namespace Capybara.Pages.GuessDogBreed
 
  /// chart does not update !!!!
                 _radialData.Append( result);
-                await _radialChart.UpdateSeriesAsync();
-                await _radialChart.UpdateOptionsAsync(true, true, false);
+                //await _radialChart.UpdateSeriesAsync();
+                //await _radialChart.UpdateOptionsAsync(true, true, false);
 
 /// chart does not update !!!!
 //todo update chart
