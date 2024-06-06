@@ -18,9 +18,11 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 8.0.x
-
+    - name: get workload wasm
+      run: dotnet workload install wasm-tools
+      
     - name: Publish .NET Core Project
-      run: dotnet publish -c Release -o release --nologo
+      run: dotnet publish
       
     - name: Commit wwwroot to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.3.3
