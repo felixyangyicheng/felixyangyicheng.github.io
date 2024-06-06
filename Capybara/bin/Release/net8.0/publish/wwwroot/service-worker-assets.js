@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "gIKgx5HT",
+  "version": "LgRZrtsg",
   "assets": [
     {
       "hash": "sha256-qb/HJtKnALFWD9fSkddslmYn2NmMU7JK1SNoKZf8wSY=",
@@ -78,7 +78,7 @@ self.assetsManifest = {
       "url": "_framework/BlazorTransitionableRoute.wasm"
     },
     {
-      "hash": "sha256-TXEj/NrY0QBlrvFGWp7x1O0n9csIR/eYuX2NOcImhVk=",
+      "hash": "sha256-wUB1GF+DznlRbtOibZ7n2rtK9fRgyk3cvfw4tWDoIjo=",
       "url": "_framework/Capybara.wasm"
     },
     {
@@ -246,7 +246,7 @@ self.assetsManifest = {
       "url": "_framework/System.Linq.Queryable.wasm"
     },
     {
-      "hash": "sha256-+ya0X9pu9qrdk52SGFiqNdMacOp6bLCkrLhc95EcO4o=",
+      "hash": "sha256-GHMiRvW1v4Vfb07G/avZ9hGgBFNy9VDwfVRkJS9liHQ=",
       "url": "_framework/System.Linq.wasm"
     },
     {
@@ -338,7 +338,7 @@ self.assetsManifest = {
       "url": "_framework/Toolbelt.Web.CssClassInlineBuilder.wasm"
     },
     {
-      "hash": "sha256-SrQly2STjsiZNn0PGnV5HuucKPf6gCO06HVkOxq5M2Q=",
+      "hash": "sha256-mtc8rIU2enY5fGeOyl34RfvGnQuJN+9/SBDV1f7A+Ic=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -498,7 +498,7 @@ self.assetsManifest = {
       "url": "pushNotifications.js"
     },
     {
-      "hash": "sha256-scYjv+7MREgPZGkkUccZdT/vEcY7eXqa+RyckdCoAv0=",
+      "hash": "sha256-JkCsvAX1u7daxCktylciQZ5J9vBm2Cxwd/HCm6AG688=",
       "url": "races_chien.json"
     },
     {
