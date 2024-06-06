@@ -62,8 +62,6 @@ namespace Capybara.Components.ComboInput
             //Console.WriteLine(ElementsRendered);
             GC.Collect();
             await Task.WhenAll();
-
-
             await FocusFirstEmptyInput();
             //await base.OnAfterRenderAsync(firstRender);
 
