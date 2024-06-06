@@ -1,0 +1,1337 @@
+[
+  {
+    "type": "dog",
+    "breedName": "Beagle",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0009_beagle_0.jpg?itok=A9ABvwqS"
+  },
+  {
+    "type": "dog",
+    "breedName": "Dobermann",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0046_doberman.jpg?itok=iJFRft5z"
+  },
+  {
+    "type": "dog",
+    "breedName": "Dogue de Bordeaux",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0047_dogue%20de%20bordeaux.jpg?itok=LulERROv"
+  },
+  {
+    "type": "dog",
+    "breedName": "Field Spaniel",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0127_spaniel_field.jpg?itok=3D1dnsHv"
+  },
+  {
+    "type": "dog",
+    "breedName": "Kerry Blue terrier",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/kerry_blue_terrier.jpg?itok=Ep1-bJ5D"
+  },
+  {
+    "type": "dog",
+    "breedName": "L\u00e9vrier irlandais (Irish Wolfhound)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0071_irish_wolfhound.jpg?itok=uRmVUUPB"
+  },
+  {
+    "type": "dog",
+    "breedName": "Pinscher allemand",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0052_german_pinscher.jpg?itok=YicpVDJB"
+  },
+  {
+    "type": "dog",
+    "breedName": "Puli",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero%20Puli.jpg?itok=eBI_I_WK"
+  },
+  {
+    "type": "dog",
+    "breedName": "Retriever de la Nouvelle-Ecosse (Nova Scotia)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0107_nova_scotia_ducke_toller.jpg?itok=NQOJK0TA"
+  },
+  {
+    "type": "dog",
+    "breedName": "Rottweiler",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0109_rottweiler.jpg?itok=tmagGxrz"
+  },
+  {
+    "type": "dog",
+    "breedName": "Saint-Bernard",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0129_saint_bernard.jpg?itok=v1jXlUlS"
+  },
+  {
+    "type": "dog",
+    "breedName": "Setter anglais",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0048_english_setter.jpg?itok=py5AkCSE"
+  },
+  {
+    "type": "dog",
+    "breedName": "Staffordshire Bull terrier",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0130_staffordshire_bull_terrier.jpg?itok=Z-pc4i9n"
+  },
+  {
+    "type": "dog",
+    "breedName": "Terrier anglais miniature",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/english_toy_terrier_black_%26_tan.jpg?itok=PXbA9EKg"
+  },
+  {
+    "type": "dog",
+    "breedName": "Affenpinscher",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/affenpinscher.jpg?itok=HFBGWk_x"
+  },
+  {
+    "type": "dog",
+    "breedName": "Airedale terrier",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0001_airedale_terrier_0.jpg?itok=dvziZunq"
+  },
+  {
+    "type": "dog",
+    "breedName": "Akita Inu",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0074_japanese_akita.jpg?itok=Pe5kSmtR"
+  },
+  {
+    "type": "dog",
+    "breedName": "Barzo\u00ef",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0020_borzoi.jpg?itok=YE2IzT9I"
+  },
+  {
+    "type": "dog",
+    "breedName": "Basenji",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0006_basenji_0.jpg?itok=g8UJcolE"
+  },
+  {
+    "type": "dog",
+    "breedName": "Basset Bleu de Gascogne",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/basset_bleu_de_gascogne.jpg?itok=jrudaxAn"
+  },
+  {
+    "type": "dog",
+    "breedName": "Basset Fauve de Bretagne",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/basset_fauve_de_bretagne.jpg?itok=udwW9UJc"
+  },
+  {
+    "type": "dog",
+    "breedName": "Basset Griffon Vend\u00e9en (grand)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0007_basset_griffon_vendeen_grande_0.jpg?itok=Ekizdaes"
+  },
+  {
+    "type": "dog",
+    "breedName": "Basset Griffon Vend\u00e9en (petit)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/basset_griffon_vendeen_petit.jpg?itok=wME0j8wT"
+  },
+  {
+    "type": "dog",
+    "breedName": "Basset hound",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0008_basset_hound_0.jpg?itok=GG5rW9OG"
+  },
+  {
+    "type": "dog",
+    "breedName": "Bedlington terrier",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0011_bedlington_terrier_0.jpg?itok=68YV-RSs"
+  },
+  {
+    "type": "dog",
+    "breedName": "Berger allemand",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0053_german_shepherd.jpg?itok=3Zyuyp5b"
+  },
+  {
+    "type": "dog",
+    "breedName": "Berger australien",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0005_australian_shepherd_dog_0.jpg?itok=zc1yYpsb"
+  },
+  {
+    "type": "dog",
+    "breedName": "Berger belge Groenendael",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero%20Belgian%20Shepherd%20Dog%20Groenendael%20%281%29.jpg?itok=zFN-SVWF"
+  },
+  {
+    "type": "dog",
+    "breedName": "Berger belge Laekenois",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0012_belgian_shepherd_lakenois_0.jpg?itok=bdGkyMoW"
+  },
+  {
+    "type": "dog",
+    "breedName": "Berger belge Malinois",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0013_belgian_shepherd_malinois_0.jpg?itok=Hoh9_S8o"
+  },
+  {
+    "type": "dog",
+    "breedName": "Berger belge Tervueren",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0014_belgian_shepherd_tervueren_0.jpg?itok=-Cw6Io0O"
+  },
+  {
+    "type": "dog",
+    "breedName": "Berger d'Anatolie",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0003_anatolian_shepherd_0.jpg?itok=OuNMUJIo"
+  },
+  {
+    "type": "dog",
+    "breedName": "Berger de Beauce (Beauceron)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero%20bauceron.jpg?itok=vBYnE36-"
+  },
+  {
+    "type": "dog",
+    "breedName": "Berger de Bergame",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/bergamasco.jpg?itok=kZ2r4AgW"
+  },
+  {
+    "type": "dog",
+    "breedName": "Berger de Brie (Briard)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0025_briard.jpg?itok=L-RUTQLf"
+  },
+  {
+    "type": "dog",
+    "breedName": "Berger de Maremme",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/maremma_sheepdog.jpg?itok=rsgPKdEk"
+  },
+  {
+    "type": "dog",
+    "breedName": "Berger des Pyr\u00e9n\u00e9es",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0102_pyrenean_sheepdog.jpg?itok=wLcqOJeK"
+  },
+  {
+    "type": "dog",
+    "breedName": "Berger polonais de Plaine (Nizinny)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/polish_lowland_sheepdog.jpg?itok=G0aRi9KK"
+  },
+  {
+    "type": "dog",
+    "breedName": "Berger shetland",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0116_shetland_sheepdog.jpg?itok=bGetpTke"
+  },
+  {
+    "type": "dog",
+    "breedName": "Bichon bolonais",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/bolognese.jpg?itok=9MJn9tF2"
+  },
+  {
+    "type": "dog",
+    "breedName": "Bichon frise",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0016_bichon_frise.jpg?itok=aY3HlFBj"
+  },
+  {
+    "type": "dog",
+    "breedName": "Bichon havanais",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0064_havanese.jpg?itok=oXsJ7xI1"
+  },
+  {
+    "type": "dog",
+    "breedName": "Bichon maltais",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0080_maltese.jpg?itok=lez5y3OD"
+  },
+  {
+    "type": "dog",
+    "breedName": "Bobtail",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0091_old_english_sheepdog.jpg?itok=9edbIxQm"
+  },
+  {
+    "type": "dog",
+    "breedName": "Border collie",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0018_border_collie.jpg?itok=Z_iac2So"
+  },
+  {
+    "type": "dog",
+    "breedName": "Border terrier",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0019_border_terrier.jpg?itok=VUmlj_-L"
+  },
+  {
+    "type": "dog",
+    "breedName": "Boston terrier",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0021_boston_terrier.jpg?itok=XsewI81Y"
+  },
+  {
+    "type": "dog",
+    "breedName": "Bouledogue anglais (Bulldog)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0029_Bulldog.jpg?itok=_NCuu0y-"
+  },
+  {
+    "type": "dog",
+    "breedName": "Bouledogue fran\u00e7ais",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0051_french_bulldog.jpg?itok=FC_LO6Tx"
+  },
+  {
+    "type": "dog",
+    "breedName": "Bouvier australien",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0004_australian_cattle_dog_0.jpg?itok=J67OtFMX"
+  },
+  {
+    "type": "dog",
+    "breedName": "Bouvier bernois",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0015_bernese_mountain_dog.jpg?itok=jufJW3VJ"
+  },
+  {
+    "type": "dog",
+    "breedName": "Bouvier des Flandres",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0022_bouvoir_des_flandres.jpg?itok=_K4M8rTY"
+  },
+  {
+    "type": "dog",
+    "breedName": "Boxer",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0023_boxer.jpg?itok=myvilzIA"
+  },
+  {
+    "type": "dog",
+    "breedName": "Braque allemand",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0054_german_shorthaired_pointer.jpg?itok=FBICdPWo"
+  },
+  {
+    "type": "dog",
+    "breedName": "Braque de Weimar",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0135_weimeraner.jpg?itok=sU8T1z8x"
+  },
+  {
+    "type": "dog",
+    "breedName": "Braque hongrois (Vizsla)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0067_hungarian_vizsla.jpg?itok=5UKaVAFn"
+  },
+  {
+    "type": "dog",
+    "breedName": "Braque hongrois \u00e0 poil dur (Vizsla)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/hungarian_wire_haired_vizsla.jpg?itok=bnQYjsAR"
+  },
+  {
+    "type": "dog",
+    "breedName": "Braque italien",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0024_bracco_italiano.jpg?itok=v-IHvbG9"
+  },
+  {
+    "type": "dog",
+    "breedName": "Buhund norv\u00e9gien",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/norwegian_buhund.jpg?itok=-tJeZOTz"
+  },
+  {
+    "type": "dog",
+    "breedName": "Bull terrier",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0027_bull_terrier.jpg?itok=gxeuyL0u"
+  },
+  {
+    "type": "dog",
+    "breedName": "Bull terrier nain",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0028_bull_terrier_miniature.jpg?itok=oD66LebZ"
+  },
+  {
+    "type": "dog",
+    "breedName": "Bullmastiff",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0030_Bullmastiff.jpg?itok=EpnDB9q_"
+  },
+  {
+    "type": "dog",
+    "breedName": "Cairn terrier",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0031_Cairn_terrier.jpg?itok=dng6o592"
+  },
+  {
+    "type": "dog",
+    "breedName": "Caniche nain",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0098_poodle_miniature.jpg?itok=guiEZpxQ"
+  },
+  {
+    "type": "dog",
+    "breedName": "Caniche Standard",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0097_poodle_standard.jpg?itok=7Chknwde"
+  },
+  {
+    "type": "dog",
+    "breedName": "Caniche toy",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0096_poodle_toy.jpg?itok=8tEYpZJj"
+  },
+  {
+    "type": "dog",
+    "breedName": "Carlin",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0100_pug.jpg?itok=1aCrX4Xy"
+  },
+  {
+    "type": "dog",
+    "breedName": "Cavalier King Charles",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/cavalier_king_charles_spaniel.jpg?itok=5dVJit1r"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chien chinois \u00e0 cr\u00eate",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0035_chinese_crested.jpg?itok=rUZxznNO"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chien courant de Hamilton",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/hamiltonstovare.jpg?itok=cRKpJA-a"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chien courant italien (Segugio)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/segugio_italiano_short_smooth_coat.jpg?itok=T1mhwSCP"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chien d'arr\u00eat allemand \u00e0 poil dur",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0057_german_wirehaired_pointer.jpg?itok=uFxtk4l9"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chien d'eau espagnol",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0128_spanish_water_dog.jpg?itok=Q5QaqHJk"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chien d'eau portugais",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0099_portuguese_water_dog.jpg?itok=BWqBELFR"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chien d'\u00e9lan norv\u00e9gien (Elkhound)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/norwegian_elkhound.jpg?itok=zGFpTAZK"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chien de Canaan",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/canaan.jpg?itok=xRdzQ2O5"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chien de la Serra de Estrela",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero%20Estrela%20Mountain%20Dog%20%281%29.jpg?itok=cMgaYoHQ"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chien du Pharaon (L\u00e9vrier du Pharaon)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0093_pharaoh_dog.jpg?itok=9Q6cOhXR"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chien esquimau canadien",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/canadian_eskimo.jpg?itok=PzbVW-Sk"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chien finnois de Laponie",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero%20Finnish%20Lapphund%20%281%29.jpg?itok=94v4OF33"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chien hollandais de canardi\u00e8re (Kooiker)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0077_kooikerhondje.jpg?itok=KJwwUfaB"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chien nu du Mexique (Xoloitzcuintle)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0083_mexican_hairless_dog.jpg?itok=IU6BZU0E"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chien rouge de Baviere",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/bavarian_mountain_hound.jpg?itok=i6K-RQnl"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chien su\u00e9dois de Laponie (Lapphund)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/swedish_lapphund.jpg?itok=1VpuatYg"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chihuahua (poil court)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0034_chihuahua_smooth.jpg?itok=f8LMIDz0"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chihuahua (poil long)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0033_Chihuahua_long.jpg?itok=GNtG7HDn"
+  },
+  {
+    "type": "dog",
+    "breedName": "Chow Chow",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/chow_chow_rough.jpg?itok=5TprSOFG"
+  },
+  {
+    "type": "dog",
+    "breedName": "Clumber Spaniel",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0123_spaniel_clumber.jpg?itok=E7IR31Nr"
+  },
+  {
+    "type": "dog",
+    "breedName": "Cocker am\u00e9ricain",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0122_spaniel_american_cocker.jpg?itok=6tp5ZyMZ"
+  },
+  {
+    "type": "dog",
+    "breedName": "Cocker anglais",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0124_spaniel_cocker.jpg?itok=ZPnB2v-H"
+  },
+  {
+    "type": "dog",
+    "breedName": "Colley barbu (Bearded Collie)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0010_bearded_collie_0.jpg?itok=TW4BiB0T"
+  },
+  {
+    "type": "dog",
+    "breedName": "Collie (poil court)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0037_collie_smooth.jpg?itok=610E0VHD"
+  },
+  {
+    "type": "dog",
+    "breedName": "Collie (poil long)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0036_collie_rough.jpg?itok=MC_NYkw3"
+  },
+  {
+    "type": "dog",
+    "breedName": "Coton de Tul\u00e9ar",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/coton_de_tulear.jpg?itok=3JsW5LeT"
+  },
+  {
+    "type": "dog",
+    "breedName": "Curly coated retriever",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0104_retriever_curly_coated.jpg?itok=Uznfbcgu"
+  },
+  {
+    "type": "dog",
+    "breedName": "Dalmatien",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0044_dalmatian.jpg?itok=ca2RWlxM"
+  },
+  {
+    "type": "dog",
+    "breedName": "Dandie Dinmont Terrier",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/dandie_dinmont_terrier.jpg?itok=xVUVL_p-"
+  },
+  {
+    "type": "dog",
+    "breedName": "Dogue allemand",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/great_dane.jpg?itok=aAdP20k3"
+  },
+  {
+    "type": "dog",
+    "breedName": "Dogue du Tibet",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0132_tibetan_mastiff.jpg?itok=3mfU0vNv"
+  },
+  {
+    "type": "dog",
+    "breedName": "Epagneul breton",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0026_brittany.jpg?itok=r98JJNaX"
+  },
+  {
+    "type": "dog",
+    "breedName": "\u00c9pagneul de M\u00fcnster",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0086_munsterlander.jpg?itok=NGHwpTjI"
+  },
+  {
+    "type": "dog",
+    "breedName": "Epagneul japonais (Chin)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero%20Japanese%20Chin.jpg?itok=FKLjfIAW"
+  },
+  {
+    "type": "dog",
+    "breedName": "Epagneul King Charles",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0032_king_charles_spaniel.jpg?itok=D_1VQ4eV"
+  },
+  {
+    "type": "dog",
+    "breedName": "Epagneul nain continental (\u00e9pagneul Papillon)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0092_papillon.jpg?itok=xq4C9hj2"
+  },
+  {
+    "type": "dog",
+    "breedName": "Epagneul tib\u00e9tain",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0133_tibetan_spaniel.jpg?itok=zVBhjdep"
+  },
+  {
+    "type": "dog",
+    "breedName": "Flat coated retriever",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0105_retriever_flat_coated.jpg?itok=bLc2C6kH"
+  },
+  {
+    "type": "dog",
+    "breedName": "Fox terrier \u00e0 poil dur",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0050_fox_terrier_wire.jpg?itok=q4QGrRZu"
+  },
+  {
+    "type": "dog",
+    "breedName": "Fox terrier \u00e0 poil ras",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero%20Fox%20Terrier%20Smooth%20Coat%20%281%29.jpg?itok=Otfddk48"
+  },
+  {
+    "type": "dog",
+    "breedName": "Foxhound anglais",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/foxhound.jpg?itok=GhGyB_2t"
+  },
+  {
+    "type": "dog",
+    "breedName": "Golden Retriever",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0059_golden_retriever.jpg?itok=kiTzsFAi"
+  },
+  {
+    "type": "dog",
+    "breedName": "Grand Bleu de Gascogne",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/grand_bleu_de_gascogne.jpg?itok=sGfFXCql"
+  },
+  {
+    "type": "dog",
+    "breedName": "Greyhound",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0062_greyhound.jpg?itok=f9K-H-ZF"
+  },
+  {
+    "type": "dog",
+    "breedName": "Griffon bruxellois",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0063_griffon_bruxellois.jpg?itok=NE9uCqfI"
+  },
+  {
+    "type": "dog",
+    "breedName": "Hovawart",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0065_hovawart.jpg?itok=SFOYOrDJ"
+  },
+  {
+    "type": "dog",
+    "breedName": "Irish Water Spaniel",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/irish_water_spaniel.jpg?itok=aAiXFRLM"
+  },
+  {
+    "type": "dog",
+    "breedName": "Komondor",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/komondor.jpg?itok=V2BKxWFI"
+  },
+  {
+    "type": "dog",
+    "breedName": "Kuvasz",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0066_hungarian_kuvasz.jpg?itok=CV8FoKVE"
+  },
+  {
+    "type": "dog",
+    "breedName": "Labrador Retriever",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0106_retriever_labrador.jpg?itok=JGZ_fDlv"
+  },
+  {
+    "type": "dog",
+    "breedName": "Lancashire Heeler (Ormskirk terrier)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/lancashire_heeler.jpg?itok=XSA3KKV-"
+  },
+  {
+    "type": "dog",
+    "breedName": "L\u00e9onberg",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0078_leonberger.jpg?itok=5D1cWll9"
+  },
+  {
+    "type": "dog",
+    "breedName": "L\u00e9vrier afghan",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0000_afghan_hound_0.jpg?itok=vkb8L2gC"
+  },
+  {
+    "type": "dog",
+    "breedName": "L\u00e9vrier \u00e9cossais",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0045_deerhound.jpg?itok=FzwUS97T"
+  },
+  {
+    "type": "dog",
+    "breedName": "Lhassa Apso",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0079_lhasa_apso.jpg?itok=YDIb93ti"
+  },
+  {
+    "type": "dog",
+    "breedName": "Malamute de l'Alaska",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0002_alaskan_malamute_0.jpg?itok=xJ9tGkgt"
+  },
+  {
+    "type": "dog",
+    "breedName": "Mastiff",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0082_mastiff.jpg?itok=rirHpxwj"
+  },
+  {
+    "type": "dog",
+    "breedName": "M\u00e2tin de Naples",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0087_neapolitan_mastiff.jpg?itok=OHoytDIB"
+  },
+  {
+    "type": "dog",
+    "breedName": "Montagne des Pyr\u00e9n\u00e9es",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0101_pyrenean_mountain_dog.jpg?itok=9NvgXg6B"
+  },
+  {
+    "type": "dog",
+    "breedName": "Norwich Terrier",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0090_norwich_terrier.jpg?itok=3NuHbCjF"
+  },
+  {
+    "type": "dog",
+    "breedName": "Otterhound (Chien \u00e0 loutre)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/otterhound.jpg?itok=lWLlwR5p"
+  },
+  {
+    "type": "dog",
+    "breedName": "Parson Russell Terrier (Terrier du R\u00e9v\u00e9rend Russell)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero%20Parson%20Russell%20Terrier.jpg?itok=0k-8Tvdx"
+  },
+  {
+    "type": "dog",
+    "breedName": "Petit chien lion",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/lowchen_little_lion.jpg?itok=qBVxVYV5"
+  },
+  {
+    "type": "dog",
+    "breedName": "Petit l\u00e9vrier italien (Levrette d'Italie)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0072_italian_greyhound.jpg?itok=-OhDyYV9"
+  },
+  {
+    "type": "dog",
+    "breedName": "Pinscher nain",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0084_miniature_pinscher.jpg?itok=ke9K19uv"
+  },
+  {
+    "type": "dog",
+    "breedName": "Podenco d'Ibiza",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0068_ibizan_hound.jpg?itok=sTDL980U"
+  },
+  {
+    "type": "dog",
+    "breedName": "Pointer",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0094_pointer.jpg?itok=K0wnA1Rv"
+  },
+  {
+    "type": "dog",
+    "breedName": "Pom\u00e9ranien (Loulou de Pom\u00e9ranie)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0095_pomeranian.jpg?itok=yNBkCtKm"
+  },
+  {
+    "type": "dog",
+    "breedName": "Retriever de la baie de Chesapeake",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0103_retriever_chesapeake_bay.jpg?itok=XKo9Qx0c"
+  },
+  {
+    "type": "dog",
+    "breedName": "Rhod\u00e9sian Ridgeback (Chien de Rhod\u00e9sie)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0108_rhodesian_ridgeback.jpg?itok=cnPzOZZf"
+  },
+  {
+    "type": "dog",
+    "breedName": "Saint-Hubert",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0017_bloodhound.jpg?itok=Ci7K_JdS"
+  },
+  {
+    "type": "dog",
+    "breedName": "Saluki",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/saluki.jpg?itok=hvlpIH8a"
+  },
+  {
+    "type": "dog",
+    "breedName": "Samoy\u00e8de",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0110_samoyed.jpg?itok=ryu5aZ0K"
+  },
+  {
+    "type": "dog",
+    "breedName": "Schipperke",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0111_schipperke.jpg?itok=rryn6Ov2"
+  },
+  {
+    "type": "dog",
+    "breedName": "Schnauzer g\u00e9ant",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0058_giant_schnauzer.jpg?itok=HxEvRwTL"
+  },
+  {
+    "type": "dog",
+    "breedName": "Schnauzer moyen",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0112_schnauzer_standard.jpg?itok=sIaR6s4v"
+  },
+  {
+    "type": "dog",
+    "breedName": "Schnauzer nain",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0085_miniature_schnauzer.jpg?itok=pXqBJFXv"
+  },
+  {
+    "type": "dog",
+    "breedName": "Scottish Terrier (Terrier \u00e9cossais)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0113_scottish_terrier.jpg?itok=r-Fe-p7i"
+  },
+  {
+    "type": "dog",
+    "breedName": "Sealyham terrier",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0114_sealyham_terrier.jpg?itok=dc-a-tFR"
+  },
+  {
+    "type": "dog",
+    "breedName": "Setter Gordon",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0060_gordon_setter_0.jpg?itok=jlHKcCsc"
+  },
+  {
+    "type": "dog",
+    "breedName": "Setter irlandais",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0069_irish_setter.jpg?itok=EcMVhUPU"
+  },
+  {
+    "type": "dog",
+    "breedName": "Setter irlandais rouge et blanc",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/irish_red_and_white_setter.jpg?itok=8UrIXrP6"
+  },
+  {
+    "type": "dog",
+    "breedName": "Shar-Pei",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0115_shar_pei.jpg?itok=yzmupSen"
+  },
+  {
+    "type": "dog",
+    "breedName": "Shiba Inu",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0075_japanese_shiba_inu.jpg?itok=FI7RLdfE"
+  },
+  {
+    "type": "dog",
+    "breedName": "Shih Tzu",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0117_shih_tzu.jpg?itok=SlIbiPEM"
+  },
+  {
+    "type": "dog",
+    "breedName": "Sib\u00e9rian Husky",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0118_siberian_husky.jpg?itok=fdTvFsvJ"
+  },
+  {
+    "type": "dog",
+    "breedName": "Silky terrier",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/australian_silky_terrier.jpg?itok=5tlr9UrZ"
+  },
+  {
+    "type": "dog",
+    "breedName": "Skye terrier",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0119_skye_terrier.jpg?itok=mx-7vuDw"
+  },
+  {
+    "type": "dog",
+    "breedName": "Sloughi",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0120_sloughi.jpg?itok=2IySw6cI"
+  },
+  {
+    "type": "dog",
+    "breedName": "Spinone",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0073_italian_spinone.jpg?itok=vx4gP5gM"
+  },
+  {
+    "type": "dog",
+    "breedName": "Spitz allemand moyen",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0056_german_spitz_mitte.jpg?itok=7G3umu72"
+  },
+  {
+    "type": "dog",
+    "breedName": "Spitz allemand nain (Pom\u00e9ranien)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0055_german_spitz_klein.jpg?itok=W2XF-Qk1"
+  },
+  {
+    "type": "dog",
+    "breedName": "Spitz des Visigoths (Vallhund)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0131_swedish_vallhund.jpg?itok=DCY1-_mt"
+  },
+  {
+    "type": "dog",
+    "breedName": "Spitz finlandais",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0049_finnish_spitz.jpg?itok=FaAZjR65"
+  },
+  {
+    "type": "dog",
+    "breedName": "Spitz japonais",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/japanese_spitz.jpg?itok=iSabbxpQ"
+  },
+  {
+    "type": "dog",
+    "breedName": "Spitz loup (Keeshond)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0076_keeshond.jpg?itok=MzffYi7N"
+  },
+  {
+    "type": "dog",
+    "breedName": "Springer gallois (Welsh Springer spaniel)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0126_spaniel_welsh_springer.jpg?itok=n3oCHdeD"
+  },
+  {
+    "type": "dog",
+    "breedName": "Springer spaniel anglais",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0125_spaniel_english_springer.jpg?itok=WL3Ae1vF"
+  },
+  {
+    "type": "dog",
+    "breedName": "Sussex Spaniel",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/sussex_spaniel.jpg?itok=TOyj9ccf"
+  },
+  {
+    "type": "dog",
+    "breedName": "Teckel \u00e0 poil dur",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0042_dachshund_wire_standard.jpg?itok=5gh7BVhv"
+  },
+  {
+    "type": "dog",
+    "breedName": "Teckel \u00e0 poil long",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0038_dachshund_long_standard.jpg?itok=D-Eiw12p"
+  },
+  {
+    "type": "dog",
+    "breedName": "Teckel \u00e0 poil ras",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0040_dachshund_smooth_standard.jpg?itok=cORcpbJJ"
+  },
+  {
+    "type": "dog",
+    "breedName": "Teckel nain \u00e0 poil dur",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0043_dachshund_wire_mini.jpg?itok=646RrPpM"
+  },
+  {
+    "type": "dog",
+    "breedName": "Teckel nain \u00e0 poil long",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0039_dachshund_long_mini.jpg?itok=nkuj4dMN"
+  },
+  {
+    "type": "dog",
+    "breedName": "Teckel nain \u00e0 poil ras",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0041_dachshund_smooth_mini.jpg?itok=sk9Ktc3C"
+  },
+  {
+    "type": "dog",
+    "breedName": "Terre-Neuve",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0088_newfoundland.jpg?itok=zMiDhX3G"
+  },
+  {
+    "type": "dog",
+    "breedName": "Terrier australien",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero%20Australian%20Terrier_0.jpg?itok=fpftBRzI"
+  },
+  {
+    "type": "dog",
+    "breedName": "Terrier de Manchester",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0081_manchester_terrier.jpg?itok=g6ElInSB"
+  },
+  {
+    "type": "dog",
+    "breedName": "Terrier du Norfolk",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0089_norfolk_terrier.jpg?itok=ZfdYfcCq"
+  },
+  {
+    "type": "dog",
+    "breedName": "Terrier gallois (Welsh terrier)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0138_welsh_terrier.jpg?itok=HbZ6YO7A"
+  },
+  {
+    "type": "dog",
+    "breedName": "Terrier irlandais",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0070_irish_terrier.jpg?itok=OoQjHpxr"
+  },
+  {
+    "type": "dog",
+    "breedName": "Terrier irlandais (Soft coated wheaten terrier)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0121_soft_coated_wheaten_terrier.jpg?itok=TK88DutP"
+  },
+  {
+    "type": "dog",
+    "breedName": "Terrier Lakeland",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/lakeland_terrier.jpg?itok=M2jSVqZw"
+  },
+  {
+    "type": "dog",
+    "breedName": "Terrier tch\u00e8que",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/breed_library/cesky_terrier.jpg?itok=j-09csL5"
+  },
+  {
+    "type": "dog",
+    "breedName": "Terrier tib\u00e9tain",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0134_tibetan_terrier.jpg?itok=xa5zojHO"
+  },
+  {
+    "type": "dog",
+    "breedName": "Welsh Corgi (Cardigan)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0136_welsh_corgi_cardigan.jpg?itok=AW3A9Ca6"
+  },
+  {
+    "type": "dog",
+    "breedName": "Welsh Corgi (Pembroke)",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0137_welsh_corgi_pembroke.jpg?itok=sAz0LJeF"
+  },
+  {
+    "type": "dog",
+    "breedName": "West Highland White Terrier",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0139_west_highland_white_terrier.jpg?itok=W78Dh_8y"
+  },
+  {
+    "type": "dog",
+    "breedName": "Whippet",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0140_whippet.jpg?itok=SHcDs6GZ"
+  },
+  {
+    "type": "dog",
+    "breedName": "Yorkshire Terrier",
+    "imageUrl": "https://www.purina.fr/sites/default/files/styles/nppe_breed_selector_500/public/2021-02/BREED%20Hero_0141_yorkshire_terrier.jpg?itok=jxxwq3J4"
+  },
+  {
+    "type": "cat",
+    "breedName": "Abyssin",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Valentino.jpg/100px-Valentino.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "American curl",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/1/17/American_curl_2.jpg/100px-American_curl_2.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "American shorthair",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Jewelkatz_Romeo_Of_Stalker-Bars.jpg/100px-Jewelkatz_Romeo_Of_Stalker-Bars.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "American wirehair",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/7/7f/American_Wirehair_-_CFF_cat_show_Heinola_2008-05-04_IMG_8721.JPG/100px-American_Wirehair_-_CFF_cat_show_Heinola_2008-05-04_IMG_8721.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Anatoli",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/9/94/Cat_0063.JPG/100px-Cat_0063.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Angora turc",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/b/be/Bad_Belzig_asv2022-07_img09_Am_Stadtgraben.jpg/100px-Bad_Belzig_asv2022-07_img09_Am_Stadtgraben.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Asian",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/8/89/Shimatora_Smith_3.JPG/100px-Shimatora_Smith_3.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Brume australienne",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Australian_Mist.jpg/100px-Australian_Mist.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Balinais",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Balinese_blue_lynx_point.jpg/100px-Balinese_blue_lynx_point.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Bengal",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/9/9f/BengalCat_Stella.jpg/100px-BengalCat_Stella.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Bleu russe",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/2/25/Russian_blue_cat.jpg/100px-Russian_blue_cat.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Bobtail am�ricain",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/8/88/American_bobtail_2.jpg/100px-American_bobtail_2.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Bobtail des Kouriles",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/8/82/Kurilian_bobtail.JPG/100px-Kurilian_bobtail.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Bobtail japonais",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Japanese_Bobtail_Cat%2C_Japan.jpg/100px-Japanese_Bobtail_Cat%2C_Japan.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Bombay",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/8/88/Bombay_Katze_Ebene_of_Blue_Sinfonie.JPG/100px-Bombay_Katze_Ebene_of_Blue_Sinfonie.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Brazilian shorthair",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/8/87/Gato_pelo_curto_brasileiro.JPG/100px-Gato_pelo_curto_brasileiro.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "British longhair",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/5/50/British_Longhair_-_Black_Silver_Shaded.jpg/100px-British_Longhair_-_Black_Silver_Shaded.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "British shorthair",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Heccy.jpg/100px-Heccy.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Burmese",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Burmakatze-chocolate.JPG/100px-Burmakatze-chocolate.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Burmilla",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/0/09/Ancelaine_Lumikki_BML_ns_11_female_EX1_CAC_BIV.JPG/100px-Ancelaine_Lumikki_BML_ns_11_female_EX1_CAC_BIV.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Californian rex",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cat_silhouette.svg/100px-Cat_silhouette.svg.png"
+  },
+  {
+    "type": "cat",
+    "breedName": "Californian spangled",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Spangled_Cat.jpg/100px-Star_Spangled_Cat.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Ceylan",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cat_silhouette.svg/100px-Cat_silhouette.svg.png"
+  },
+  {
+    "type": "cat",
+    "breedName": "Chartreux",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/5/57/Chartreux-Bonheur-nuits_indiennes-neige2009.jpg/100px-Chartreux-Bonheur-nuits_indiennes-neige2009.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Chantilly",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Chantilly.svg/100px-Chantilly.svg.png"
+  },
+  {
+    "type": "cat",
+    "breedName": "Chausie",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/6/61/Chausiecatexample.jpg/100px-Chausiecatexample.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Colorpoint shorthair",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Flame_Point_Siamese.JPG/100px-Flame_Point_Siamese.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Cornish rex",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/b/b8/BebopsLilacPrince.JPG/100px-BebopsLilacPrince.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Cymric",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/c/cd/CymricCatPerched.jpg/100px-CymricCatPerched.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Devon rex",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Syra.jpg/100px-Syra.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Donskoy",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Don_sphynx.jpg/100px-Don_sphynx.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "European shorthair",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/f/f1/European-cat_show_Helsinki_2008.JPG/100px-European-cat_show_Helsinki_2008.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Exotic shorthair",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Cream_tabby_exotic_cat.jpg/100px-Cream_tabby_exotic_cat.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "German rex",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/c/c7/German_rex_harry_%28cropped%29.jpg/100px-German_rex_harry_%28cropped%29.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Havana brown",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Havana_Brown_-_choco.jpg/100px-Havana_Brown_-_choco.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Highlander",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cat_silhouette.svg/100px-Cat_silhouette.svg.png"
+  },
+  {
+    "type": "cat",
+    "breedName": "Highland fold[11]",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Scottish_Fold.jpg/100px-Scottish_Fold.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Himalayen",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Chocolate_Himlayan.jpg/100px-Chocolate_Himlayan.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Khao Manee",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/9/99/Khao_Manee_%22Leela%22.jpg/100px-Khao_Manee_%22Leela%22.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Korat",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/8/8f/KOR_1149.jpg/100px-KOR_1149.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "LaPerm",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Laperm_LH_blacktortie_white.jpg/100px-Laperm_LH_blacktortie_white.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Maine coon",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/f/ff/MaineCoonSansFond.png/100px-MaineCoonSansFond.png"
+  },
+  {
+    "type": "cat",
+    "breedName": "Mandarin",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Oriental_Longhair_%28Javanese%2C_Mandarin%29%2C_Red_Classic_Tabby.jpg/100px-Oriental_Longhair_%28Javanese%2C_Mandarin%29%2C_Red_Classic_Tabby.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Manx",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Japanese_Bobtail_looking_like_Manx.jpg/100px-Japanese_Bobtail_looking_like_Manx.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Mau arabe",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Bex_Arabian_Mau.jpg/100px-Bex_Arabian_Mau.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Mau �gyptien",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Mau_egyptien_bronze.jpg/100px-Mau_egyptien_bronze.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Minskin",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cat_silhouette.svg/100px-Cat_silhouette.svg.png"
+  },
+  {
+    "type": "cat",
+    "breedName": "Munchkin",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/2/28/Munchkinshorthaired.jpg/100px-Munchkinshorthaired.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Nebelung",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Nebelung_Male%2C_Aleksandr_van_Song_de_Chine.JPG/100px-Nebelung_Male%2C_Aleksandr_van_Song_de_Chine.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Norv�gien ou Skogkatt",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Norskskogkatt_Evita_3.JPG/100px-Norskskogkatt_Evita_3.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Ocicat",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Ocicat_Charan-Rizzo_watchin.jpg/100px-Ocicat_Charan-Rizzo_watchin.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Ojos azules",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Ojos_Azules_from_the_USA.jpg/99px-Ojos_Azules_from_the_USA.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Oriental shorthair",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/f/f4/OSH_24-CH_Clamoris_Epeius_%28Omar%29.JPG/100px-OSH_24-CH_Clamoris_Epeius_%28Omar%29.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Persan",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/7/7e/PersanColourpointRedPoint.jpg/100px-PersanColourpointRedPoint.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Peterbald",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Tamila_the_lilac_tabby_Peterbald_cat.jpg/100px-Tamila_the_lilac_tabby_Peterbald_cat.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Pixie-bob",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Ponderosa_Klondike_ofAstonwoods11.JPG/100px-Ponderosa_Klondike_ofAstonwoods11.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Ragamuffin",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/20050922AmarilloRes.jpg/100px-20050922AmarilloRes.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Ragdoll",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/6/64/Ragdoll_from_Gatil_Ragbelas.jpg/100px-Ragdoll_from_Gatil_Ragbelas.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Sacr� de Birmanie",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Birmakatze_Seal-Point.jpg/100px-Birmakatze_Seal-Point.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Safari",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cat_silhouette.svg/100px-Cat_silhouette.svg.png"
+  },
+  {
+    "type": "cat",
+    "breedName": "Savannah",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Savannah_Fond_Blanc.jpg/100px-Savannah_Fond_Blanc.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Scottish fold",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Scottish_Fold.jpg/100px-Scottish_Fold.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Selkirk rex",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/4/41/Selkirk_rex_longhair_FINTICAt_cat_show_Helsinki_2013-11-24.JPG/100px-Selkirk_rex_longhair_FINTICAt_cat_show_Helsinki_2013-11-24.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Serengeti",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Serengetimalecat.jpg/100px-Serengetimalecat.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Seychellois",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/1/15/Seychellois_at_J%C3%A4ms%C3%A4_Cat_show.JPG/100px-Seychellois_at_J%C3%A4ms%C3%A4_Cat_show.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Siamois",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/4/48/Chronos_4_mois.jpg/100px-Chronos_4_mois.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Sib�rien",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/0/06/Sibirische-Katze-Omega-1.jpg/100px-Sibirische-Katze-Omega-1.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Singapura",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/d/da/Raffles_singapura_cat.jpg/100px-Raffles_singapura_cat.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Skookum",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cat_silhouette.svg/100px-Cat_silhouette.svg.png"
+  },
+  {
+    "type": "cat",
+    "breedName": "Snowshoe",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Hattikatin_Lumipyry.JPG/100px-Hattikatin_Lumipyry.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Sokok�",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/9/94/Sokoke_dalili.jpg/100px-Sokoke_dalili.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Somali",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/2/25/Vega-poseuse.jpg/100px-Vega-poseuse.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Sphynx",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Sphinx2_July_2006.jpg/100px-Sphinx2_July_2006.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Tha�",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/5/57/Phaithai_Vanity_Fair.JPG/100px-Phaithai_Vanity_Fair.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Tiffany",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Tiffanie_at_cat_show.jpg/100px-Tiffanie_at_cat_show.jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Tonkinois",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/4/42/Chat_tonkinois_lilac_mink_%28chatterie_de_l%27Esprit_d%27Edenvane%29..jpg/100px-Chat_tonkinois_lilac_mink_%28chatterie_de_l%27Esprit_d%27Edenvane%29..jpg"
+  },
+  {
+    "type": "cat",
+    "breedName": "Toyger",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Toyger_-_Cornish_Rex_presentation_show_Riihim%C3%A4ki_2008-11-16_IMG_0101.JPG/100px-Toyger_-_Cornish_Rex_presentation_show_Riihim%C3%A4ki_2008-11-16_IMG_0101.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "Turc de Van",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/a/a2/GizemliKediler_Bey_Bunyamin_%28Beebe%29_TUV_d_63_male_EX1_CAC.JPG/100px-GizemliKediler_Bey_Bunyamin_%28Beebe%29_TUV_d_63_male_EX1_CAC.JPG"
+  },
+  {
+    "type": "cat",
+    "breedName": "York chocolat",
+    "imageUrl": "//upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Adult_Kittie_%28s%29.jpg/100px-Adult_Kittie_%28s%29.jpg"
+  }
+]
