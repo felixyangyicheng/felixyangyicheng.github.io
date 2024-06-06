@@ -48,8 +48,8 @@ namespace Capybara.Components.ComboInput
             InputClasses = Enumerable.Repeat("default", StringInit.Length).ToArray();
             AllInputsCorrect = false;
        
-                ElementsRendered = false;
-            Console.WriteLine(ElementsRendered);
+            ElementsRendered = false;
+         
             await base.OnParametersSetAsync();
         }
 
@@ -58,7 +58,7 @@ namespace Capybara.Components.ComboInput
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
                 
-                ElementsRendered = true;
+            ElementsRendered = true;
             //Console.WriteLine(ElementsRendered);
             GC.Collect();
             await Task.WhenAll();
@@ -182,9 +182,7 @@ namespace Capybara.Components.ComboInput
                 InputClasses[randomIndex] = "correct";
                 InputDisabled[randomIndex] = true;
                 // Disable the input
-                Console.WriteLine(randomIndex);
-                Console.WriteLine(InputValues[randomIndex]);
-                Console.WriteLine(StringInit[randomIndex]);
+    
                 await InvokeAsync(StateHasChanged);
             }
             await OnHintAsked.InvokeAsync(10);
