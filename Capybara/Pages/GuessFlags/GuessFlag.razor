@@ -16,7 +16,7 @@
     {
         <p>loading..</p>
     }
-    @if (ListToGuess.Count == 0)
+    @if (ListToGuess?.Count == 0)
     {
 
         <MudButton Color="Color.Secondary" OnClick="NewGame">New game ?</MudButton>
@@ -41,13 +41,15 @@
         }
             <IndividualLetterComboInput OnHintAsked="Decrement" OnWordOk="NextFlag" HintAvaiable="@(Points>0)" StringInit="@RegionToGuess.Region"></IndividualLetterComboInput>
                 <h3>Correct/Total: @(Points / 10)/10</h3>
-                <h3>left: @(ListToGuess.Count)</h3>
+                <h3>left: @(ListToGuess?.Count)</h3>
         }
         </MudItem>
     <MudItem md="4">
 
         <div class="viewed" id="viewed">
-
+        @if (FlagsViewed!=null)
+        {
+                    
             @foreach (var i in FlagsViewed)
             {
             <MudGrid>
@@ -69,8 +71,9 @@
                 <p>@i.Region</p>
                     </MudItem>
                 </MudGrid>            }
+        }
 
-            </div>
+        </div>
     </MudItem>
         
 </MudGrid>

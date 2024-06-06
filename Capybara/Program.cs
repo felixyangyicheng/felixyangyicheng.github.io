@@ -25,6 +25,7 @@ builder.Services.AddHttpClient("notification.push.srv.local", client =>
         client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("notification.push.srv") ?? throw new ArgumentException());
     });
 #endif
+builder.Services.AddPWAUpdater();
 builder.Services.AddSpeechSynthesis();
 
         builder.Services.AddMudServices(config =>

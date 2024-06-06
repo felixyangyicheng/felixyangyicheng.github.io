@@ -53,7 +53,7 @@ namespace Capybara.Pages.GuessFlags
             await JSRuntime.InvokeVoidAsync("ScrollToBottom", "viewed");
 
         }
-        private async Task NextFlag(bool correctGuess)
+        private void NextFlag(bool correctGuess)
         {
             if (correctGuess)
             {

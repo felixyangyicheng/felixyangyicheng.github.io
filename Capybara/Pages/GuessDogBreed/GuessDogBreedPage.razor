@@ -46,25 +46,28 @@
         <MudItem xs="12" md="4">
 
             <div class="viewed" id="viewed">
-
-                @foreach (var i in DogBreedsViewed)
+                @if (DogBreedsViewed!=null)
                 {
-                    <MudGrid id="view">
-                        <MudItem xs="6">
-                            <MudImage Width="100"  Src="@i.ImageUrl" ></MudImage>
-                        </MudItem>
-                        <MudItem xs="5">
-                            @if (i.Correct==false)
-                            {
-                                <MudChip Color="MudBlazor.Color.Error" Icon="@Icons.Material.Filled.Close">KO</MudChip>
-                            }
-                            else
-                            {
-                                <MudChip Color="MudBlazor.Color.Success" Icon="@Icons.Material.Filled.Check">OK</MudChip>
-                            }                      
-                            <p>@i.BreedName</p>
-                        </MudItem>
-                    </MudGrid>
+                    
+                    @foreach (var i in DogBreedsViewed)
+                    {
+                        <MudGrid id="view">
+                            <MudItem xs="6">
+                                <MudImage Width="100"  Src="@i.ImageUrl" ></MudImage>
+                            </MudItem>
+                            <MudItem xs="5">
+                                @if (i.Correct==false)
+                                {
+                                    <MudChip Color="MudBlazor.Color.Error" Icon="@Icons.Material.Filled.Close">KO</MudChip>
+                                }
+                                else
+                                {
+                                    <MudChip Color="MudBlazor.Color.Success" Icon="@Icons.Material.Filled.Check">OK</MudChip>
+                                }                      
+                                <p>@i.BreedName</p>
+                            </MudItem>
+                        </MudGrid>
+                    }
                 }
 
             </div>

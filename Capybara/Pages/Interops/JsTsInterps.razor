@@ -22,7 +22,10 @@
 <button class="btn btn-primary" @onclick="@HelloAlert">Hello Alert</button>
 
 @code {
+    [NotNull]
     private IJSObjectReference module;
+    [NotNull]
+
     private IJSObjectReference hello;
 
     string Message { get; set; } = string.Empty;
