@@ -1,10 +1,4 @@
-﻿using ApexCharts;
-using Capybara.Components.Dialogs;
-using Capybara.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.JSInterop;
-using System.Diagnostics;
-using System.Net.Http;
+﻿
 
 namespace Capybara.Pages.GuessDogBreed
 {
@@ -21,8 +15,6 @@ namespace Capybara.Pages.GuessDogBreed
         [NotNull]
         public DogBreedQuaternary DogBreedQuaternary { get; set; } = new();
         public DogBreedModel DogBreedToGuess { get; set; } = new();
-        public Random rnd { get; set; } = new Random();
-
 
         private List<StatisticModel> _guessResult { get; set; } = new();
 
@@ -39,12 +31,6 @@ namespace Capybara.Pages.GuessDogBreed
 
         protected bool loading { get; set; }
         protected int TotalGuess { get; set; } = 15;
-        protected class StatisticModel
-        {
-            public int? Ok { get; set; }
-            public int? Ko { get; set; }
-            public string Title { get; set; } = "";
-        }
 
 
 protected override async Task OnInitializedAsync()

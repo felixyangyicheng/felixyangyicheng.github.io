@@ -60,7 +60,7 @@ namespace Capybara.Components.ComboInput
                 
             ElementsRendered = true;
             //Console.WriteLine(ElementsRendered);
-            GC.Collect();
+          
             await Task.WhenAll();
             await FocusFirstEmptyInput();
             //await base.OnAfterRenderAsync(firstRender);
@@ -101,7 +101,7 @@ namespace Capybara.Components.ComboInput
                     else
                     {
                         ElementsRendered = false;
-                        await FocusFirstEmptyInput();
+                        //await FocusFirstEmptyInput();
                         return;
                     }
                 }
@@ -109,7 +109,7 @@ namespace Capybara.Components.ComboInput
                 if (index < StringInit.Length-1 )
                 {
                     ElementsRendered = false;
-                    await FocusFirstEmptyInput();  
+                    //await FocusFirstEmptyInput();  
                 }
             }
             else

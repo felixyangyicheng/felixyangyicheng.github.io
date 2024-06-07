@@ -73,10 +73,7 @@ namespace Capybara.Pages.GuessFlags
                     }
                 }
             }
-            else
-            {
-                Decrement();
-            }
+
 
             StateHasChanged();
         }
