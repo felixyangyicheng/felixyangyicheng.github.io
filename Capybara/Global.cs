@@ -19,4 +19,5 @@ global using Capybara.Models;
 global using System.Net.Http.Json;
 global using ApexCharts;
 global using Capybara.Components.Dialogs;
-global using  Color = MudBlazor.Color
+global using Color = MudBlazor.Color;
+global using Console = System.Console;

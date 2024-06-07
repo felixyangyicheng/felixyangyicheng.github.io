@@ -1,0 +1,22 @@
+﻿<div style="visibility:@(GuessResult.Count>0?"visible":"hidden")">
+
+    <ApexChart TItem="StatisticModel"
+               Title="Ok"
+               Options=_barCharOptions
+               @ref="_barChart">
+
+        <ApexPointSeries TItem="StatisticModel"
+                         Items="GuessResult"
+                         Name="Ok"
+                         SeriesType="SeriesType.Bar"
+                         XValue="@(e => e.Title)"
+                         YValue="@(e => e.Ok)" />
+
+        <ApexPointSeries TItem="StatisticModel"
+                         Items="GuessResult"
+                         Name="Ko"
+                         SeriesType="SeriesType.Bar"
+                         XValue="@(e => e.Title)"
+                         YValue="@(e => e.Ko)" />
+    </ApexChart>
+</div>

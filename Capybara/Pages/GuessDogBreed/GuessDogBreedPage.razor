@@ -73,30 +73,10 @@
 
             </div>
         </MudItem>
-   
-    <MudItem xs="12" sm="12" md="6">
-            <ApexChart TItem="StatisticModel"
-                       Title="Ok"
-                      
-                       Options=_barCharOptions
-                       @ref="_barChart">
 
-                <ApexPointSeries TItem="StatisticModel"
-                                 Items="_guessResult"
-                                 Name="Ok"
-
-                                 SeriesType="SeriesType.Bar"
-                                 XValue="@(e => e.Title)"
-                                 YValue="@(e => e.Ok)" />
-
-                <ApexPointSeries TItem="StatisticModel"
-                                 Items="_guessResult"
-                                 Name="Ko"
-                                 SeriesType="SeriesType.Bar"
-                                 XValue="@(e => e.Title)"
-                                 YValue="@(e => e.Ko)" />
-            </ApexChart>
-    </MudItem>
+        <MudItem xs="12" sm="12" md="6" >
+            <SimpleStatisticComponent GuessResult="GuessResult"></SimpleStatisticComponent>
+        </MudItem>
     </MudGrid>
 
 </MudContainer>

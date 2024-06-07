@@ -25,6 +25,11 @@ namespace Capybara.Pages.GuessFlags
         public int Points { get; set; } = 0;
         protected override async Task OnInitializedAsync()
         {
+            //await NewGame();
+            await base.OnInitializedAsync();
+        }
+        private async Task NewGame()
+        {
 #if DEBUG
             string rootPath = configuration.GetValue<string>("rootPath") ?? throw new ArgumentNullException(nameof(rootPath));
 #else
@@ -32,21 +37,16 @@ namespace Capybara.Pages.GuessFlags
 #endif
             var response = _httpClient.GetFromJsonAsync<List<FlagModel>>($"{rootPath}/place_flags.json");
 
-            regionAndFlags =await response;
+            regionAndFlags = await response;
             FlagsViewed = new();
             if (regionAndFlags != null)
             {
-                ListToGuess = regionAndFlags.OrderBy(x => Random.Shared.Next()).Take(10).ToList();
+                ListToGuess = regionAndFlags.OrderBy(_ => Guid.NewGuid()).Take(10).ToList();
                 if (ListToGuess.Count > 0)
                 {
                     RegionToGuess = ListToGuess[0];
                 }
             }
-            await base.OnInitializedAsync();
-        }
-        private async Task NewGame()
-        {
-            await OnInitializedAsync();
         }
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {

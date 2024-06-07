@@ -16,7 +16,7 @@ namespace Capybara.Pages.GuessDogBreed
         public DogBreedQuaternary DogBreedQuaternary { get; set; } = new();
         public DogBreedModel DogBreedToGuess { get; set; } = new();
 
-        private List<StatisticModel> _guessResult { get; set; } = new();
+        private List<StatisticModel> GuessResult { get; set; } = new();
 
         private ApexChart<StatisticModel> _barChart { get; set; } = default!;
 
@@ -35,15 +35,21 @@ namespace Capybara.Pages.GuessDogBreed
 
 protected override async Task OnInitializedAsync()
         {
-            loading=true;
+
+
+            await base.OnInitializedAsync();
+        }
+        private async Task NewGame()
+        {
+
+            loading = true;
 #if DEBUG
             string rootPath = configuration.GetValue<string>("rootPath") ?? throw new ArgumentNullException(nameof(rootPath));
 #else
         string rootPath = configuration.GetValue<string>("githubLink") ?? throw new ArgumentNullException(nameof(rootPath));
 #endif
-            var response = _httpClient.GetFromJsonAsync<List<DogBreedModel>>($"{rootPath}/races_chien.json");
-          //  _radialData = new List<DogBreedResult> ();
-            DogBreeds = await response;
+
+            DogBreeds = await _httpClient.GetFromJsonAsync<List<DogBreedModel>>($"{rootPath}/races_chien.json"); 
             DogBreedsViewed = new();
             if (DogBreeds != null)
             {
@@ -55,12 +61,6 @@ protected override async Task OnInitializedAsync()
             }
             loading = false;
 
-
-            await base.OnInitializedAsync();
-        }
-        private async Task NewGame()
-        {
-            await OnInitializedAsync();
         }
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
@@ -90,12 +90,9 @@ protected override async Task OnInitializedAsync()
 
                 stat.Ok = DogBreedsViewed?.Count(x=>x.Correct==true);
                 stat.Ko = DogBreedsViewed?.Count(x=>x.Correct==false);
-                _guessResult.Clear();
-                _guessResult.Add(stat);
+                GuessResult.Clear();
+                GuessResult.Add(stat);
                
-
-                await _barChart.RenderAsync();
-
 
                 ListToGuess.RemoveAt(0);
                 StateHasChanged();
@@ -105,6 +102,11 @@ protected override async Task OnInitializedAsync()
                 }
                 else
                 {
+                    DialogOptions o = new DialogOptions() { MaxWidth = MaxWidth.Medium, FullWidth = true, Position = DialogPosition.TopCenter };
+                    var p = new DialogParameters<ResultChartDialog>();
+                    p.Add(x => x.GuessResult, GuessResult);
+                    var d = await DialogService.ShowAsync<ResultChartDialog>("Result", p, o);
+                  
                     DogBreedToGuess = new DogBreedModel(); // Or handle end of list case
                 }
             }
@@ -120,7 +122,7 @@ protected override async Task OnInitializedAsync()
             dogBreedProposeCorrect.Correct = true;
             dogBreedProposeCorrect.BreedName = DogBreedToGuess.BreedName;
       
-            List<DogBreedModel> wrong = DogBreeds.OrderBy(x => Random.Shared.Next())
+            List<DogBreedModel> wrong = DogBreeds.OrderBy(_ => Guid.NewGuid())
                 .Where(a => a.BreedName!= DogBreedToGuess.BreedName&&a.Type==DogBreedToGuess.Type)
                 .Take(3)
                 .ToList();
@@ -135,7 +137,7 @@ protected override async Task OnInitializedAsync()
 
      
             DogBreedQuaternary.DogBreedProposes.Add(dogBreedProposeCorrect);
-            DogBreedQuaternary.DogBreedProposes.OrderBy(x => Random.Shared.Next()).ToList();
+            DogBreedQuaternary.DogBreedProposes= DogBreedQuaternary.DogBreedProposes.OrderBy(_ => Guid.NewGuid()).ToList();
             StateHasChanged();
         }
  

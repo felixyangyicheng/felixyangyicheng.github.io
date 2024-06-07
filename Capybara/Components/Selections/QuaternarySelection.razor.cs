@@ -17,6 +17,7 @@ namespace Capybara.Components.Selections
         {
             Random rnd = new Random();
             Color = (Color)rnd.Next(0, 8);
+            Quaternary.DogBreedProposes= Quaternary.DogBreedProposes.OrderBy(_ => Guid.NewGuid()).ToList();
             await base.OnParametersSetAsync();
         }
 

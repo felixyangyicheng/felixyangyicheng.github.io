@@ -26,6 +26,7 @@ builder.Services.AddHttpClient("notification.push.srv.local", client =>
     });
 #endif
 builder.Services.AddPWAUpdater();
+builder.Services.AddBootstrapBlazor();
 builder.Services.AddSpeechSynthesis();
 
         builder.Services.AddMudServices(config =>

@@ -2,6 +2,54 @@
 @using Capybara.Pages.ApexChartPages
 
 
-<ApexChartDynamic></ApexChartDynamic>
+@using System.Text
+@using System.Diagnostics.CodeAnalysis
+@inject IConfiguration _configuration
+
+<MudContainer>
+    <div style="width: 100%; height: 70vh;">
+            <Markdown @ref="MarkdownSetValue" Value="@MarkdownString" ValueChanged="SetMarkdownString" @bind-Html="@HtmlString" IsViewer="true"/>
+   
+    </div>
+</MudContainer>
+
+@code {
+    private string? MarkdownString { get; set; } = "### README.md";
+    private string? HtmlString { get; set; }
+    StringBuilder rawStringBuilder = new StringBuilder("");
+    [NotNull]
+    private Markdown? MarkdownSetValue { get; set; }
+
+    protected async Task SetMarkdownString(string text)
+    {
+        MarkdownString = text;
+        await InvokeAsync(StateHasChanged);
+
+    }
+    protected override async Task OnParametersSetAsync()
+    {
+
+        HttpClient client = new HttpClient();
+        client.BaseAddress = new Uri("https://raw.githubusercontent.com/felixyangyicheng/felixyangyicheng.github.io/gh-pages/README.md");
+        var result = await client.GetAsync("");
+
+        using (StreamReader readtext = new StreamReader(await result.Content.ReadAsStreamAsync()))
+        {
+
+            while (!readtext.EndOfStream)
+            {
+
+                rawStringBuilder.Append("\r " + readtext.ReadLine());
+
+            }
+        }
+
+        await Task.Delay(600);
+        await MarkdownSetValue.SetValue(rawStringBuilder.ToString());
+        StateHasChanged();
+
+    }
 
 
+
+}
