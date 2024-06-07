@@ -1,5 +1,76 @@
 @import '_content/Toolbelt.Blazor.PWA.Updater/Toolbelt.Blazor.PWA.Updater.bundle.scp.css';
 
+/* /Components/ComboInput/IndividualLetterComboInput.razor.rz.scp.css */
+/* Style de base pour l'élément input */
+.case[b-4lpb438kwo] {
+    width: 35px;
+    height: 35px;
+    margin: 1px;
+    font-family: 'Arial', sans-serif; /* Police de caractère */
+    font-size: 10px; /* Taille de la police */
+    color: #333; /* Couleur du texte */
+    font-weight: bold; /* Poids de la police (gras) */
+    font-style: italic; /* Style de la police (italique) */
+    text-transform: uppercase; /* Texte en majuscules */
+    text-align: left; /* Alignement du texte */
+}
+
+/* Pour les fenêtres de moins de 600px de large */
+@media (max-width: 599px) {
+    .case[b-4lpb438kwo] {
+        width: 32px;
+        height: 32px;
+        font-size: 7.5px;
+    }
+}
+
+/* Pour les fenêtres de 600px à 899px de large */
+@media (min-width: 600px) and (max-width: 899px) {
+    .case[b-4lpb438kwo] {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Pour les fenêtres de 900px à 1199px de large */
+@media (min-width: 900px) and (max-width: 1199px) {
+    .case[b-4lpb438kwo] {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Pour les fenêtres de 1200px et plus */
+@media (min-width: 1200px) {
+    .case[b-4lpb438kwo] {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.combocase[b-4lpb438kwo] {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.default[b-4lpb438kwo] {
+    border: 2px solid blue;
+}
+
+.correct[b-4lpb438kwo] {
+    border: 2px solid green;
+    background-color: rgba(37, 195, 61, 0.34);
+}
+
+.all-correct[b-4lpb438kwo] {
+    background-color: rgba(37, 195, 61, 0.34);
+    border: 5px solid green;
+}
+
+.incorrect[b-4lpb438kwo] {
+    border: 2px solid red;
+    background-color: rgba(255, 47, 70, 0.45);
+}
 /* /Layout/MainLayout.razor.rz.scp.css */
 .page[b-6rwbdaioqd] {
     position: relative;
