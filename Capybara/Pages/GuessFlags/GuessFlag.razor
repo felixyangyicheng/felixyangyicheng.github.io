@@ -2,79 +2,150 @@
 @inject HttpClient _httpClient
 @inject IJSRuntime JSRuntime
 <style>
-    .viewed{
-        overflow-y:scroll;
-        max-height:80vh;
+    .viewed {
+        overflow-y: scroll;
+        min-height: 30vh;
+        max-height: 80vh;
     }
 </style>
 <MudContainer>
-
-<h3>GuessFlag</h3>
-<MudGrid>
-    <MudItem md="8">
-    @if (ListToGuess==null)
-    {
-        <p>loading..</p>
-    }
-    @if (ListToGuess?.Count == 0)
-    {
-
-        <MudButton Color="Color.Secondary" OnClick="NewGame">New game ?</MudButton>
-    }
-    else 
-    {
-        
-        @if (rnd.Next(regionAndFlags.Count()) % 2 == 0&&RegionToGuess.Official.Count>0)
+    <MudGrid>
+        @if (ListToGuess == null)
         {
-
-            <MudImage Width="150" src="@RegionToGuess.Official[0]" />
+            <p>loading..</p>
         }
-        else if (RegionToGuess.Proposed.Count > 0)
+        @if (ListToGuess?.Count == 0)
         {
-    
-            <MudImage  Width="150" src="@RegionToGuess.Proposed[0]" />
+
+            <MudButton Color="Color.Secondary" OnClick="NewGame">New game ?</MudButton>
+            <p></p>
+            <h1>
+
+                Découvrez la France à travers ses Drapeaux Régionaux : jeu Ludique et Éducatif
+            </h1>
+            <p>
+
+                Connaissez-vous bien la France, ses régions, ses départements, et ses territoires d'outre-mer ? Que diriez-vous de tester vos connaissances tout en vous amusant ? Nous vous présentons un jeu passionnant et éducatif pour deviner les drapeaux des différentes entités administratives françaises : régions, anciennes régions, départements, et territoires.
+            </p>
+
+            <h3>
+
+                Renforcer ses connaissances géographiques
+            </h3>
+            <p>
+
+                La France est un pays riche en diversité culturelle et géographique. En jouant à ce jeu, vous découvrirez les spécificités de chaque région, leur histoire, leurs traditions et leurs particularités locales. Vous apprendrez à reconnaître les drapeaux et à associer chaque symbole à sa région.
+            </p>
+            <h3>
+
+                Revivre l'histoire
+            </h3>
+            <p>
+
+                Les anciennes régions et départements ont souvent des histoires fascinantes. Comprendre les raisons derrière les symboles présents sur les drapeaux permet de plonger dans le passé et de mieux appréhender l’évolution administrative et culturelle de la France.
+            </p>
+            <h3>
+
+                Élargir sa culture générale
+            </h3>
+            <p>
+
+                Savoir identifier les drapeaux des différentes entités françaises enrichit votre culture générale. C'est une compétence précieuse, que ce soit pour des discussions entre amis, des quizz ou simplement pour le plaisir de connaître votre pays plus en profondeur.
+            </p>
+
+            <h3>
+
+                jeu pour tous
+            </h3>
+            <p>
+
+                Que vous soyez enfant, adulte, amateur d’histoire, de géographie ou simplement curieux, ce jeu est fait pour vous. Il est conçu pour être accessible et intéressant pour tous les âges. C'est aussi un excellent moyen de passer du temps en famille ou entre amis.
+            </p>
+            <h3>
+
+                Stimuler la mémoire et l'observation
+            </h3>
+            <p>
+
+                En essayant de deviner les drapeaux, vous faites travailler votre mémoire visuelle et vos capacités d'observation. C'est un excellent exercice pour le cerveau, tout en restant ludique et agréable.
+            </p>
+            <h3>
+
+                Découvrir des territoires méconnus
+            </h3>
+            <p>
+
+                Les départements et territoires d’outre-mer ont souvent des cultures et des drapeaux méconnus. Ce jeu vous invite à un voyage virtuel dans des contrées lointaines et fascinantes, du bout de la Bretagne aux îles du Pacifique.
+            </p>
+            <h2>
+
+                Comment jouer ?
+            </h2>
+            <p>
+
+                Le jeu est simple. Chaque drapeau est présenté, et vous devez deviner à quelle région, ancien département ou territoire il appartient. Vous pouvez jouer seul pour tester vos connaissances ou en groupe pour un défi entre amis. Les réponses sont accompagnées d’anecdotes et de faits intéressants sur chaque entité, pour rendre l’expérience encore plus enrichissante.
+            </p>
+            <p>
+
+                Ce jeu est bien plus qu’un simple passe-temps. C’est une invitation à découvrir la richesse et la diversité de la France sous un nouvel angle, à travers ses symboles et ses histoires. Alors, prêt à relever le défi ? Plongez dans l'univers des drapeaux régionaux français et laissez-vous surprendre par tout ce que vous allez apprendre !
+            </p>
         }
         else
         {
-            <MudImage Width="150" src="@RegionToGuess.Official[0]" />
+            <MudItem xs="12" md="6">
 
-        }
-            <IndividualLetterComboInput OnHintAsked="Decrement" OnWordOk="NextFlag" HintAvaiable="@(Points>0)" StringInit="@RegionToGuess.Region"></IndividualLetterComboInput>
+                @if (rnd.Next(regionAndFlags.Count()) % 2 == 0 && RegionToGuess.Official.Count > 0)
+                {
+
+                    <MudImage Width="150" src="@RegionToGuess.Official[0]" />
+                }
+                else if (RegionToGuess.Proposed.Count > 0)
+                {
+
+                    <MudImage Width="150" src="@RegionToGuess.Proposed[0]" />
+                }
+                else
+                {
+                    <MudImage Width="150" src="@RegionToGuess.Official[0]" />
+
+                }
+                <IndividualLetterComboInput OnHintAsked="Decrement" OnWordOk="NextFlag" HintAvaiable="@(Points>0)" StringInit="@RegionToGuess.Region"></IndividualLetterComboInput>
                 <h3>Correct/Total: @(Points / 10)/10</h3>
                 <h3>left: @(ListToGuess?.Count)</h3>
-    }
-    </MudItem>
-    <MudItem md="4">
-
-        <div class="viewed" id="viewed">
-        @if (FlagsViewed!=null)
-        {
-                    
-            @foreach (var i in FlagsViewed)
-            {
-            <MudGrid>
-                    <MudItem xs="8">
-
-                @if (i.Proposed.Count > 0)
-                {
-                    
-                    <MudImage Src="@i.Proposed[0]" />
-                }
-                @if(i.Official.Count>0)
-                {
-
-                    <MudImage Src="@i.Official[0]" />
-                }
-                    </MudItem>
-                    <MudItem xs="4">
-
-                <p>@i.Region</p>
-                    </MudItem>
-                </MudGrid>            }
+            </MudItem>
         }
+        <MudItem xs="12" md="6">
 
-        </div>
-    </MudItem>
-        
-</MudGrid>
+            <div class="viewed" id="viewed">
+                @if (FlagsViewed != null)
+                {
+
+                    @foreach (var i in FlagsViewed)
+                    {
+                        <MudGrid>
+                            <MudItem xs="8">
+
+                                @if (i.Proposed.Count > 0)
+                                {
+
+                                    <MudImage Src="@i.Proposed[0]" />
+                                }
+                                @if (i.Official.Count > 0)
+                                {
+
+                                    <MudImage Src="@i.Official[0]" />
+                                }
+                            </MudItem>
+                            <MudItem xs="4">
+
+                                <p>@i.Region</p>
+                            </MudItem>
+                        </MudGrid>
+                    }
+                }
+
+            </div>
+        </MudItem>
+
+    </MudGrid>
 </MudContainer>

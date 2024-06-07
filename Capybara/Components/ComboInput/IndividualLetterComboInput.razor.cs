@@ -15,14 +15,14 @@ namespace Capybara.Components.ComboInput
         public EventCallback<int> OnHintAsked { get; set; }
         [Parameter]
         public bool HintAvaiable { get; set; }
-        
 
-        private string[] InputValues { get; set; }=new string[0];
+
+        private string[] InputValues { get; set; } = new string[0];
         private ElementReference[]? InputRefs { get; set; } = default;
         private string[] InputClasses { get; set; } = new string[0];
-        private bool[] InputDisabled { get; set; }=new bool[0];
+        private bool[] InputDisabled { get; set; } = new bool[0];
         private bool AllInputsCorrect { get; set; }
-       // private bool FirstRender { get; set; } = true;
+        // private bool FirstRender { get; set; } = true;
         private bool ElementsRendered { get; set; } = false;
         protected override async Task OnParametersSetAsync()
         {
@@ -36,20 +36,20 @@ namespace Capybara.Components.ComboInput
                 }
             }
             InputRefs = new ElementReference[StringInit.Length];
- 
+
             InputDisabled = Enumerable.Repeat(false, StringInit.Length).ToArray();
             foreach (var item in StringInit.Select((value, i) => (value, i)))
             {
-                if (char.ToString(item.value).Equals("-")|| char.IsWhiteSpace(item.value))
+                if (char.ToString(item.value).Equals("-") || char.IsWhiteSpace(item.value))
                 {
                     InputDisabled[item.i] = true;
                 }
             }
             InputClasses = Enumerable.Repeat("default", StringInit.Length).ToArray();
             AllInputsCorrect = false;
-       
+
             ElementsRendered = false;
-         
+
             await base.OnParametersSetAsync();
         }
 
@@ -57,17 +57,18 @@ namespace Capybara.Components.ComboInput
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-                
+
             ElementsRendered = true;
             //Console.WriteLine(ElementsRendered);
-          
-            await Task.WhenAll();
+
+            await Task.WhenAny(FocusFirstEmptyInput());
+
             await FocusFirstEmptyInput();
             //await base.OnAfterRenderAsync(firstRender);
 
         }
 
-  
+
 
         private async Task HandleInput(ChangeEventArgs e, int index)
         {
@@ -101,15 +102,15 @@ namespace Capybara.Components.ComboInput
                     else
                     {
                         ElementsRendered = false;
-                        //await FocusFirstEmptyInput();
+                        await FocusFirstEmptyInput();
                         return;
                     }
                 }
 
-                if (index < StringInit.Length-1 )
+                if (index < StringInit.Length - 1)
                 {
                     ElementsRendered = false;
-                    //await FocusFirstEmptyInput();  
+                    await FocusFirstEmptyInput();
                 }
             }
             else
@@ -131,7 +132,7 @@ namespace Capybara.Components.ComboInput
             }
             try
             {
-                if (InputRefs?.Length<=0)
+                if (InputRefs?.Length <= 0)
                 {
 
 
@@ -150,7 +151,7 @@ namespace Capybara.Components.ComboInput
             }
             catch (Exception ex)
             {
-              
+
                 Console.WriteLine(ex.Message.ToString());
                 throw ex;
             }
@@ -182,7 +183,7 @@ namespace Capybara.Components.ComboInput
                 InputClasses[randomIndex] = "correct";
                 InputDisabled[randomIndex] = true;
                 // Disable the input
-    
+
                 await InvokeAsync(StateHasChanged);
             }
             await OnHintAsked.InvokeAsync(10);

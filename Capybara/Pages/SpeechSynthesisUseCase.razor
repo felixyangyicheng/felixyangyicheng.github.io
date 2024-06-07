@@ -7,17 +7,17 @@
 @using Color =MudBlazor.Color  ;
 
 
-<br/>
+<br />
 <MudGrid>
     <MudItem xs="6" md="6" lg="6">
-        <a href="https://github.com/jsakamoto/Toolbelt.Blazor.SpeechSynthesis" target="_blank">        
-            <img src="https://img.shields.io/static/v1?label=BlazorSpeechSynthesis&message=%E2%9D%A4&logo=GitHub&color=ff69b4"/>
+        <a href="https://github.com/jsakamoto/Toolbelt.Blazor.SpeechSynthesis" target="_blank">
+            <img src="https://img.shields.io/static/v1?label=BlazorSpeechSynthesis&message=%E2%9D%A4&logo=GitHub&color=ff69b4" />
         </a>
         <a href="https://www.nuget.org/packages/Toolbelt.Blazor.SpeechSynthesis/" target="_blank">
             <img src="https://img.shields.io/nuget/v/Toolbelt.Blazor.SpeechSynthesis.svg" alt="NuGet Package" />
         </a>
         <p>
-            <MudTextField T="string"  AutoGrow Lines="10" Label="Insert text that you when to generate synthesis voice" Variant="Variant.Text" @bind-Value="@Text" ></MudTextField>
+            <MudTextField T="string" AutoGrow Lines="10" Label="Insert text that you when to generate synthesis voice" Variant="Variant.Text" @bind-Value="@Text"></MudTextField>
         </p>
         @if (Voices.Any())
         {
@@ -32,37 +32,37 @@
                 </select>
             </p>
         }
-                <section>
-                    <MudButton Variant="Variant.Filled" OnClick="OnClickSpeakButton" Color="Color.Success">Speak</MudButton>
-                    <MudButton Variant="Variant.Filled" Color="Color.Success" OnClick="OnClickSpeakByCachedButton">Speak by Cached</MudButton>
+        <section>
+            <MudButton Variant="Variant.Filled" OnClick="OnClickSpeakButton" Color="Color.Success">Speak</MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Success" OnClick="OnClickSpeakByCachedButton">Speak by Cached</MudButton>
 
-                    <MudButton Variant="Variant.Filled" Color="Color.Warning" OnClick="OnClickPauseButton">Pause</MudButton>
-                    <MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="OnClickResumeButton">Resume</MudButton>
-                    <MudButton Variant="Variant.Filled" Color="Color.Error" OnClick="OnClickCancelButton">Cancel</MudButton>
-                </section>
-                <section>                    
-                    <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="OnClickGC">GC</MudButton>
-                    <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="OnClickClearLog">Clear Log</MudButton>
-                </section>
+            <MudButton Variant="Variant.Filled" Color="Color.Warning" OnClick="OnClickPauseButton">Pause</MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="OnClickResumeButton">Resume</MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Error" OnClick="OnClickCancelButton">Cancel</MudButton>
+        </section>
+        <section>
+            <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="OnClickGC">GC</MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="OnClickClearLog">Clear Log</MudButton>
+        </section>
 
-                <section>
-                    <p>Voice options</p>
-                    <div style="display:flex; justify-content:space-between; flex-wrap:wrap;">
-                        <div>Language (BCP47): <input type="text" @bind="Lang" /></div>
-                        <div>Picth: @Pitch.ToString("0.0") <input type="range" min="0.0" max="2.0" step="0.1" @bind="Pitch" /> <button @onclick="(() => this.Pitch = 1.0)">reset</button></div>
-                        <div>Rate: @Rate.ToString("0.0") <input type="range" min="0.1" max="10.0" step="0.1" @bind="Rate" /> <button @onclick="(() => this.Rate = 1.0)">reset</button></div>
-                        <div>Volume: @Volume.ToString("0.0") <input type="range" min="0.0" max="1.0" step="0.1" @bind="Volume" /> <button @onclick="(() => this.Volume = 1.0)">reset</button></div>
-                    </div>
-                </section>
-                <section class="status">
-                    <p>Status</p>
-                    <div class="indicators">
-                        <div class="@V2.CssClass(new { Active = this.Available })">Available</div>
-                        <div class="@V2.CssClass(new { Active = this.SpeechSynthesis.Speaking })">Speaking</div>
-                        <div class="@V2.CssClass(new { Active = this.SpeechSynthesis.Pending })">Pending</div>
-                        <div class="@V2.CssClass(new { Active = this.SpeechSynthesis.Paused })">Paused</div>
-                    </div>
-                </section>
+        <section>
+            <p>Voice options</p>
+            <div style="display:flex; justify-content:space-between; flex-wrap:wrap;">
+                <div>Language (BCP47): <input type="text" @bind="Lang" /></div>
+                <div>Picth: @Pitch.ToString("0.0") <input type="range" min="0.0" max="2.0" step="0.1" @bind="Pitch" /> <button @onclick="(() => this.Pitch = 1.0)">reset</button></div>
+                <div>Rate: @Rate.ToString("0.0") <input type="range" min="0.1" max="10.0" step="0.1" @bind="Rate" /> <button @onclick="(() => this.Rate = 1.0)">reset</button></div>
+                <div>Volume: @Volume.ToString("0.0") <input type="range" min="0.0" max="1.0" step="0.1" @bind="Volume" /> <button @onclick="(() => this.Volume = 1.0)">reset</button></div>
+            </div>
+        </section>
+        <section class="status">
+            <p>Status</p>
+            <div class="indicators">
+                <div class="@V2.CssClass(new { Active = this.Available })">Available</div>
+                <div class="@V2.CssClass(new { Active = this.SpeechSynthesis.Speaking })">Speaking</div>
+                <div class="@V2.CssClass(new { Active = this.SpeechSynthesis.Pending })">Pending</div>
+                <div class="@V2.CssClass(new { Active = this.SpeechSynthesis.Paused })">Paused</div>
+            </div>
+        </section>
     </MudItem>
     <MudItem xs="6" md="6" lg="6">
 

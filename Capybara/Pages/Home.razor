@@ -1,21 +1,38 @@
 ﻿@page "/"
-@using Capybara.Pages.ApexChartPages
 
-
-@using System.Text
-@using System.Diagnostics.CodeAnalysis
 @inject IConfiguration _configuration
 
 <MudContainer>
+    @if (loading)
+    {
+
+        <Pulse />
+    }
     <div style="width: 100%; height: 70vh;">
-            <Markdown @ref="MarkdownSetValue" Value="@MarkdownString" ValueChanged="SetMarkdownString" @bind-Html="@HtmlString" IsViewer="true"/>
-   
+        <Markdown @ref="MarkdownSetValue" Value="@MarkdownString" ValueChanged="SetMarkdownString" @bind-Html="@HtmlString" IsViewer="true" />
+
     </div>
+    <details>
+        <summary>More info</summary>
+        <div>
+
+            <section>
+            </section>
+            <section>
+                <p>Runtime information</p>
+                <p>@RuntimeInformation.FrameworkDescription / @RuntimeInformation.ProcessArchitecture</p>
+                <p>@RuntimeInformation.OSDescription / @RuntimeInformation.OSArchitecture</p>
+                <p>@RuntimeInformation.RuntimeIdentifier </p>
+            </section>
+
+        </div>
+    </details>
 </MudContainer>
 
 @code {
     private string? MarkdownString { get; set; } = "### README.md";
     private string? HtmlString { get; set; }
+    private bool loading { get; set; }
     StringBuilder rawStringBuilder = new StringBuilder("");
     [NotNull]
     private Markdown? MarkdownSetValue { get; set; }
@@ -28,24 +45,22 @@
     }
     protected override async Task OnParametersSetAsync()
     {
-
+        loading = true;
         HttpClient client = new HttpClient();
         client.BaseAddress = new Uri("https://raw.githubusercontent.com/felixyangyicheng/felixyangyicheng.github.io/gh-pages/README.md");
         var result = await client.GetAsync("");
-
         using (StreamReader readtext = new StreamReader(await result.Content.ReadAsStreamAsync()))
         {
-
             while (!readtext.EndOfStream)
             {
-
                 rawStringBuilder.Append("\r " + readtext.ReadLine());
-
             }
+            loading = false;
         }
 
         await Task.Delay(600);
         await MarkdownSetValue.SetValue(rawStringBuilder.ToString());
+
         StateHasChanged();
 
     }

@@ -10,7 +10,7 @@
                 if (char.IsWhiteSpace(item.value))
                 {
                     <div>
-                        <input MaxLength="1" class="form-control case" disabled="@InputDisabled[item.i]" @key="@item" @ref="InputRefs[item.i]"  />
+                        <input MaxLength="1" class="form-control case" disabled="@InputDisabled[item.i]" @key="@item" @ref="InputRefs[item.i]" />
                     </div>
 
                 }
@@ -18,7 +18,7 @@
                 {
                     <div>
 
-                        <input class="form-control case" value="-" disabled="@InputDisabled[item.i]" @key="@item" @ref="InputRefs[item.i]"  />
+                        <input class="form-control case" value="-" disabled="@InputDisabled[item.i]" @key="@item" @ref="InputRefs[item.i]" />
                     </div>
 
                 }
@@ -29,7 +29,6 @@
                         <input @key="@item"
                                @ref="InputRefs[item.i]" maxlength="1"
                                @oninput="@(e => HandleInput(e, item.i))"
-                               
                                disabled="@InputDisabled[item.i]"
                                value="@InputValues[item.i]"
                                type="text" class="form-control case @(GetInputClass(item.i))" />
@@ -46,32 +45,3 @@
     </MudContainer>
 }
 
-<style>
-    .case {
-        width: 40px;
-        height: 40px;
-    }
-
-    .combocase {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .default {
-        border: 2px solid blue;
-    }
-
-    .correct {
-        border: 2px solid green;
-        background-color: rgba(37, 195, 61, 0.34);
-    }
-
-    .all-correct {
-        background-color: rgba(37, 195, 61, 0.34);
-        border: 5px solid green;
-    }
-
-    .incorrect {
-        border: 2px solid red;
-        background-color: rgba(255, 47, 70, 0.45);
-    }
-</style>
