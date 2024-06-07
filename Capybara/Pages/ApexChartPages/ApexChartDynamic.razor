@@ -2,7 +2,8 @@
 @inject HttpClient _httpClient
 @inject IJSRuntime JSRuntime
 <ApexChart TItem="MyData"
-           Title="Sample Data">
+           Title="Sample Data"
+           @ref=chart>
 
     <ApexPointSeries TItem="MyData"
                      Items="Data"
@@ -18,16 +19,23 @@
                      XValue="e => e.Category"
                      YValue="e=> e.Revenue" />
 </ApexChart>
-
+<MudButton OnClick="Render">Rerender</MudButton>
 @code {
     private List<MyData> Data { get; set; } = new();
+    private ApexChart<MyData> chart;
     protected override void OnInitialized()
     {
         Data.Add(new MyData { Category = "Jan", NetProfit = 12, Revenue = 33 });
         Data.Add(new MyData { Category = "Feb", NetProfit = 43, Revenue = 42 });
         Data.Add(new MyData { Category = "Mar", NetProfit = 112, Revenue = 23 });
     }
-
+    protected async Task Render()
+    {
+        Data.Clear();
+        Random rnd = new();
+        Data.Add(new MyData { Category = "Avril", NetProfit = rnd.Next(), Revenue = rnd.Next() });
+        await chart.RenderAsync();
+    }
     public class MyData
     {
         public string Category { get; set; } = "";

@@ -23,23 +23,31 @@ namespace Capybara.Pages.GuessDogBreed
         public DogBreedModel DogBreedToGuess { get; set; } = new();
         public Random rnd { get; set; } = new Random();
 
-        private ApexChart<List<DogBreedResult>> chart { get; set; } = new();
-        private List<DogBreedResult> _radialData = default!;
-        private ApexChart<DogBreedResult> _radialChart = default!;
-        private ApexChart<DogBreedResult> _barChart = default!;
 
-        private ApexChartOptions<List<DogBreedResult>> options { get; set; } = new();
+        private List<StatisticModel> _guessResult { get; set; } = new();
 
-        public bool loading { get; set; }
+        private ApexChart<StatisticModel> _barChart { get; set; } = default!;
 
-        public class StatisticModel
+        private ApexChartOptions<StatisticModel> _barCharOptions { get; set; } = new ApexChartOptions<StatisticModel>
         {
-            public decimal Percentage { get; set; }
+            Theme = new Theme
+            {
+                Mode = Mode.Light,
+                Palette = PaletteType.Palette6
+            }
+        };
+
+        protected bool loading { get; set; }
+        protected int TotalGuess { get; set; } = 15;
+        protected class StatisticModel
+        {
+            public int? Ok { get; set; }
+            public int? Ko { get; set; }
             public string Title { get; set; } = "";
         }
 
-        public StatisticModel statistic { get; set; } = new();
-        protected override async Task OnInitializedAsync()
+
+protected override async Task OnInitializedAsync()
         {
             loading=true;
 #if DEBUG
@@ -48,18 +56,19 @@ namespace Capybara.Pages.GuessDogBreed
         string rootPath = configuration.GetValue<string>("githubLink") ?? throw new ArgumentNullException(nameof(rootPath));
 #endif
             var response = _httpClient.GetFromJsonAsync<List<DogBreedModel>>($"{rootPath}/races_chien.json");
-            _radialData = new List<DogBreedResult> ();
+          //  _radialData = new List<DogBreedResult> ();
             DogBreeds = await response;
             DogBreedsViewed = new();
             if (DogBreeds != null)
             {
-                ListToGuess = DogBreeds.OrderBy(x => Random.Shared.Next()).Take(15).ToList();
+                ListToGuess = DogBreeds.OrderBy(x => Random.Shared.Next()).Take(TotalGuess).ToList();
                 if (ListToGuess.Count > 0)
                 {
                     NewQuaternary();
                 }
             }
             loading = false;
+
 
             await base.OnInitializedAsync();
         }
@@ -69,14 +78,10 @@ namespace Capybara.Pages.GuessDogBreed
         }
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            // await JSRuntime.InvokeVoidAsync("ScrollToBottom", "viewed");
-           // await chart.UpdateOptionsAsync(true, true, false);
-
             await base.OnAfterRenderAsync(firstRender);
         }
         private async Task NextDogBreed(bool correctGuess)
         {
-   
  
             if (ListToGuess != null && ListToGuess.Count > 0)
             {
@@ -93,13 +98,19 @@ namespace Capybara.Pages.GuessDogBreed
                 DogBreedsViewed?.Add(result);
                 DogBreedsViewed=DogBreedsViewed?.OrderBy(x => x.Order).ToList();
 
- /// chart does not update !!!!
-                _radialData.Add( result);
+  
+                StatisticModel stat = new StatisticModel { Title = "Résultat" };
+           
+
+                stat.Ok = DogBreedsViewed?.Count(x=>x.Correct==true);
+                stat.Ko = DogBreedsViewed?.Count(x=>x.Correct==false);
+                _guessResult.Clear();
+                _guessResult.Add(stat);
+               
 
                 await _barChart.RenderAsync();
 
-                /// chart does not update !!!!
-                //todo update chart
+
                 ListToGuess.RemoveAt(0);
                 StateHasChanged();
                 if (ListToGuess.Count > 0)

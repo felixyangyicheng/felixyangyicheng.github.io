@@ -27,6 +27,7 @@
             @if (ListToGuess?.Count == 0)
             {
                 <MudButton Color="Color.Secondary" OnClick="NewGame">New game ?</MudButton>
+                <MudNumericField T="int" @bind-Value="TotalGuess" Variant="Variant.Outlined" HelperText="Combien de devinettes?"></MudNumericField>
             }
             else
             {
@@ -43,7 +44,7 @@
                 </MudGrid>
             }
         </MudItem>
-        <MudItem xs="12" md="4">
+        <MudItem xs="12" sm="4" md="4">
 
             <div class="viewed" id="viewed">
                 @if (DogBreedsViewed!=null)
@@ -73,30 +74,29 @@
             </div>
         </MudItem>
    
-    <div class="radial-chart">
-
-            <h1>Ok: @_radialData.Count(x => x.Correct == true)</h1>
-            <h1>Ko: @_radialData.Count(x => x.Correct != true)</h1>
-            <ApexChart TItem="DogBreedResult"
+    <MudItem xs="12" sm="12" md="6">
+            <ApexChart TItem="StatisticModel"
                        Title="Ok"
-                     
+                      
+                       Options=_barCharOptions
                        @ref="_barChart">
 
-                <ApexPointSeries TItem="DogBreedResult"
-                                 Items="_radialData"
+                <ApexPointSeries TItem="StatisticModel"
+                                 Items="_guessResult"
                                  Name="Ok"
-                                 SeriesType="SeriesType.Bar"
-                                 XValue="@(e => e.Correct)"
-                                 YAggregate="@(e => e.Count(e => e.Correct))" />
 
-                <ApexPointSeries TItem="DogBreedResult"
-                                 Items="_radialData"
+                                 SeriesType="SeriesType.Bar"
+                                 XValue="@(e => e.Title)"
+                                 YValue="@(e => e.Ok)" />
+
+                <ApexPointSeries TItem="StatisticModel"
+                                 Items="_guessResult"
                                  Name="Ko"
                                  SeriesType="SeriesType.Bar"
-                                 XValue="@(e => e.Correct)"
-                                 YAggregate="@(e => e.Count(e => e.Correct==false))" />
+                                 XValue="@(e => e.Title)"
+                                 YValue="@(e => e.Ko)" />
             </ApexChart>
-    </div>
+    </MudItem>
     </MudGrid>
 
 </MudContainer>

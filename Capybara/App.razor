@@ -11,7 +11,7 @@
     </NotFound>
 </Router> *@
 
-<Router AppAssembly="@typeof(Program).Assembly">
+<Router AppAssembly="@typeof(Program).Assembly" @rendermode="RenderMode.InteractiveWebAssembly">
     <Found Context="routeData">
         <LayoutView Layout="@typeof(MainLayout)">
             <TransitionableRoutePrimary RouteData="@routeData" ForgetStateOnTransition="true">
