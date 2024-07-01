@@ -10,6 +10,7 @@ https://img.shields.io/nuget/v/Toolbelt.Blazor.SpeechSynthesis.svg
  - 🛠 [Google Chrome extension APIs](https://developer.chrome.com/docs/extensions/reference/api) - Documentation chrome APIs
  - 🚀 [Que c'est, Manifest V3](https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3) - Fichier Manifest V3 chrome extension
  - ⚡️ [Build browser extensions easily with Blazor](https://mingyaulee.github.io/Blazor.BrowserExtension/) - Documentation Blazor.BrowserExtension
+ -  [gRPC with self signed certificate](https://blog.yowko.com/aspdotnetcore-grpc-self-signed-certificate/) - grpc- https certificate dans docker container
 
  ## Licence 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) 
