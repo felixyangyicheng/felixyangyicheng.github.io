@@ -12,6 +12,28 @@ https://img.shields.io/nuget/v/Toolbelt.Blazor.SpeechSynthesis.svg
  - ⚡️ [Build browser extensions easily with Blazor](https://mingyaulee.github.io/Blazor.BrowserExtension/) - Documentation Blazor.BrowserExtension
  -  [gRPC with self signed certificate](https://blog.yowko.com/aspdotnetcore-grpc-self-signed-certificate/) - grpc- https certificate dans docker container
 
+## Dockerfile
+```Dockerfile
+FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine as build
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+COPY . .
+RUN dotnet restore <project_name>.csproj
+RUN dotnet publish -o /app/published-app
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine as runtime
+RUN apk add icu openssl
+WORKDIR /app
+COPY --from=build /app/published-app /app
+ENV certPassword demo
+RUN openssl genrsa -des3 -passout pass:${certPassword} -out demo.key 2048
+RUN openssl rsa -passin pass:${certPassword} -in demo.key -out demo.key
+RUN openssl req -sha256 -new -key server.key -out server.csr -subj '/CN=demo'
+RUN openssl x509 -req -sha256 -days 365 -in demo.csr -signkey demo.key -out demo.crt
+RUN openssl pkcs12 -export -out demo.pfx -inkey demo.key -in demo.crt -certfile demo.crt -passout pass:${certPassword}
+ENTRYPOINT ["dotnet", "/app/<project_name>.dll"]
+```
  ## Licence 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) 
 
