@@ -1,31 +1,92 @@
-name: .NET
+#from https://github.com/ILoveDotNet/ilovedotnet/blob/main/.github/workflows/deployment.yml
+name: build and test and deploy
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  schedule:
+      # Runs every sunday 05.00 PM UTC (22.30 PM IST Equivalent). Pattern - "*(0-59 minute) *(0-23 hour) *(1-31 day of the month) *(1-12 month) *(0-6 day of the week)"
+      - cron: '0 17 * * 0'
+
 permissions:
   contents: write
   pages: write
   id-token: write
+
 jobs:
-  deploy-to-github-pages:
-
+  build-test-deploy-blazor:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: 8.0.x
-    - name: get workload wasm
-      run: dotnet workload install wasm-tools
-      
-    - name: Publish .NET Core Project
-      run: dotnet publish
-      
-    - name: Commit wwwroot to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4.3.3
-      with:
+      # Checkout the code
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Install .NET SDK
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      # Install dotnet wasm buildtools workload
+      - name: Install .NET WASM Build Tools
+        run: dotnet workload install wasm-tools
+
+      # Restore Dependencies
+      - name: Restore dependencies
+        run: dotnet restore ./Capybara/Capybara.csproj
+
+      # Check Vulnerable Nuget Packages
+      - name: Checking Vulnerable Nuget Packages
+        run: |
+          dotnet list ./Capybara/Capybara.csproj package --vulnerable --include-transitive --format=json > list.json
+          if jq -cre '.projects | .. | .severity? // empty | select(test("Critical|High"))' list.json; then
+            echo 'Vulnerabilities found! Exiting...'
+            jq . list.json
+            exit 1
+          else
+            echo 'No vulnerabilities found!'
+          fi
+        
+      # Check Outdated Nuget Packages
+      - name: Checking Outdated Nuget Packages
+        run: dotnet list ./Capybara/Capybara.csproj package --outdated --include-transitive --format json
+        
+      # Check Deprecated Nuget Packages
+      - name: Checking Deprecated Nuget Packages
+        run: dotnet list ./Capybara/Capybara.csproj package --deprecated --include-transitive --format json
+
+      # Build Blazor Project
+      - name: Build Blazor Project
+        run: dotnet build ./Capybara/Capybara.csproj --configuration Release --no-restore
+        
+      # Install dotnet report generator
+      - name: Install .NET Report Generator
+        run: dotnet tool install -g dotnet-reportgenerator-globaltool
+        
+
+      # Publishes Blazor project to the release-folder
+      - name: Publish Blazor Project
+        run: dotnet publish ./Capybara.sln -c:Release -p:GHPages=true -o dist/Capybara --nologo
+        
+      # touch 404.html & .nojekyll
+      - name: touch 404.html & .nojekyll
+        run: |
+            touch dist/Capybara/wwwroot/.nojekyll
+            cp dist/Capybara/wwwroot/index.html dist/Capybara/wwwroot/404.html
+      # Rewrite base href        
+      - name: Rewrite base href
+        uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
+        with:
+          html_path: dist/Capybara/wwwroot/index.html
+          base_href: /        
+      # Commit Blazor Web App to GitHub Pages
+      - name: Commit wwwroot to GitHub Pages
+        if: ${{ github.actor != 'dependabot[bot]' && github.event_name != 'pull_request' }}
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
           BRANCH: gh-pages
-          FOLDER: .../../Capybara/bin/Release/net8.0/publish/wwwroot
+          FOLDER: dist/Capybara/wwwroot
