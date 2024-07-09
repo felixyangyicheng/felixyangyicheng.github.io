@@ -121,6 +121,10 @@
       "url": "races_chien.json"
     },
     {
+      "hash": "sha256-NYtt9ZC9AGfgkCkXC3tmS7M2HQElbUu+3aYdj\/yMtfo=",
+      "url": "README.md"
+    },
+    {
       "hash": "sha256-bFOKqw5FbzFNuGp+UW8SdfNO\/TQCT1bGGFz6nxgP9zU=",
       "url": "ts\/hello.ts"
     },
@@ -157,7 +161,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-u24cXC8eLPsNpyQRkTHNNYsPtT6IUpNiPBcX5ep2q\/U=",
+      "hash": "sha256-xMLS8rCMAh1AiHgAE2KEgJPr6deiSLGXihzgi2TnqkY=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -193,7 +197,7 @@
       "url": "_framework\/BootstrapBlazor.wasm"
     },
     {
-      "hash": "sha256-JkrcpCruMwyz4ZI836WaRgY5t6N02B+SUYRvKcxQ57M=",
+      "hash": "sha256-3OBC+sxvBl1EX0icgMj9MbPCxy\/u1\/J76ifFWGT1O0w=",
       "url": "_framework\/Capybara.wasm"
     },
     {
@@ -957,5 +961,5 @@
       "url": "_content\/Toolbelt.Blazor.PWA.Updater\/Toolbelt.Blazor.PWA.Updater.bundle.scp.css"
     }
   ],
-  "version": "ZJmbzm9L"
+  "version": "hrRi1GWD"
 };
