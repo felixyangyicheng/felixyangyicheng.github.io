@@ -76,7 +76,9 @@ jobs:
       - name: touch 404.html & .nojekyll
         run: |
             touch dist/Capybara/wwwroot/.nojekyll
-            cp dist/Capybara/wwwroot/index.html dist/Capybara/wwwroot/404.html
+            cp dist/Capybara/wwwroot/index.html dist/Capybara/wwwroot/404.html    
+            sed -i '$d' dist/Capybara/wwwroot/index.html dist/Capybara/wwwroot/README.md  # Supprime la dernière ligne du fichier
+            echo "Dernière modification: $(date +"%Y_%m_%d_%I_%M_%p")" >> dist/Capybara/wwwroot/index.html dist/Capybara/wwwroot/README.md # Ajoute la date et l'heure actuelles à la fin du fichier
       # Rewrite base href        
       - name: Rewrite base href
         uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
