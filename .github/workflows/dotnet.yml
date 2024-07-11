@@ -78,7 +78,7 @@ jobs:
             touch dist/Capybara/wwwroot/.nojekyll
             cp dist/Capybara/wwwroot/index.html dist/Capybara/wwwroot/404.html    
             sed -i '$d' dist/Capybara/wwwroot/README.md  
-            echo "Dernière modification: $(date +"%Y-%m-%d-%I-%M-%p")" >> dist/Capybara/wwwroot/README.md 
+            echo "Dernière modification: $(date +"%Y-%m-%dT%I:%M:%pZ")" >> dist/Capybara/wwwroot/README.md 
       # Rewrite base href        
       - name: Rewrite base href
         uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
