@@ -1,5 +1,5 @@
-﻿import Data from "./data.js?v=8.3.3"
-import EventHandler from "./event-handler.js?v=8.3.3"
+﻿import Data from "./data.js"
+import EventHandler from "./event-handler.js"
 
 export function init(id) {
     const el = document.getElementById(id)
@@ -45,13 +45,23 @@ export function init(id) {
         inputFile.dispatchEvent(event)
     })
 
-    EventHandler.on(el, 'click', '.btn-zoom', e => {
-        const previewId = el.getAttribute('data-bb-previewer-id');
-        const prev = Data.get(previewId)
-        const button = e.delegateTarget
-        const buttons = [...el.querySelectorAll('.btn-zoom')]
-        prev.viewer.updatePrevList([...el.querySelectorAll('.upload-body img')].map(v => v.src))
-        prev.viewer.show(buttons.indexOf(button))
+    const getIndex = target => {
+        let index = 0;
+        let button = target;
+        if (button.tagName === 'IMG') {
+            button = button.closest('.upload-item').querySelector('.btn-zoom');
+        }
+        if (button) {
+            const buttons = [...el.querySelectorAll('.btn-zoom')]
+            index = buttons.indexOf(button);
+        }
+        return index;
+    };
+
+    EventHandler.on(el, 'click', '.btn-zoom, .upload-item-body-image', e => {
+        const prev = Data.get(el.getAttribute('data-bb-previewer-id'));
+        prev.viewer.updatePrevList([...el.querySelectorAll('.upload-body img')].map(v => v.src));
+        prev.viewer.show(getIndex(e.delegateTarget));
     })
 }
 

@@ -1,7 +1,7 @@
-﻿import { getHeight, getInnerHeight } from "../../modules/utility.js?v=8.3.3"
-import Data from "../../modules/data.js?v=8.3.3"
-import EventHandler from "../../modules/event-handler.js?v=8.3.3"
-import Popover from "../../modules/base-popover.js?v=8.3.3"
+﻿import { getHeight, getInnerHeight, getTransitionDelayDurationFromElement } from "../../modules/utility.js"
+import Data from "../../modules/data.js"
+import EventHandler from "../../modules/event-handler.js"
+import Popover from "../../modules/base-popover.js"
 
 export function init(id, invoke, method) {
     const el = document.getElementById(id)
@@ -80,6 +80,27 @@ export function init(id, invoke, method) {
     Data.set(id, select)
 }
 
+export function show(id) {
+    const select = Data.get(id)
+    if (select) {
+        const delay = getTransitionDelayDurationFromElement(select.popover.toggleElement);
+        const handler = setTimeout(() => {
+            clearTimeout(handler);
+            select.popover.show();
+        }, delay);
+    }
+}
+
+export function hide(id) {
+    const select = Data.get(id)
+    const delay = getTransitionDelayDurationFromElement(select.popover.toggleElement);
+    if (select) {
+        const handler = setTimeout(() => {
+            clearTimeout(handler);
+            select.popover.hide();
+        }, delay)
+    }
+}
 
 export function dispose(id) {
     const select = Data.get(id)

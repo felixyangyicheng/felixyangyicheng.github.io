@@ -1,6 +1,6 @@
-﻿import { getWidth } from "../../modules/utility.js?v=8.3.3"
-import Data from "../../modules/data.js?v=8.3.3"
-import Popover from "../../modules/base-popover.js?v=8.3.3"
+﻿import { getWidth } from "../../modules/utility.js"
+import Data from "../../modules/data.js"
+import Popover from "../../modules/base-popover.js"
 
 export function init(id) {
     const el = document.getElementById(id)
@@ -16,7 +16,7 @@ export function init(id) {
         }
         const dropdown = el.querySelector('.dropdown-table') || document.querySelector('.popover-dropdown .dropdown-table');
         if (dropdown) {
-            dropdown.style.setProperty('--bb-dropdown-table-width', `${width}px`);
+            dropdown.style.setProperty('--bb-dropdown-table-width', `${width - 2}px`);
         }
     }
 

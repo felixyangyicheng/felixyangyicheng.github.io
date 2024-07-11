@@ -1,7 +1,7 @@
-﻿import { getDescribedElement, getDescribedOwner, hackPopover, isDisabled } from "../../modules/utility.js?v=8.3.3"
-import { showTooltip, removeTooltip } from "./Button.razor.js?v=8.3.3"
-import Data from "../../modules/data.js?v=8.3.3"
-import EventHandler from "../../modules/event-handler.js?v=8.3.3"
+﻿import { getDescribedElement, getDescribedOwner, hackPopover, isDisabled } from "../../modules/utility.js"
+import { showTooltip, removeTooltip } from "./Button.razor.js"
+import Data from "../../modules/data.js"
+import EventHandler from "../../modules/event-handler.js"
 
 const config = {
     class: 'popover-confirm',
@@ -152,6 +152,7 @@ export function submit(id) {
         }
     }
 }
+
 export function dispose(id) {
     const confirm = Data.get(id)
     Data.remove(id)

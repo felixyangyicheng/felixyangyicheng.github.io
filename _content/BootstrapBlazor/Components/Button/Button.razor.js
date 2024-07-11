@@ -1,6 +1,4 @@
-﻿import Data from "../../modules/data.js?v=8.3.3"
-
-const showTooltip = (id, title) => {
+﻿const showTooltip = (id, title) => {
     const el = document.getElementById(id)
 
     if (el) {

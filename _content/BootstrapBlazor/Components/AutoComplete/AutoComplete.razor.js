@@ -1,9 +1,9 @@
-﻿import { debounce, getHeight } from "../../modules/utility.js?v=8.3.3"
-import { handleKeyUp, select, selectAllByFocus, selectAllByEnter } from "../Input/BootstrapInput.razor.js?v=8.3.3"
-import Data from "../../modules/data.js?v=8.3.3"
-import EventHandler from "../../modules/event-handler.js?v=8.3.3"
-import Input from "../../modules/input.js?v=8.3.3"
-import Popover from "../../modules/base-popover.js?v=8.3.3"
+﻿import { debounce, getHeight } from "../../modules/utility.js"
+import { handleKeyUp, select, selectAllByFocus, selectAllByEnter } from "../Input/BootstrapInput.razor.js"
+import Data from "../../modules/data.js"
+import EventHandler from "../../modules/event-handler.js"
+import Input from "../../modules/input.js"
+import Popover from "../../modules/base-popover.js"
 
 export function init(id, invoke) {
     const el = document.getElementById(id)

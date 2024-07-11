@@ -1,4 +1,4 @@
-﻿import Data from "../../modules/data.js?v=8.3.3"
+﻿import Data from "../../modules/data.js"
 
 export function init(id, invoke, callback) {
     const handler = e => {

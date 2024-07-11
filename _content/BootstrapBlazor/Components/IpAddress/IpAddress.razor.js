@@ -1,5 +1,5 @@
-﻿import Data from "../../modules/data.js?v=8.3.3"
-import EventHandler from "../../modules/event-handler.js?v=8.3.3"
+﻿import Data from "../../modules/data.js"
+import EventHandler from "../../modules/event-handler.js"
 
 const selectCell = (el, index) => {
     if (index === -1) {
@@ -24,7 +24,7 @@ export function init(id) {
 
     el.querySelectorAll(".ipv4-cell").forEach((c, index) => {
         EventHandler.on(c, 'keydown', e => {
-            if (e.keyCode >= 48 && e.keyCode <= 57) {
+            if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)) {
                 // numbers, backup last status
                 ip.prevValues[index] = c.value
                 if (c.value === "0") {
