@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Capybara",
   "resources": {
-    "hash": "sha256-tnEu8UmJw06zblQEHJn0YIMsBKivbJAhoDIphautxGA=",
+    "hash": "sha256-yUj4EfqBUr+gVVd6B0rOGG5/Wzu05slCKbbVOMn+/ZQ=",
     "jsModuleNative": {
       "dotnet.native.8.0.7.1epic5n2jl.js": "sha256-7S35U4CggQUc8InbiUPyjl+UidwpWOPAnPxiPzXC6C4="
     },
@@ -9,7 +9,7 @@
       "dotnet.runtime.8.0.7.3dp1i72u0p.js": "sha256-soZyw6XWXOLKhA26AOyzSpCP5cAsw1wvhdPHSYNTMfQ="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-l1vC0M+TsW6sZhJy1OytI9WB1coxgYifTlS6cVX5RXM="
+      "dotnet.native.wasm": "sha256-E4UDJmmB/16gwdm2ZlNk8MaUr5OBN/kip8kqVmMz3Kc="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -22,7 +22,7 @@
       "BlazorPro.Spinkit.wasm": "sha256-nV2tGIu9iVpLFRlThkVYlxGuUA3o56pX2Br9DCupGoo=",
       "BootstrapBlazor.Markdown.wasm": "sha256-l6rz92mwP0hHXPg+7fBQY+RNL5Ik9jYXXVrYdVMKkrk=",
       "BootstrapBlazor.wasm": "sha256-CEdGuLDCmZvrtdOt0VFIGPwfeQ15f6NHKy1m2aEx73g=",
-      "Capybara.wasm": "sha256-IcRpAjIuxrJNxaMBwbjWXOl4/urOEyh+pa96Trjz9iI=",
+      "Capybara.wasm": "sha256-vf44FLcca+23JbM0OzC/UiG8hl67WcVPfllEWGiVPnI=",
       "Microsoft.AspNetCore.Authorization.wasm": "sha256-4Lv9kBW2CW1G2mDLg6ZCExN8M+CBtBrjhH5XL4wlYac=",
       "Microsoft.AspNetCore.Components.Authorization.wasm": "sha256-d75LbuoVQHDhPfMoaLD3NAfuUQ6T3aGl7VBtNyvWYR0=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-Z/nL1Xd4vwDhuJvYwFd8kBsbVGnmtIZUha8/C6d/3iE=",

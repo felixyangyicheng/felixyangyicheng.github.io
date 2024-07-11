@@ -157,7 +157,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-ZCBpD4WmApQccQtOWInaXbxAfAe2D5NcAAiqTKFvMI8=",
+      "hash": "sha256-uPVnThhJtDG6vGCje\/VR0RMPNQ8z0SNDWZ8N4ZtN\/ak=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -165,7 +165,7 @@
       "url": "_framework\/dotnet.native.8.0.7.1epic5n2jl.js"
     },
     {
-      "hash": "sha256-l1vC0M+TsW6sZhJy1OytI9WB1coxgYifTlS6cVX5RXM=",
+      "hash": "sha256-E4UDJmmB\/16gwdm2ZlNk8MaUr5OBN\/kip8kqVmMz3Kc=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -189,7 +189,7 @@
       "url": "_framework\/BootstrapBlazor.wasm"
     },
     {
-      "hash": "sha256-IcRpAjIuxrJNxaMBwbjWXOl4\/urOEyh+pa96Trjz9iI=",
+      "hash": "sha256-vf44FLcca+23JbM0OzC\/UiG8hl67WcVPfllEWGiVPnI=",
       "url": "_framework\/Capybara.wasm"
     },
     {
@@ -965,5 +965,5 @@
       "url": "_content\/Toolbelt.Blazor.PWA.Updater\/Toolbelt.Blazor.PWA.Updater.bundle.scp.css"
     }
   ],
-  "version": "5Amxp5aT"
+  "version": "yfmurmgi"
 };
