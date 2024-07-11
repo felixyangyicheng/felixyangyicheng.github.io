@@ -59,11 +59,11 @@
                             <MudItem xs="5">
                                 @if (i.Correct==false)
                                 {
-                                    <MudChip Color="MudBlazor.Color.Error" Icon="@Icons.Material.Filled.Close">KO</MudChip>
+                                    <MudChip Color="MudBlazor.Color.Error" T="string" Icon="@Icons.Material.Filled.Close">KO</MudChip>
                                 }
                                 else
                                 {
-                                    <MudChip Color="MudBlazor.Color.Success" Icon="@Icons.Material.Filled.Check">OK</MudChip>
+                                    <MudChip Color="MudBlazor.Color.Success" T="string" Icon="@Icons.Material.Filled.Check">OK</MudChip>
                                 }                      
                                 <p>@i.BreedName</p>
                             </MudItem>
