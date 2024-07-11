@@ -7,11 +7,11 @@
 
                 @if (Result.Correct == false)
                 {
-                    <MudChip Color="Color.Error" Icon="@Icons.Material.Filled.Close">KO</MudChip>
+                    <MudChip Color="Color.Error" T="string" Icon="@Icons.Material.Filled.Close">KO</MudChip>
                 }
                 else
                 {
-                    <MudChip Color="Color.Success" Icon="@Icons.Material.Filled.Check">OK</MudChip>
+                <MudChip Color="Color.Success" T="string"  Icon="@Icons.Material.Filled.Check">OK</MudChip>
                 }
                 @Result.BreedName
   
