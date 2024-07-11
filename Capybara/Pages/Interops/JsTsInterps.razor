@@ -23,10 +23,10 @@
 
 @code {
     [NotNull]
-    private IJSObjectReference module;
+    private IJSObjectReference? module= default!;
     [NotNull]
 
-    private IJSObjectReference hello;
+    private IJSObjectReference hello = default!;
 
     string Message { get; set; } = string.Empty;
 

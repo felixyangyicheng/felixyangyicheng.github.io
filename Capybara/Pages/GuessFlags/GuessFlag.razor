@@ -12,7 +12,7 @@
     <MudGrid>
         @if (ListToGuess == null)
         {
-            <p>loading..</p>
+          <Pulse></Pulse>
         }
         @if (ListToGuess?.Count == 0)
         {

@@ -4,12 +4,12 @@
 @inject HttpClient Http
 
 @inject NavigationManager NavigationManager
-@using Color =MudBlazor.Color  ;
+@using Color =MudBlazor.Color  
 
 
 <br />
 <MudGrid>
-    <MudItem xs="6" md="6" lg="6">
+    <MudItem xs="12" md="12" lg="12">
         <a href="https://github.com/jsakamoto/Toolbelt.Blazor.SpeechSynthesis" target="_blank">
             <img src="https://img.shields.io/static/v1?label=BlazorSpeechSynthesis&message=%E2%9D%A4&logo=GitHub&color=ff69b4" />
         </a>
@@ -17,7 +17,7 @@
             <img src="https://img.shields.io/nuget/v/Toolbelt.Blazor.SpeechSynthesis.svg" alt="NuGet Package" />
         </a>
         <p>
-            <MudTextField T="string" AutoGrow Lines="10" Label="Insert text that you when to generate synthesis voice" Variant="Variant.Text" @bind-Value="@Text"></MudTextField>
+            <MudTextField T="string" AutoGrow Lines="10" Label="Insert text that you when to generate synthesis voice" Variant="Variant.Outlined" @bind-Value="@Text"></MudTextField>
         </p>
         @if (Voices.Any())
         {
@@ -39,11 +39,10 @@
             <MudButton Variant="Variant.Filled" Color="Color.Warning" OnClick="OnClickPauseButton">Pause</MudButton>
             <MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="OnClickResumeButton">Resume</MudButton>
             <MudButton Variant="Variant.Filled" Color="Color.Error" OnClick="OnClickCancelButton">Cancel</MudButton>
-        </section>
-        <section>
             <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="OnClickGC">GC</MudButton>
             <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="OnClickClearLog">Clear Log</MudButton>
         </section>
+     
 
         <section>
             <p>Voice options</p>
@@ -64,28 +63,6 @@
             </div>
         </section>
     </MudItem>
-    <MudItem xs="6" md="6" lg="6">
 
-        <details>
-            <summary>More info</summary>
-            <div>
-
-                <section>
-                    <p>Log</p>
-                    <div style="background: var(--background);padding: 2.5px 5px;border-radius: 6px;font-family:monospace;min-height:2em;">
-                        @foreach (var log in Logs)
-                        {
-                            <div>@log</div>
-                        }
-                    </div>
-                </section>
-                <section>
-                    <p>Runtime information</p>
-                    <p>@RuntimeInformation.FrameworkDescription / @RuntimeInformation.ProcessArchitecture</p>
-                </section>
-
-            </div>
-        </details>
-    </MudItem>
 
 </MudGrid>

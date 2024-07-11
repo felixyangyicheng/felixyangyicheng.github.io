@@ -22,7 +22,7 @@
 <MudButton OnClick="Render">Rerender</MudButton>
 @code {
     private List<MyData> Data { get; set; } = new();
-    private ApexChart<MyData> chart;
+    private ApexChart<MyData> chart = default!;
     protected override void OnInitialized()
     {
         Data.Add(new MyData { Category = "Jan", NetProfit = 12, Revenue = 33 });

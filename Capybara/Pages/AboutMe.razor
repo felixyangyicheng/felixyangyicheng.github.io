@@ -1,13 +1,58 @@
 ﻿@page "/aboutme"
-<h3>About Me</h3>
-@using Color =MudBlazor.Color  ;
+@using Color =MudBlazor.Color
+@using Transition =MudBlazor.Transition
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<style type="text/css">
 
+    .bounceIn {
+        opacity: 0;
+        animation-delay: 0.5s;
+        animation-duration: 0.5s;
+        animation-name: bounceIn;
+        animation-fill-mode: forwards;
+    }
+
+    .bounceOut {
+        animation-duration: 0.5s;
+        animation-name: bounceOut;
+        animation-fill-mode: forwards;
+    }
+
+    .backInDown {
+        opacity: 0;
+        animation-delay: 0.5s;
+        animation-duration: 0.5s;
+        animation-name: backInDown;
+        animation-fill-mode: forwards;
+    }
+
+    .backOutDown {
+        animation-duration: 0.5s;
+        animation-name: backOutDown;
+        animation-fill-mode: forwards;
+    }
+
+    .rotateIn {
+        opacity: 0;
+        animation-delay: 0.5s;
+        animation-duration: 0.5s;
+        animation-name: rotateIn;
+        animation-fill-mode: forwards;
+    }
+
+    .rotateOut {
+        animation-duration: 0.5s;
+        animation-name: rotateOut;
+        animation-fill-mode: forwards;
+    }
+</style>
 <br />
 <br />
+<h3>About Me</h3>
 <br />
 <h1 align="center">Hi 👋, I'm Yicheng</h1>
 <h3 align="center">A passionate .Net Full-Stack developer</h3>
-<MudCarousel Class="mud-width-full" Style="height:70vh;" AutoCycle="true" TData="object">
+<MudCarousel Class="mud-width-full" Style="height:45vh;" AutoCycleTime="new TimeSpan(35000000)" AutoCycle="true" TData="object">
 
     <PreviousButtonTemplate>
         <div Class="mud-button-root mud-icon-button mud-icon-button-color-inherit mud-ripple mud-ripple-icon">
@@ -24,27 +69,27 @@
         </div>
     </NextButtonTemplate>
     <ChildContent>
-        <MudCarouselItem>
+        <MudCarouselItem Color="@Color.Info" Transition="Transition.Custom" CustomTransitionEnter="backInDown" CustomTransitionExit="backOutDown">
             <div align="center" style="height:100%">
-                <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=felixyangyicheng&show_icons=true&locale=en&layout=compact" alt="felixyangyicheng" />
+                <img align="middle" src="https://github-readme-stats.vercel.app/api/top-langs?username=felixyangyicheng&show_icons=true&locale=en&layout=compact" alt="felixyangyicheng" />
             </div>
         </MudCarouselItem>
-        <MudCarouselItem>
+        <MudCarouselItem Color="@Color.Info" Transition="Transition.Custom" CustomTransitionEnter="backInDown" CustomTransitionExit="backOutDown">
             <div align="center" style="height:100%">
-                <img align="center" src="https://github-readme-stats.vercel.app/api?username=felixyangyicheng&show_icons=true&locale=en" alt="felixyangyicheng" />
+                <img align="middle" src="https://github-readme-stats.vercel.app/api?username=felixyangyicheng&show_icons=true&locale=en" alt="felixyangyicheng" />
             </div>
         </MudCarouselItem>
-        <MudCarouselItem>
+        <MudCarouselItem Color="@Color.Info" Transition="Transition.Custom" CustomTransitionEnter="backInDown" CustomTransitionExit="backOutDown">
             <div align="center" style="height:100%">
-                <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=felixyangyicheng&" alt="felixyangyicheng" />
+                <img align="middle" src="https://github-readme-streak-stats.herokuapp.com/?user=felixyangyicheng&" alt="felixyangyicheng" />
             </div>
         </MudCarouselItem>
-        <MudCarouselItem>
+        <MudCarouselItem Color="@Color.Info"  Transition="Transition.Custom" CustomTransitionEnter="backInDown" CustomTransitionExit="backOutDown">
             <div align="center" style="height:100%">
                 <img src="https://github-profile-trophy.vercel.app/?username=felixyangyicheng&theme=juicyfresh&row=2&column=3" alt="felixyangyicheng" />
             </div>
         </MudCarouselItem>
-        <MudCarouselItem>
+        <MudCarouselItem Color="@Color.Info" Transition="Transition.Custom" CustomTransitionEnter="backInDown" CustomTransitionExit="backOutDow" >
             <div align="center" style="height:100%">
 
                 <h3 align="center">Languages and Tools:</h3>
@@ -52,11 +97,11 @@
 
             </div>
         </MudCarouselItem>
-        <MudCarouselItem>
+        <MudCarouselItem Color="@Color.Info" Transition="Transition.Custom" CustomTransitionEnter="backInDown" CustomTransitionExit="backOutDow">
             <div align="center" style="height:100%">
                 <h3 align="center">Connect with me</h3>
                 <p align="center">
-                    <a href="https://linkedin.com/in/yicheng-yang-5aa583119" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="yicheng-yang-5aa583119" height="30" width="40" /></a>
+                    <a href="https://linkedin.com/in/yicheng-yang-5aa583119" target="blank"><img align="middle" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="yicheng-yang-5aa583119" height="30" width="40" /></a>
                 </p>
             </div>
         </MudCarouselItem>
