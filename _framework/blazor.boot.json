@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Capybara",
   "resources": {
-    "hash": "sha256-9aC4dsuVWMJNhOeMt0nTDdT1D/4M76BYQwCWUasdBmc=",
+    "hash": "sha256-tnEu8UmJw06zblQEHJn0YIMsBKivbJAhoDIphautxGA=",
     "jsModuleNative": {
       "dotnet.native.8.0.7.1epic5n2jl.js": "sha256-7S35U4CggQUc8InbiUPyjl+UidwpWOPAnPxiPzXC6C4="
     },
@@ -9,7 +9,7 @@
       "dotnet.runtime.8.0.7.3dp1i72u0p.js": "sha256-soZyw6XWXOLKhA26AOyzSpCP5cAsw1wvhdPHSYNTMfQ="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-jnNtGzbUAb3ppAjF6lEkPWiiBkzceqW3duFyYi+/n4Q="
+      "dotnet.native.wasm": "sha256-l1vC0M+TsW6sZhJy1OytI9WB1coxgYifTlS6cVX5RXM="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -22,7 +22,7 @@
       "BlazorPro.Spinkit.wasm": "sha256-nV2tGIu9iVpLFRlThkVYlxGuUA3o56pX2Br9DCupGoo=",
       "BootstrapBlazor.Markdown.wasm": "sha256-l6rz92mwP0hHXPg+7fBQY+RNL5Ik9jYXXVrYdVMKkrk=",
       "BootstrapBlazor.wasm": "sha256-CEdGuLDCmZvrtdOt0VFIGPwfeQ15f6NHKy1m2aEx73g=",
-      "Capybara.wasm": "sha256-HpYzcPav19iBfutWLWiczk2uMDrIP6fcMl+7jY8sArk=",
+      "Capybara.wasm": "sha256-IcRpAjIuxrJNxaMBwbjWXOl4/urOEyh+pa96Trjz9iI=",
       "Microsoft.AspNetCore.Authorization.wasm": "sha256-4Lv9kBW2CW1G2mDLg6ZCExN8M+CBtBrjhH5XL4wlYac=",
       "Microsoft.AspNetCore.Components.Authorization.wasm": "sha256-d75LbuoVQHDhPfMoaLD3NAfuUQ6T3aGl7VBtNyvWYR0=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-Z/nL1Xd4vwDhuJvYwFd8kBsbVGnmtIZUha8/C6d/3iE=",
@@ -40,7 +40,7 @@
       "Microsoft.Extensions.Configuration.wasm": "sha256-aH0Ll+agEvSt09FJ0YTpvpuViWN2Sn7QqtciEz/gw04=",
       "Microsoft.Extensions.DependencyInjection.Abstractions.wasm": "sha256-FeOczFTGCWsvF1WzAnuYjf7AVykRe8DUWIoW/EJUXvg=",
       "Microsoft.Extensions.DependencyInjection.wasm": "sha256-YNQPHVRif3boPHLeGSBKbFiN9IDc7BLlt1jZHlterPs=",
-      "Microsoft.Extensions.Diagnostics.Abstractions.wasm": "sha256-/ZO9pdDuyENWL5A1ZMqAtCldXgeH4NtHCdT26SgcyXg=",
+      "Microsoft.Extensions.Diagnostics.Abstractions.wasm": "sha256-rfRkrpmn02+Iyi+XYADvnZQyZUra/SsUzkbbyi0GIYk=",
       "Microsoft.Extensions.Diagnostics.wasm": "sha256-yQ6ptGIexmcL0nWZKmf7pwvEmw1pH7S/YNS+NPXAVrg=",
       "Microsoft.Extensions.FileProviders.Abstractions.wasm": "sha256-YSM1iFGRoMRJmAaKBGzof/AfbGQqNn6QaSJCbT8PquA=",
       "Microsoft.Extensions.FileProviders.Physical.wasm": "sha256-ibmLaPr8JpwKs6Sm04dtNZvwEKmcwYuJ8zP457dt400=",
