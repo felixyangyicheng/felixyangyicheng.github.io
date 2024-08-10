@@ -67,6 +67,13 @@ namespace Capybara.Pages
         {
             return this.Voices.FirstOrDefault(v => v.VoiceIdentity == this.VoiceId);
         }
+
+
+        private async Task ClearAllText()
+        {
+            this.Text = string.Empty;
+            await InvokeAsync(StateHasChanged);
+        }
         void OnInputText(ChangeEventArgs args)
         {
             this.Text = args.Value?.ToString() ?? "";

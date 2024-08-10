@@ -4,7 +4,7 @@
 @inject HttpClient Http
 
 @inject NavigationManager NavigationManager
-@using Color =MudBlazor.Color  
+@using Color =MudBlazor.Color
 
 
 <br />
@@ -17,8 +17,15 @@
             <img src="https://img.shields.io/nuget/v/Toolbelt.Blazor.SpeechSynthesis.svg" alt="NuGet Package" />
         </a>
         <p>
-            <MudTextField T="string" AutoGrow Lines="10" Label="Insert text that you when to generate synthesis voice" Variant="Variant.Outlined" @bind-Value="@Text"></MudTextField>
+            <MudTextField T="string" AutoGrow Lines="10" 
+                Label="Insert text that you when to generate synthesis voice" 
+                Variant="Variant.Outlined" @bind-Value="@Text" ></MudTextField>
         </p>
+        <p>
+            <MudButton Variant="Variant.Filled" OnClick="ClearAllText" Color="Color.Warning">Clear All Text</MudButton>
+
+        </p>
+
         @if (Voices.Any())
         {
             <p>
@@ -32,17 +39,26 @@
                 </select>
             </p>
         }
-        <section>
-            <MudButton Variant="Variant.Filled" OnClick="OnClickSpeakButton" Color="Color.Success">Speak</MudButton>
-            <MudButton Variant="Variant.Filled" Color="Color.Success" OnClick="OnClickSpeakByCachedButton">Speak by Cached</MudButton>
+        <MudGrid>
+            <MudItem xs="12" md="12" lg="12">
 
-            <MudButton Variant="Variant.Filled" Color="Color.Warning" OnClick="OnClickPauseButton">Pause</MudButton>
-            <MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="OnClickResumeButton">Resume</MudButton>
-            <MudButton Variant="Variant.Filled" Color="Color.Error" OnClick="OnClickCancelButton">Cancel</MudButton>
-            <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="OnClickGC">GC</MudButton>
-            <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="OnClickClearLog">Clear Log</MudButton>
-        </section>
-     
+                <MudButton Variant="Variant.Filled" OnClick="OnClickSpeakButton" Color="Color.Success">Speak</MudButton>
+                <MudButton Variant="Variant.Filled" Color="Color.Success" OnClick="OnClickSpeakByCachedButton">Speak by Cached</MudButton>
+            </MudItem>
+            <MudItem xs="12" md="12" lg="12">
+
+                <MudButton Variant="Variant.Filled" Color="Color.Warning" OnClick="OnClickPauseButton">Pause</MudButton>
+                <MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="OnClickResumeButton">Resume</MudButton>
+                <MudButton Variant="Variant.Filled" Color="Color.Error" OnClick="OnClickCancelButton">Cancel</MudButton>
+            </MudItem>
+            <MudItem xs="12" md="12" lg="12">
+                <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="OnClickGC">GC</MudButton>
+                <MudButton Variant="Variant.Filled" Color="Color.Info" OnClick="OnClickClearLog">Clear Log</MudButton>
+
+            </MudItem>
+
+        </MudGrid>
+
 
         <section>
             <p>Voice options</p>
