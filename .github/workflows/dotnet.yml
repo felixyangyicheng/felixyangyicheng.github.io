@@ -6,7 +6,15 @@ name: .NET
 on:
   push:
     branches: [ master ]
+  schedule:
+    - cron: "30 0/1 * * *"
 
+  # manual Actions
+  workflow_dispatch:
+
+# timezone
+env:
+  TZ: Europe/Paris
 jobs:
   deploy-to-github-pages:
 
