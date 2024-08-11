@@ -1,0 +1,1244 @@
+[
+  {
+    "Region": "Auvergne-Rhône-Alpes",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Flag_of_the_region_Auvergne-Rh%C3%B4ne-Alpes.svg/100px-Flag_of_the_region_Auvergne-Rh%C3%B4ne-Alpes.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Flag_of_the_Region_of_Auvergne-Rh%C3%B4ne-Alpes.svg/100px-Flag_of_the_Region_of_Auvergne-Rh%C3%B4ne-Alpes.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Bourgogne-Franche-Comté",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Flag_of_the_region_Bourgogne-Franche-Comt%C3%A9_%28fixed%29.svg/100px-Flag_of_the_region_Bourgogne-Franche-Comt%C3%A9_%28fixed%29.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_the_Region_of_Bourgogne-Franche-Comt%C3%A9.svg/100px-Flag_of_the_Region_of_Bourgogne-Franche-Comt%C3%A9.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Brittany",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Flag_of_Brittany_%28Gwenn_ha_du%29.svg/100px-Flag_of_Brittany_%28Gwenn_ha_du%29.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Flag_of_the_Region_of_Bretagne.svg/100px-Flag_of_the_Region_of_Bretagne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Centre-Val de Loire",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Flag_of_Centre-Val_de_Loire.svg/100px-Flag_of_Centre-Val_de_Loire.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_the_Region_of_Centre-Val_de_Loire.svg/100px-Flag_of_the_Region_of_Centre-Val_de_Loire.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Corsica",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Flag_of_Corsica.svg/100px-Flag_of_Corsica.svg.png"
+    ],
+    "Proposed": [],
+    "Details": []
+  },
+  {
+    "Region": "Grand Est",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Flag_of_the_Region_of_Grand_Est_%28Variant_1%29.svg/100px-Flag_of_the_Region_of_Grand_Est_%28Variant_1%29.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Hauts-de-France",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Flag_of_the_Region_of_Hauts-de-France.svg/100px-Flag_of_the_Region_of_Hauts-de-France.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Île-de-France",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/IDF_flag.svg/100px-IDF_flag.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Normandy",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Normandie.svg/100px-Flag_of_Normandie.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Flag_of_the_Region_of_Normandy.svg/100px-Flag_of_the_Region_of_Normandy.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Nouvelle-Aquitaine",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Flag_of_Nouvelle-Aquitaine.svg/100px-Flag_of_Nouvelle-Aquitaine.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Flag_of_the_Region_of_Nouvelle-Aquitaine_%28Variant_1%29.svg/100px-Flag_of_the_Region_of_Nouvelle-Aquitaine_%28Variant_1%29.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Occitanie",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Flag_of_R%C3%A9gion_Occitanie_%28symbol_only%29.svg/100px-Flag_of_R%C3%A9gion_Occitanie_%28symbol_only%29.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Flag_of_the_Region_of_Occitanie.svg/100px-Flag_of_the_Region_of_Occitanie.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Pays de la Loire",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Flag_of_the_Region_of_Pays_de_la_Loire.svg/100px-Flag_of_the_Region_of_Pays_de_la_Loire.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Provence-Alpes-Côte d'Azur",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Flag_of_Provence-Alpes-C%C3%B4te_d%27Azur.svg/100px-Flag_of_Provence-Alpes-C%C3%B4te_d%27Azur.svg.png"
+    ],
+    "Proposed": [],
+    "Details": []
+  },
+  {
+    "Region": "Auvergne",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Auvergne.svg/100px-Flag_of_Auvergne.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Flag_of_the_former_Region_of_Auvergne.svg/100px-Flag_of_the_former_Region_of_Auvergne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Champagne-Ardenne",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Flag_of_Champagne-Ardenne.svg/100px-Flag_of_Champagne-Ardenne.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Champagne_Ardenne_flag.svg/100px-Champagne_Ardenne_flag.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Limousin",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Flag_of_Limousin.svg/100px-Flag_of_Limousin.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Flag_of_the_former_Region_of_Limousin.svg/100px-Flag_of_the_former_Region_of_Limousin.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Rhône-Alpes",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Flag_of_Rh%C3%B4ne-Alpes.svg/100px-Flag_of_Rh%C3%B4ne-Alpes.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Flag_of_the_former_Region_of_Rh%C3%B4ne-Alpes.svg/100px-Flag_of_the_former_Region_of_Rh%C3%B4ne-Alpes.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Lorraine",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Flag_of_Lorraine.svg/100px-Flag_of_Lorraine.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Flag_of_the_former_Region_of_Lorraine.svg/100px-Flag_of_the_former_Region_of_Lorraine.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Poitou-Charentes",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Poitou-Charentes_flag.svg/100px-Poitou-Charentes_flag.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Flag_of_the_former_Region_of_Poitou-Charentes.svg/100px-Flag_of_the_former_Region_of_Poitou-Charentes.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Bourgogne",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Bourgogne.svg/100px-Flag_of_Bourgogne.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_the_former_Region_of_Bourgogne.svg/100px-Flag_of_the_former_Region_of_Bourgogne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Nord-Pas-de-Calais",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Generic_flag_of_Nord-Pas-de-Calais.svg/100px-Generic_flag_of_Nord-Pas-de-Calais.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Flag_of_the_former_Region_of_Nord-Pas_de_Calais.svg/100px-Flag_of_the_former_Region_of_Nord-Pas_de_Calais.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Languedoc-Roussillon",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Flag_of_Languedoc-Roussillon.svg/100px-Flag_of_Languedoc-Roussillon.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Flag_of_Languedoc-Roussillon2.svg/100px-Flag_of_Languedoc-Roussillon2.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Franche Comte",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Flag_of_Franche-Comt%C3%A9.svg/100px-Flag_of_Franche-Comt%C3%A9.svg.png"
+    ],
+    "Proposed": [],
+    "Details": []
+  },
+  {
+    "Region": "Pacardie",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Flag_of_the_former_Region_of_Picardie.svg/100px-Flag_of_the_former_Region_of_Picardie.svg.png"
+    ],
+    "Proposed": [],
+    "Details": []
+  },
+  {
+    "Region": "Brittany",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Flag_of_Brittany_%28Gwenn_ha_du%29.svg/100px-Flag_of_Brittany_%28Gwenn_ha_du%29.svg.png"
+    ],
+    "Proposed": [],
+    "Details": []
+  },
+  {
+    "Region": "Pays-de-la-Loire",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Unofficial_flag_of_Pays-de-la-Loire.svg/100px-Unofficial_flag_of_Pays-de-la-Loire.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Centre-Val de Loire",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Flag_of_Centre-Val_de_Loire.svg/100px-Flag_of_Centre-Val_de_Loire.svg.png"
+    ],
+    "Proposed": [],
+    "Details": []
+  },
+  {
+    "Region": "Basse-Normandie",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Flag_of_the_former_Region_of_Basse-Normandie.svg/100px-Flag_of_the_former_Region_of_Basse-Normandie.svg.png"
+    ],
+    "Proposed": [],
+    "Details": []
+  },
+  {
+    "Region": "Corsica",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Flag_of_Corsica.svg/100px-Flag_of_Corsica.svg.png"
+    ],
+    "Proposed": [],
+    "Details": []
+  },
+  {
+    "Region": "Haute-Normandie",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_the_former_Region_of_Haute-Normandie.svg/100px-Flag_of_the_former_Region_of_Haute-Normandie.svg.png"
+    ],
+    "Proposed": [],
+    "Details": []
+  },
+  {
+    "Region": "Alsace",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Flag_of_Alsace.svg/100px-Flag_of_Alsace.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Flag_of_the_former_Region_of_Alsace.svg/100px-Flag_of_the_former_Region_of_Alsace.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Aquitaine",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Aquitaine.svg/100px-Flag_of_Aquitaine.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_the_former_Region_of_Aquitaine.svg/100px-Flag_of_the_former_Region_of_Aquitaine.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Ain",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Flag_of_the_Department_of_Ain.svg/83px-Flag_of_the_Department_of_Ain.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Flag_of_Ain.svg/83px-Flag_of_Ain.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Doubs",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_the_Department_of_Doubs.svg/83px-Flag_of_the_Department_of_Doubs.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Proposed_flag_of_Doubs.svg/83px-Proposed_flag_of_Doubs.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Manche",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Flag_of_the_Department_of_Manche.svg/83px-Flag_of_the_Department_of_Manche.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Drapeau_non-officiel_fr_d%C3%A9partement_Manche.svg/83px-Drapeau_non-officiel_fr_d%C3%A9partement_Manche.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Haute-Savoie",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Unofficial_Flag_of_Haute-Savoie.svg/83px-Unofficial_Flag_of_Haute-Savoie.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Aisne",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Flag_of_the_Department_of_Aisne.svg/83px-Flag_of_the_Department_of_Aisne.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Drapeau_fr_d%C3%A9partement_Aisne.svg/83px-Drapeau_fr_d%C3%A9partement_Aisne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Drôme",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Flag_of_the_Department_of_Dr%C3%B4me.svg/83px-Flag_of_the_Department_of_Dr%C3%B4me.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Drapeau_d%C3%A9partement_fr_Dr%C3%B4me.svg/83px-Drapeau_d%C3%A9partement_fr_Dr%C3%B4me.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Marne",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Flag_of_the_Department_of_Marne.svg/83px-Flag_of_the_Department_of_Marne.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Drapeau_fr_d%C3%A9partement_Marne.svg/83px-Drapeau_fr_d%C3%A9partement_Marne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Allier",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Flag_of_the_Department_of_Allier.svg/83px-Flag_of_the_Department_of_Allier.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Drapeau_fr_d%C3%A9partement_Allier.svg/83px-Drapeau_fr_d%C3%A9partement_Allier.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Eure",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Flag_of_the_Department_of_Eure.svg/83px-Flag_of_the_Department_of_Eure.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Proposed_flag_of_Eure.svg/83px-Proposed_flag_of_Eure.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Haute-Marne",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Flag_of_the_Department_of_Haute-Marne.svg/83px-Flag_of_the_Department_of_Haute-Marne.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Drapeau_fr_d%C3%A9partement_Haute-Marne.svg/83px-Drapeau_fr_d%C3%A9partement_Haute-Marne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Seine-Maritime",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Flag_of_the_Department_of_Seine-Maritime_%28Variant_1%29.svg/83px-Flag_of_the_Department_of_Seine-Maritime_%28Variant_1%29.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Proposed_flag_for_Seine-Maritime.svg/83px-Proposed_flag_for_Seine-Maritime.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Alpes-de-Haute-Provence",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Flag_of_the_Department_of_Alpes-de-Haute-Provence.svg/83px-Flag_of_the_Department_of_Alpes-de-Haute-Provence.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Drapeau_fr_d%C3%A9partement_Alpes-de-Haute-Provence.svg/82px-Drapeau_fr_d%C3%A9partement_Alpes-de-Haute-Provence.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Eure-et-Loir",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_the_Department_of_Eure-et-Loir.svg/83px-Flag_of_the_Department_of_Eure-et-Loir.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Flag_of_Eure-et-Loir.svg/83px-Flag_of_Eure-et-Loir.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Mayenne",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_the_Department_of_Mayenne.svg/83px-Flag_of_the_Department_of_Mayenne.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Drapeau_fr_d%C3%A9partement_Mayenne.svg/83px-Drapeau_fr_d%C3%A9partement_Mayenne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Seine-et-Marne",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Flag_of_the_Department_of_Seine-et-Marne.svg/83px-Flag_of_the_Department_of_Seine-et-Marne.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Drapeau_propos%C3%A9_pour_le_d%C3%A9partement_de_Seine-et-Marne.svg/83px-Drapeau_propos%C3%A9_pour_le_d%C3%A9partement_de_Seine-et-Marne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Hautes-Alpes",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Hautes-Alpes.svg/83px-Flag_of_Hautes-Alpes.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Finistère",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flag_of_the_Department_of_Finist%C3%A8re.svg/83px-Flag_of_the_Department_of_Finist%C3%A8re.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Drapeau_Finist%C3%A8re.svg/82px-Drapeau_Finist%C3%A8re.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Meurthe-et-Moselle",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Drapeau_fr_d%C3%A9partement_Meurthe-et-Moselle.svg/83px-Drapeau_fr_d%C3%A9partement_Meurthe-et-Moselle.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Yvelines",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Drapeau_fr_d%C3%A9partement_Yvelines.svg/83px-Drapeau_fr_d%C3%A9partement_Yvelines.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Alpes-Maritimes",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Flag_of_the_Department_of_Alpes-Maritimes.svg/83px-Flag_of_the_Department_of_Alpes-Maritimes.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Flag_of_the_County_of_Nice.svg/83px-Flag_of_the_County_of_Nice.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Gard",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Flag_of_the_Department_of_Gard.svg/83px-Flag_of_the_Department_of_Gard.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Drapeau_non-officiel_fr_d%C3%A9partement_Gard.svg/83px-Drapeau_non-officiel_fr_d%C3%A9partement_Gard.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Meuse",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_the_Department_of_Meuse.svg/83px-Flag_of_the_Department_of_Meuse.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Drapeau_fr_d%C3%A9partement_Meuse.svg/83px-Drapeau_fr_d%C3%A9partement_Meuse.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Deux-Sèvres",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Flag_of_the_Department_of_Deux-S%C3%A8vres.svg/83px-Flag_of_the_Department_of_Deux-S%C3%A8vres.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Drapeau_fr_d%C3%A9partement_Deux-S%C3%A8vres.svg/83px-Drapeau_fr_d%C3%A9partement_Deux-S%C3%A8vres.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Ardèche",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_the_Department_of_Ard%C3%A8che.svg/83px-Flag_of_the_Department_of_Ard%C3%A8che.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Drapeau_fr_d%C3%A9partement_Ard%C3%A8che.svg/83px-Drapeau_fr_d%C3%A9partement_Ard%C3%A8che.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Haute-Garonne",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Flag_of_the_Department_of_Haute-Garonne.svg/83px-Flag_of_the_Department_of_Haute-Garonne.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Drapeau_non-officiel_fr_d%C3%A9partement_Haute-Garonne.svg/83px-Drapeau_non-officiel_fr_d%C3%A9partement_Haute-Garonne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Morbihan",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Banniel_departamant_ar_Mor-Bihan_2022.svg/83px-Banniel_departamant_ar_Mor-Bihan_2022.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Drapeau_fr_d%C3%A9partement_Morbihan.svg/83px-Drapeau_fr_d%C3%A9partement_Morbihan.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Somme",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Flag_of_the_Department_of_Somme_%28Variant_2%29.svg/83px-Flag_of_the_Department_of_Somme_%28Variant_2%29.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Drapeau_fr_d%C3%A9partement_Somme.svg/83px-Drapeau_fr_d%C3%A9partement_Somme.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Ardennes",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Flag_of_the_Department_of_Ardennes.svg/83px-Flag_of_the_Department_of_Ardennes.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Drapeau_fr_d%C3%A9partement_Ardennes.svg/83px-Drapeau_fr_d%C3%A9partement_Ardennes.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Gers",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Flag_of_the_Department_of_Gers.png/83px-Flag_of_the_Department_of_Gers.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Flag_of_Gers.svg/83px-Flag_of_Gers.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Moselle",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_the_Department_of_Moselle.svg/83px-Flag_of_the_Department_of_Moselle.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Drapeau_fr_d%C3%A9partement_Moselle.svg/83px-Drapeau_fr_d%C3%A9partement_Moselle.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Tarn",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Drapeau_fr_d%C3%A9partement_Tarn.svg/83px-Drapeau_fr_d%C3%A9partement_Tarn.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Ariège",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Flag_of_the_Department_of_Ari%C3%A8ge.svg/83px-Flag_of_the_Department_of_Ari%C3%A8ge.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Proposition_de_drapeau_pour_le_d%C3%A9partement_de_l%27Ari%C3%A8ge.svg/83px-Proposition_de_drapeau_pour_le_d%C3%A9partement_de_l%27Ari%C3%A8ge.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Gironde",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Flag_of_the_Department_of_Gironde.svg/83px-Flag_of_the_Department_of_Gironde.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Flag_of_Gironde.svg/83px-Flag_of_Gironde.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Nièvre",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_the_Department_of_Ni%C3%A8vre.svg/83px-Flag_of_the_Department_of_Ni%C3%A8vre.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Drapeau_fr_d%C3%A9partement_Ni%C3%A8vre.svg/83px-Drapeau_fr_d%C3%A9partement_Ni%C3%A8vre.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Tarn-et-Garonne",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Flag_of_Tarn-et-Garonne.svg/83px-Flag_of_Tarn-et-Garonne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Aube",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Flag_of_the_Department_of_Aube.svg/83px-Flag_of_the_Department_of_Aube.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Drapeau_fr_d%C3%A9partement_Aube.svg/83px-Drapeau_fr_d%C3%A9partement_Aube.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Hérault",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_the_Department_of_H%C3%A9rault.svg/83px-Flag_of_the_Department_of_H%C3%A9rault.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Drapeau_non-officiel_fr_d%C3%A9partement_H%C3%A9rault.svg/83px-Drapeau_non-officiel_fr_d%C3%A9partement_H%C3%A9rault.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Nord",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Flag_of_the_Department_of_Nord.svg/83px-Flag_of_the_Department_of_Nord.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Drapeau_fr_d%C3%A9partement_Nord.svg/83px-Drapeau_fr_d%C3%A9partement_Nord.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Var",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Flag_of_the_Department_of_Var.svg/83px-Flag_of_the_Department_of_Var.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Proposition_de_drapeau_pour_le_Var.svg/83px-Proposition_de_drapeau_pour_le_Var.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Aude",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Flag_of_the_Department_of_Aude.svg/83px-Flag_of_the_Department_of_Aude.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Drapeau_non-offiicel_fr_d%C3%A9partement_Aude.svg/83px-Drapeau_non-offiicel_fr_d%C3%A9partement_Aude.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Ille-et-Vilaine",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Flag_of_the_Department_of_Ille-et-Vilaine.svg/83px-Flag_of_the_Department_of_Ille-et-Vilaine.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Drapeau_non-officiel_fr_d%C3%A9partement_Ille-et-Vilaine.svg/83px-Drapeau_non-officiel_fr_d%C3%A9partement_Ille-et-Vilaine.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Oise",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Flag_of_the_Department_of_Oise.svg/83px-Flag_of_the_Department_of_Oise.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Drapeau_fr_d%C3%A9partement_Oise.svg/83px-Drapeau_fr_d%C3%A9partement_Oise.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Vaucluse",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Flag_of_the_Department_of_Vaucluse.svg/83px-Flag_of_the_Department_of_Vaucluse.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Drapeau_fr_d%C3%A9partement_Vaucluse.svg/83px-Drapeau_fr_d%C3%A9partement_Vaucluse.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Aveyron",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Flag_of_Rouergue.svg/83px-Flag_of_Rouergue.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Indre",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Drapeau_d%C3%A9partement_fr_Indre.svg/83px-Drapeau_d%C3%A9partement_fr_Indre.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Orne",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_the_Department_of_Orne.svg/83px-Flag_of_the_Department_of_Orne.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Orne.svg/83px-Flag_of_Orne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Vendée",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Flag_of_the_Department_of_Vend%C3%A9e_%28Variant_1%29.svg/83px-Flag_of_the_Department_of_Vend%C3%A9e_%28Variant_1%29.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Traditional_flag_of_Vend%C3%A9e.svg/83px-Traditional_flag_of_Vend%C3%A9e.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Bouches-du-Rhône",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Flag_of_the_Department_of_Bouches-du-Rh%C3%B4ne.svg/83px-Flag_of_the_Department_of_Bouches-du-Rh%C3%B4ne.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Proposition_de_drapeau_fr_d%C3%A9partement_Bouches-du-Rh%C3%B4ne.svg/82px-Proposition_de_drapeau_fr_d%C3%A9partement_Bouches-du-Rh%C3%B4ne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Indre-et-Loire",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Drapeau_non-officiel_fr_d%C3%A9partement_Indre-et-Loire.svg/83px-Drapeau_non-officiel_fr_d%C3%A9partement_Indre-et-Loire.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Pas-de-Calais",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_the_Department_of_Pas-de-Calais_%28Variant_1%29.svg/83px-Flag_of_the_Department_of_Pas-de-Calais_%28Variant_1%29.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Unofficial_Flag_of_Pas-De-Calais.svg/83px-Unofficial_Flag_of_Pas-De-Calais.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Vienne",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Flag_of_the_Department_of_Vienne.svg/83px-Flag_of_the_Department_of_Vienne.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Drapeau_fr_d%C3%A9partement_Vienne.svg/83px-Drapeau_fr_d%C3%A9partement_Vienne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Calvados",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_the_Department_of_Calvados.svg/83px-Flag_of_the_Department_of_Calvados.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Flag_of_Calvados.svg/83px-Flag_of_Calvados.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Isère",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Drapeau_non-officiel_d%C3%A9partement_fr_Is%C3%A8re.svg/83px-Drapeau_non-officiel_d%C3%A9partement_fr_Is%C3%A8re.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Puy-de-Dôme",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Flag_of_the_Department_of_Puy-de-D%C3%B4me.svg/83px-Flag_of_the_Department_of_Puy-de-D%C3%B4me.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Drapeau_propos%C3%A9_pour_le_d%C3%A9partement_Puy-de-D%C3%B4me.svg/82px-Drapeau_propos%C3%A9_pour_le_d%C3%A9partement_Puy-de-D%C3%B4me.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Haute-Vienne",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_the_Department_of_Haute-Vienne_%28Variant_2%29.svg/83px-Flag_of_the_Department_of_Haute-Vienne_%28Variant_2%29.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Drapeau_fr_d%C3%A9partement_Haute-Vienne.svg/82px-Drapeau_fr_d%C3%A9partement_Haute-Vienne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Cantal",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Flag_of_the_Department_of_Cantal.svg/83px-Flag_of_the_Department_of_Cantal.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Drapeau_fr_d%C3%A9partement_Cantal.svg/83px-Drapeau_fr_d%C3%A9partement_Cantal.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Jura",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Flag_of_the_Department_of_Jura.svg/83px-Flag_of_the_Department_of_Jura.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Flag_of_Jura_%28department%29.svg/83px-Flag_of_Jura_%28department%29.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Pyrénées-Atlantiques",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Drapeau_propos%C3%A9_pour_les_Pyrenees-atlantiques.svg/83px-Drapeau_propos%C3%A9_pour_les_Pyrenees-atlantiques.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Vosges",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Flag_of_the_Department_of_Vosges.svg/83px-Flag_of_the_Department_of_Vosges.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Vosges.svg/83px-Vosges.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Charente",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Flag_of_the_Department_of_Charente_%28Variant_2%29.svg/83px-Flag_of_the_Department_of_Charente_%28Variant_2%29.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Flag_of_Charente.svg/83px-Flag_of_Charente.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Landes",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Drapeau_fr_d%C3%A9partement_Landes.svg/83px-Drapeau_fr_d%C3%A9partement_Landes.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Hautes-Pyrénées",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Flag_of_the_Department_of_Hautes-Pyr%C3%A9n%C3%A9es.svg/83px-Flag_of_the_Department_of_Hautes-Pyr%C3%A9n%C3%A9es.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Proposed_flag_for_Hautes-Pyr%C3%A9n%C3%A9es.svg/83px-Proposed_flag_for_Hautes-Pyr%C3%A9n%C3%A9es.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Yonne",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Flag_of_the_Department_of_Yonne.svg/83px-Flag_of_the_Department_of_Yonne.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Drapeau_fr_d%C3%A9partement_Yonne.svg/83px-Drapeau_fr_d%C3%A9partement_Yonne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Charente-Maritime",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_the_Department_of_Charente-Maritime.svg/83px-Flag_of_the_Department_of_Charente-Maritime.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/CharenteMaritimeFlag.svg/83px-CharenteMaritimeFlag.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Loir-et-Cher",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Drapeau_fr_d%C3%A9partement_Loir-et-Cher.svg/83px-Drapeau_fr_d%C3%A9partement_Loir-et-Cher.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Pyrénées-Orientales",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Flag_of_the_Department_of_Pyr%C3%A9n%C3%A9es-Orientales.svg/83px-Flag_of_the_Department_of_Pyr%C3%A9n%C3%A9es-Orientales.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Drapeau_propos%C3%A9_pour_le_d%C3%A9partement_des_Pyr%C3%A9n%C3%A9es-Orientales.svg/83px-Drapeau_propos%C3%A9_pour_le_d%C3%A9partement_des_Pyr%C3%A9n%C3%A9es-Orientales.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Territoire de Belfort",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Flag_of_the_Department_of_Belfort.svg/83px-Flag_of_the_Department_of_Belfort.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Drapeau_fr_d%C3%A9partement_Territoire_de_Belfort.svg/83px-Drapeau_fr_d%C3%A9partement_Territoire_de_Belfort.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Cher",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Drapeau_fr_d%C3%A9partement_Cher.svg/83px-Drapeau_fr_d%C3%A9partement_Cher.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Loire",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Flag_of_the_Department_of_Loire.svg/83px-Flag_of_the_Department_of_Loire.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Drapeau_fr_d%C3%A9partement_Loire.svg/83px-Drapeau_fr_d%C3%A9partement_Loire.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Bas-Rhin",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_the_Department_of_Bas-Rhin.svg/83px-Flag_of_the_Department_of_Bas-Rhin.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Flag_of_Basse-Alsace.svg/83px-Flag_of_Basse-Alsace.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Essonne",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_the_Department_of_Essonne.svg/83px-Flag_of_the_Department_of_Essonne.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Drapeau_fr_d%C3%A9partement_Essonne.svg/83px-Drapeau_fr_d%C3%A9partement_Essonne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Corrèze",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Flag_of_the_Department_of_Corr%C3%A8ze.svg/83px-Flag_of_the_Department_of_Corr%C3%A8ze.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Drapeau_d%C3%A9partement_fr_Corr%C3%A8ze.svg/83px-Drapeau_d%C3%A9partement_fr_Corr%C3%A8ze.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Haute-Loire",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Drapeau_d%C3%A9partement_fr_Haute-Loire.svg/83px-Drapeau_d%C3%A9partement_fr_Haute-Loire.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Haut-Rhin",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Flag_of_the_Department_of_Haut-Rhin.svg/83px-Flag_of_the_Department_of_Haut-Rhin.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Haute-Alsace.svg/83px-Flag_of_Haute-Alsace.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Hauts-de-Seine",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_the_Department_of_Hauts-de-Seine.svg/83px-Flag_of_the_Department_of_Hauts-de-Seine.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Drapeau_fr_d%C3%A9partement_Hauts-de-Seine.svg/83px-Drapeau_fr_d%C3%A9partement_Hauts-de-Seine.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Loire-Atlantique",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Flag_of_the_Department_of_Loire-Atlantique.svg/83px-Flag_of_the_Department_of_Loire-Atlantique.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Drapeau_fr_d%C3%A9partement_Loire-Atlantique.svg/83px-Drapeau_fr_d%C3%A9partement_Loire-Atlantique.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Rhône",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Flag_of_Rh%C3%B4ne.svg/83px-Flag_of_Rh%C3%B4ne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Seine-Saint-Denis",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Proposition_de_drapeau_fr_d%C3%A9partement_Seine-Saint-Denis.svg/83px-Proposition_de_drapeau_fr_d%C3%A9partement_Seine-Saint-Denis.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Loiret",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_the_Department_of_Loiret.svg/83px-Flag_of_the_Department_of_Loiret.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Drapeau_fr_d%C3%A9partement_Loiret.svg/82px-Drapeau_fr_d%C3%A9partement_Loiret.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Grand Lyon",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Flag_of_the_Department_of_Grand_Lyon.svg/83px-Flag_of_the_Department_of_Grand_Lyon.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Banni%C3%A8re_de_Lyon.svg/83px-Banni%C3%A8re_de_Lyon.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Val-de-Marne",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Flag_of_the_Department_of_Val-de-Marne.svg/83px-Flag_of_the_Department_of_Val-de-Marne.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Drapeau_propos%C3%A9_pour_le_d%C3%A9partement_du_Val-de-Marne.svg/83px-Drapeau_propos%C3%A9_pour_le_d%C3%A9partement_du_Val-de-Marne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Côte-d'Or",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Flag_of_the_Department_of_C%C3%B4te-d%27Or.svg/83px-Flag_of_the_Department_of_C%C3%B4te-d%27Or.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Drapeau_non-officiel_fr_d%C3%A9partement_C%C3%B4te-d%27Or.svg/83px-Drapeau_non-officiel_fr_d%C3%A9partement_C%C3%B4te-d%27Or.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Lot",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Flag_of_the_Department_of_Lot.svg/83px-Flag_of_the_Department_of_Lot.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Unofficial_Flag_of_Lot.svg/83px-Unofficial_Flag_of_Lot.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Haute-Saône",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Flag_of_the_Department_of_Haute-Sa%C3%B4ne.svg/83px-Flag_of_the_Department_of_Haute-Sa%C3%B4ne.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Drapeau_fr_d%C3%A9partement_Haute-Sa%C3%B4ne.svg/83px-Drapeau_fr_d%C3%A9partement_Haute-Sa%C3%B4ne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Val-d'Oise",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Flag_of_the_Department_of_Val-d%27Oise_%28Variant_2%29.svg/83px-Flag_of_the_Department_of_Val-d%27Oise_%28Variant_2%29.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Drapeau_fr_d%C3%A9partement_Val-d%27Oise.svg/83px-Drapeau_fr_d%C3%A9partement_Val-d%27Oise.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Côtes-d'Armor",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Flag_of_the_Department_of_C%C3%B4tes-d%27Armor.svg/83px-Flag_of_the_Department_of_C%C3%B4tes-d%27Armor.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Drapeau_fr_d%C3%A9partement_C%C3%B4tes-d%27Armor.svg/83px-Drapeau_fr_d%C3%A9partement_C%C3%B4tes-d%27Armor.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Lot-et-Garonne",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Drapeau_fr_d%C3%A9partement_Lot-et-Garonne.svg/83px-Drapeau_fr_d%C3%A9partement_Lot-et-Garonne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Saône-et-Loire",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Flag_of_the_Department_of_Sa%C3%B4ne-et-Loire.svg/83px-Flag_of_the_Department_of_Sa%C3%B4ne-et-Loire.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Proposition_de_drapeau_pour_le_d%C3%A9partement_de_Sa%C3%B4ne-et-Loire.svg/83px-Proposition_de_drapeau_pour_le_d%C3%A9partement_de_Sa%C3%B4ne-et-Loire.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Creuse",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Drapeau_fr_d%C3%A9partement_Creuse.svg/83px-Drapeau_fr_d%C3%A9partement_Creuse.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Lozère",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Flag_of_the_Department_of_Loz%C3%A8re.svg/83px-Flag_of_the_Department_of_Loz%C3%A8re.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Drapeau_non-officiel_fr_d%C3%A9partement_Loz%C3%A8re.svg/83px-Drapeau_non-officiel_fr_d%C3%A9partement_Loz%C3%A8re.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Sarthe",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Flag_of_the_Department_of_Sarthe.svg/83px-Flag_of_the_Department_of_Sarthe.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Drapeau_fr_d%C3%A9partement_Sarthe.svg/83px-Drapeau_fr_d%C3%A9partement_Sarthe.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Dordogne",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Flag_of_the_Department_of_Dordogne.svg/83px-Flag_of_the_Department_of_Dordogne.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Drapeau_fr_d%C3%A9partement_Dordogne.svg/83px-Drapeau_fr_d%C3%A9partement_Dordogne.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Maine-et-Loire",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Flag_of_the_Department_of_Maine-et-Loire_%28Variant_2%29.svg/83px-Flag_of_the_Department_of_Maine-et-Loire_%28Variant_2%29.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Flag_of_Anjou.svg/83px-Flag_of_Anjou.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Savoie",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Flag_of_Savoie.svg/83px-Flag_of_Savoie.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "French Guiana",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_French_Guiana_%28Local%29.svg/100px-Flag_of_French_Guiana_%28Local%29.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Guadeloupe",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Flag_of_Guadeloupe_%28Local%29.svg/100px-Flag_of_Guadeloupe_%28Local%29.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Martinique",
+    "Official": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag-of-Martinique.svg/100px-Flag-of-Martinique.svg.png"
+    ],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Flag_of_Martinique_%28Local%29.svg/100px-Flag_of_Martinique_%28Local%29.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Mayotte",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Flag_of_Mayotte_%28Local%29.svg/100px-Flag_of_Mayotte_%28Local%29.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Saint Barthélemy",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Flag_of_Saint_Barth%C3%A9lemy_%28Local%29.svg/100px-Flag_of_Saint_Barth%C3%A9lemy_%28Local%29.svg.png"
+    ],
+    "Details": []
+  },
+  {
+    "Region": "Saint Martin",
+    "Official": [],
+    "Proposed": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Local_flag_of_the_Collectivity_of_Saint_Martin.svg/100px-Local_flag_of_the_Collectivity_of_Saint_Martin.svg.png"
+    ],
+    "Details": []
+  }
+]
