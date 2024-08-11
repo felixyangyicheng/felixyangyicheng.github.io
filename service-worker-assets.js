@@ -169,7 +169,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-\/PvOA7ONW0gEBb3vXI3E0yMfLKKYUUpSy4wGBWMX1OU=",
+      "hash": "sha256-yrH1o9FTEmUYYHQyiEdLYgyEK\/ChGAVmGaqeXNNBMpg=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -177,7 +177,7 @@
       "url": "_framework\/dotnet.native.8.0.7.1epic5n2jl.js"
     },
     {
-      "hash": "sha256-c0tx0Rw70gVQlU55Q7y\/fWRCiiBUr6JlcnDNLgiCU+Q=",
+      "hash": "sha256-AnZKIlRz3sr\/i6uObBs9z4zv8x5fcvMkMx5RnpQkVHI=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -205,7 +205,7 @@
       "url": "_framework\/BootstrapBlazor.WebAPI.wasm"
     },
     {
-      "hash": "sha256-Nu+gkmUoo7bZDmg7tU49Td4tCXwz3vPxBMLnvoUU5Go=",
+      "hash": "sha256-2j3IcWgGUmpwKRwEJqzL1Sp+ndkDoeb9hvfcpFq9wh0=",
       "url": "_framework\/Capybara.wasm"
     },
     {
@@ -237,19 +237,19 @@
       "url": "_framework\/Microsoft.AspNetCore.Components.Web.wasm"
     },
     {
-      "hash": "sha256-TX9FNZgICC8DW5sbRVOFJ0sNjm4gIJCyYokQU\/gAN7I=",
+      "hash": "sha256-YhVJT0NMycBownmh8MVeZcUhItpP9O9+fcHuOB+ZRIM=",
       "url": "_framework\/Microsoft.AspNetCore.Components.WebAssembly.wasm"
     },
     {
-      "hash": "sha256-f\/\/ieyKUwT2GbMrsERHQpOpH\/Woilbrem8kBYIK+H2Y=",
+      "hash": "sha256-fwU5\/mFNCy9jhvVFQnUgauWQgVM2\/IbCzshDjLKmXT0=",
       "url": "_framework\/Microsoft.AspNetCore.Connections.Abstractions.wasm"
     },
     {
-      "hash": "sha256-Kv1ebjvqKSGAjWQ41\/U10EPBeJtzEfiTOyTlzoySb\/c=",
+      "hash": "sha256-blib896iiD3+HaMD3fUUhKulXdWMJvvu9mZa\/4Mrbs0=",
       "url": "_framework\/Microsoft.AspNetCore.Http.Connections.Client.wasm"
     },
     {
-      "hash": "sha256-Ry7+QWtpGxC41EtdidwhMs+4ASwy+Y8bBH5SyGN45hg=",
+      "hash": "sha256-msXY5uvDPsO8RJCeqtw7q+0KYQVFQMSgUo\/J4cArA5s=",
       "url": "_framework\/Microsoft.AspNetCore.Http.Connections.Common.wasm"
     },
     {
@@ -257,19 +257,19 @@
       "url": "_framework\/Microsoft.AspNetCore.Metadata.wasm"
     },
     {
-      "hash": "sha256-ApMGeV0F0FewOc1jr3rafx+2AV4rpUB+v6JxnPoCNvM=",
+      "hash": "sha256-h5NdQ6j37\/BfBkQvLZhkYimPsKQhxx24epC8JW5SS4U=",
       "url": "_framework\/Microsoft.AspNetCore.SignalR.Client.Core.wasm"
     },
     {
-      "hash": "sha256-Z\/A4HvwXsonhroRwsu0jpNLBLeMTnjRzjNbPdFoPdPE=",
+      "hash": "sha256-J15uFoZe2pgDTh87p+B\/ROsOp3SxghvWXz5pzLFGsog=",
       "url": "_framework\/Microsoft.AspNetCore.SignalR.Client.wasm"
     },
     {
-      "hash": "sha256-buQnmoDBhMJv7rXCfssmoLOXNNB2lzmENeUQYl1fCqs=",
+      "hash": "sha256-VrCjj9wqcjLqk4zr3b70jiWGwPYwW1xKQnt68G6QA9w=",
       "url": "_framework\/Microsoft.AspNetCore.SignalR.Common.wasm"
     },
     {
-      "hash": "sha256-pevnH4gp6cewwbClgLwdU1QSXFwo15pH8mPQ4Xw3HGo=",
+      "hash": "sha256-244JbNT2y+Oau\/Y9LOWTx1xxLKLJ3gbv6Nbu914zF2k=",
       "url": "_framework\/Microsoft.AspNetCore.SignalR.Protocols.Json.wasm"
     },
     {
@@ -289,7 +289,7 @@
       "url": "_framework\/Microsoft.Extensions.Configuration.Abstractions.wasm"
     },
     {
-      "hash": "sha256-hBdB9kiY1FHMouER22WC7WbB4WW+YcflscmmYZDLMEg=",
+      "hash": "sha256-LI4aQshu21h6dNtg+Z958HytiMtep1zLs0ARSXcMduI=",
       "url": "_framework\/Microsoft.Extensions.Configuration.Binder.wasm"
     },
     {
@@ -321,7 +321,7 @@
       "url": "_framework\/Microsoft.Extensions.Diagnostics.wasm"
     },
     {
-      "hash": "sha256-RPD2h6ffIPYT2cPxB8RYHu26vs7JNGl\/m0yOnGxJ04o=",
+      "hash": "sha256-zZo42VAlYX1ATYkxtCi48Dst7dDP92wlczm4waTRxY0=",
       "url": "_framework\/Microsoft.Extensions.Features.wasm"
     },
     {
@@ -373,7 +373,7 @@
       "url": "_framework\/Microsoft.JSInterop.wasm"
     },
     {
-      "hash": "sha256-zlOkbbvWC8xLsJ09iMI1NKTzT4TfGNWxA+mnqorQ5Lo=",
+      "hash": "sha256-U2Sslvw+GNKzEnhYVJpuzjaY8DEv+xd1jQV3WXCdE+s=",
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.wasm"
     },
     {
@@ -1217,5 +1217,5 @@
       "url": "_content\/Toolbelt.Blazor.GetProperty.Script\/Toolbelt.Blazor.GetProperty.Script.lib.module.js"
     }
   ],
-  "version": "RWzjE3Ax"
+  "version": "r3Aik3t0"
 };
