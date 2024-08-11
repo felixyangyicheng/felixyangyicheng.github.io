@@ -18,7 +18,8 @@ namespace Capybara.Components.ComboInput
 
 
         private string[] InputValues { get; set; } = new string[0];
-        private ElementReference[]? InputRefs { get; set; } = default;
+        [NotNull]
+        private ElementReference[]? InputRefs { get; set; } = default!;
         private string[] InputClasses { get; set; } = new string[0];
         private bool[] InputDisabled { get; set; } = new bool[0];
         private bool AllInputsCorrect { get; set; }

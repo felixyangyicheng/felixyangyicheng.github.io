@@ -1,0 +1,111 @@
+﻿@page "/file-transfer"
+@using System.Diagnostics.CodeAnalysis
+@using ReactorBlazorQRCodeScanner
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+@inject IConfiguration Configuration
+<MudPaper Width="100%" Elevation="0">
+    <MudContainer MaxWidth="MaxWidth.Small">
+        <MudPaper Width="100%"
+                  Square="true"
+                  Elevation="0"
+                  >
+            <MudCard Class="mt-10">
+                <MudCardContent>
+                    <MudText Style="text-align: center;" Typo="Typo.body2">Prêt à envoyer un fichier？</MudText>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton Style="text-align: center;" Variant="Variant.Text" FullWidth
+                               Color="MudBlazor.Color.Info"
+                               OnClick="@(async () => await GotoSenderPageAsync())">Créer une salle</MudButton>
+                </MudCardActions>
+            </MudCard>
+
+            <MudCard Class="mt-5">
+                <MudCardContent>
+                    <MudText Style="text-align: center;" Typo="Typo.body2">En attente de réception du fichier？</MudText>
+                </MudCardContent>
+                <MudCardActions>
+
+                    <MudTextField Style="text-align: center;" T="string"
+                                  Label="N° de connexion"
+                                  Variant="Variant.Outlined"
+                                  Adornment="Adornment.End"
+                                  AdornmentIcon="@Icons.Material.Filled.JoinInner"
+                                  AdornmentColor="MudBlazor.Color.Info"
+                                  Immediate="true"
+                                  MaxLength="4"
+                                  ValueChanged="@(InputRoomIdChanged)" />
+                </MudCardActions>
+            </MudCard>
+            <MudCard Class="mt-5">
+                <MudCardContent>
+                    <MudButton Variant="Variant.Filled" FullWidth OnClick="StartQRScan" Color="MudBlazor.Color.Success" Disabled="@Scanning">Scanner QR code</MudButton>
+                    <MudText Style="text-align: center;" Typo="Typo.body1">@QRCodeString</MudText>
+
+                </MudCardContent>
+                <MudCardActions Class="d-flex align-center justify-space-between">
+                    <QRCodeScanner Width="350" />
+                </MudCardActions>
+            </MudCard>
+        </MudPaper>
+    </MudContainer>
+</MudPaper>
+@code
+{
+    [NotNull]
+    private QRCodeScannerJsInterop? _qrCodeScannerJsInterop=default!;
+    private Action<string>? _onQrCodeScanAction;
+    private string QRCodeString = "";
+    private bool Scanning = false;
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+    }
+    protected async Task StartQRScan()
+    {
+        _onQrCodeScanAction = async(code) =>await OnQrCodeScanOk(code);
+        _qrCodeScannerJsInterop = new QRCodeScannerJsInterop(JSRuntime);
+        await _qrCodeScannerJsInterop.Init(_onQrCodeScanAction);
+        Scanning = true;
+        StateHasChanged();
+    }
+
+    protected async Task StopQRScan()
+    {
+        await _qrCodeScannerJsInterop.StopRecording();
+        Scanning = false;
+        StateHasChanged();
+    }
+
+    private async Task OnQrCodeScanOk(string code)
+    {
+
+
+        QRCodeString = code;
+        if (QRCodeString.Contains(Configuration["fileshare.srv"] ?? throw new NullReferenceException("")))
+        {
+            QRCodeString = QRCodeString.Replace(Configuration["fileshare.srv"] ?? throw new NullReferenceException(""), "");
+        }
+        StateHasChanged();
+        NavigationManager.NavigateTo(QRCodeString);
+        await StopQRScan();
+    }
+    
+    private Task GotoSenderPageAsync()
+    {
+        NavigationManager.NavigateTo($"/file-transfer/sender");
+        return Task.CompletedTask;
+    }
+
+    private Task InputRoomIdChanged(string value)
+    {
+        value = value.Trim();
+        int roomId;
+        if (value.Length == 4 && int.TryParse(value, out roomId))
+        {
+            NavigationManager.NavigateTo($"/file-transfer/receiver/{roomId}");
+        }
+        return Task.CompletedTask;
+    }
+}

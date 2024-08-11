@@ -19,5 +19,16 @@ global using Capybara.Models;
 global using System.Net.Http.Json;
 global using ApexCharts;
 global using Capybara.Components.Dialogs;
+global using JiuLing.CommonLibs.ExtensionMethods;
+global using Microsoft.AspNetCore.SignalR.Client;
+global using Microsoft.JSInterop;
+global using Capybara.Models.Enums;
+global using Microsoft.AspNetCore.Components.Forms;
+global using Capybara.Shared.Dialogs;
+global using System.Collections.Concurrent;
+global using System.Text.Json;
+global using Capybara.Shared;
+global using ZXingBlazor.Components;
+
 global using Color = MudBlazor.Color;
 global using Console = System.Console;

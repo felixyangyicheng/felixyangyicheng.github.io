@@ -1,0 +1,23 @@
+﻿@* @page "/"
+@inject NavigationManager _nav
+<MudPaper Width="100%" Elevation="0">
+    <MudContainer MaxWidth="MaxWidth.Small">
+        <MudPaper Width="100%"
+                  Square="true"
+                  Elevation="0"
+                  Style="text-align: center; padding-top:10vh">
+            <MudGrid>
+                <MudItem xs="12">
+                    <MudButton FullWidth Style="text-align: center;" Variant="Variant.Filled" Color="MudBlazor.Color.Info" OnClick="Transfer">Transfer</MudButton>
+                </MudItem>
+            </MudGrid>
+        </MudPaper>
+    </MudContainer>
+</MudPaper>
+
+@code{
+    private void Transfer(){
+        _nav.NavigateTo("/file-transfer");
+    }
+    protected override void OnAfterRender(bool firstRender) => _nav.NavigateTo("/file-transfer");
+} *@

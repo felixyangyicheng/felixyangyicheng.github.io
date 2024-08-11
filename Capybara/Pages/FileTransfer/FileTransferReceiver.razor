@@ -1,0 +1,107 @@
+﻿@page "/file-transfer/receiver/{RoomId:int}"
+
+@using Capybara.Models.Enums
+@using Capybara.HashCheckService
+
+
+@inject IJSRuntime JSRuntime
+@inject IConfiguration Configuration
+@inject NavigationManager NavigationManager
+@inject IDialogService Dialog
+@inject HashServiceFactory HashServiceFactory;
+
+<PageTitle>Transfer de fichiers</PageTitle>
+
+<MudPaper Width="100%" Elevation="0">
+    <MudContainer MaxWidth="MaxWidth.Small">
+        <MudGrid>
+
+            <MudItem xs="12" sm="12" md="12">
+                @if (_files.Count<1)
+                {
+                    <MudProgressCircular Color="MudBlazor.Color.Primary"
+                                         Indeterminate="true"
+                                         Size="MudBlazor.Size.Small" />
+                    <MudText Typo="@Typo.caption" Class="ml-2">En attente de téléchargement fichiers..</MudText>
+                }
+            </MudItem>
+   
+
+     
+
+         <MudItem xs="12" sm="12" md="12">
+                <MudChip Disabled="true" Label="true" T="string" Variant="Variant.Outlined" Color="MudBlazor.Color.Surface">
+                    Destinatiare
+                </MudChip>
+                <MudChip Label="true" T="string" Variant="Variant.Outlined" Color="MudBlazor.Color.Success">
+                    @($"Numéro de salle {RoomId}")
+                </MudChip>
+
+                @switch (_connectionType)
+                {
+                    case ConnectionTypeEnum.WebRTC:
+                        <MudChip Label="true" T="string" Variant="Variant.Outlined" Color="MudBlazor.Color.Success">
+                            Peer to peer
+                        </MudChip>
+                        break;
+                    case ConnectionTypeEnum.ServiceRelay:
+                        <MudChip Label="true" T="string" Variant="Variant.Outlined" Color="MudBlazor.Color.Warning">
+                            Transfert intermédiaire sur le serveur
+                        </MudChip>
+                        break;
+                }
+            </MudItem>
+
+            @if (_connectionType == ConnectionTypeEnum.None)
+            {
+                <MudItem xs="12" sm="12" md="12">
+
+                    <MudProgressCircular Color="MudBlazor.Color.Primary"
+                                         Indeterminate="true"
+                                         Size="MudBlazor.Size.Small" />
+                    <MudText Typo="@Typo.caption" Class="ml-2">connexion en cours....</MudText>
+             </MudItem>
+            }
+            else
+            {
+                foreach (var file in _files)
+                {
+                    <MudItem xs="12" sm="12" md="12">
+
+                        <div class="d-flex align-center justify-space-between">
+                            <MudText Typo="Typo.overline" Class="mt-1">@file.FileName</MudText>
+                            @switch (file.State)
+                            {
+                                case FileTransferStateEnum.Sent:
+                                    if (file.Succeed)
+                                    {
+                                        <MudLink Underline="@Underline.None"
+                                                 OnClick="@(() =>DownloadFileAsync(file.FileName))">télécharger</MudLink>
+                                    }
+                                    else
+                                    {
+                                        <MudLink Disabled="true">@($"échoué：{file.Message}")</MudLink>
+                                    }
+                                    break;
+                                case FileTransferStateEnum.Sending:
+                                    <MudLink Disabled="true">Recevoir ..</MudLink>
+                                    break;
+                            }
+                        </div>
+                        <MudProgressLinear Striped="true"
+                                           Color="MudBlazor.Color.Info"
+                                           Size="MudBlazor.Size.Large"
+                                           Value="@file.TransferProgress"
+                                           Class="mt-3">
+                            <MudText Typo="Typo.subtitle1" Color="MudBlazor.Color.Dark">
+                                <b>@($"{Convert.ToInt32(file.TransferProgress)}%")</b>
+                            </MudText>
+                        </MudProgressLinear>
+                    </MudItem>
+                }
+            }
+
+        </MudGrid>
+    </MudContainer>
+</MudPaper>
+
