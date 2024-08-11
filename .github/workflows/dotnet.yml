@@ -81,7 +81,7 @@ jobs:
             echo "Dernière modification: $(date +"%Y-%m-%dT%I:%M:%pZ")" >> dist/Capybara/wwwroot/README.md 
       # Rewrite base href        
       - name: Rewrite base href
-        uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
+        uses: SteveSandersonMS/ghaction-rewrite-base-href@v1.1.0
         with:
           html_path: dist/Capybara/wwwroot/index.html
           base_href: /        
