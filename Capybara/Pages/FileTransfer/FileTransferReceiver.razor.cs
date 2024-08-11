@@ -1,10 +1,4 @@
-﻿using JiuLing.CommonLibs.ExtensionMethods;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.SignalR.Client;
-using Microsoft.JSInterop;
-using Capybara.Models.Enums;
-using Capybara.Models;
-
+﻿
 
 namespace Capybara.Pages.FileTransfer
 {
@@ -94,7 +88,7 @@ namespace Capybara.Pages.FileTransfer
         [JSInvokable]
         public async Task ReceiverConnected()
         {
-            //接收端准备就绪
+            //receiver ready
             _connectionType = ConnectionTypeEnum.WebRTC;
             await InvokeAsync(StateHasChanged);
         }
