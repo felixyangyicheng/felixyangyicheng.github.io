@@ -26,6 +26,10 @@ builder.Services.AddHttpClient("notification.push.srv.local", client =>
         client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("notification.push.srv") ?? throw new ArgumentException());
     });
 #endif
+builder.Services.AddHttpClient("fileshare.srv", client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("fileshare.srv") ?? throw new ArgumentException());
+});
 builder.Services.AddPWAUpdater();
 builder.Services.AddBootstrapBlazor();
 builder.Services.AddSingleton<HashServiceFactory>();

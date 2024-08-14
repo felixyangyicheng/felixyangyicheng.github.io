@@ -55,7 +55,7 @@ namespace Capybara.Pages.FileTransfer
             _objRef = DotNetObjectReference.Create(this);
 
             _hub = new HubConnectionBuilder()
-                .WithUrl($"{Configuration["OneTransfert.srv"]}/file-transfer-hub").WithAutomaticReconnect()
+                .WithUrl($"{Configuration["fileshare.srv"]}/file-transfer-hub").WithAutomaticReconnect()
                 .Build();
 
 

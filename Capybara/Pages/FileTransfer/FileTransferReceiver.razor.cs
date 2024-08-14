@@ -21,7 +21,7 @@ namespace Capybara.Pages.FileTransfer
             _objRef = DotNetObjectReference.Create(this);
 
             _hub = new HubConnectionBuilder()
-                .WithUrl($"{Configuration["OneTransfert.srv"]}/file-transfer-hub")
+                .WithUrl($"{Configuration["fileshare.srv"]}/file-transfer-hub")
                 .Build();
 
             _hub.On<string>("ReceiveSenderIceCandidate", async (candidate) =>
