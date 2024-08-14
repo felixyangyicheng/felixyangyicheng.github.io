@@ -1,6 +1,7 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Capybara.HashCheckService;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -27,6 +28,7 @@ builder.Services.AddHttpClient("notification.push.srv.local", client =>
 #endif
 builder.Services.AddPWAUpdater();
 builder.Services.AddBootstrapBlazor();
+builder.Services.AddSingleton<HashServiceFactory>();
 builder.Services.AddSpeechSynthesis();
 
         builder.Services.AddMudServices(config =>
