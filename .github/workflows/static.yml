@@ -4,7 +4,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
+    branches: ["master", "gh-pages"]
 
   # Runs at 30 minutes past the hour. Actions schedules run at most every 5 minutes using UTC time. 
   schedule:
