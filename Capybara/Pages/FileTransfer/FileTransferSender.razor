@@ -8,6 +8,7 @@
 @using Capybara.Shared.Dialogs
 @using System.Text.Json
 @using System.Collections.Concurrent
+@using MudExtensions
 
 
 @inject IJSRuntime JSRuntime
@@ -65,7 +66,7 @@
                 <MudItem xs="12" sm="12" md="12">
 
                             <MudAlert Style="text-align: center;" Severity="Severity.Warning" Variant="Variant.Outlined">Scannez le code pour accéder directement</MudAlert>
-                        <MudBarcode @bind="_qrValue"
+                        <MudBarcode Value="@_qrValue"
                                     Style="text-align: center;"
                                     Width="170"
                                     Height="170"

@@ -8,6 +8,9 @@
         max-height: 80vh;
     }
 </style>
+<br/>
+
+
 <MudContainer>
     <MudGrid>
         @if (ListToGuess == null)
@@ -17,8 +20,10 @@
         @if (ListToGuess?.Count == 0)
         {
 
+            <p></p>
             <MudButton Color="Color.Secondary" OnClick="NewGame">New game ?</MudButton>
             <p></p>
+
             <h1>
 
                 Découvrez la France à travers ses Drapeaux Régionaux : jeu Ludique et Éducatif
