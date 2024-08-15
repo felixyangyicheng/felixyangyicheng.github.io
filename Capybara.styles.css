@@ -19,35 +19,38 @@
 }
 
 /* Pour les fenêtres de moins de 600px de large */
-@media (max-width: 599px) {
+@media (max-width: 399px) {
     .case[b-pp2zsstjj9] {
-        width: 32px;
-        height: 32px;
+        width: 35px;
+        height: 35px;
         font-size: 7.5px;
     }
 }
 
 /* Pour les fenêtres de 600px à 899px de large */
-@media (min-width: 600px) and (max-width: 899px) {
+@media (min-width: 400px) and (max-width: 899px) {
     .case[b-pp2zsstjj9] {
-        width: 35px;
-        height: 35px;
+        width: 45px;
+        height: 45px;
+        font-size: 12.5px;
     }
 }
 
 /* Pour les fenêtres de 900px à 1199px de large */
 @media (min-width: 900px) and (max-width: 1199px) {
     .case[b-pp2zsstjj9] {
-        width: 35px;
-        height: 35px;
+        width: 45px;
+        height: 45px;
+        font-size: 12.5px;
     }
 }
 
 /* Pour les fenêtres de 1200px et plus */
 @media (min-width: 1200px) {
     .case[b-pp2zsstjj9] {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
+        font-size: 12.5px;
     }
 }
 
