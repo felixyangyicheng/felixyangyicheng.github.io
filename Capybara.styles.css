@@ -77,6 +77,13 @@
     border: 2px solid red;
     background-color: rgba(255, 47, 70, 0.45);
 }
+/* /Components/Dominos/Piece.razor.rz.scp.css */
+body[b-7loz76w1nx] {
+}
+individualValue[b-7loz76w1nx] {
+    height: 30px;
+    width: 30px;
+}
 /* /Layout/MainLayout.razor.rz.scp.css */
 .page[b-rcy5nsiigv] {
     position: relative;
