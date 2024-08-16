@@ -1,9 +1,4 @@
-﻿
-
-
-
-
-namespace Capybara.Pages.FileTransfer
+﻿namespace Capybara.Pages.FileTransfer
 {
     public partial class FileTransferSender
     {
@@ -54,9 +49,7 @@ namespace Capybara.Pages.FileTransfer
             System.Console.WriteLine($"Préparation à l'initialisation de la salle....");
             _objRef = DotNetObjectReference.Create(this);
 
-            _hub = new HubConnectionBuilder()
-                .WithUrl($"{Configuration["fileshare.srv"]}/file-transfer-hub").WithAutomaticReconnect()
-                .Build();
+
 
 
             _hub.On("ReceiverJoin", async () =>

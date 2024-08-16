@@ -1,0 +1,147 @@
+﻿
+@page "/domino/game/{hostId}/{numberOfPlayers:int}/{numberOfRounds:int}"
+@inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
+@inject IConfiguration Configuration
+@inject IDialogService Dialog
+@inject ISnackbar Snackbar
+@code {
+    [Parameter] public string HostId { get; set; }
+    [Parameter] public int NumberOfPlayers { get; set; }
+    [Parameter] public int NumberOfRounds { get; set; }
+
+    private HubConnection _hub;
+    private Game currentGame;
+    private Player currentPlayer;
+    private string playerName;
+    private bool isGameStarted = false;
+    private bool isRoundEnded = false;
+    private bool isGameEnded = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        _hub = new HubConnectionBuilder()
+            .WithUrl($"{Configuration["dominogame.srv"]}/gamehub")
+            .Build();
+
+        _hub.On<Game>("GameCreated", (game) =>
+        {
+            currentGame = game;
+            StateHasChanged();
+        });
+
+        _hub.On<Game>("GameJoined", (game) =>
+        {
+            currentGame = game;
+            StateHasChanged();
+        });
+
+        _hub.On<Game>("GameStarted", (game) =>
+        {
+            currentGame = game;
+            isGameStarted = true;
+            StateHasChanged();
+        });
+
+        _hub.On<Game, Player, Domino>("DominoPlayed", (game, player, domino) =>
+        {
+            currentGame = game;
+            StateHasChanged();
+        });
+
+        _hub.On<Game, Player>("RoundEnded", (game, player) =>
+        {
+            currentGame = game;
+            isRoundEnded = true;
+            StateHasChanged();
+        });
+
+        _hub.On<Game>("GameEnded", (game) =>
+        {
+            currentGame = game;
+            isGameEnded = true;
+            StateHasChanged();
+        });
+
+        _hub.On<Player>("PlayerDisconnected", (player) =>
+        {
+            var playerToRemove = currentGame?.Players.FirstOrDefault(p => p.ConnectionId == player.ConnectionId);
+            if (playerToRemove != null)
+            {
+                currentGame.Players.Remove(playerToRemove);
+                StateHasChanged();
+            }
+        });
+
+        await _hub.StartAsync();
+        await _hub.SendAsync("CreateGame", HostId, NumberOfPlayers, NumberOfRounds);
+    }
+
+    private async Task JoinGame()
+    {
+        currentPlayer = new Player { ConnectionId = _hub.ConnectionId, Name = playerName };
+        await _hub.SendAsync("JoinGame", currentPlayer.ConnectionId, currentPlayer.Name, HostId);
+    }
+
+    private async Task PlayDomino(Domino domino, bool toHead)
+    {
+        await _hub.SendAsync("PlayDomino", HostId, currentPlayer.ConnectionId, domino.Value1, domino.Value2, toHead);
+    }
+}
+
+<div>
+    <h3>Game: @HostId</h3>
+    @if (currentGame == null)
+    {
+        <p>Creating game...</p>
+    }
+    else if (!isGameStarted)
+    {
+        <div>
+            <input @bind="playerName" placeholder="Your Name" />
+            <button @onclick="JoinGame">Join Game</button>
+        </div>
+    }
+    else if (isGameEnded)
+    {
+        <h3>Game Ended</h3>
+        <p>Winner: @currentGame.Players.OrderByDescending(p => p.Score).First().Name</p>
+        <p>Total Scores:</p>
+        <ul>
+            @foreach (var player in currentGame.Players)
+            {
+                <li>@player.Name: @player.Score</li>
+            }
+        </ul>
+    }
+    else
+    {
+        <h3>Current Round: @currentGame.CurrentRound</h3>
+        <p>Board:</p>
+        <ul>
+            @foreach (var domino in currentGame.Board)
+            {
+                <li>@domino.Value1 | @domino.Value2</li>
+            }
+        </ul>
+
+        <h3>Your Hand:</h3>
+        <ul>
+            @foreach (var domino in currentPlayer.Hand)
+            {
+                <li>
+                    @domino.Value1 | @domino.Value2
+                    <button @onclick="() => PlayDomino(domino, true)">Play at Head</button>
+                    <button @onclick="() => PlayDomino(domino, false)">Play at Tail</button>
+                </li>
+            }
+        </ul>
+
+        @if (isRoundEnded)
+        {
+            <h3>Round Ended</h3>
+            <p>Winner: @currentGame.Players.OrderBy(p => p.Hand.Count).First().Name</p>
+        }
+    }
+</div>
