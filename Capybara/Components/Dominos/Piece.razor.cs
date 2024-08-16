@@ -13,9 +13,11 @@
         [Parameter]
         public bool Rotate { get; set; }
 
+
+        public string BasePath { get; set; } = "";
         protected override void OnInitialized()
         {
-
+            BasePath= $"{Configuration["raw.githubusercontent"]}";
         }
     }
 }

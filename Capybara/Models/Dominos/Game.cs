@@ -2,7 +2,7 @@
 {
     public class Game
     {
-        public string HostId { get; set; }
+        public string HostId { get; set; } = default!;
         public int NumberOfPlayers { get; set; }
         public int NumberOfRounds { get; set; }
         public List<Player> Players { get; set; } = new List<Player>();

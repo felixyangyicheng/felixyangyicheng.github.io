@@ -6,14 +6,15 @@
 @inject IDialogService Dialog
 @inject ISnackbar Snackbar
 @code {
-    [Parameter] public string HostId { get; set; }
+    [Parameter] public string HostId { get; set; } = default!;
     [Parameter] public int NumberOfPlayers { get; set; }
     [Parameter] public int NumberOfRounds { get; set; }
 
-    private HubConnection _hub;
-    private Game currentGame;
-    private Player currentPlayer;
-    private string playerName;
+    [NotNull]
+    private HubConnection _hub=default!;
+    private Game currentGame = default!;
+    private Player currentPlayer = default!;
+    private string playerName = default!;
     private bool isGameStarted = false;
     private bool isRoundEnded = false;
     private bool isGameEnded = false;
@@ -69,7 +70,7 @@
             var playerToRemove = currentGame?.Players.FirstOrDefault(p => p.ConnectionId == player.ConnectionId);
             if (playerToRemove != null)
             {
-                currentGame.Players.Remove(playerToRemove);
+                currentGame?.Players.Remove(playerToRemove);
                 StateHasChanged();
             }
         });
