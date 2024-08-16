@@ -25,6 +25,50 @@
       "url": "img\/bike.svg"
     },
     {
+      "hash": "sha256-cTkFi5c6ry81krFieX36t3ZCJn\/ATDdLFC2bQPi3T94=",
+      "url": "img\/dominos\/domino-icon.svg"
+    },
+    {
+      "hash": "sha256-0CGrVKor6Ml9iXhsKg0wVPDwS4u7K9Qg3jNtaBwFcMQ=",
+      "url": "img\/dominos\/domino0.svg"
+    },
+    {
+      "hash": "sha256-rjGC4ExDphjP+Kvxie3IJNz+Qpm\/QhCWf5DKxGpwm8Y=",
+      "url": "img\/dominos\/domino1.svg"
+    },
+    {
+      "hash": "sha256-vu4MU6vSP4uDCip4hnMsRAh0RpN4sD0yg+C85Lw2y3U=",
+      "url": "img\/dominos\/domino2.svg"
+    },
+    {
+      "hash": "sha256-s+J5hkcXhoCTGpxlBXsyCPRhRDXND1kh28ZZFcr0\/i4=",
+      "url": "img\/dominos\/domino3.svg"
+    },
+    {
+      "hash": "sha256-mphUTO9CtGqWq0xD2PyA8Zjf4fb2M2WxnSXSl\/sNXno=",
+      "url": "img\/dominos\/domino4.svg"
+    },
+    {
+      "hash": "sha256-BGjDBRoS38q4RNi9bHEizHUqAAmAoDtjMXI3Kf8\/ZyE=",
+      "url": "img\/dominos\/domino5.svg"
+    },
+    {
+      "hash": "sha256-\/DpV0QYcCcT4uR1D+fz\/8caLBvJlc8GROsYf9qyo1AY=",
+      "url": "img\/dominos\/domino6.svg"
+    },
+    {
+      "hash": "sha256-oz2ZAf7wQdTo3fzdSUMYSp8ZrLHEO0m+1vFlr0nYBT0=",
+      "url": "img\/dominos\/domino7.svg"
+    },
+    {
+      "hash": "sha256-KpbjDDLQ2oK18XVpP5KRUtUmHgfynOl009ypb0cgPSE=",
+      "url": "img\/dominos\/domino8.svg"
+    },
+    {
+      "hash": "sha256-HbL042u22jjfUFgbiFBOse36YiT\/QdXZZDtHI0RxBZQ=",
+      "url": "img\/dominos\/domino9.svg"
+    },
+    {
       "hash": "sha256-J8bI39xWe9Fm97VkS1xNnczlda+U8dJUm1n\/2siVh3U=",
       "url": "img\/icon-512.png"
     },
@@ -169,7 +213,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-00x4Os3kxXjAxAuSK6fIS9d+2AWi9BqXS7EVJsmAanI=",
+      "hash": "sha256-GFb9DdVKyiqe7ylueB\/l6h1BovgHyDovyO3rLs4JXlM=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -205,7 +249,7 @@
       "url": "_framework\/BootstrapBlazor.WebAPI.wasm"
     },
     {
-      "hash": "sha256-agoL378JWbqjJUlVxIh\/cLVe0lqjn30uCBEnuPTv8NM=",
+      "hash": "sha256-cDDnLFv5BApfttxc+KIl2sTDrmaX5LGDQ0IwngHaSIo=",
       "url": "_framework\/Capybara.wasm"
     },
     {
@@ -657,7 +701,7 @@
       "url": "_framework\/ZXingBlazor.wasm"
     },
     {
-      "hash": "sha256-NZcK6Ae2tHWXyGh6jFE5+QCfgM0QZU3mkZMeHktryuk=",
+      "hash": "sha256-QXvoKEmxOyUAy1BxcrkJ+W\/dQE8h+6wH56c\/duqnZf8=",
       "url": "appsettings.json"
     },
     {
@@ -1221,5 +1265,5 @@
       "url": "_content\/Toolbelt.Blazor.GetProperty.Script\/Toolbelt.Blazor.GetProperty.Script.lib.module.js"
     }
   ],
-  "version": "\/iOjLtmZ"
+  "version": "4tejLxwy"
 };

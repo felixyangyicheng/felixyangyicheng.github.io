@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Capybara",
   "resources": {
-    "hash": "sha256-YSn4we+kmfW38k6HUp+1lIVoXD1jqOy8/HFQeBdsJPU=",
+    "hash": "sha256-u1YzOvgk34cw57xk1mzFQObfzK1Lktxlj1ssB/8yeX0=",
     "jsModuleNative": {
       "dotnet.native.8.0.8.1epic5n2jl.js": "sha256-JDQ6uid/EQVE4mX9F+mWK6QksrpYC8T7+EeRlkbvENg="
     },
@@ -23,7 +23,7 @@
       "BootstrapBlazor.Markdown.wasm": "sha256-qpS7BxhQveFIk4syx9BPYpgqBlhDEWv8TNHGf6lWcX0=",
       "BootstrapBlazor.wasm": "sha256-x9p2gW81l0Nt4pmdjVCsAvI+UHwLvRRd/QeREyjyZxQ=",
       "BootstrapBlazor.WebAPI.wasm": "sha256-wpuO5ofud56hOm53MDpcCijvg2O2aYt5mZCD81IYix4=",
-      "Capybara.wasm": "sha256-agoL378JWbqjJUlVxIh/cLVe0lqjn30uCBEnuPTv8NM=",
+      "Capybara.wasm": "sha256-cDDnLFv5BApfttxc+KIl2sTDrmaX5LGDQ0IwngHaSIo=",
       "CodeBeam.MudBlazor.Extensions.wasm": "sha256-3Igj32tJzw6+v5oX76pnqQh+tpAQ3ln98mASvzCmlDY=",
       "CsvHelper.wasm": "sha256-C+c9R05nmsSkIe8W7X3Zm/Yxg23hvBLxDZAKLIzBRlY=",
       "JiuLing.CommonLibs.wasm": "sha256-nKMa/UndmV4b6XxK2q6MCpfQ/FVW9/9curWiVeZO7MA=",
