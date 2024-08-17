@@ -1,6 +1,38 @@
 ﻿body {
 }
-individualValue {
-    height: 30px;
-    width: 30px;
+.individualValue {
+    height: 15px;
+    width: 15px;
+}
+.pieceBorder {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    border: 0.5px solid;
+    border-radius: 5px;
+}
+.pieceBorderVertical {
+    display: flex; /* Utilise flexbox */
+    flex-direction: column; /* Empile les enfants verticalement */
+    align-items: center; /* Centre les images horizontalement */
+    margin: 5px;
+    padding: 5px;
+    border: 0.5px solid;
+    border-radius: 5px;
+}
+
+.dominoPiece {
+    position: absolute;
+    display: flex;
+    border: 1px solid #000;
+    background-color: #f9f9f9;
+}
+
+    .dominoPiece.vertical {
+        flex-direction: column;
+    }
+
+.individualValue {
+    width: 50%;
+    height: auto;
 }
