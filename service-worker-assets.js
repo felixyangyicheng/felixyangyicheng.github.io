@@ -213,7 +213,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-KW31R0wC7PI0O9jrGTkBLvwoOn0XwVm4LQr4R4d4Mk0=",
+      "hash": "sha256-KFeN2Bx9apnq\/05NTSyJ43fJlbPzaBJqbLS06sKVqg0=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -249,7 +249,7 @@
       "url": "_framework\/BootstrapBlazor.WebAPI.wasm"
     },
     {
-      "hash": "sha256-GD+bNBg32F+EUbfl2eSYkJalOd3dCWpoAuOmKRBbWA4=",
+      "hash": "sha256-4GpwN\/DUhaMhxXZs4XNr\/\/7QKC\/fMjz3OJyNPvTRsjs=",
       "url": "_framework\/Capybara.wasm"
     },
     {
@@ -1265,5 +1265,5 @@
       "url": "_content\/Toolbelt.Blazor.GetProperty.Script\/Toolbelt.Blazor.GetProperty.Script.lib.module.js"
     }
   ],
-  "version": "Pq7DFwSy"
+  "version": "LUY\/9bzP"
 };
