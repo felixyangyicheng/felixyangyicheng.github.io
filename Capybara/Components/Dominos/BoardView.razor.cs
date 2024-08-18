@@ -6,8 +6,8 @@ namespace Capybara.Components.Dominos
     {
         private LinkedList<DominoPieceModel> dominoPieces = new LinkedList<DominoPieceModel>();
         public string BasePath { get; set; } = "";
-        public int number = 0;
-
+        public int placedOrder = 0;
+        public string NoPlaybaleText="";
         public int? ValueFisrt = null;
         public int? ValueLast = null;
 
@@ -72,16 +72,18 @@ namespace Capybara.Components.Dominos
                 Domino = new Domino(4, 4),
                 Number = 5
 
-
             });
-            ValueFisrt = dominoPieces.First.Value.Domino.Value1;
-            ValueLast = dominoPieces.Last.Value.Domino.Value2;
+            ValueFisrt = GetLinkListLastPlayableValue();
+            ValueLast = GetLinkListLastPlayableValue();
         }
-
+        /// <summary>
+        /// Function to get playable value from the tail
+        /// </summary>
+        /// <param name="domino"></param>
         private int? GetLinkListLastPlayableValue()
         {
-            var firstDomino = dominoPieces.First?.Value.Domino;
-            var nextDomino = dominoPieces.First?.Next?.Value.Domino;
+            var firstDomino = dominoPieces.Last?.Value.Domino;
+            var nextDomino = dominoPieces.Last?.Previous?.Value.Domino;
             if (firstDomino?.Value1 == nextDomino?.Value1 || firstDomino?.Value1 == nextDomino?.Value2)
             {
                 return firstDomino?.Value2;
@@ -92,6 +94,10 @@ namespace Capybara.Components.Dominos
             }
             return null;
         }
+        /// <summary>
+        /// Function to get playable value from the head
+        /// </summary>
+        /// <returns></returns>
         private int? GetLinkListFirstPlayableValue()
         {
             var firstDomino = dominoPieces.First?.Value.Domino;
@@ -106,35 +112,45 @@ namespace Capybara.Components.Dominos
             }
             return null;
         }
+
+        /// <summary>
+        /// Place a domino piece into board
+        /// </summary>
+        /// <param name="domino"></param>
         private void AddDomino(Domino domino)
         {
-            number = dominoPieces.Count;
+            placedOrder = dominoPieces.Count;
 
-            if (domino.CanBePlacedNextTo(dominoPieces.First.Value.Domino))
+            if (domino.Value1== GetLinkListFirstPlayableValue()||domino.Value2==GetLinkListFirstPlayableValue())
             {
                 dominoPieces.AddFirst(new DominoPieceModel
                 {
                     Domino = domino,
-                    Number = number
+                    Number = placedOrder
                 });
             }
-            else if (domino.CanBePlacedNextTo(dominoPieces.Last.Value.Domino))
+            else if (domino.Value1 == GetLinkListLastPlayableValue() || domino.Value2 == GetLinkListLastPlayableValue())
             {
 
                 dominoPieces.AddLast(new DominoPieceModel
                 {
                     Domino = domino,
-                    Number = number
+                    Number = placedOrder
                 });
             }
-            ValueFisrt = dominoPieces.First.Value.Domino.Value1;
-            ValueLast = dominoPieces.Last.Value.Domino.Value2;
+            else
+            {
+                NoPlaybaleText = "You must skip your turn";
+            }
+            ValueFisrt = GetLinkListFirstPlayableValue();
+            ValueLast = GetLinkListLastPlayableValue();
             StateHasChanged();
         }
 
+
         private class DominoPieceModel
         {
-            public Domino Domino { get; set; }
+            public Domino Domino { get; set; } = default!;
             public int Number { get; set; }
             public string Width { get; set; } = "120px";
             public string Height { get; set; } = "60px";
