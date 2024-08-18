@@ -1,13 +1,16 @@
 ﻿@page "/dominoboard"
 @inject IConfiguration Configuration
 
-<div class="board">
-    @foreach (var piece in dominoPieces)
-    {
-        <Piece Domino="@piece.Domino" Class="@piece.Class" />
-    }
-</div>
+<MudPaper Class="d-flex flex-column flex-grow-1" Elevation="0">
 
+    @foreach (var piece in dominoPieces.Select((value, i) => new { i, value }))
+    {
+        <Piece Domino="@piece.value.Domino" Class="@piece.value.Class" />
+    }
+
+</MudPaper>
+
+<MudButton OnClick="e=>AddDomino(new Domino(4,0))">Add</MudButton>
 @code {
 
-}
+} 
