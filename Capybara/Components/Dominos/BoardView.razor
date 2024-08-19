@@ -5,11 +5,61 @@
 @inject NavigationManager NavigationManager
 @inject IDialogService Dialog
 
-<MudPaper Class="d-flex flex-column flex-grow-1" Elevation="0">
+@* <MudPaper Class="d-flex flex-column flex-grow-1" Elevation="0">
 
     @foreach (var piece in dominoPieces.Select((value, i) => new { i, value }))
     {
         <Piece Domino="@piece.value.Domino" Class="@piece.value.Class" />
+    }
+
+</MudPaper> *@
+
+<MudPaper Class="d-flex flex-column flex-grow-1" Elevation="0">
+
+    @foreach (var piece in dominoPieces.Select((value, i) => new { i, value }))
+    {
+        if (piece.i % 12 == 0 || piece.i % 12 == 6) // New row every 12 pieces
+        {
+            if (piece.i % 12 == 0)
+            {
+                <MudPaper Class="d-flex flex-row flex-grow-1" Elevation="0">
+                    @for (int j = piece.i; j < piece.i + 5 && j < dominoPieces.Count; j++)
+                    {
+                        var currentPiece = dominoPieces.Skip(j).First();
+
+                        <Piece Domino="@currentPiece.Domino" Class="@currentPiece.Class" />
+
+                    }
+                </MudPaper>
+            }
+            else if (piece.i % 12 == 6)
+            {
+                <MudPaper Class="d-flex flex-row-reverse flex-grow-1" Elevation="0">
+                    @for (int j = piece.i; j < piece.i + 5 && j < dominoPieces.Count; j++)
+                    {
+                        var currentPiece = dominoPieces.Skip(j).First();
+
+                        <Piece Domino="@currentPiece.Domino" Class="@currentPiece.Class" />
+
+                    }
+                </MudPaper>
+            }
+        }
+        else if (piece.i % 12 == 5) // One piece on the left
+        {
+            <MudPaper Class="d-flex flex-row-reverse flex-grow-1" Elevation="0">
+
+                <Piece Domino="@piece.value.Domino" Class="pieceBorderVertical" />
+
+            </MudPaper>
+        }
+        else if (piece.i % 12 == 11) // One piece on the right
+        {
+            <MudPaper Class="d-flex flex-row flex-grow-1" Elevation="0">
+
+                <Piece Domino="@piece.value.Domino" Class="pieceBorderVertical" />
+            </MudPaper>
+        }
     }
 
 </MudPaper>

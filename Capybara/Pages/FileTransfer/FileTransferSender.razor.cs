@@ -50,9 +50,11 @@
             _objRef = DotNetObjectReference.Create(this);
 
 
+			_hub = new HubConnectionBuilder()
+	           .WithUrl($"{Configuration["fileshare.srv"]}/file-transfer-hub").WithAutomaticReconnect()
+	           .Build();
 
-
-            _hub.On("ReceiverJoin", async () =>
+			_hub.On("ReceiverJoin", async () =>
             {
                 System.Console.WriteLine("Entrée du destinataire");
                 _isReceiverJoined = true;
