@@ -23,7 +23,7 @@
     {
 
         _hub = new HubConnectionBuilder()
-            .WithUrl($"{Configuration["dominogame.srv"]}/gamehub")
+            .WithUrl($"{Configuration["dominogame.srv"]}/game")
             .Build();
 
         _hub.On<Game>("GameCreated", (game) =>
