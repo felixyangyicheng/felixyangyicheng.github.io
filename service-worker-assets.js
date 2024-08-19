@@ -213,7 +213,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-KFeN2Bx9apnq\/05NTSyJ43fJlbPzaBJqbLS06sKVqg0=",
+      "hash": "sha256-PvfJSReYJilRLnzoPUfHBoKcoSKpibAybzNJgTZ3m4A=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -249,7 +249,7 @@
       "url": "_framework\/BootstrapBlazor.WebAPI.wasm"
     },
     {
-      "hash": "sha256-4GpwN\/DUhaMhxXZs4XNr\/\/7QKC\/fMjz3OJyNPvTRsjs=",
+      "hash": "sha256-sJjYNUBHEtPOcuBoMwm9o59TbUVTg\/RJvboHLGTk7Fg=",
       "url": "_framework\/Capybara.wasm"
     },
     {
@@ -425,7 +425,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.wasm"
     },
     {
-      "hash": "sha256-wyLBsaEtWO8z97KKSn4zW0V5WjkBTD\/qv8+SsD3C23U=",
+      "hash": "sha256-PMZG9zMxJ+6u5MBnSh7PURL12eSdBAsWXlgMeXlidDs=",
       "url": "_framework\/MudBlazor.wasm"
     },
     {
@@ -701,7 +701,7 @@
       "url": "_framework\/ZXingBlazor.wasm"
     },
     {
-      "hash": "sha256-Jysu2ST24u52bSnbVCmu6DFCIrxuG\/EvL1MGuVGJzM8=",
+      "hash": "sha256-MCCUIrHKVYWX1sQh+j3ro0ZAIUV8skRyZeWWXlVXZME=",
       "url": "appsettings.json"
     },
     {
@@ -1265,5 +1265,5 @@
       "url": "_content\/Toolbelt.Blazor.GetProperty.Script\/Toolbelt.Blazor.GetProperty.Script.lib.module.js"
     }
   ],
-  "version": "LUY\/9bzP"
+  "version": "ie81BCsW"
 };
