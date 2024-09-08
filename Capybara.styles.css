@@ -81,23 +81,19 @@
 body[b-7loz76w1nx] {
 }
 .individualValue[b-7loz76w1nx] {
-    height: 15px;
-    width: 15px;
+    height: 7.5vw;
+    width: 7.5vw;
 }
 .pieceBorder[b-7loz76w1nx] {
     display: flex;
-    padding: 5px;
-    border: 0.5px solid;
     border-radius: 5px;
-    width:150px;
+
+    height: fit-content;
 }
 .pieceBorderVertical[b-7loz76w1nx] {
     display: flex; /* Utilise flexbox */
     flex-direction: column; /* Empile les enfants verticalement */
     align-items: center; /* Centre les images horizontalement */
-
-    padding: 5px;
-    border: 0.5px solid;
     border-radius: 5px;
 }
 
@@ -106,15 +102,11 @@ body[b-7loz76w1nx] {
     display: flex;
     border: 1px solid #000;
     background-color: #f9f9f9;
+    align-items: center;
 }
 
 .dominoPiece.vertical[b-7loz76w1nx] {
     flex-direction: column;
-}
-
-.individualValue[b-7loz76w1nx] {
-    width: 50%;
-    height: auto;
 }
 
 /* /Layout/MainLayout.razor.rz.scp.css */
