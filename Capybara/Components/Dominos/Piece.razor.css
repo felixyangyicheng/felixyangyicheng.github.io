@@ -6,6 +6,8 @@
 }
 .pieceBorder {
     display: flex;
+
+    border: 0.5px solid;
     border-radius: 5px;
 
     height: fit-content;
@@ -14,6 +16,7 @@
     display: flex; /* Utilise flexbox */
     flex-direction: column; /* Empile les enfants verticalement */
     align-items: center; /* Centre les images horizontalement */
+    border: 0.5px solid;
     border-radius: 5px;
 }
 
@@ -29,3 +32,9 @@
     flex-direction: column;
 }
 
+/*.individualValue {
+    width: 50%;
+    height: auto;
+}
+
+*/

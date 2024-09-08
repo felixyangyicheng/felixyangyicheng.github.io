@@ -1,124 +1,177 @@
-﻿@page "/dominoboard"
+﻿@page "/dominoboardsample"
 
 @inject IJSRuntime JSRuntime
 @inject IConfiguration Configuration
 @inject NavigationManager NavigationManager
 @inject IDialogService Dialog
+<MudContainer>
 
-<MudPaper MaxWidth="75vw">
+	<MudPaper MaxWidth="75vw">
 
-<MudDropContainer T="DropItem" Items="_items" ApplyDropClassesOnDragStarted="_applyDropClassesOnDragStarted"
-				  ItemsSelector="@((item,dropzone) => item.Place == dropzone)" CanDropClass="mud-border-success" NoDropClass="mud-border-error"
-				  ItemDropped="ItemUpdated" Class="d-flex flex-column flex-grow-1"
-Style="height:80vh; width:75vw">
-	<ChildContent>
-		<MudDropZone T="DropItem" Identifier="Dinner" CanDrop="@((item) => item.IsPicked == false && item.IsRotten == false)"
-					 Style="position:absolute;top:10%; left: 10%;" Class="rounded-lg border-2 border-solid mud-border-lines-default pa-6 ma-8 flex-grow-1">
-			<MudText Typo="Typo.h6" Class="mb-4">Soup</MudText>
-		</MudDropZone>
-		@foreach (var piece in dominoPieces.Select((value, i) => new { i, value }))
-		{
-			if (piece.i % 12 == 0 || piece.i % 12 == 6) // New row every 12 pieces
-			{
-				if (piece.i % 12 == 0)
-				{
-						<MudPaper Class="d-flex flex-row" MaxWidth="75vw" Elevation="0">
-						@for (int j = piece.i; j < piece.i + 5 && j < dominoPieces.Count; j++)
-						{
-							var currentPiece = dominoPieces.Skip(j).First();
+		<MudDropContainer T="DominoDropItem" Items="_items" ApplyDropClassesOnDragStarted="_applyDropClassesOnDragStarted"
+						  ItemsSelector="@((item,dropzone) => item.Place == dropzone)" CanDropClass="mud-border-success" NoDropClass="mud-border-error"
+						  ItemDropped="ItemUpdated" Class="d-flex flex-column flex-grow-1"
+						  Style="height:80vh; width:75vw">
+			<ChildContent>
 
-							<Piece Domino="@currentPiece.Domino" Class="@currentPiece.Class" />
 
-						}
-					</MudPaper>
-				}
-				else if (piece.i % 12 == 6)
-				{
-					<MudPaper Class="d-flex flex-row-reverse flex-grow-1" Elevation="0">
-						@for (int j = piece.i; j < piece.i + 5 && j < dominoPieces.Count; j++)
-						{
-							var currentPiece = dominoPieces.Skip(j).First();
+				<MudGrid>
+					<MudItem xs="12">
+						<MudGrid>
+							<MudItem xs="12">
 
-							<Piece Domino="@currentPiece.Domino" Class="@currentPiece.Class" />
 
-						}
-					</MudPaper>
-				}
-			}
-			else if (piece.i % 12 == 5) // One piece on the left
-			{
-				<MudPaper Class="d-flex flex-row-reverse flex-grow-1" Elevation="0">
+							</MudItem>
 
-					<Piece Domino="@piece.value.Domino" Class="pieceBorderVertical align-self-center" />
+							<MudItem xs="12">
+								<MudDropZone T="DominoDropItem" Identifier="First" CanDrop="@((item) => item.IsPicked == false && (item.Domino.Value1 == ValueFisrt||item.Domino.Value2==ValueFisrt))"
+											 Class="rounded-lg border-1 border-dashed pa-3">
 
+								</MudDropZone>
+								@foreach (var piece in dominoPieces.Select((value, i) => new { i, value }))
+								{
+									if (piece.i % 12 == 0 || piece.i % 12 == 6) // New row every 12 pieces
+									{
+										if (piece.i % 12 == 0)
+										{
+											<MudPaper Class="d-flex flex-row" MaxWidth="75vw" Elevation="0">
+												@for (int j = piece.i; j < piece.i + 5 && j < dominoPieces.Count; j++)
+												{
+													var currentPiece = dominoPieces.Skip(j).First();
+													var temp = 0;
+													var first = GetLinkListFirstPlayableValue();
+													var v1 = currentPiece.Domino.Value1;
+													var v2 = currentPiece.Domino.Value2;
+
+													if (v2 == first)
+													{
+														temp = v1;
+														v1 = v2;
+														v2 = temp;
+													}
+													<Piece Domino="@currentPiece.Domino" Class="@currentPiece.Class" />
+
+												}
+											</MudPaper>
+										}
+										else if (piece.i % 12 == 6)
+										{
+											<MudPaper Class="d-flex flex-row-reverse " Elevation="0">
+												@for (int j = piece.i; j < piece.i + 5 && j < dominoPieces.Count; j++)
+												{
+													var currentPiece = dominoPieces.Skip(j).First();
+													var temp = 0;
+													var last = GetLinkListLastPlayableValue();
+													var v1 = currentPiece.Domino.Value1;
+													var v2 = currentPiece.Domino.Value2;
+
+													if (v1 == last)
+													{
+														temp = v2;
+														v2 = v1;
+														v1 = temp;
+													}
+
+													<Piece Domino="new Domino(v1, v2)" Class="flex-row-reverse" />
+
+												}
+											</MudPaper>
+										}
+									}
+									else if (piece.i % 12 == 5) // One piece on the left
+									{
+										<MudPaper Class="d-flex flex-row-reverse" Elevation="0">
+
+											<Piece Domino="@piece.value.Domino" Class="pieceBorderVertical align-self-center" />
+
+										</MudPaper>
+									}
+									else if (piece.i % 12 == 11) // One piece on the right
+									{
+										<MudPaper Class="d-flex flex-row" Elevation="0">
+
+											<Piece Domino="@piece.value.Domino" Class="pieceBorderVertical align-self-center" />
+										</MudPaper>
+									}
+								}
+								<MudDropZone T="DominoDropItem" Identifier="Last" CanDrop="@((item) => item.IsPicked == false && (item.Domino.Value1 == ValueLast||item.Domino.Value2==ValueLast))"
+											 Class="rounded-lg border-1 border-dashed pa-3 ">
+
+								</MudDropZone>
+							</MudItem>
+							<MudItem xs="12">
+
+
+								<MudDropZone T="DominoDropItem" Identifier="Hand" CanDrop="@((item) => false)" Class="rounded-lg border-1 border-solid mud-border-lines-default pa-2 flex-grow-1 d-flex">
+
+								</MudDropZone>
+							</MudItem>
+
+						</MudGrid>
+					</MudItem>
+
+
+
+				</MudGrid>
+			</ChildContent>
+			<ItemRenderer>
+				<MudPaper Class="d-flex flex-row-reverse" Elevation="0">
+					@if (context.IsPicked)
+					{
+
+					}
+					else
+					{
+
+						<MudBadge Visible="true" Overlap="true" Icon="@Icons.Material.Rounded.Circle" Color="Color.Success">
+							<Piece Domino="@context.Domino" Class="pieceBorderVertical align-self-center" />
+						</MudBadge>
+					}
 				</MudPaper>
-			}
-			else if (piece.i % 12 == 11) // One piece on the right
-			{
-				<MudPaper Class="d-flex flex-row flex-grow-1" Elevation="0">
+			</ItemRenderer>
+		</MudDropContainer>
 
-						<Piece Domino="@piece.value.Domino" Class="pieceBorderVertical align-self-center" />
-				</MudPaper>
-			}
-		}
-		<MudDropZone T="DropItem" Identifier="Trash" CanDrop="@((item) => item.IsPicked == false && item.IsRotten == true)"
-						 Style=" position:absolute;bottom:20%; right: 10%; max-width:750px" Class="rounded-lg border-2 border-dashed mud-border-lines-default pa-6 ma-8 flex-grow-1">
-			<MudText Typo="Typo.h6" Class="mb-4">Trash</MudText>
-		</MudDropZone>
-		<div class="d-flex flex-wrap justify-space-between">
+	</MudPaper>
+</MudContainer>
 
-
-		</div>
-		<MudDropZone T="DropItem" Identifier="Fridge" CanDrop="@((item) => false)" Class="rounded-lg border-2 border-solid mud-border-lines-default pa-6 ma-8 flex-grow-1 d-flex flex-wrap">
-			<MudText Typo="Typo.h6" Class="mb-4">Fridge</MudText>
-		</MudDropZone>
-	</ChildContent>
-	<ItemRenderer>
-		<MudPaper Height="54px" Width="54px" Class="pa-2" Elevation="0">
-			<MudBadge Visible="@(context.IsRotten ? true : false)" Overlap="true" Icon="@Icons.Custom.Uncategorized.Bacteria" Color="Color.Dark">
-				<MudIcon Icon="@context.Icon" Color="@context.Color" Size="Size.Large" />
-			</MudBadge>
-		</MudPaper>
-	</ItemRenderer>
-</MudDropContainer>
-
-</MudPaper>
-
-<p>First Playable: @ValueFisrt</p>
-<p>Last Playable: @ValueLast</p>
-<p>No Playable: @NoPlaybaleText</p>
-
-<MudButton OnClick="e=>AddDomino(new Domino(6,6))">Add</MudButton>
 @code {
-	private bool _applyDropClassesOnDragStarted = false;
+	private bool _applyDropClassesOnDragStarted = true;
 
 	private void Reset()
 	{
 		foreach (var item in _items)
 		{
-			item.Place = "Fridge";
+			item.Place = "Hand";
 			item.IsPicked = false;
 		}
 	}
 
-	private void ItemUpdated(MudItemDropInfo<DropItem> dropItem)
+	private void ItemUpdated(MudItemDropInfo<DominoDropItem> dropItem)
 	{
 		dropItem.Item.IsPicked = true;
 		dropItem.Item.Place = dropItem.DropzoneIdentifier;
+		if (dropItem.Item.Place == "Last")
+		{
+			AddDominoToLast(dropItem.Item.Domino);
+		}
+		else if (dropItem.Item.Place == "First")
+		{
+			AddDominoToFirst(dropItem.Item.Domino);
+		}
 	}
 
-	private List<DropItem> _items = new()
+	private List<DominoDropItem> _items = new()
 		{
-			new DropItem() { Icon = @Icons.Custom.Uncategorized.FoodApple, Color = Color.Error, IsRotten = false, Place = "Fridge" },
-			new DropItem() { Icon = @Icons.Custom.Uncategorized.Baguette, Color = Color.Warning, IsRotten = false, Place = "Fridge" },
-			new DropItem() { Icon = @Icons.Custom.Uncategorized.Sausage, Color = Color.Secondary, IsRotten = true, Place = "Fridge" },
-			new DropItem() { Icon = @Icons.Custom.Uncategorized.WaterMelon, Color = Color.Success, IsRotten = false, Place = "Fridge" },
-			new DropItem() { Icon = @Icons.Custom.Uncategorized.Fish, Color = Color.Info, IsRotten = true, Place = "Fridge" },
+			new DominoDropItem() { Domino =new Domino(8,9), Color = Color.Error, IsRotten = false, Place = "Hand" },
+			new DominoDropItem() { Domino = new Domino(6,9), Color = Color.Warning, IsRotten = false, Place = "Hand" },
+			new DominoDropItem() { Domino = new Domino(0,9), Color = Color.Secondary, IsRotten = true, Place = "Hand" },
+			new DominoDropItem() { Domino = new Domino(0,9), Color = Color.Success, IsRotten = false, Place = "Hand" },
+			new DominoDropItem() { Domino = new Domino(2,9), Color = Color.Info, IsRotten = true, Place = "Hand" },
 		};
 
-	public class DropItem
+	public class DominoDropItem
 	{
-		public string Icon { get; init; }
+		public Domino Domino { get; init; }
 		public Color Color { get; init; }
 		public bool IsRotten { get; set; }
 		public bool IsPicked { get; set; }
