@@ -5,12 +5,12 @@
 @inject NavigationManager NavigationManager
 @inject IDialogService Dialog
 
-<MudPaper MaxWidth="750px">
+<MudPaper MaxWidth="75vw">
 
 <MudDropContainer T="DropItem" Items="_items" ApplyDropClassesOnDragStarted="_applyDropClassesOnDragStarted"
 				  ItemsSelector="@((item,dropzone) => item.Place == dropzone)" CanDropClass="mud-border-success" NoDropClass="mud-border-error"
 				  ItemDropped="ItemUpdated" Class="d-flex flex-column flex-grow-1"
-Style="height:80vh; width:70vw">
+Style="height:80vh; width:75vw">
 	<ChildContent>
 		<MudDropZone T="DropItem" Identifier="Dinner" CanDrop="@((item) => item.IsPicked == false && item.IsRotten == false)"
 					 Style="position:absolute;top:10%; left: 10%;" Class="rounded-lg border-2 border-solid mud-border-lines-default pa-6 ma-8 flex-grow-1">
@@ -22,7 +22,7 @@ Style="height:80vh; width:70vw">
 			{
 				if (piece.i % 12 == 0)
 				{
-					<MudPaper Class="d-flex flex-row flex-grow-1" Elevation="0">
+						<MudPaper Class="d-flex flex-row" MaxWidth="75vw" Elevation="0">
 						@for (int j = piece.i; j < piece.i + 5 && j < dominoPieces.Count; j++)
 						{
 							var currentPiece = dominoPieces.Skip(j).First();
@@ -49,7 +49,7 @@ Style="height:80vh; width:70vw">
 			{
 				<MudPaper Class="d-flex flex-row-reverse flex-grow-1" Elevation="0">
 
-					<Piece Domino="@piece.value.Domino" Class="pieceBorderVertical" />
+					<Piece Domino="@piece.value.Domino" Class="pieceBorderVertical align-self-center" />
 
 				</MudPaper>
 			}
@@ -57,7 +57,7 @@ Style="height:80vh; width:70vw">
 			{
 				<MudPaper Class="d-flex flex-row flex-grow-1" Elevation="0">
 
-					<Piece Domino="@piece.value.Domino" Class="pieceBorderVertical" />
+						<Piece Domino="@piece.value.Domino" Class="pieceBorderVertical align-self-center" />
 				</MudPaper>
 			}
 		}
