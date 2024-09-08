@@ -185,7 +185,7 @@
       "url": "ts\/scrollTestInTs.ts"
     },
     {
-      "hash": "sha256-DoVpafY5uu0QB1F3BebwjTDW\/wUYxY5AODyqyNZu6r8=",
+      "hash": "sha256-8bfhQPqdtJT+\/6+hw3RpUVckycKBJCJqMW8wr3660fU=",
       "url": "Capybara.styles.css"
     },
     {
@@ -213,7 +213,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-BFzWpIUrhXIHg9y38uenGhywmqz+EFB8KfzI6pidFb0=",
+      "hash": "sha256-bywC0aTuw2\/rXA3k2JTLjXgUpTTp2Ppqc3ixwr3u4Sw=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -249,7 +249,7 @@
       "url": "_framework\/BootstrapBlazor.WebAPI.wasm"
     },
     {
-      "hash": "sha256-dNvLimDkdBg+ALq8InUKV27tHIkKzA9soWSuKWJHqIw=",
+      "hash": "sha256-7i3I\/B+EuTcXjgz+vxc9So2NdWCunu30JkFQ53naTOA=",
       "url": "_framework\/Capybara.wasm"
     },
     {
@@ -1265,5 +1265,5 @@
       "url": "_content\/Toolbelt.Blazor.GetProperty.Script\/Toolbelt.Blazor.GetProperty.Script.lib.module.js"
     }
   ],
-  "version": "s9sl8J2y"
+  "version": "WJ8fPV2q"
 };

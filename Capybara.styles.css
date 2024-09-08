@@ -86,6 +86,8 @@ body[b-7loz76w1nx] {
 }
 .pieceBorder[b-7loz76w1nx] {
     display: flex;
+
+    border: 0.5px solid;
     border-radius: 5px;
 
     height: fit-content;
@@ -94,6 +96,7 @@ body[b-7loz76w1nx] {
     display: flex; /* Utilise flexbox */
     flex-direction: column; /* Empile les enfants verticalement */
     align-items: center; /* Centre les images horizontalement */
+    border: 0.5px solid;
     border-radius: 5px;
 }
 
@@ -109,6 +112,12 @@ body[b-7loz76w1nx] {
     flex-direction: column;
 }
 
+/*.individualValue {
+    width: 50%;
+    height: auto;
+}
+
+*/
 /* /Layout/MainLayout.razor.rz.scp.css */
 .page[b-rcy5nsiigv] {
     position: relative;
