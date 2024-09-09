@@ -83,7 +83,7 @@
             _qrValue = $"{NavigationManager.BaseUri}file-transfer/receiver/{_roomId}";
 
             System.Console.WriteLine("En attente de l'arrivée du destinataire....");
-            await Task.Factory.StartNew(StartSendFileQueueAsync, TaskCreationOptions.LongRunning);
+            await Task.Factory.StartNew(StartSendFileQueueAsync2, TaskCreationOptions.LongRunning);
         }
         protected async Task OnChange(InputFileChangeEventArgs e)
         {
@@ -245,8 +245,87 @@
             }
             await InvokeAsync(StateHasChanged);
         }
+		private async Task StartSendFileQueueAsync()
+		{
+			var tasks = new List<Task>();
 
-        private async Task StartSendFileQueueAsync()
+			while (!_isClosePage)
+			{
+				while (_fileQueue.TryDequeue(out var file))
+				{
+					// Limit the number of concurrent uploads using SemaphoreSlim
+					await _fileQueueSlim.WaitAsync();
+
+					tasks.Add(SendFileAsync(file));
+				}
+
+				if (tasks.Count > 0)
+				{
+					// Wait for all tasks to complete before dequeuing more files
+					await Task.WhenAll(tasks);
+					tasks.Clear();
+				}
+
+				await Task.Delay(2); // Give time for additional files to be added
+			}
+		}
+		private async Task SendFileAsync(FileTransferInfo file)
+		{
+			try
+			{
+				file.State = FileTransferStateEnum.Sending;
+
+				FileMetadata fileMetadata = file as FileMetadata;
+
+				if (_connectionType == ConnectionTypeEnum.WebRTC)
+				{
+					// Send file metadata first
+					await JSRuntime.InvokeVoidAsync("sendFileInfo", JsonSerializer.Serialize(fileMetadata));
+
+					// Send the actual file data in chunks
+					await JSRuntime.InvokeVoidAsync("sendFile", file.FileContext.ToArray());
+				}
+				else if (_connectionType == ConnectionTypeEnum.ServiceRelay)
+				{
+					// Send file metadata to the server
+					await _hub.InvokeAsync("SendFileInfo", JsonSerializer.Serialize(fileMetadata));
+
+					// Send the file data via SignalR
+					await SendFileWithSignalRAsync(file);
+				}
+
+				file.State = FileTransferStateEnum.Sent;
+			}
+			finally
+			{
+				// Release the semaphore slot when the file is sent
+				_fileQueueSlim.Release();
+			}
+		}
+		private async Task SendFileWithSignalRAsync(FileTransferInfo file)
+		{
+			int totalBytesSent = 0;
+
+			for (int offset = 0; offset < file.FileContext.Count; offset += _chunkSize)
+			{
+				int remainingBytes = file.FileContext.Count - offset;
+				int chunkToSend = Math.Min(_chunkSize, remainingBytes);
+				byte[] chunk = new byte[chunkToSend];
+				file.FileContext.CopyTo(offset, chunk, 0, chunkToSend);
+
+				// Send the chunk via SignalR
+				await _hub.InvokeAsync("SendFile", chunk);
+
+				totalBytesSent += chunkToSend;
+				file.TransferProgress = (double)totalBytesSent / file.FileContext.Count * 100;
+
+				await InvokeAsync(StateHasChanged);
+				await Task.Delay(10); // Optional delay to control pacing
+			}
+
+			await _hub.InvokeAsync("SendFileSent");
+		}
+		private async Task StartSendFileQueueAsync2()
         {
             while (!_isClosePage)
             {
