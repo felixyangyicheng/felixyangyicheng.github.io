@@ -16,7 +16,7 @@
 
         private readonly List<FileTransferInfo> _files = new List<FileTransferInfo>();
 
-        private readonly SemaphoreSlim _fileQueueSlim = new(1, 1);
+        private readonly SemaphoreSlim _fileQueueSlim = new(1, 3); // used to be 1,1 
         private readonly ConcurrentQueue<FileTransferInfo> _fileQueue = new ConcurrentQueue<FileTransferInfo>();
 
         protected ElementReference UploadElement { get; set; }
@@ -232,7 +232,8 @@
 
         private async Task SendAllFilesAsync()
         {
-            foreach (var file in _files)
+            _files.Sort((x, y) => x.FileSize.CompareTo(y.FileSize));
+			foreach (var file in _files)
             {
                 if (file.State != FileTransferStateEnum.Init)
                 {
@@ -240,6 +241,7 @@
                 }
                 file.State = FileTransferStateEnum.Queue;
                 _fileQueue.Enqueue(file);
+              
             }
             await InvokeAsync(StateHasChanged);
         }
@@ -251,7 +253,9 @@
                 while (_fileQueue.TryDequeue(out var file))
                 {
                     await _fileQueueSlim.WaitAsync();
-                    _files.First(x => x.FileName == file.FileName).State = FileTransferStateEnum.Sending;
+			
+
+					_files.First(x => x.FileName == file.FileName).State = FileTransferStateEnum.Sending;
                     FileMetadata fileMetadata = file as FileMetadata;
                     if (_connectionType == ConnectionTypeEnum.WebRTC)
                     {
@@ -265,8 +269,11 @@
                     }
                     await InvokeAsync(StateHasChanged);
                     await Task.Delay(1);
+
+                
                 }
-                await Task.Delay(10);
+                await Task.Delay(2);
+
             }
         }
 
