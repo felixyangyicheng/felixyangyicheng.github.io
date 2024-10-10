@@ -303,8 +303,8 @@ const setBodyHeight = table => {
         card.style.height = `calc(100% - ${bodyHeight}px)`
     }
     else {
-        const body = table.body || table.tables[0]
-        if (bodyHeight > 0) {
+        const body = table.body || table.tables[0];
+        if (bodyHeight > 0 && body && body.parentNode) {
             body.parentNode.style.height = `calc(100% - ${bodyHeight}px)`
         }
         let headerHeight = 0
@@ -720,6 +720,7 @@ const setCopyColumn = table => {
 
     const el = table.el
     EventHandler.on(el, 'click', '.col-copy', e => {
+        e.stopPropagation();
         const index = e.delegateTarget.closest('th').cellIndex
         let rows
         if (table.thead) {
@@ -867,7 +868,7 @@ const saveColumnWidth = table => {
 }
 
 const setTableDefaultWidth = table => {
-    if (table.tables.length > 0 && table.tables[0].checkVisibility()) {
+    if (table.tables.length > 0 && isVisible(table.tables[0])) {
         const { scrollWidth, columnMinWidth } = table.options;
         const tableWidth = [...table.tables[0].querySelectorAll('col')]
             .map(i => {
