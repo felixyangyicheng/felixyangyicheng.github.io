@@ -1,5 +1,11 @@
 ﻿@page "/makeappointment"
-<MudCalendar Items="events">
+<MudCalendar Items="events"
+			 ShowDatePicker="true"
+			 Outlined="true"
+			 DayStartTime="new TimeOnly(9,0,0)"
+			 CellClicked="CellClicked"
+
+			 DayTimeInterval="CalendarTimeInterval.Minutes15" >
 	<DayTemplate>
 		<div style="width: 100%; height: 100%; border: 2px solid @GetColor(((CustomItem)context).Color)">
 			<div style="background-color: @GetColor(((CustomItem)context).Color)">
@@ -24,8 +30,14 @@
 
 </MudCalendar>
 @code {
-	private string GetColor(Color color) => $"var(--mud-palette-{color.ToDescriptionString()})";
 
+	[Inject]
+	private IDialogService DialogService { get; set; } = default!;
+	private string GetColor(Color color) => $"var(--mud-palette-{color.ToDescriptionString()})";
+	private Task CellClicked(DateTime dateTime)
+	{
+		return DialogService.ShowMessageBox("Cell Clicked", dateTime.ToString(Thread.CurrentThread.CurrentCulture));
+	}
 	private List<CustomItem> events = new()
 	{
 		new CustomItem
