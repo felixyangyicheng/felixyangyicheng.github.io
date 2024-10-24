@@ -15,7 +15,7 @@
 </MudDialog>
 
 @code {
-    [NotNull, CascadingParameter] MudDialogInstance? MudDialog { get; set; }
+    [NotNull, CascadingParameter] IMudDialogInstance? MudDialog { get; set; }
 
   
     [Parameter] public List<StatisticModel> GuessResult { get; set; } = default!;

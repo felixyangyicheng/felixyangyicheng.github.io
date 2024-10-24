@@ -138,8 +138,17 @@
 
 	private void ItemUpdated(MudItemDropInfo<DominoDropItem> dropItem)
 	{
-		dropItem.Item.IsPicked = true;
-		dropItem.Item.Place = dropItem.DropzoneIdentifier;
+
+		if (dropItem.Item is null)
+		{
+			throw new ArgumentNullException(nameof(dropItem.Item));
+		}
+		else
+		{
+
+			dropItem.Item.IsPicked = true;
+			dropItem.Item.Place = dropItem.DropzoneIdentifier;
+		}
 		if (dropItem.Item.Place == "Last")
 		{
 			AddDominoToLast(dropItem.Item.Domino);
@@ -161,10 +170,10 @@
 
 	public class DominoDropItem
 	{
-		public Domino Domino { get; init; }
+		public Domino Domino { get; init; } = default!;
 		public Color Color { get; init; }
 		public bool IsRotten { get; set; }
 		public bool IsPicked { get; set; }
-		public string Place { get; set; }
+		public string Place { get; set; } = "";
 	}
 }

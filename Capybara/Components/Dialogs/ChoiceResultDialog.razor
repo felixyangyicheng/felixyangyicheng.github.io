@@ -27,7 +27,7 @@
 </MudDialog>
 
 @code{
-    [NotNull, CascadingParameter] MudDialogInstance? MudDialog { get; set; }
+    [NotNull, CascadingParameter] IMudDialogInstance? MudDialog { get; set; }
 
     [Parameter] public DogBreedResult Result { get; set; } = new DogBreedResult();
     private static System.Timers.Timer aTimer { get; set; } = new();

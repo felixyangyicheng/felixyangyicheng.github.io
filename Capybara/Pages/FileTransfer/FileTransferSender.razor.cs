@@ -180,7 +180,7 @@
                     };
                     var parameters = new DialogParameters();
                     parameters.Add("ContentText", "Impossible d'ajouter le fichier de façon répétée");
-                    Dialog.Show<DialogOk>("Avertissement", parameters, options);
+                    await Dialog.ShowAsync<DialogOk>("Avertissement", parameters, options);
                     return;
                 }
                 files.Add(browserFile);
@@ -203,7 +203,7 @@
                 };
                 var parameters = new DialogParameters();
                 parameters.Add("ContentText", $"La taille du fichier {f.Name} dépasse la limite du système");
-                Dialog.Show<DialogOk>("Avertissement", parameters, options);
+				await Dialog.ShowAsync<DialogOk>("Avertissement", parameters, options);
                 return;
             }
             var file = new FileTransferInfo();

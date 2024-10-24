@@ -17,18 +17,21 @@
     <ItemGroup>
         <PackageReference Include="Blazor-ApexCharts" Version="3.5.0" />
 
-		<PackageReference Include="BootstrapBlazor" Version="8.10.2-beta05" />
-		<PackageReference Include="BootstrapBlazor.Markdown" Version="8.0.0" />
+		<PackageReference Include="BootstrapBlazor" Version="8.10.4" />
+		<PackageReference Include="BootstrapBlazor.Markdown" Version="8.2.1" />
 		<PackageReference Include="BootstrapBlazor.WebAPI" Version="8.0.5" />
-		<PackageReference Include="CodeBeam.MudBlazor.Extensions" Version="7.0.1" />
+		<PackageReference Include="CodeBeam.MudBlazor.Extensions" Version="7.0.2" />
+		<PackageReference Include="Heron.MudCalendar" Version="2.0.3" />
 		<PackageReference Include="JiuLing.CommonLibs" Version="1.6.8" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.0-rc.2.24474.3" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.0-rc.2.24474.3" PrivateAssets="all" />
         <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.0-rc.2.24474.3" />
+        <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="9.0.0-rc.2.24473.5" />
 	    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.0-rc.2.24473.5" />    
-		<PackageReference Include="MudBlazor" Version="7.9.0" />
+		<PackageReference Include="MudBlazor" Version="8.0.0-preview.2" />
         <PackageReference Include="BlazorPro.Spinkit" Version="1.2.0" />
         <PackageReference Include="ReactorBlazorQRCodeScanner" Version="1.0.7" />
+        <PackageReference Include="System.Private.Uri" Version="4.3.2" />
         <PackageReference Include="System.Text.Json" Version="9.0.0-rc.2.24473.5" />
         <PackageReference Include="Tewr.Blazor.FileReader" Version="3.3.2.23201" />
         <PackageReference Include="ToolBelt.Blazor.SpeechSynthesis" Version="10.3.1" />
