@@ -1,0 +1,30 @@
+﻿@using MudBlazor.Interfaces
+<MudGrid Class="justify-space-between mb-3 mx-n3" Style="max-width: 800px;">
+    <MudItem xs="12">
+        <MudTextField Mask="@mask" Label="Credit Card Number" Style="max-width: 400px;"
+                      @bind-Value="Number" Variant="@Variant.Text" Clearable />
+    </MudItem>
+    <MudItem xs="12">
+        Credit Card: <b>@Number</b>
+    </MudItem>
+
+    <MudItem xs="12">
+        DateTime: <b>@SubmitModel</b>
+    </MudItem>
+</MudGrid>
+@code {
+    [NotNull, CascadingParameter] IMudDialogInstance? MudDialog { get; set; }
+
+    [Parameter] public DateTime SubmitModel { get; set; } = new DateTime();
+    protected string Number { get; set; } = "";
+    protected string Type { get; set; } = "";
+
+    MultiMask mask = new MultiMask("00 00 00 00 00",
+        new MaskOption("American Express", "0000 000000 00000", @"^(34|37)"),
+        new MaskOption("Diners Club", "0000 000000 0000", @"^(30[0-59])"),
+        new MaskOption("JCB", "0000 0000 0000 0000", @"^(35|2131|1800)"),
+        new MaskOption("VISA", "0000 0000 0000 0000", @"^4"),
+        new MaskOption("MasterCard", "0000 0000 0000 0000", @"^(5[1-5]|2[2-7])"),
+        new MaskOption("Discover", "0000 0000 0000 0000", @"^(6011|65|64[4-9])")
+    );
+}

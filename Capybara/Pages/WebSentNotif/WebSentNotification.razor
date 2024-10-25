@@ -1,7 +1,7 @@
 ﻿@page "/PWANotif"
 @inject HttpClient _httpClient
 @inject IJSRuntime JSRuntime
-
+@using Console=System.Console
 <button class="btn btn-primary" @onclick="Send">Send Notification</button>
 @code {
     [Inject, NotNull] IConfiguration? configuration { get; set; }
