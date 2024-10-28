@@ -9,7 +9,8 @@
     </MudItem>
 
     <MudItem xs="12">
-        DateTime: <b>@SubmitModel</b>
+        DateTime: <b>@SubmitModel - @(SubmitModel.AddMinutes(15))</b>
+
     </MudItem>
 </MudGrid>
 @code {

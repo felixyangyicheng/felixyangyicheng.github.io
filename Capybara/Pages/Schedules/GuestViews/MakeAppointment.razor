@@ -4,27 +4,27 @@
 			 Outlined="true"
 			 DayStartTime="new TimeOnly(9,0,0)"
 			 CellClicked="CellClicked"
-
+			 ShowMonth="false"
 			 DayTimeInterval="CalendarTimeInterval.Minutes15" >
 	<DayTemplate>
 		<div style="width: 100%; height: 100%; border: 2px solid @GetColor(((CustomCalendarItem)context).Color)">
 			<div style="background-color: @GetColor(((CustomCalendarItem)context).Color)">
 				<MudText Style="color: #ffffff;" Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Title)</MudText>
+				<MudText Style="color: #ffffff;" Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start.ToString()) </MudText>
+				<MudText Style="color: #ffffff;" Typo="Typo.body1" Align="MudBlazor.Align.Center">-</MudText>
+				<MudText Style="color: #ffffff;" Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).End.ToString()) </MudText>
 			</div>
 			<div class="pa-2">
 				<MudText Typo="Typo.body2">@context.Text</MudText>
 			</div>
 		</div>
 	</DayTemplate>
-	<MonthTemplate>
-		<div class="d-flex gap-1">
-			<MudIcon Icon="@Icons.Material.Filled.Circle" Color="Color.Secondary" Size="Size.Small" />
-			<div>@context.Text</div>
-		</div>
-	</MonthTemplate>
 	<WeekTemplate>
 		<div class="pa-1" style="width: 100%; height: 100%;">
-			<MudChip T="string" Variant="Variant.Outlined" Color="Color.Tertiary" Class="ma-0" Style="width: 100%; height: 100%;">@context.Text</MudChip>
+			<MudText Style="color: #ffffff;" Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Title)</MudText>
+			<MudText Style="color: #ffffff;" Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start.ToString()) </MudText>
+			<MudText Style="color: #ffffff;" Typo="Typo.body1" Align="MudBlazor.Align.Center">-</MudText>
+			<MudText Style="color: #ffffff;" Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).End.ToString()) </MudText>
 		</div>
 	</WeekTemplate>
 
