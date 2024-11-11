@@ -10,9 +10,16 @@ namespace Capybara.Pages.Schedules.GuestViews
 		private IDialogService DialogService { get; set; } = default!;
 		private CustomCalendarItem SubmitModel { get; set; } = new();
 		private string GetColor(Color color) => $"var(--mud-palette-{color.ToDescriptionString()})";
+		private bool IsPassed(CustomCalendarItem item)
+		{ return DateTime.Now > item.Start; }
 
 		private List<CustomCalendarItem> events = new()
 	{
+		new CustomCalendarItem
+		{
+			Start = DateTime.Now.AddYears(-1),
+			End = DateTime.Now.AddMinutes(-1000),
+		},
 		new CustomCalendarItem
 		{
 			Start = DateTime.Today.AddHours(10),
@@ -34,7 +41,6 @@ namespace Capybara.Pages.Schedules.GuestViews
 			End = DateTime.Today.AddDays(1).AddHours(12.5),
 			Title = "Event tomorrow",
 			Location = "Over there",
-
 			Text = "This is an event tomorrow",
 			Color = Color.Tertiary,
 			Guest = new Guest

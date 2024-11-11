@@ -7,25 +7,48 @@
 			 ShowMonth="false"
 			 DayTimeInterval="CalendarTimeInterval.Minutes15" >
 	<DayTemplate>
-		<div style="width: 100%; height: 100%; border: 2px solid @GetColor(((CustomCalendarItem)context).Color)">
-			<div style="background-color: @GetColor(((CustomCalendarItem)context).Color)">
-				<MudText Style="color: #ffffff;" Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Title)</MudText>
-				<MudText Style="color: #ffffff;" Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start.ToString()) </MudText>
-				<MudText Style="color: #ffffff;" Typo="Typo.body1" Align="MudBlazor.Align.Center">-</MudText>
-				<MudText Style="color: #ffffff;" Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).End.ToString()) </MudText>
+		@if (IsPassed((CustomCalendarItem)context))
+		{
+			<div class="passed" style="width: 100%; height: 100%; border: 2px solid @GetColor(((CustomCalendarItem)context).Color)">
+				<div class="passed">
+					<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Title)</MudText>
+					<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start.ToString()) </MudText>
+					<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start>DateTime.Now))</MudText>
+					<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).End.ToString()) </MudText>
+				</div>
 			</div>
-			<div class="pa-2">
-				<MudText Typo="Typo.body2">@context.Text</MudText>
+		}else{
+
+			<div class="taken" style="width: 100%; height: 100%; border: 2px solid @GetColor(((CustomCalendarItem)context).Color)">
+				<div class="taken">
+					<MudText  Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Title)</MudText>
+					<MudText  Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start.ToString()) </MudText>
+					<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start > DateTime.Now))</MudText>
+					<MudText  Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).End.ToString()) </MudText>
+				</div>
 			</div>
-		</div>
+		}
 	</DayTemplate>
 	<WeekTemplate>
-		<div class="pa-1" style="width: 100%; height: 100%;">
-			<MudText Style="color: #ffffff;" Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Title)</MudText>
-			<MudText Style="color: #ffffff;" Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start.ToString()) </MudText>
-			<MudText Style="color: #ffffff;" Typo="Typo.body1" Align="MudBlazor.Align.Center">-</MudText>
-			<MudText Style="color: #ffffff;" Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).End.ToString()) </MudText>
-		</div>
+		@if (IsPassed((CustomCalendarItem)context))
+		{
+			<div class="pa-1 passed" style="width: 100%; height: 100%;">
+				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Title)</MudText>
+				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start.ToString()) </MudText>
+				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start > DateTime.Now))</MudText>
+
+				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).End.ToString()) </MudText>
+			</div>
+		}else{
+			<div class="pa-1 taken" style="width: 100%; height: 100%;">
+				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Title)</MudText>
+				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start.ToString()) </MudText>
+				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start > DateTime.Now))</MudText>
+
+				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).End.ToString()) </MudText>
+			</div>
+		}
+
 	</WeekTemplate>
 
 </MudCalendar>
