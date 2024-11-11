@@ -290,6 +290,25 @@ main[b-rcy5nsiigv] {
         right: 2rem;
     }
 }
+/* /Pages/Schedules/GuestViews/MakeAppointment.razor.rz.scp.css */
+
+body[b-9gozk40u5c] {
+
+}
+
+.taken[b-9gozk40u5c] {
+    background: #243960;
+    background: linear-gradient( 45deg, rgba(0, 153, 68, .5) 0, rgba(0, 153, 68, .5) 25%, transparent 25%, transparent 50%, rgba(0, 153, 68, .5) 50%, rgba(0, 153, 68, .5) 75%, transparent 75%, transparent );
+    background-size: 10px 10px;
+    color: black;
+}
+
+.passed[b-9gozk40u5c] {
+    background: #243960;
+    background: linear-gradient( 45deg, #243960 0, #243960 0 25%, transparent 25%, transparent 50%, #243960 0 50%, #243960 0 75%, transparent 75%, transparent );
+    background-size: 10px 10px;
+    color:wheat;
+}
 /* /Pages/SpeechSynthesisUseCase.razor.rz.scp.css */
 .status .indicators[b-1wkqh0xqsn] {
     display: flex;
