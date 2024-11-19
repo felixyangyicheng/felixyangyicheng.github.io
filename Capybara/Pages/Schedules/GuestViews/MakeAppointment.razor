@@ -2,9 +2,11 @@
 <MudCalendar Items="events"
 			 ShowDatePicker="true"
 			 Outlined="true"
+
 			 DayStartTime="new TimeOnly(9,0,0)"
 			 CellClicked="CellClicked"
 			 ShowMonth="false"
+			 ShowWeek="false"
 			 DayTimeInterval="CalendarTimeInterval.Minutes15" >
 	<DayTemplate>
 		@if (IsPassed((CustomCalendarItem)context))

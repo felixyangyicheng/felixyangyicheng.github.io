@@ -2,17 +2,31 @@
 
 @inject IConfiguration _configuration
 
-<MudContainer>
+<MudContainer  Class="MudContainer">
     @if (loading)
     {
 
         <Pulse />
     }
-    <div style="width: 100%; height: 70vh;">
-        <Markdown @ref="MarkdownSetValue" Value="@MarkdownString" ValueChanged="SetMarkdownString" @bind-Html="@HtmlString" IsViewer="true" />
+    <div style="width: 100%; height: 70vh;" >
+        <MudButtonGroup Color="Color.Primary" Vertical Variant="Variant.Filled" DropShadow="true">
+            <MudButton Href="/guessflag">Guess flag</MudButton>
+            <MudButton Href="/guessbreed">Guess breed</MudButton>
+        </MudButtonGroup>
+        <MudButtonGroup Color="Color.Primary" Vertical Variant="Variant.Filled" DropShadow="true">
+            <MudButton Href="/SpeechSynthesis">Speech Synthesis</MudButton>
+            <MudTooltip Text="Secondary" Color="Color.Secondary" Placement="Placement.Top">
+            <MudButton Href="/file-transfer">P2P File transert</MudButton>
+            </MudTooltip>
+        </MudButtonGroup>
+        <MudButtonGroup Color="Color.Primary" Vertical Variant="Variant.Filled" DropShadow="true">
+            <MudButton Href="/">Home</MudButton>
+            <MudButton Href="/aboutmer">About me</MudButton>
+        </MudButtonGroup>
 
     </div>
     <details>
+        <Markdown @ref="MarkdownSetValue" Value="@MarkdownString" ValueChanged="SetMarkdownString" @bind-Html="@HtmlString" IsViewer="true" />
         <summary>More info</summary>
         <div>
 
