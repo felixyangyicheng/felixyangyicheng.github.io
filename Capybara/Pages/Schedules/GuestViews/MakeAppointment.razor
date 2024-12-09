@@ -13,7 +13,7 @@
 				<div class="passed">
 					<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Title)</MudText>
 					<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start.ToString()) </MudText>
-					<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start>DateTime.Now))</MudText>
+					<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@IsPassed((CustomCalendarItem)context)</MudText>
 					<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).End.ToString()) </MudText>
 				</div>
 			</div>
@@ -23,7 +23,7 @@
 				<div class="taken">
 					<MudText  Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Title)</MudText>
 					<MudText  Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start.ToString()) </MudText>
-					<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start > DateTime.Now))</MudText>
+					<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(IsPassed((CustomCalendarItem)context))</MudText>
 					<MudText  Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).End.ToString()) </MudText>
 				</div>
 			</div>
@@ -35,7 +35,7 @@
 			<div class="pa-1 passed" style="width: 100%; height: 100%;">
 				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Title)</MudText>
 				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start.ToString()) </MudText>
-				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start > DateTime.Now))</MudText>
+				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(IsPassed((CustomCalendarItem)context))</MudText>
 
 				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).End.ToString()) </MudText>
 			</div>
@@ -43,7 +43,7 @@
 			<div class="pa-1 taken" style="width: 100%; height: 100%;">
 				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Title)</MudText>
 				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start.ToString()) </MudText>
-				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).Start > DateTime.Now))</MudText>
+				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(IsPassed((CustomCalendarItem)context))</MudText>
 
 				<MudText Typo="Typo.body1" Align="MudBlazor.Align.Center">@(((CustomCalendarItem)context).End.ToString()) </MudText>
 			</div>

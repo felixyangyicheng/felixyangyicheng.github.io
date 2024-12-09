@@ -11,15 +11,11 @@ namespace Capybara.Pages.Schedules.GuestViews
 		private CustomCalendarItem SubmitModel { get; set; } = new();
 		private string GetColor(Color color) => $"var(--mud-palette-{color.ToDescriptionString()})";
 		private bool IsPassed(CustomCalendarItem item)
-		{ return DateTime.Now > item.Start; }
+		{ return DateTime.Now >= item.Start; }
 
 		private List<CustomCalendarItem> events = new()
 	{
-		new CustomCalendarItem
-		{
-			Start = DateTime.Now.AddYears(-1),
-			End = DateTime.Now.AddMinutes(-1000),
-		},
+
 		new CustomCalendarItem
 		{
 			Start = DateTime.Today.AddHours(10),
@@ -49,6 +45,15 @@ namespace Capybara.Pages.Schedules.GuestViews
 				FamilyName="Fatoun",
 				GivenName="Kimberley"
 			}
+		},
+		new CustomCalendarItem
+		{
+			Start = DateTime.Now.AddYears(-1),
+			End = DateTime.Now.AddMinutes(-1000),
+			Title = "-",
+			Location = "-",
+			Text = "-",
+			Color = Color.Tertiary,
 		}
 	};
 

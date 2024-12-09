@@ -1,0 +1,152 @@
+﻿* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #f1f4f5;
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: #2f79ff;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+.stack {
+    width: 70%;
+    max-width: 1150px;
+    margin: 25px 0 150px 25px;
+    display: flex;
+    align-content: flex-start;
+}
+
+.paper {
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, .15);
+    padding: 50px;
+}
+
+#paper1 {
+    top: 45px;
+    left: 50px;
+}
+
+#paper2 {
+    top: 20px;
+    left: -100%;
+}
+
+#paper3 {
+    top: 25px;
+    transform: rotate(-4deg);
+    left: -200%;
+}
+
+#caddy {
+    max-width: 15%;
+}
+
+    #caddy .caddy-color {
+        fill: #005e7e;
+    }
+
+h1 {
+    font-size: 20px;
+}
+
+    h1 .emoji {
+        font-size: 150%;
+        vertical-align: middle;
+    }
+
+    h1 .lang {
+        margin-right: 1.25em;
+    }
+
+h2 {
+    font-size: 28px;
+    margin-top: 1.5em;
+}
+
+p,
+ol,
+ul {
+    color: #333;
+    line-height: 1.5em;
+}
+
+p {
+    /* margin: 1.5em 0; */
+    font-size: 12px;
+}
+
+ol,
+ul {
+    margin: .5em 0 .5em 2em;
+}
+
+    ol li,
+    ul li {
+        font-size: 12px;
+        /* margin-left: 1em;
+			margin-bottom: .5em; */
+    }
+
+li ol {
+    list-style-type: lower-alpha;
+}
+
+code {
+    color: #000;
+    font-family: Menlo, monospace;
+    background: #f0f0f0;
+    border-radius: 2px;
+    padding: 4px 8px;
+    font-size: 90%;
+}
+
+
+
+@media (max-width: 1100px) {
+    .stack {
+        width: 85%;
+    }
+}
+
+@media (max-width: 800px) {
+    .stack {
+        margin: 0 0 50px 0;
+        width: 100%;
+    }
+
+    .paper {
+        padding: 50px;
+    }
+
+    #paper1,
+    #paper2 {
+        display: none;
+    }
+
+    #paper3 {
+        left: 0;
+        transform: none;
+        top: 0;
+    }
+
+    #caddy {
+        display: block;
+    }
+}
