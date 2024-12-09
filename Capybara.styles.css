@@ -290,6 +290,159 @@ main[b-rcy5nsiigv] {
         right: 2rem;
     }
 }
+/* /Pages/Home.razor.rz.scp.css */
+*[b-n7ttzm87hq] {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body[b-n7ttzm87hq] {
+    background: #f1f4f5;
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    -webkit-font-smoothing: antialiased;
+}
+
+a[b-n7ttzm87hq] {
+    color: #2f79ff;
+    text-decoration: none;
+}
+
+    a:hover[b-n7ttzm87hq] {
+        text-decoration: underline;
+    }
+
+.stack[b-n7ttzm87hq] {
+    width: 70%;
+    max-width: 1150px;
+    margin: 25px 0 150px 25px;
+    display: flex;
+    align-content: flex-start;
+}
+
+.paper[b-n7ttzm87hq] {
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, .15);
+    padding: 50px;
+}
+
+#paper1[b-n7ttzm87hq] {
+    top: 45px;
+    left: 50px;
+}
+
+#paper2[b-n7ttzm87hq] {
+    top: 20px;
+    left: -100%;
+}
+
+#paper3[b-n7ttzm87hq] {
+    top: 25px;
+    transform: rotate(-4deg);
+    left: -200%;
+}
+
+#caddy[b-n7ttzm87hq] {
+    max-width: 15%;
+}
+
+    #caddy .caddy-color[b-n7ttzm87hq] {
+        fill: #005e7e;
+    }
+
+h1[b-n7ttzm87hq] {
+    font-size: 20px;
+}
+
+    h1 .emoji[b-n7ttzm87hq] {
+        font-size: 150%;
+        vertical-align: middle;
+    }
+
+    h1 .lang[b-n7ttzm87hq] {
+        margin-right: 1.25em;
+    }
+
+h2[b-n7ttzm87hq] {
+    font-size: 28px;
+    margin-top: 1.5em;
+}
+
+p[b-n7ttzm87hq],
+ol[b-n7ttzm87hq],
+ul[b-n7ttzm87hq] {
+    color: #333;
+    line-height: 1.5em;
+}
+
+p[b-n7ttzm87hq] {
+    /* margin: 1.5em 0; */
+    font-size: 12px;
+}
+
+ol[b-n7ttzm87hq],
+ul[b-n7ttzm87hq] {
+    margin: .5em 0 .5em 2em;
+}
+
+    ol li[b-n7ttzm87hq],
+    ul li[b-n7ttzm87hq] {
+        font-size: 12px;
+        /* margin-left: 1em;
+			margin-bottom: .5em; */
+    }
+
+li ol[b-n7ttzm87hq] {
+    list-style-type: lower-alpha;
+}
+
+code[b-n7ttzm87hq] {
+    color: #000;
+    font-family: Menlo, monospace;
+    background: #f0f0f0;
+    border-radius: 2px;
+    padding: 4px 8px;
+    font-size: 90%;
+}
+
+
+
+@media (max-width: 1100px) {
+    .stack[b-n7ttzm87hq] {
+        width: 85%;
+    }
+}
+
+@media (max-width: 800px) {
+    .stack[b-n7ttzm87hq] {
+        margin: 0 0 50px 0;
+        width: 100%;
+    }
+
+    .paper[b-n7ttzm87hq] {
+        padding: 50px;
+    }
+
+    #paper1[b-n7ttzm87hq],
+    #paper2[b-n7ttzm87hq] {
+        display: none;
+    }
+
+    #paper3[b-n7ttzm87hq] {
+        left: 0;
+        transform: none;
+        top: 0;
+    }
+
+    #caddy[b-n7ttzm87hq] {
+        display: block;
+    }
+}
 /* /Pages/Schedules/GuestViews/MakeAppointment.razor.rz.scp.css */
 
 body[b-9gozk40u5c] {
@@ -298,7 +451,7 @@ body[b-9gozk40u5c] {
 
 .taken[b-9gozk40u5c] {
     background: #243960;
-    background: linear-gradient( 45deg, rgba(0, 153, 68, .5) 0, rgba(0, 153, 68, .5) 25%, transparent 25%, transparent 50%, rgba(0, 153, 68, .5) 50%, rgba(0, 153, 68, .5) 75%, transparent 75%, transparent );
+    background: linear-gradient( 45deg, rgba(0, 153, 68, .5) 25%, transparent 25%, transparent 50%, rgba(0, 153, 68, .5) 50%, rgba(0, 153, 68, .5) 75%, transparent 75%, transparent );
     background-size: 10px 10px;
     color: black;
 }

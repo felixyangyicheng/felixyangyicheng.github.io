@@ -1,8 +1,8 @@
 self.assetsManifest = {
-  "version": "EOIuG4W4",
+  "version": "qx/qhlQi",
   "assets": [
     {
-      "hash": "sha256-2Zhh1DkXV2X/yKV/h5l0s8lys8jPrBNN7JXT1yI41yY=",
+      "hash": "sha256-f2c9rsB4f3vT9KIMkljFQGGyg9Qas7hBadvOeT9NztI=",
       "url": "Capybara.styles.css"
     },
     {
@@ -654,8 +654,8 @@ self.assetsManifest = {
       "url": "_framework/BootstrapBlazor.WebAPI.qxcnf95l2u.wasm"
     },
     {
-      "hash": "sha256-bOWS8Y5XaPoKxSFXUHAlnEpISdrJl4VE/fFdiA3moJo=",
-      "url": "_framework/Capybara.c8w1kahag2.wasm"
+      "hash": "sha256-+OSGjysju6Hhwm3sKCfRgQPzaTj7BN54e009RJinrI8=",
+      "url": "_framework/Capybara.4tz7urofgl.wasm"
     },
     {
       "hash": "sha256-hLxsycHkg0unoScwnCC+52DNIwpDffhPn43PBJXucqw=",
@@ -834,8 +834,8 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.JSInterop.t1yq1crnbd.wasm"
     },
     {
-      "hash": "sha256-fDapa9ORW6csXs8AZIZojTBLVqu3TUI8D4Y5kGePtE4=",
-      "url": "_framework/MudBlazor.kq85bs69vi.wasm"
+      "hash": "sha256-IOFTcPGlEV9/jb2LLS38rYt/czenIousYx3JBRRS+tY=",
+      "url": "_framework/MudBlazor.8il51hmos5.wasm"
     },
     {
       "hash": "sha256-wJU+xJiCJIR1Dr2sARcq+GuZTOhdZNuN9qmZbg33mm4=",
@@ -1106,7 +1106,7 @@ self.assetsManifest = {
       "url": "_framework/bg/Heron.MudCalendar.resources.1zvukp0ok5.wasm"
     },
     {
-      "hash": "sha256-a2I/FI64+rf2Fl5ein+lPzoE6GM0/ZXOMKjl01YQYc8=",
+      "hash": "sha256-dpRlKtYP4OSvr8TND9rdRM9ezzYtEjE3wolgeJ10KpU=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -1266,7 +1266,7 @@ self.assetsManifest = {
       "url": "appsettings.json"
     },
     {
-      "hash": "sha256-4shTnMGwfEb/kpnJTDSD80FxT0VX/roCruQ11eiOc9U=",
+      "hash": "sha256-tsLNAT+DW5s2K0wTmIrViuDsmQPEuwHY7xXNpwPWT7M=",
       "url": "css/app.css"
     },
     {
@@ -1382,7 +1382,7 @@ self.assetsManifest = {
       "url": "img/user.svg"
     },
     {
-      "hash": "sha256-vx9DmxpB/6WSGPPPuFSkGy1XubfUew5zKd6TjHviVoU=",
+      "hash": "sha256-KGJ56W1329TnHeQLrZXOhzswvA0Cpppk+d4kDLGshog=",
       "url": "index.html"
     },
     {
