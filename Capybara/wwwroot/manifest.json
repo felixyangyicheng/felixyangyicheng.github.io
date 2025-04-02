@@ -1,6 +1,6 @@
 {
-  "name": "ServiceMonitor",
-  "short_name": "ServiceMonitor",
+  "name": "Porfolio",
+  "short_name": "Porfolio",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
