@@ -1,8 +1,10 @@
-﻿import { getDescribedElement, getDescribedOwner, hackPopover, isDisabled } from "./utility.js"
+﻿import { getDescribedElement, getDescribedOwner, hackTooltip, hackPopover, isDisabled, registerBootstrapBlazorModule } from "./utility.js"
 import EventHandler from "./event-handler.js"
 
 const Popover = {
     init(el, config) {
+        hackTooltip();
+
         const popover = {
             ...{
                 el,
@@ -12,9 +14,10 @@ const Popover = {
                 isDisabled: () => {
                     return isDisabled(el) || isDisabled(el.parentNode) || isDisabled(el.querySelector('.form-control'))
                 },
-                initCallback: null
+                initCallback: null,
+                hideCallback: null
             },
-            ...config || {}
+            ...(config || {})
         }
         const createPopover = () => {
             if (!popover.isDisabled()) {
@@ -67,6 +70,12 @@ const Popover = {
             }
         }
 
+        popover.triggerHideCallback = () => {
+            if (popover.hideCallback) {
+                popover.hideCallback();
+            };
+        }
+
         if (popover.isPopover) {
             popover.hasDisplayNone = false;
 
@@ -110,6 +119,8 @@ const Popover = {
                 popover.popover.tip.classList.remove('show');
                 el.classList.remove('show');
                 el.append(popover.toggleMenu);
+
+                popover.triggerHideCallback();
             }
 
             const active = e => {
@@ -120,7 +131,18 @@ const Popover = {
                 }
             }
 
-            const closePopover = e => {
+
+            EventHandler.on(el, 'show.bs.popover', showPopover)
+            EventHandler.on(el, 'inserted.bs.popover', insertedPopover)
+            EventHandler.on(el, 'hide.bs.popover', hidePopover)
+            EventHandler.on(el, 'click', popover.toggleClass, active)
+            EventHandler.on(popover.toggleMenu, 'click', '.dropdown-item', e => {
+                if (popover.popover._config.autoClose !== 'outside') {
+                    popover.hide()
+                }
+            })
+
+            popover.closePopover = e => {
                 const selector = `.${popover.class}.show`;
                 const el = e.target;
                 if (el.closest(selector)) {
@@ -139,22 +161,9 @@ const Popover = {
                     }
                 });
             }
-
-            EventHandler.on(el, 'show.bs.popover', showPopover)
-            EventHandler.on(el, 'inserted.bs.popover', insertedPopover)
-            EventHandler.on(el, 'hide.bs.popover', hidePopover)
-            EventHandler.on(el, 'click', popover.toggleClass, active)
-            EventHandler.on(popover.toggleMenu, 'click', '.dropdown-item', e => {
-                if (popover.popover._config.autoClose !== 'outside') {
-                    popover.hide()
-                }
-            })
-
-            if (!window.bb_dropdown) {
-                window.bb_dropdown = true
-
-                EventHandler.on(document, 'click', closePopover);
-            }
+            registerBootstrapBlazorModule('Popover', el, () => {
+                EventHandler.on(document, 'click', popover.closePopover);
+            });
 
             // update handler
             if (popover.toggleMenu) {
@@ -174,6 +183,7 @@ const Popover = {
             }
 
             EventHandler.on(el, 'show.bs.dropdown', show)
+            EventHandler.on(el, 'hide.bs.dropdown', popover.triggerHideCallback)
 
             popover.popover = bootstrap.Dropdown.getOrCreateInstance(popover.toggleElement);
         }
@@ -195,9 +205,15 @@ const Popover = {
             EventHandler.off(popover.el, 'hide.bs.popover')
             EventHandler.off(popover.el, 'click', '.dropdown-toggle')
             EventHandler.off(popover.toggleMenu, 'click', '.dropdown-item')
+
+            const { Popover } = window.BootstrapBlazor;
+            Popover.dispose(popover, () => {
+                EventHandler.off(document, 'click', popover.closePopover);
+            });
         }
         else {
             EventHandler.off(popover.el, 'show.bs.dropdown')
+            EventHandler.off(popover.el, 'hide.bs.dropdown')
         }
     }
 }

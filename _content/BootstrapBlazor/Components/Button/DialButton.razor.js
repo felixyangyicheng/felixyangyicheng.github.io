@@ -1,4 +1,5 @@
-﻿import Data from "../../modules/data.js"
+﻿import { registerBootstrapBlazorModule } from "../../modules/utility.js"
+import Data from "../../modules/data.js"
 import EventHandler from "../../modules/event-handler.js"
 
 export function init(id) {
@@ -15,12 +16,9 @@ export function init(id) {
     EventHandler.on(button, 'click', () => {
         toggle(el, list)
     })
-
-    if (!window.bb_dial_button) {
-        window.bb_dial_button = true
-
-        EventHandler.on(document, 'click', e => closePopup(e));
-    }
+    registerBootstrapBlazorModule('DialButton', id, () => {
+        EventHandler.on(document, 'click', closePopup);
+    });
 }
 
 export function update(id) {
@@ -42,9 +40,15 @@ export function dispose(id) {
     Data.remove(id)
 
     if (dial) {
-        EventHandler.off(dial.button, 'click')
-        EventHandler.off(dial.list, 'animationend')
+        const { button, list } = dial;
+        EventHandler.off(button, 'click')
+        EventHandler.off(list, 'animationend')
     }
+
+    const { DialButton } = window.BootstrapBlazor;
+    DialButton.dispose(id, () => {
+        EventHandler.off(document, 'click', closePopup)
+    });
 }
 
 const toggle = (el, list) => {

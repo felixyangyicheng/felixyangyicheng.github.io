@@ -12,7 +12,8 @@ export function init(id, invoke, shownCallback, closeCallback) {
             if (modal) {
                 modal.hide();
             }
-        }
+        },
+        originalStyle: null
     }
     Data.set(id, modal)
 
@@ -21,18 +22,12 @@ export function init(id, invoke, shownCallback, closeCallback) {
     })
     EventHandler.on(el, 'hidden.bs.modal', e => {
         e.stopPropagation();
-        if (modal.draggable) {
-            modal.dialog.style.width = ''
-            modal.dialog.style.margin = ''
-
-            EventHandler.off(modal.dialog, 'mousedown')
-            EventHandler.off(modal.dialog, 'touchstart')
-        }
         invoke.invokeMethodAsync(closeCallback)
     })
     EventHandler.on(window, 'popstate', modal.pop)
 
     modal.show = () => {
+        backupBodyStyle(modal);
         const dialogs = el.querySelectorAll('.modal-dialog')
         if (dialogs.length === 1) {
             let backdrop = el.getAttribute('data-bs-backdrop') !== 'static'
@@ -55,12 +50,14 @@ export function init(id, invoke, shownCallback, closeCallback) {
             modal.modal._config.backdrop = 'static'
 
             modal.handlerKeyboardAndBackdrop()
+            el.classList.add('show');
         }
     }
 
     modal.hide = () => {
         if (el.children.length === 1) {
             modal.modal.hide();
+            restoreBodyStyle(modal);
         }
         else {
             modal.invoke.invokeMethodAsync(modal.closeCallback)
@@ -137,8 +134,28 @@ export function dispose(id) {
         }
 
         EventHandler.off(window, 'popstate', modal.pop)
-        if (modal.modal) {
-            modal.modal.dispose()
+        const dialog = modal.modal;
+        if (dialog) {
+            if (document.body.classList.contains('modal-open')) {
+                dialog._backdrop._config.isAnimated = false;
+                dialog._hideModal();
+            }
+
+            restoreBodyStyle(modal);
+            dialog.dispose()
         }
+    }
+}
+
+const backupBodyStyle = modal => {
+    if (modal.originalStyle === null) {
+        modal.originalStyle = document.body.style.cssText;
+    }
+}
+
+const restoreBodyStyle = modal => {
+    if (modal.originalStyle !== null) {
+        document.body.style.cssText = modal.originalStyle;
+        delete modal.originalStyle;
     }
 }

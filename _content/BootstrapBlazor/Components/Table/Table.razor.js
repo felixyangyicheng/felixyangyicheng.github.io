@@ -28,7 +28,7 @@ export function reloadColumnWidth(tableName) {
 
 export function reloadColumnOrder(tableName) {
     const key = `bb-table-column-order-${tableName}`
-    return JSON.parse(localStorage.getItem(key)) || [];
+    return JSON.parse(localStorage.getItem(key)) ?? [];
 }
 
 export function saveColumnOrder(options) {
@@ -51,6 +51,7 @@ export function reset(id) {
 
     const shim = [...table.el.children].find(i => i.classList.contains('table-shim'))
     if (shim !== void 0) {
+        table.shim = shim;
         table.thead = [...shim.children].find(i => i.classList.contains('table-fixed-header'))
         table.isResizeColumn = shim.classList.contains('table-resize')
         if (table.thead) {
@@ -102,13 +103,23 @@ export function reset(id) {
 
     table.pages = [...table.el.children].find(i => i.classList.contains('nav-pages'));
 
-    setBodyHeight(table)
 
     setColumnToolboxListener(table);
 
+    if (isVisible(table.el) === false) {
+        table.loopCheckHeightHandler = requestAnimationFrame(() => check(table));
+        return;
+    }
+
+    observeHeight(table)
+}
+
+const observeHeight = table => {
+    setBodyHeight(table);
+
     const observer = new ResizeObserver(entries => {
         entries.forEach(entry => {
-            if (entry.target === shim) {
+            if (entry.target === table.shim) {
                 setTableDefaultWidth(table);
             }
             else if (entry.target === table.search || entry.target === table.toolbar || entry.target === table.pages) {
@@ -117,7 +128,7 @@ export function reset(id) {
         });
     });
     if (table.thead) {
-        observer.observe(shim);
+        observer.observe(table.shim);
     }
     if (table.search) {
         observer.observe(table.search);
@@ -128,6 +139,7 @@ export function reset(id) {
     if (table.pages) {
         observer.observe(table.pages);
     }
+    table.observer = observer;
 }
 
 export function resetColumn(id) {
@@ -197,10 +209,21 @@ export function scrollTo(id, x = 0, y = 0, options = { behavior: 'smooth' }) {
     }
 }
 
+export function toggleView(id) {
+    const table = Data.get(id);
+    destroyTable(table);
+
+    reset(id);
+}
+
 export function dispose(id) {
     const table = Data.get(id)
-    Data.remove(id)
+    Data.remove(id);
 
+    destroyTable(table);
+}
+
+const destroyTable = table => {
     if (table) {
         if (table.loopCheckHeightHandler) {
             cancelAnimationFrame(table.loopCheckHeightHandler);
@@ -215,7 +238,10 @@ export function dispose(id) {
 
         disposeColumnDrag(table.columns)
         disposeDragColumns(table.dragColumns)
-        EventHandler.off(table.element, 'click', '.col-copy');
+
+        if (table.element) {
+            EventHandler.off(table.element, 'click', '.col-copy');
+        }
 
         if (table.handlers.setResizeHandler) {
             EventHandler.off(document, 'click', table.handlers.setResizeHandler);
@@ -224,7 +250,8 @@ export function dispose(id) {
             EventHandler.off(document, 'click', table.handlers.setColumnToolboxHandler);
         }
         if (table.observer) {
-            table.observer.disconnect()
+            table.observer.disconnect();
+            table.observer = null;
         }
 
         if (table.popovers) {
@@ -264,18 +291,16 @@ const check = table => {
         table.loopCheckHeightHandler = requestAnimationFrame(() => check(table));
     }
     else {
-        delete table.loopCheckHeightHandler;
-        setBodyHeight(table);
+        if (table.loopCheckHeightHandler > 0) {
+            cancelAnimationFrame(table.loopCheckHeightHandler);
+            delete table.loopCheckHeightHandler;
+        }
+        observeHeight(table);
     }
 };
 
 const setBodyHeight = table => {
     const el = table.el
-    if (isVisible(el) === false) {
-        table.loopCheckHeightHandler = requestAnimationFrame(() => check(table));
-        return;
-    }
-
     const children = [...el.children]
     const search = children.find(i => i.classList.contains('table-search'))
     table.search = search;
@@ -303,7 +328,7 @@ const setBodyHeight = table => {
         card.style.height = `calc(100% - ${bodyHeight}px)`
     }
     else {
-        const body = table.body || table.tables[0];
+        const body = table.body ?? table.tables[0];
         if (bodyHeight > 0 && body && body.parentNode) {
             body.parentNode.style.height = `calc(100% - ${bodyHeight}px)`
         }
@@ -391,24 +416,31 @@ const setExcelKeyboardListener = table => {
                     break;
                 }
             }
-        } else if (keyCode === KeyCodes.RIGHT_ARROW) {
+        }
+        else if (keyCode === KeyCodes.RIGHT_ARROW) {
             while (++index < cells.length) {
                 if (activeCell(cells, index)) {
                     break;
                 }
             }
-        } else if (keyCode === KeyCodes.UP_ARROW) {
-            cells = tr.previousElementSibling.children;
-            while (index < cells.length) {
-                if (activeCell(cells, index)) {
-                    break;
+        }
+        else if (keyCode === KeyCodes.UP_ARROW) {
+            cells = tr.previousElementSibling && tr.previousElementSibling.children;
+            if (cells) {
+                while (index < cells.length) {
+                    if (activeCell(cells, index)) {
+                        break;
+                    }
                 }
             }
-        } else if (keyCode === KeyCodes.DOWN_ARROW) {
-            cells = tr.nextElementSibling.children;
-            while (index < cells.length) {
-                if (activeCell(cells, index)) {
-                    break;
+        }
+        else if (keyCode === KeyCodes.DOWN_ARROW) {
+            cells = tr.nextElementSibling && tr.nextElementSibling.children;
+            if (cells) {
+                while (index < cells.length) {
+                    if (activeCell(cells, index)) {
+                        break;
+                    }
                 }
             }
         }
@@ -551,16 +583,17 @@ const setResizeListener = table => {
                     colWidth = getWidth(col.closest('th'))
                 }
                 tableWidth = getWidth(col.closest('table'))
-                originalX = e.clientX || e.touches[0].clientX
+                originalX = e.clientX ?? e.touches[0].clientX
             },
             e => {
-                const eventX = e.clientX || e.changedTouches[0].clientX
+                const eventX = e.clientX ?? e.changedTouches[0].clientX
                 const marginX = eventX - originalX
                 table.tables.forEach(t => {
                     const group = [...t.children].find(i => i.nodeName === 'COLGROUP')
+                    const calcColWidth = colWidth + marginX;
                     if (group) {
                         const curCol = group.children.item(colIndex)
-                        curCol.style.width = `${colWidth + marginX}px`
+                        curCol.style.setProperty('width', `${calcColWidth}px`);
                         const tableEl = curCol.closest('table')
                         let width = tableWidth + marginX
                         if (t.closest('.table-fixed-body')) {
@@ -578,6 +611,22 @@ const setResizeListener = table => {
                                 tip.update();
                             }
                         }
+
+                        const header = col.parentElement;
+                        if (header.classList.contains('fixed')) {
+                            resizeNextFixedColumnWidth(header, calcColWidth);
+                        }
+                    }
+
+                    const tbody = [...t.children].find(i => i.nodeName === 'TBODY');
+                    if (tbody) {
+                        const rows = [...tbody.children].filter(i => i.nodeName === 'TR');
+                        rows.forEach(row => {
+                            const header = row.children.item(colIndex);
+                            if (header.classList.contains('fixed')) {
+                                resizeNextFixedColumnWidth(header, calcColWidth);
+                            }
+                        });
                     }
                 })
             },
@@ -594,6 +643,25 @@ const setResizeListener = table => {
             }
         )
     })
+}
+
+const resizeNextFixedColumnWidth = (col, width) => {
+    if (col.classList.contains('fixed-right')) {
+        const nextColumn = col.previousElementSibling;
+        if (nextColumn.classList.contains('fixed')) {
+            const right = parseFloat(col.style.getPropertyValue('right'));
+            nextColumn.style.setProperty('right', `${right + width}px`);
+            resizeNextFixedColumnWidth(nextColumn, nextColumn.offsetWidth);
+        }
+    }
+    else if (col.classList.contains('fixed')) {
+        const nextColumn = col.nextElementSibling;
+        if (nextColumn.classList.contains('fixed')) {
+            const left = parseFloat(col.style.getPropertyValue('left'));
+            nextColumn.style.setProperty('left', `${left + width}px`);
+            resizeNextFixedColumnWidth(nextColumn, nextColumn.offsetWidth);
+        }
+    }
 }
 
 const setColumnResizingListen = (table, col) => {
@@ -763,8 +831,7 @@ const setCopyColumn = table => {
 }
 
 const disposeColumnDrag = columns => {
-    columns = columns || []
-    columns.forEach(col => {
+    (columns ?? []).forEach(col => {
         EventHandler.off(col, 'click');
         EventHandler.off(col, 'dblclick');
         EventHandler.off(col, 'mousedown');
@@ -831,8 +898,7 @@ const setDraggable = table => {
 }
 
 const disposeDragColumns = columns => {
-    columns = columns || []
-    columns.forEach(col => {
+    (columns ?? []).forEach(col => {
         EventHandler.off(col, 'dragstart')
         EventHandler.off(col, 'dragend')
         EventHandler.off(col, 'drop')
