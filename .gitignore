@@ -21,4 +21,6 @@ Capybara/bin/Release/net8.0/*.wasm
 Capybara/bin/Release/net8.0/*.map
 Capybara/bin/Release/net8.0/*.json
 Capybara/obj/
+Capybara.Test/bin/
+Capybara.Test/obj/
 .vs/
