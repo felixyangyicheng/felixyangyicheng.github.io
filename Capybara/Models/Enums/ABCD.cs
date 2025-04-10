@@ -1,4 +1,4 @@
-﻿namespace Capybara.Models.RoadSecurityTheory
+﻿namespace Capybara.Models.Enums
 {
     public enum ABCD
     {
