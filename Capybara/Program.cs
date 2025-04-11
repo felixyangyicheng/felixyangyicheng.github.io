@@ -1,9 +1,5 @@
-using System;
-using System.Net.Http;
-using System.Threading.Tasks;
+
 using Capybara.HashCheckService;
-using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Microsoft.Extensions.DependencyInjection;
 
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
