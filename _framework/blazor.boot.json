@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Capybara",
   "resources": {
-    "hash": "sha256-f3/z7noipJw0X7WBEdnNaqTjoimNFEZk5lIkz+DMt5M=",
+    "hash": "sha256-SYh6DRYIIb3IT8glXklKBAKKOnWtVnEiiSUPh3UX+04=",
     "fingerprinting": {
       "Blazor-ApexCharts.asn021yqfh.wasm": "Blazor-ApexCharts.wasm",
       "BlazorComponentUtilities.jrk97nw8r4.wasm": "BlazorComponentUtilities.wasm",
@@ -9,7 +9,7 @@
       "BootstrapBlazor.Markdown.zjbytjdc34.wasm": "BootstrapBlazor.Markdown.wasm",
       "BootstrapBlazor.j064ab3rxm.wasm": "BootstrapBlazor.wasm",
       "BootstrapBlazor.WebAPI.1cl339xwip.wasm": "BootstrapBlazor.WebAPI.wasm",
-      "Capybara.cfzwsgt4w7.wasm": "Capybara.wasm",
+      "Capybara.56xj6pcusv.wasm": "Capybara.wasm",
       "CodeBeam.MudBlazor.Extensions.jb5swwb5xg.wasm": "CodeBeam.MudBlazor.Extensions.wasm",
       "CsvHelper.5c97h8cn3b.wasm": "CsvHelper.wasm",
       "Heron.MudCalendar.xws3ihe1y4.wasm": "Heron.MudCalendar.wasm",
@@ -184,7 +184,7 @@
       "BootstrapBlazor.Markdown.zjbytjdc34.wasm": "sha256-AViUoytAnIKRYsW72jNrws0HWGJgck5sOX62fnfcirk=",
       "BootstrapBlazor.j064ab3rxm.wasm": "sha256-jcIQkQJB/nG6vLAygDfs9a/Cm1hsPuf9x3P7FwRW5/k=",
       "BootstrapBlazor.WebAPI.1cl339xwip.wasm": "sha256-wUWuOXjm0yd4EGJHfwNhBCEd0UCkrhgcsZV7scfl/6o=",
-      "Capybara.cfzwsgt4w7.wasm": "sha256-qNh2gVo43JWaF48vwP2nf0AHrRI95Xqaq0/1YlDJ40c=",
+      "Capybara.56xj6pcusv.wasm": "sha256-rTh6bz8TWIVu+n+jS21fpAjsVKPVai8Ce2trj+5TC7Y=",
       "CodeBeam.MudBlazor.Extensions.jb5swwb5xg.wasm": "sha256-75n6n1QNwlxTnt2M75/cQTkBzj1c9HPtnppKpTJiR+k=",
       "CsvHelper.5c97h8cn3b.wasm": "sha256-BXz5RCSFBrg3KCDZD4lxgyWmw1YH6vUT0N/oIQdCKfA=",
       "Heron.MudCalendar.xws3ihe1y4.wasm": "sha256-IQsoukSImfx4Ui40MtB0wcxp7qcXEEtmMDm2ox0kVhw=",
