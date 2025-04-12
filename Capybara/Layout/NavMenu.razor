@@ -1,24 +1,24 @@
 ﻿<MudNavMenu>
     <MudText Typo="Typo.h6" Class="px-4">Porfolio</MudText>
-    <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">Interesting WebAssembly projets </MudText>
+    <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">P'tits trucs en Blazor WebAssembly </MudText>
     <MudDivider Class="my-2" />
-    <MudNavLink Href="/" IconColor="Color.Info" Icon="@Icons.Custom.FileFormats.FilePdf">Home</MudNavLink>
-    <MudNavGroup Title="Games" Expanded="false">
+    <MudNavLink Href="/" IconColor="Color.Info" Icon="@Icons.Custom.FileFormats.FilePdf">Accueil</MudNavLink>
+    <MudNavGroup Title="Jeux" Icon="@Icons.Material.Filled.Games" Expanded="false">
         <MudNavLink Href="/guessflag" IconColor="Color.Info" Icon="@Icons.Material.Filled.Games">Guess Flags</MudNavLink>
         <MudNavLink Href="/guessbreed" IconColor="Color.Info" Icon="@Icons.Material.Filled.Pets">Guess breeds</MudNavLink>
     </MudNavGroup>
-    <MudNavGroup Title="Interrsting fonctions" Expanded="false">
+    <MudNavGroup Title="Utilité" Icon="@Icons.Material.Rounded.Functions" Expanded="false">
         <MudNavLink Href="/SpeechSynthesis" IconColor="Color.Info" Icon="@Icons.Material.Rounded.ChatBubbleOutline">Speech Synthesis</MudNavLink>
         <MudNavLink Href="/file-transfer" IconColor="Color.Info" Icon="@Icons.Material.Rounded.Timer">File Transfer</MudNavLink>
         <MudNavLink Href="/PWANotif" IconColor="Color.Info" Icon="@Icons.Material.Rounded.Info">Web push notification</MudNavLink>
     </MudNavGroup>
     <MudNavGroup Title="Docs" Expanded="false">
-        <MudNavGroup Title="Tutos" Expanded="false">
-            <MudNavLink Href="/Tutos/AMD_Ollama/amd_rocm_ollama_rx6500xt-fr" IconColor="Color.Info" Icon="@Icons.Material.Rounded.DocumentScanner">Guide pour exécuter Ollama sur Ubuntu 24.04 avec une AMD Radeon RX 6500 XT (Méthode Non Officielle)</MudNavLink>
+        <MudNavGroup Title="Tutos" Icon="@Icons.Material.Rounded.NewReleases" Expanded="false">
+            <MudNavLink Href="/Tutos/AMD_Ollama/amd_rocm_ollama_rx6500xt-fr" IconColor="Color.Info" Icon="@Icons.Material.Rounded.DocumentScanner">Ollama avec AMD Radeon RX 6500xt (Ubuntu)</MudNavLink>
 
         </MudNavGroup>
 
     </MudNavGroup>
-    <MudNavLink Href="/aboutme" IconColor="Color.Info" Icon="@Icons.Material.Rounded.Man2">About me</MudNavLink>
+    <MudNavLink Href="/aboutme" IconColor="Color.Info" Icon="@Icons.Material.Rounded.Man2">Moi, qui suis-je?</MudNavLink>
 
 </MudNavMenu>
