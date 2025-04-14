@@ -49,6 +49,8 @@ sudo nano /etc/systemd/system/ollama.service
 ```ini
 Environment="HSA_OVERRIDE_GFX_VERSION=10.3.0"
 Environment="ROCR_VISIBLE_DEVICES=0"
+Environment="OLLAMA_ORIGINS='*'"
+Environment="OLLAMA_HOST=0.0.0.0:11434"
 ```
 
 ### 3. Recharger le service
