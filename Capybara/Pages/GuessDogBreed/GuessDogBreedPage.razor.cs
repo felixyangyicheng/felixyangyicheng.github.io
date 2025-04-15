@@ -18,22 +18,18 @@ namespace Capybara.Pages.GuessDogBreed
 
 		private List<StatisticModel> GuessResult { get; set; } = new();
 
-		private ApexChart<StatisticModel> _barChart { get; set; } = default!;
 
-		private ApexChartOptions<StatisticModel> _barCharOptions { get; set; } = new ApexChartOptions<StatisticModel>
-		{
-			Theme = new Theme
-			{
-				Mode = Mode.Light,
-				Palette = PaletteType.Palette6
-			}
-		};
+
+
 
 		protected bool loading { get; set; }
 		protected int TotalGuess { get; set; } = 15;
-
-
-		protected override async Task OnInitializedAsync()
+        protected Counter timer=new Counter();
+        private void TimerOutCallback()
+        {
+            //todo
+    }
+        protected override async Task OnInitializedAsync()
 		{
 
 
@@ -68,8 +64,8 @@ namespace Capybara.Pages.GuessDogBreed
 		}
 		private async Task NextDogBreed(bool correctGuess)
 		{
-
-			if (ListToGuess != null && ListToGuess.Count > 0)
+            timer.Start(10);
+            if (ListToGuess != null && ListToGuess.Count > 0)
 			{
 				DogBreedResult result = new();
 				result.BreedName = DogBreedToGuess.BreedName;

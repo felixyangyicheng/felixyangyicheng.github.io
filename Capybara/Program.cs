@@ -1,4 +1,5 @@
 
+
 using Capybara.HashCheckService;
 
 
@@ -25,6 +26,14 @@ builder.Services.AddHttpClient("notification.push.srv.local", client =>
 builder.Services.AddHttpClient("fileshare.srv", client =>
 {
     client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("fileshare.srv") ?? throw new ArgumentException());
+});
+builder.Services.AddApexCharts(e =>
+{
+    e.GlobalOptions = new ApexChartBaseOptions
+    {
+        Debug = true,
+        Theme = new Theme { Palette = PaletteType.Palette6 }
+    };
 });
 builder.Services.AddPWAUpdater();
 builder.Services.AddBootstrapBlazor();
