@@ -12,10 +12,20 @@
         <MudNavLink Href="/file-transfer" IconColor="Color.Info" Icon="@Icons.Material.Rounded.Timer">File Transfer</MudNavLink>
         <MudNavLink Href="/PWANotif" IconColor="Color.Info" Icon="@Icons.Material.Rounded.Info">Web push notification</MudNavLink>
     </MudNavGroup>
-    <MudNavGroup Title="Docs" Expanded="false">
+    <MudNavGroup Title="Docs" Icon="@Icons.Material.Rounded.Book" Expanded="false">
         <MudNavGroup Title="Tutos" Icon="@Icons.Material.Rounded.NewReleases" Expanded="false">
-            <MudNavLink Href="/Tutos/AMD_Ollama/amd_rocm_ollama_rx6500xt-fr" IconColor="Color.Info" Icon="@Icons.Material.Rounded.DocumentScanner">Ollama avec AMD Radeon RX 6500xt (Ubuntu)</MudNavLink>
-
+            <MudNavGroup Title="Ollama" Icon="@Icons.Material.Rounded.NewReleases" Expanded="false">
+                <MudNavLink Href="/Tutos/AMD_Ollama/amd_rocm_ollama_rx6500xt-fr" IconColor="Color.Info" Icon="@Icons.Material.Rounded.DocumentScanner">Ollama avec AMD Radeon RX 6500xt (Ubuntu)</MudNavLink>
+            </MudNavGroup>
+            <MudNavGroup Title="CaddyServer" Icon="@Icons.Material.Rounded.NewReleases" Expanded="false">
+                <MudNavLink Href="/Tutos/CaddyServer/BasicCaddySample-fr" IconColor="Color.Info" Icon="@Icons.Material.Rounded.DocumentScanner">Exemple Cadyfile</MudNavLink>
+            </MudNavGroup>
+            <MudNavGroup Title="Cockpit" Icon="@Icons.Material.Rounded.NewReleases" Expanded="false">
+                <MudNavLink Href="/Tutos/Cockpit/Cockpit_installation-fr" IconColor="Color.Info" Icon="@Icons.Material.Rounded.DocumentScanner">Installation Cockpit</MudNavLink>
+            </MudNavGroup>
+            <MudNavGroup Title="Jenkins" Icon="@Icons.Material.Rounded.NewReleases" Expanded="false">
+                <MudNavLink Href="/Tutos/Jenkins/BashSample_AutomatedDockerComposeDeployment-fr" IconColor="Color.Info" Icon="@Icons.Material.Rounded.DocumentScanner">Script Bash: Jenkins, docker</MudNavLink>
+            </MudNavGroup>
         </MudNavGroup>
 
     </MudNavGroup>
