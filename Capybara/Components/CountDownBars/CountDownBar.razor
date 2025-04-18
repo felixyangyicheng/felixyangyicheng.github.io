@@ -1,0 +1,75 @@
+﻿<div style="width: 100%; background-color: #e0e0e0; height: 20px; border-radius: 10px; overflow: hidden;">
+    <div style="
+        height: 100%;
+        background-color: @GetProgressColor();
+        width: @($"{Progress}%");
+        transition: width 1s linear;
+    "></div>
+</div>
+
+<p style="margin-top: 10px; font-weight: bold; font-size: 1.2em;">@Time</p>
+
+@code {
+    private System.Timers.Timer _timer = null!;
+    private int _secondsToRun = 15;
+    private int _initialSeconds;
+    protected string Time { get; set; } = "00:00";
+    protected double Progress { get; set; } = 100;
+
+    [Parameter]
+    public EventCallback<Task> TimerOut { get; set; }
+
+    public void Start(int secondsToRun)
+    {
+        _initialSeconds = secondsToRun;
+        _secondsToRun = secondsToRun;
+
+        if (_secondsToRun > 0)
+        {
+            Time = TimeSpan.FromSeconds(_secondsToRun).ToString(@"mm\:ss");
+            Progress = 100;
+            StateHasChanged();
+            _timer.Start();
+        }
+    }
+
+    public void Stop()
+    {
+        _timer.Stop();
+    }
+
+    protected override void OnInitialized()
+    {
+        _timer = new System.Timers.Timer(1000);
+        _timer.Elapsed += OnTimedEvent;
+        _timer.AutoReset = true;
+    }
+
+    private async void OnTimedEvent(object? sender, System.Timers.ElapsedEventArgs e)
+    {
+        _secondsToRun--;
+
+        await InvokeAsync(() =>
+        {
+            Time = TimeSpan.FromSeconds(Math.Max(_secondsToRun, 0)).ToString(@"mm\:ss");
+            Progress = (_secondsToRun / (double)_initialSeconds) * 100;
+            StateHasChanged();
+        });
+
+        if (_secondsToRun <= 0)
+        {
+            _timer.Stop();
+            await TimerOut.InvokeAsync();
+        }
+    }
+
+    public void Dispose()
+    {
+        _timer.Dispose();
+    }
+
+    private string GetProgressColor()
+    {
+        return Progress > 50 ? "#4caf50" : Progress > 20 ? "#ffc107" : "#f44336";
+    }
+}

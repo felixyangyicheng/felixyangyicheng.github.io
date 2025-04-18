@@ -59,5 +59,6 @@ namespace Capybara.Pages
         {
             _timer.Dispose();
         }
+
     }
 }

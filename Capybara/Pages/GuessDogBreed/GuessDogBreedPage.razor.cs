@@ -19,12 +19,12 @@ namespace Capybara.Pages.GuessDogBreed
 		private List<StatisticModel> GuessResult { get; set; } = new();
 
 
+        protected CountDownBar timer=new CountDownBar();
 
 
 
 		protected bool loading { get; set; }
 		protected int TotalGuess { get; set; } = 15;
-        protected Counter timer=new Counter();
         private async Task TimerOutCallback()
         {
 			await NextDogBreed(false);
