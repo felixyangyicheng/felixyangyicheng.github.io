@@ -14,7 +14,7 @@ namespace Capybara.Components.Charts
             {
                 Bar = new PlotOptionsBar
                 {
-                    Horizontal = true
+                    Horizontal = false
                 }
             }
         };
@@ -24,14 +24,7 @@ namespace Capybara.Components.Charts
         {
 
             _barCharOptions.Blazor = new ApexChartsBlazorOptions { JavascriptPath = "https://apexcharts.github.io/Blazor-ApexCharts/_content/Blazor-ApexCharts/js/blazor-apexcharts.js" };
-            //_barCharOptions = new ApexChartOptions<StatisticModel>
-            //{
-            //    Theme = new Theme
-            //    {
-            //        Mode = Mode.Light,
-            //        Palette = PaletteType.Palette1
-            //    }
-            //};
+
 
         }
         protected override async Task OnParametersSetAsync()

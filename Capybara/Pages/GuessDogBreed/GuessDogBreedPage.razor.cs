@@ -25,10 +25,10 @@ namespace Capybara.Pages.GuessDogBreed
 		protected bool loading { get; set; }
 		protected int TotalGuess { get; set; } = 15;
         protected Counter timer=new Counter();
-        private void TimerOutCallback()
+        private async Task TimerOutCallback()
         {
-            //todo
-    }
+			await NextDogBreed(false);
+        }
         protected override async Task OnInitializedAsync()
 		{
 
@@ -64,7 +64,7 @@ namespace Capybara.Pages.GuessDogBreed
 		}
 		private async Task NextDogBreed(bool correctGuess)
 		{
-            timer.Start(10);
+
             if (ListToGuess != null && ListToGuess.Count > 0)
 			{
 				DogBreedResult result = new();
@@ -112,6 +112,7 @@ namespace Capybara.Pages.GuessDogBreed
 
 		private void NewQuaternary()
 		{
+
 			DogBreedQuaternary.DogBreedProposes = new();
 			DogBreedToGuess = ListToGuess[0];
 			DogBreedPropose dogBreedProposeCorrect = new();
@@ -135,7 +136,8 @@ namespace Capybara.Pages.GuessDogBreed
 			DogBreedQuaternary.DogBreedProposes.Add(dogBreedProposeCorrect);
 			DogBreedQuaternary.DogBreedProposes = DogBreedQuaternary.DogBreedProposes.OrderBy(_ => Guid.NewGuid()).ToList();
 			StateHasChanged();
-		}
+            timer.Start(10);
+        }
 
 
 

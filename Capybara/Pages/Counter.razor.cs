@@ -12,7 +12,7 @@ namespace Capybara.Pages
         protected string Time { get; set; } = "00:00";
 
         [Parameter]
-        public EventCallback TimerOut { get; set; }
+        public EventCallback<Task> TimerOut { get; set; }
 
         public void Start(int secondsToRun)
         {
