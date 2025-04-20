@@ -12,23 +12,43 @@
         <Markdown @ref="MarkdownSetValue" Value="@MarkdownString" ValueChanged="SetMarkdownString" @bind-Html="@HtmlString" IsViewer="true" />
 
     </div>
-    <details>
-        <summary>More info</summary>
-        <div>
 
-            <section>
-            </section>
+</MudContainer>
+<details>
+    <summary>Plus d'info/Mentions légales </summary>
+    <MudGrid>
+        <MudItem xs="12" >
+            <footer>
+                © Copyright felixyangyicheng
+                <p>
+                    MIT License
+                </p>
+                <p>
+                    <a href="https://felixyangyicheng.github.io/legal">Mentions légales</a>
+                </p>
+                <div id="disclaimer">
+
+                    The maintainer of this site is not responsible for the content, disposition, or behavior of this Web
+                    property, which is independently owned and maintained. For inquiries, please contact the site owner or
+                    hosting provider.
+                </div>
+            </footer>
+        </MudItem>
+        <MudItem xs="12">
             <section>
                 <p>Runtime information</p>
                 <p>@RuntimeInformation.FrameworkDescription / @RuntimeInformation.ProcessArchitecture</p>
                 <p>@RuntimeInformation.OSDescription / @RuntimeInformation.OSArchitecture</p>
                 <p>@RuntimeInformation.RuntimeIdentifier </p>
             </section>
+        </MudItem>
+    </MudGrid>
 
-        </div>
-    </details>
-</MudContainer>
 
+
+
+
+</details>
 @code {
     private string? MarkdownString { get; set; } = "### README.md";
     private string? HtmlString { get; set; }
