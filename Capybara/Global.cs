@@ -33,6 +33,8 @@ global using Capybara.Models.Appointment;
 global using Heron.MudCalendar;
 global using ZXingBlazor.Components;
 global using System.Timers;
+global using Capybara.HashCheckService;
+
 
 global using Color = MudBlazor.Color;
 global using Console = System.Console;

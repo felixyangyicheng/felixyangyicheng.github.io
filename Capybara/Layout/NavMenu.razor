@@ -29,6 +29,21 @@
         </MudNavGroup>
 
     </MudNavGroup>
+
+    <MudNavGroup Title="Docs" Icon="@Icons.Material.Rounded.Book" Expanded="false">
+        @if (docs != null)
+        {
+            @foreach (var item in docs)
+            {
+                @BuildNav(item)
+            }
+        }
+        else
+        {
+            <MudText Color="Color.Warning">Chargement de la documentation...</MudText>
+        }
+    </MudNavGroup>
+
     <MudNavLink Href="/aboutme" IconColor="Color.Info" Icon="@Icons.Material.Rounded.Man2">Moi, qui suis-je?</MudNavLink>
 
-</MudNavMenu>
+</MudNavMenu> 

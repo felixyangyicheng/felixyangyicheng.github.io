@@ -1,0 +1,55 @@
+﻿{
+    "Title":  "Docs",
+    "Path":  "/Docs",
+    "IsDirectory":  true,
+    "Children":  [
+                     {
+                         "Title":  "Podman",
+                         "Path":  "/Docs/Podman",
+                         "IsDirectory":  true,
+                         "Children":  {
+
+                                      }
+                     },
+                     {
+                         "Title":  "AMD Ollama",
+                         "Path":  "/Docs/AMD_Ollama",
+                         "IsDirectory":  true,
+                         "Children":  {
+                                          "Title":  "amd rocm ollama rx6500xt fr",
+                                          "Path":  "/Docs/AMD_Ollama/amd_rocm_ollama_rx6500xt-fr",
+                                          "IsDirectory":  false
+                                      }
+                     },
+                     {
+                         "Title":  "Cockpit",
+                         "Path":  "/Docs/Cockpit",
+                         "IsDirectory":  true,
+                         "Children":  {
+                                          "Title":  "Cockpit installation fr",
+                                          "Path":  "/Docs/Cockpit/Cockpit_installation-fr",
+                                          "IsDirectory":  false
+                                      }
+                     },
+                     {
+                         "Title":  "CaddyServer",
+                         "Path":  "/Docs/CaddyServer",
+                         "IsDirectory":  true,
+                         "Children":  {
+                                          "Title":  "BasicCaddyfileSample fr",
+                                          "Path":  "/Docs/CaddyServer/BasicCaddyfileSample-fr",
+                                          "IsDirectory":  false
+                                      }
+                     },
+                     {
+                         "Title":  "Jenkins",
+                         "Path":  "/Docs/Jenkins",
+                         "IsDirectory":  true,
+                         "Children":  {
+                                          "Title":  "BashSample AutomatedDockerComposeDeployment fr",
+                                          "Path":  "/Docs/Jenkins/BashSample_AutomatedDockerComposeDeployment-fr",
+                                          "IsDirectory":  false
+                                      }
+                     }
+                 ]
+}

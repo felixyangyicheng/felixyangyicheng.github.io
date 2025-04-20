@@ -1,6 +1,7 @@
 
 
-using Capybara.HashCheckService;
+using Capybara;
+
 
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -8,7 +9,6 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-
 builder.Services.AddSingleton<IConfiguration>(new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
     .Build());
@@ -23,6 +23,7 @@ builder.Services.AddHttpClient("notification.push.srv.local", client =>
         client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("notification.push.srv") ?? throw new ArgumentException());
     });
 #endif
+
 builder.Services.AddHttpClient("fileshare.srv", client =>
 {
     client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("fileshare.srv") ?? throw new ArgumentException());
@@ -52,4 +53,7 @@ builder.Services.AddSpeechSynthesis();
             config.SnackbarConfiguration.SnackbarVariant = Variant.Filled;
         });
 
-await builder.Build().RunAsync();
+var app= builder.Build();
+
+
+await app.RunAsync();

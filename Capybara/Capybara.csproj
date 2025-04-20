@@ -15,6 +15,13 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Content Include="Docs\AMD_Ollama\amd_rocm_ollama_rx6500xt-fr.md" />
+      <Content Include="Docs\CaddyServer\BasicCaddyfileSample-fr.md" />
+      <Content Include="Docs\Cockpit\Cockpit_installation-fr.md" />
+      <Content Include="Docs\Jenkins\BashSample_AutomatedDockerComposeDeployment-fr.md" />
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="Blazor-ApexCharts" Version="5.1.0" />
 
 		<PackageReference Include="BootstrapBlazor" Version="9.5.2" />
@@ -27,6 +34,7 @@
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.3" PrivateAssets="all" />
         <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.3" />
         <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="9.0.3" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.3" />
 	    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.3" />    
 		<PackageReference Include="MudBlazor" Version="8.5.1" />
         <PackageReference Include="BlazorPro.Spinkit" Version="1.2.0" />
@@ -44,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Dominos\" />
+    <Folder Include="wwwroot\docs\" />
     <Folder Include="wwwroot\public\" />
   </ItemGroup>
 </Project>

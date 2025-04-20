@@ -31,6 +31,11 @@ jobs:
         with:
           dotnet-version: 9.0.x
 
+      - name: Generate Navigation
+        run: |
+          Set-ExecutionPolicy Bypass -Scope Process -Force
+          ./Scripts/nav-gene.ps1
+
       # Install dotnet wasm buildtools workload
       - name: Install .NET WASM Build Tools
         run: dotnet workload install wasm-tools
@@ -79,6 +84,8 @@ jobs:
             cp dist/Capybara/wwwroot/index.html dist/Capybara/wwwroot/404.html    
             sed -i '$d' dist/Capybara/wwwroot/README.md  
             echo "Dernière modification: $(date +"%Y-%m-%dT%I:%M:%pZ")" >> dist/Capybara/wwwroot/README.md 
+
+
       # Rewrite base href        
       - name: Rewrite base href
         uses: SteveSandersonMS/ghaction-rewrite-base-href@v1.1.0
