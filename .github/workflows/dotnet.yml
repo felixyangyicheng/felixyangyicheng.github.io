@@ -30,19 +30,12 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 9.0.x
-
-      # Install PowerShell Core
-      - name: Setup PowerShell Core
-        uses: actions/setup-powershell@v2
-        with:
-          # Choisis la version souhaitée, par exemple 7.4.x
-          pwsh-version: '7.4.x'
-
-      # Generate Navigation (avec pwsh / Bash)
+      # Generate Navigation json file
       - name: Generate Navigation
+        shell: pwsh
         run: |
-          pwsh -NoProfile -ExecutionPolicy Bypass -File 
-          ./Capybara/Scripts/nav-gene.ps1
+            Set-ExecutionPolicy Bypass -Scope Process -Force
+            ./Capybara/Scripts/nav-gene.ps1
 
       # Install dotnet wasm buildtools workload
       - name: Install .NET WASM Build Tools
