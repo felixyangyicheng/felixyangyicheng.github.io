@@ -33,7 +33,6 @@ jobs:
 
       - name: Generate Navigation
         run: |
-          Set-ExecutionPolicy Bypass -Scope Process -Force
           ./Scripts/nav-gene.ps1
 
       # Install dotnet wasm buildtools workload
