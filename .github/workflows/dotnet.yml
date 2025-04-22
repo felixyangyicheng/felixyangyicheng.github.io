@@ -33,7 +33,7 @@ jobs:
 
       - name: Generate Navigation
         run: |
-          ./Scripts/nav-gene.ps1
+          ./Capybara/Scripts/nav-gene.ps1
 
       # Install dotnet wasm buildtools workload
       - name: Install .NET WASM Build Tools
