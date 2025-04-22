@@ -34,7 +34,6 @@ jobs:
       - name: Generate Navigation
         shell: pwsh
         run: |
-            Set-ExecutionPolicy Bypass -Scope Process -Force
             ./Capybara/Scripts/nav-gene.ps1
 
       # Install dotnet wasm buildtools workload
