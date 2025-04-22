@@ -1,0 +1,51 @@
+{
+  "Url": "/docs",
+  "Children": [
+    {
+      "Url": "",
+      "Children": {
+        "Url": "/docs/amd_ollama/amd_rocm_ollama_rx6500xt-fr",
+        "Children": [],
+        "IsFolder": false,
+        "Title": "amd rocm ollama rx6500xt fr"
+      },
+      "IsFolder": true,
+      "Title": "AMD Ollama"
+    },
+    {
+      "Url": "",
+      "Children": {
+        "Url": "/docs/caddyserver/basiccaddyfilesample-fr",
+        "Children": [],
+        "IsFolder": false,
+        "Title": "BasicCaddyfileSample fr"
+      },
+      "IsFolder": true,
+      "Title": "CaddyServer"
+    },
+    {
+      "Url": "",
+      "Children": {
+        "Url": "/docs/cockpit/cockpit_installation-fr",
+        "Children": [],
+        "IsFolder": false,
+        "Title": "Cockpit installation fr"
+      },
+      "IsFolder": true,
+      "Title": "Cockpit"
+    },
+    {
+      "Url": "",
+      "Children": {
+        "Url": "/docs/jenkins/bashsample_automateddockercomposedeployment-fr",
+        "Children": [],
+        "IsFolder": false,
+        "Title": "BashSample AutomatedDockerComposeDeployment fr"
+      },
+      "IsFolder": true,
+      "Title": "Jenkins"
+    }
+  ],
+  "IsFolder": true,
+  "Title": "Docs"
+}
