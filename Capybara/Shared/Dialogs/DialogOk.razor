@@ -10,6 +10,6 @@
 @code {
     [Parameter] public string? ContentText { get; set; }
 
-    [CascadingParameter] IMudDialogInstance? MudDialog { get; set; } 
+    [CascadingParameter] IMudDialogInstance MudDialog { get; set; } = default!;
     void Submit() => MudDialog.Close(MudBlazor.DialogResult.Ok(true));
 }

@@ -133,7 +133,7 @@ namespace Capybara.Components.ComboInput
             }
             try
             {
-                if (InputRefs?.Length <= 0)
+                if (InputRefs?.Length <= 0 || InputRefs is null)
                 {
 
 

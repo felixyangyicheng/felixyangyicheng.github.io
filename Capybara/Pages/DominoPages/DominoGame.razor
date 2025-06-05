@@ -81,7 +81,7 @@
 
     private async Task JoinGame()
     {
-        currentPlayer = new Player { ConnectionId = _hub.ConnectionId, Name = playerName };
+        currentPlayer = new Player { ConnectionId = _hub.ConnectionId??throw new NullReferenceException("connectionId null"), Name = playerName };
         await _hub.SendAsync("JoinGame", currentPlayer.ConnectionId, currentPlayer.Name, HostId);
     }
 
