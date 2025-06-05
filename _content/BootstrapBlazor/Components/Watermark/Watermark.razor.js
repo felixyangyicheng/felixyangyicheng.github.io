@@ -41,17 +41,19 @@ export function dispose(id) {
     Data.remove(id);
 
     if (watermark) {
-        const { ob } = watermark;
+        const { el, ob } = watermark;
         ob.disconnect();
 
         delete watermark.ob;
+        document.body.removeAttribute('data-bb-watermark');
+        el.remove();
     }
 }
 
 const updateWatermark = (records, watermark) => {
     for (const record of records) {
         for (const dom of record.removedNodes) {
-            if (dom.classList.contains('bb-watermark-bg')) {
+            if (dom.classList && dom.classList.contains('bb-watermark-bg')) {
                 createWatermark(watermark);
                 return;
             }
@@ -71,7 +73,8 @@ const createWatermark = watermark => {
         fontSize: 16,
         text: 'BootstrapBlazor',
         rotate: -40,
-        color: '#0000004d'
+        color: '#0000004d',
+        zIndex: '9999'
     };
 
     for (const key in options) {
@@ -90,8 +93,12 @@ const createWatermark = watermark => {
     div.style.opacity = '1';
     div.style.position = 'absolute';
     div.style.inset = '0';
-    div.style.zIndex = '999';
     div.classList.add("bb-watermark-bg");
+
+    if (options.zIndex === void 0) {
+        options.zIndex = defaults.zIndex;
+    }
+    div.style.zIndex = options.zIndex;
 
     const mark = el.querySelector('.bb-watermark-bg');
     if (mark) {
@@ -99,27 +106,22 @@ const createWatermark = watermark => {
     }
     el.appendChild(div);
 
+    if (options.isPage) {
+        document.body.setAttribute('data-bb-watermark', "true");
+        document.body.appendChild(el);
+    }
+
     options.bg = bg;
     requestAnimationFrame(() => monitor(watermark));
 }
 
 const monitor = watermark => {
-    const { el, options, ob } = watermark;
+    const { el, options } = watermark;
     if (el === null) {
         return;
     }
 
-    if (el.children.length !== 2) {
-        clearWatermark(watermark);
-        return;
-    }
-
-    const mark = el.children[1];
-    if (mark.className !== 'bb-watermark-bg') {
-        clearWatermark(watermark);
-        return;
-    }
-
+    const mark = el.querySelector('.bb-watermark-bg');
     const style = getComputedStyle(mark);
     const { display, opacity, position, inset, zIndex, zoom, transform, backgroundRepeat, backgroundImage, backgroundSize } = style;
     if (display !== 'block') {
@@ -138,7 +140,7 @@ const monitor = watermark => {
         clearWatermark(watermark);
         return;
     }
-    if (zIndex !== '999') {
+    if (zIndex !== options.zIndex) {
         clearWatermark(watermark);
         return;
     }
@@ -169,8 +171,12 @@ const monitor = watermark => {
 
 const clearWatermark = watermark => {
     const { el, ob } = watermark;
-    ob.disconnect();
-    el.innerHTML = '';
+    if (ob) {
+        ob.disconnect();
+    }
+    if (el) {
+        el.innerHTML = '';
+    }
 }
 
 const getWatermark = props => {
@@ -198,6 +204,6 @@ const getWatermark = props => {
     return {
         base64: canvas.toDataURL(),
         size: canvasSize,
-        styleSize: canvasSize / devicePixelRatio,
+        styleSize: canvasSize / devicePixelRatio
     };
 }

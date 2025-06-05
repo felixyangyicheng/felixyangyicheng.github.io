@@ -801,7 +801,7 @@ const deepMerge = (obj1, obj2, skipNull = true) => {
             }
             else {
                 const value = obj2[key];
-                if (skipNull && value === null) {
+                if (skipNull && (value === null || value === void 0)) {
                     continue;
                 }
                 obj1[key] = obj2[key];
@@ -822,7 +822,9 @@ export function registerBootstrapBlazorModule(name, identifier, callback) {
             }
             if (this._init === false) {
                 this._init = true;
-                cb(this);
+                if (isFunction(cb)) {
+                    cb(this);
+                }
             }
             return this;
         },
@@ -830,9 +832,11 @@ export function registerBootstrapBlazorModule(name, identifier, callback) {
             if (id) {
                 this._items = this._items.filter(item => item !== id);
             }
-            if (this._items.length === 0 && cb) {
+            if (this._items.length === 0) {
                 this._init = false;
-                cb(this);
+                if (isFunction(cb)) {
+                    cb(this);
+                }
             }
         }
     };
@@ -870,6 +874,16 @@ export function setMemorialMode(memorial) {
             el.setAttribute('data-bs-theme', theme);
         }
     }
+}
+
+export function drawImage(canvas, image, offsetWidth, offsetHeight) {
+    canvas.width = offsetWidth * devicePixelRatio;
+    canvas.height = offsetHeight * devicePixelRatio;
+    canvas.style.width = `${offsetWidth}px`;
+    canvas.style.height = `${offsetHeight}px`;
+    const context = canvas.getContext('2d');
+    context.scale(devicePixelRatio, devicePixelRatio);
+    context.drawImage(image, 0, 0, offsetWidth, offsetHeight);
 }
 
 export {

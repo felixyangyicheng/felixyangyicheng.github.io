@@ -76,7 +76,7 @@ export function reset(id) {
             table.tables.push(shim.firstChild)
         }
 
-        if (table.isExcel) {
+        if (table.options.enableKeyboardNavigationCell === true && table.isExcel) {
             setExcelKeyboardListener(table)
         }
 
@@ -199,12 +199,16 @@ export function scroll(id, align, options = { behavior: 'smooth' }) {
     }
 }
 
-export function scrollTo(id, x = 0, y = 0, options = { behavior: 'smooth' }) {
+export function scrollTo(id) {
     const element = document.getElementById(id);
     if (element) {
         const scroll = element.querySelector('.scroll');
         if (scroll) {
-            scroll.scrollTo(x, y, options);
+            scroll.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth",
+            });
         }
     }
 }
@@ -232,7 +236,7 @@ const destroyTable = table => {
             EventHandler.off(table.body, 'scroll')
         }
 
-        if (table.isExcel) {
+        if (table.options.enableKeyboardNavigationCell === true && table.isExcel) {
             EventHandler.off(table.element, 'keydown')
         }
 
@@ -389,15 +393,19 @@ const setExcelKeyboardListener = table => {
     const setFocus = target => {
         const handler = setTimeout(function () {
             clearTimeout(handler);
-            target.focus();
-            target.select();
+            if (target.focus) {
+                target.focus();
+            }
+            if (target.select) {
+                target.select();
+            }
         }, 10);
     }
 
     const activeCell = (cells, index) => {
         let ret = false;
         const td = cells[index];
-        const target = td.querySelector('input.form-control:not([readonly])');
+        const target = td.querySelector('.form-control:not([readonly])');
         if (target) {
             setFocus(target);
             ret = true;
@@ -425,21 +433,29 @@ const setExcelKeyboardListener = table => {
             }
         }
         else if (keyCode === KeyCodes.UP_ARROW) {
-            cells = tr.previousElementSibling && tr.previousElementSibling.children;
-            if (cells) {
-                while (index < cells.length) {
+            let nextRow = tr.previousElementSibling;
+            while (nextRow) {
+                cells = nextRow.children;
+                if (cells) {
                     if (activeCell(cells, index)) {
                         break;
+                    }
+                    else {
+                        nextRow = nextRow.previousElementSibling;
                     }
                 }
             }
         }
         else if (keyCode === KeyCodes.DOWN_ARROW) {
-            cells = tr.nextElementSibling && tr.nextElementSibling.children;
-            if (cells) {
-                while (index < cells.length) {
+            let nextRow = tr.nextElementSibling;
+            while (nextRow) {
+                cells = nextRow.children;
+                if (cells) {
                     if (activeCell(cells, index)) {
                         break;
+                    }
+                    else {
+                        nextRow = nextRow.nextElementSibling;
                     }
                 }
             }

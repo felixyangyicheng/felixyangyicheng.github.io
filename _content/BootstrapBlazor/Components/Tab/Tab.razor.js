@@ -56,6 +56,9 @@ const active = tab => {
     resize(tab)
 
     const activeTab = tab.tabNav.querySelector('.tabs-item-wrap.active')
+    if (activeTab === null) {
+        return
+    }
     if (activeTab) {
         if (tab.vertical) {
             const top = getPosition(activeTab).top - getPosition(activeTab.parentNode).top + activeTab.offsetHeight
@@ -69,7 +72,6 @@ const active = tab => {
             }
         }
         else {
-            // mark sure display total active tabitem
             const right = getPosition(activeTab).left - getPosition(activeTab.parentNode).left + activeTab.offsetWidth
             const navWidth = tab.scroll.offsetWidth
             const marginX = navWidth - right + 2
@@ -171,7 +173,7 @@ const disposeDragItems = items => {
     })
 }
 
-export function init(id, invoke, method, layoutId) {
+export function init(id, invoke, method) {
     const el = document.getElementById(id)
     if (el === null) {
         return
@@ -180,9 +182,10 @@ export function init(id, invoke, method, layoutId) {
     const tab = { el, invoke, method }
     Data.set(id, tab)
 
-    if (layoutId) {
-        const layout = document.getElementById(layoutId)
-        tab.header = layout.querySelector('.layout-header .tabs > .tabs-header');
+    const headerId = el.getAttribute("data-bb-header-id");
+    if (headerId) {
+        const header = document.getElementById(headerId)
+        tab.header = header.querySelector('.tabs > .tabs-header');
     }
     else {
         tab.header = el.firstChild

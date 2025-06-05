@@ -36,15 +36,12 @@ export function init(id, invoke) {
         }
     }
 
-    // debounce
     const duration = parseInt(input.getAttribute('data-bb-debounce') || '0');
     if (duration > 0) {
         ac.debounce = true
         EventHandler.on(input, 'keyup', debounce(e => {
             handlerKeyup(ac, e);
-        }, duration, e => {
-            return ['ArrowUp', 'ArrowDown', 'Escape', 'Enter', 'NumpadEnter'].indexOf(e.key) > -1
-        }))
+        }, duration))
     }
     else {
         EventHandler.on(input, 'keyup', e => {
@@ -52,29 +49,17 @@ export function init(id, invoke) {
         })
     }
 
-    ac.triggerBlur = () => {
-        el.classList.remove('show');
-        const triggerBlur = input.getAttribute('data-bb-blur') === 'true';
-        if (triggerBlur) {
-            invoke.invokeMethodAsync('TriggerBlur');
-        }
-    }
-
     EventHandler.on(menu, 'click', '.dropdown-item', e => {
-        ac.triggerBlur();
+        ac.close();
     });
 
     EventHandler.on(input, 'focus', e => {
         const showDropdownOnFocus = input.getAttribute('data-bb-auto-dropdown-focus') === 'true';
         if (showDropdownOnFocus) {
             if (isPopover === false) {
-                el.classList.add('show');
+                ac.show();
             }
         }
-    });
-
-    EventHandler.on(input, 'change', e => {
-        invoke.invokeMethodAsync('TriggerChange', e.target.value);
     });
 
     let filterDuration = duration;
@@ -88,12 +73,21 @@ export function init(id, invoke) {
 
     Input.composition(input, v => {
         if (isPopover === false) {
-            el.classList.add('show');
+            ac.show();
         }
 
         el.classList.add('is-loading');
         filterCallback(v);
+
     });
+
+    ac.show = () => {
+        ac.el.classList.add('show');
+    }
+
+    ac.close = () => {
+        ac.el.classList.remove('show');
+    }
 
     ac.closePopover = e => {
         [...document.querySelectorAll('.auto-complete.show')].forEach(a => {
@@ -107,39 +101,61 @@ export function init(id, invoke) {
                 const id = a.getAttribute('id');
                 const d = Data.get(id);
                 if (d) {
-                    d.triggerBlur();
+                    d.close();
+                    d.blur();
                 }
             }
         });
     }
+
+    ac.keyup = e => {
+        if (e.key === 'Tab') {
+            [...document.querySelectorAll('.auto-complete.show')].forEach(a => {
+                const id = a.getAttribute('id');
+                const d = Data.get(id);
+                if (d) {
+                    d.close();
+                    d.blur();
+                }
+            });
+        }
+    }
+
+    ac.blur = function () {
+        const { input, invoke } = this;
+        const triggerBlur = input.getAttribute('data-bb-blur') === 'true';
+        if (triggerBlur) {
+            invoke.invokeMethodAsync('TriggerBlur');
+        }
+    }
+
     registerBootstrapBlazorModule('AutoComplete', id, () => {
         EventHandler.on(document, 'click', ac.closePopover);
+        EventHandler.on(document, 'keyup', ac.keyup);
     });
 }
 
 const handlerKeyup = (ac, e) => {
     const key = e.key;
-    const { el, input, invoke, menu } = ac;
+    const { el, invoke, menu } = ac;
     if (key === 'Enter' || key === 'NumpadEnter') {
         const skipEnter = el.getAttribute('data-bb-skip-enter') === 'true';
         if (!skipEnter) {
             const current = menu.querySelector('.active');
             if (current !== null) {
                 current.click();
-                ac.triggerBlur();
             }
-            invoke.invokeMethodAsync('EnterCallback', input.value);
+            invoke.invokeMethodAsync('EnterCallback');
         }
     }
     else if (key === 'Escape') {
         const skipEsc = el.getAttribute('data-bb-skip-esc') === 'true';
         if (skipEsc === false) {
             invoke.invokeMethodAsync('EscCallback');
-            ac.triggerBlur();
         }
     }
     else if (key === 'ArrowUp' || key === 'ArrowDown') {
-        el.classList.add('show');
+        ac.show();
         const items = [...menu.querySelectorAll('.dropdown-item')];
         let current = menu.querySelector('.active');
         if (current !== null) {
@@ -159,18 +175,6 @@ const handlerKeyup = (ac, e) => {
     }
 }
 
-export function showList(id) {
-    const ac = Data.get(id)
-    if (ac) {
-        if (ac.popover) {
-            ac.popover.show();
-        }
-        else {
-            ac.el.classList.add('show');
-        }
-    }
-}
-
 export function dispose(id) {
     const ac = Data.get(id)
     Data.remove(id)
@@ -183,16 +187,16 @@ export function dispose(id) {
                 EventHandler.off(input, 'focus')
             }
         }
-        EventHandler.off(input, 'change');
-        EventHandler.off(input, 'keyup');
         EventHandler.off(menu, 'click');
+        EventHandler.off(input, 'keyup');
         Input.dispose(input);
-
-        const { AutoComplete } = window.BootstrapBlazor;
-        AutoComplete.dispose(id, () => {
-            EventHandler.off(document, 'click', ac.closePopover);
-        });
     }
+
+    const { AutoComplete } = window.BootstrapBlazor;
+    AutoComplete.dispose(id, () => {
+        EventHandler.off(document, 'click', ac.closePopover);
+        EventHandler.off(document, 'keyup', ac.keyup);
+    });
 }
 
 const scrollIntoView = (el, item) => {
