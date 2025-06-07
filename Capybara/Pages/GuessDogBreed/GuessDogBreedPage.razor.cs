@@ -32,7 +32,6 @@ namespace Capybara.Pages.GuessDogBreed
         protected override async Task OnInitializedAsync()
 		{
 
-
 			await base.OnInitializedAsync();
 		}
 		private async Task NewGame()
@@ -91,8 +90,8 @@ namespace Capybara.Pages.GuessDogBreed
 
 
 				ListToGuess.RemoveAt(0);
-				StateHasChanged();
-				if (ListToGuess.Count > 0)
+                await InvokeAsync(StateHasChanged);
+                if (ListToGuess.Count > 0)
 				{
 					NewQuaternary();
 				}
@@ -107,10 +106,10 @@ namespace Capybara.Pages.GuessDogBreed
 				}
 			}
 
-			StateHasChanged();
+			await InvokeAsync (StateHasChanged);
 		}
 
-		private void NewQuaternary()
+		private async Task NewQuaternary()
 		{
 
 			DogBreedQuaternary.DogBreedProposes = new();
@@ -135,8 +134,10 @@ namespace Capybara.Pages.GuessDogBreed
 
 			DogBreedQuaternary.DogBreedProposes.Add(dogBreedProposeCorrect);
 			DogBreedQuaternary.DogBreedProposes = DogBreedQuaternary.DogBreedProposes.OrderBy(_ => Guid.NewGuid()).ToList();
-			StateHasChanged();
-            timer.Start(10);
+            await InvokeAsync(StateHasChanged);
+
+
+            timer.Start(15);
         }
 
 

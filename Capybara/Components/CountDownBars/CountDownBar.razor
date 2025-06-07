@@ -40,11 +40,16 @@
 
     protected override void OnInitialized()
     {
-        _timer = new System.Timers.Timer(1000);
+        _timer = new System.Timers.Timer(_secondsToRun*100);
         _timer.Elapsed += OnTimedEvent;
         _timer.AutoReset = true;
     }
-
+    // protected async Task OnParametersSetAync()
+    // {
+    //     _timer = new System.Timers.Timer(1500);
+    //     _timer.Elapsed += OnTimedEvent;
+    //     _timer.AutoReset = true;
+    // }
     private async void OnTimedEvent(object? sender, System.Timers.ElapsedEventArgs e)
     {
         _secondsToRun--;
@@ -53,7 +58,7 @@
         {
             Time = TimeSpan.FromSeconds(Math.Max(_secondsToRun, 0)).ToString(@"mm\:ss");
             Progress = (_secondsToRun / (double)_initialSeconds) * 100;
-            StateHasChanged();
+              StateHasChanged();
         });
 
         if (_secondsToRun <= 0)
