@@ -1,4 +1,4 @@
-﻿@page "/word-input"
+﻿@page "/wordinput"
 @using Microsoft.AspNetCore.Components.Web
 @using Console=System.Console
 <style>
@@ -97,6 +97,7 @@
         else
         {
             InputValues[index] = string.Empty;
+              StateHasChanged();
             InputClasses[index] = "incorrect";
         }
 

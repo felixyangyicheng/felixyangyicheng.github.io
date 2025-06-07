@@ -4,8 +4,13 @@ namespace Capybara.Pages.GuessDogBreed
 {
 	public partial class GuessDogBreedPage
 	{
+		#region Injection Dépendance
+
 		[Inject, NotNull] IDialogService? DialogService { get; set; }
 		[Inject, NotNull] IConfiguration? configuration { get; set; }
+		#endregion
+
+		#region Properties
 
 		[NotNull]
 		public List<DogBreedModel>? DogBreeds { get; set; }
@@ -25,7 +30,11 @@ namespace Capybara.Pages.GuessDogBreed
 
 		protected bool loading { get; set; }
 		protected int TotalGuess { get; set; } = 15;
-        private async Task TimerOutCallback()
+		#endregion
+
+		#region Method
+
+		private async Task TimerOutCallback()
         {
 			await NextDogBreed(false);
         }
@@ -48,10 +57,10 @@ namespace Capybara.Pages.GuessDogBreed
 			DogBreedsViewed = new();
 			if (DogBreeds != null)
 			{
-				ListToGuess = DogBreeds.OrderBy(x => Random.Shared.Next()).Take(TotalGuess).ToList();
+				ListToGuess = DogBreeds.OrderBy(_ => Guid.NewGuid()).Take(TotalGuess).ToList();
 				if (ListToGuess.Count > 0)
 				{
-					NewQuaternary();
+					await NewQuaternary();
 				}
 			}
 			loading = false;
@@ -93,7 +102,7 @@ namespace Capybara.Pages.GuessDogBreed
                 await InvokeAsync(StateHasChanged);
                 if (ListToGuess.Count > 0)
 				{
-					NewQuaternary();
+					await NewQuaternary();
 				}
 				else
 				{
@@ -127,7 +136,6 @@ namespace Capybara.Pages.GuessDogBreed
 				DogBreedPropose dogBreedPropose = new();
 				dogBreedPropose.BreedName = i.BreedName;
 				dogBreedPropose.Correct = false;
-
 				DogBreedQuaternary.DogBreedProposes.Add(dogBreedPropose);
 			}
 
@@ -141,7 +149,8 @@ namespace Capybara.Pages.GuessDogBreed
         }
 
 
+        #endregion
 
 
-	}
+    }
 }

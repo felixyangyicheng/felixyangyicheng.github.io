@@ -29,6 +29,7 @@
                         <input @key="@item"
                                @ref="InputRefs[item.i]" maxlength="1"
                                @oninput="@(e => HandleInput(e, item.i))"
+                              
                                disabled="@InputDisabled[item.i]"
                                value="@InputValues[item.i]"
                                type="text" class="form-control case @(GetInputClass(item.i))" />

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.JSInterop;
+using System;
 using static MudBlazor.CategoryTypes;
 
 namespace Capybara.Components.ComboInput
@@ -63,6 +64,9 @@ namespace Capybara.Components.ComboInput
             //Console.WriteLine(ElementsRendered);
 
             await Task.WhenAny(FocusFirstEmptyInput());
+        
+            await Task.Delay(10);
+
 
             await FocusFirstEmptyInput();
             //await base.OnAfterRenderAsync(firstRender);
@@ -73,6 +77,7 @@ namespace Capybara.Components.ComboInput
 
         private async Task HandleInput(ChangeEventArgs e, int index)
         {
+      
             var input = e.Value?.ToString();
             if (input?.Length == 1 && (input[0] == StringInit[index] || char.ToLower(input[0]) == char.ToLower(StringInit[index])))
             {
@@ -97,7 +102,7 @@ namespace Capybara.Components.ComboInput
                     {
                         await OnWordOk.InvokeAsync(AllInputsCorrect);
                         ElementsRendered = false;
-                        StateHasChanged();
+                        await InvokeAsync(StateHasChanged);
                         return;
                     }
                     else
@@ -122,13 +127,14 @@ namespace Capybara.Components.ComboInput
                 InputClasses[index] = "incorrect";
             }
             ElementsRendered = false;
-            StateHasChanged();
+            await InvokeAsync(StateHasChanged);
         }
 
         private async Task FocusFirstEmptyInput()
         {
             if (!ElementsRendered)
             {
+
                 return;
             }
             try
@@ -136,7 +142,7 @@ namespace Capybara.Components.ComboInput
                 if (InputRefs?.Length <= 0 || InputRefs is null)
                 {
 
-
+                    Console.WriteLine("InputRefs?.Length <= 0 || InputRefs is null");
                 }
                 else
                 {
@@ -144,8 +150,9 @@ namespace Capybara.Components.ComboInput
                     {
                         if (string.IsNullOrEmpty(InputValues[i]) && !InputDisabled[i])
                         {
-                            await InputRefs[i].MudFocusFirstAsync();
+                            await InputRefs[i].MudFocusFirstAsync();                    
                             break;
+
                         }
                     }
                 }

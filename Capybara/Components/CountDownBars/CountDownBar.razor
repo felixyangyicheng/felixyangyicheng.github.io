@@ -44,12 +44,7 @@
         _timer.Elapsed += OnTimedEvent;
         _timer.AutoReset = true;
     }
-    // protected async Task OnParametersSetAync()
-    // {
-    //     _timer = new System.Timers.Timer(1500);
-    //     _timer.Elapsed += OnTimedEvent;
-    //     _timer.AutoReset = true;
-    // }
+
     private async void OnTimedEvent(object? sender, System.Timers.ElapsedEventArgs e)
     {
         _secondsToRun--;
