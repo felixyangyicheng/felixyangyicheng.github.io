@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "P1YdRr5Q",
+  "version": "cpYuYOn4",
   "assets": [
     {
       "hash": "sha256-2GMRaPfq/3emgez7JvmcnfVL80zjjEhWWBNKwbcJ3yM=",
@@ -866,8 +866,8 @@ self.assetsManifest = {
       "url": "_framework/BootstrapBlazor.iw0ne907k1.wasm"
     },
     {
-      "hash": "sha256-1ZVfG9CiW4xoPWotjPgvHNKn/MlNOdB42b0U41sFA3E=",
-      "url": "_framework/Capybara.dm32r3vx1s.wasm"
+      "hash": "sha256-qgxn7K8s1p7QRVrqsQwNO1q/BnyrFSza4WQe4VYWUCk=",
+      "url": "_framework/Capybara.y11cnj46j9.wasm"
     },
     {
       "hash": "sha256-m1clnNkH9MWKagZ5xgNYhltiEVusx+YuE3qJ+37d7GY=",
@@ -1194,8 +1194,8 @@ self.assetsManifest = {
       "url": "_framework/System.ObjectModel.940n34irpq.wasm"
     },
     {
-      "hash": "sha256-ghjnT0Gu6utlTTwfFRplPcDY93jiycrvRU3rG1g1NsY=",
-      "url": "_framework/System.Private.CoreLib.y45yaw86ox.wasm"
+      "hash": "sha256-OK4+muc3tKs+2ZblIV3bVAKxHVEUUPIU6I4lliO4HA8=",
+      "url": "_framework/System.Private.CoreLib.wumyanct37.wasm"
     },
     {
       "hash": "sha256-ml7L2bpfnEkJjO3u+9miPMtA7K6CF65iK/g0goXHs2M=",
@@ -1334,12 +1334,12 @@ self.assetsManifest = {
       "url": "_framework/de/Heron.MudCalendar.resources.hzhvbx2f6j.wasm"
     },
     {
-      "hash": "sha256-bRcCClphOEZhojFz95rGh4hBHAxIlRF5oDXee+b1hoM=",
+      "hash": "sha256-2b9i/EJdciABSL+wpVP5f6nERVULDT9PozAUZ9k+6Do=",
       "url": "_framework/dotnet.js"
     },
     {
-      "hash": "sha256-/C5tKHqqrmdiE1GDXgYqhRlI9O+JBF80JQFlPD+hQQ8=",
-      "url": "_framework/dotnet.native.4ug331fh7m.wasm"
+      "hash": "sha256-zkk6goAkVUCOj40womRuZvtI0wcFIu7WnrrfmTtVwuY=",
+      "url": "_framework/dotnet.native.i0e50sb1si.wasm"
     },
     {
       "hash": "sha256-xBfTvpgdlrKjCfqv0pD1t9aH43HKLF8CZrjtTuDplgI=",
@@ -1490,7 +1490,7 @@ self.assetsManifest = {
       "url": "css/bootstrap/bootstrap.min.css.map"
     },
     {
-      "hash": "sha256-fGFZfBPgRgFf3pwUzihG93I6tX2NRKJKuFiHIxUlTeI=",
+      "hash": "sha256-wEKXL56s57jv3jDQwiWelkPi8sUtxdChNbotR21D/0A=",
       "url": "docs/nav-structure.json"
     },
     {
