@@ -1,51 +1,51 @@
 {
+  "Url": "/docs",
   "Children": [
     {
+      "Url": "",
       "Children": {
-        "Children": [],
         "Url": "/docs/amd_ollama/amd_rocm_ollama_rx6500xt-fr",
+        "Children": [],
         "IsFolder": false,
         "Title": "amd rocm ollama rx6500xt fr"
       },
-      "Url": "",
       "IsFolder": true,
       "Title": "AMD Ollama"
     },
     {
+      "Url": "",
       "Children": {
-        "Children": [],
         "Url": "/docs/caddyserver/basiccaddyfilesample-fr",
+        "Children": [],
         "IsFolder": false,
         "Title": "BasicCaddyfileSample fr"
       },
-      "Url": "",
       "IsFolder": true,
       "Title": "CaddyServer"
     },
     {
+      "Url": "",
       "Children": {
-        "Children": [],
         "Url": "/docs/cockpit/cockpit_installation-fr",
+        "Children": [],
         "IsFolder": false,
         "Title": "Cockpit installation fr"
       },
-      "Url": "",
       "IsFolder": true,
       "Title": "Cockpit"
     },
     {
+      "Url": "",
       "Children": {
-        "Children": [],
         "Url": "/docs/jenkins/bashsample_automateddockercomposedeployment-fr",
+        "Children": [],
         "IsFolder": false,
         "Title": "BashSample AutomatedDockerComposeDeployment fr"
       },
-      "Url": "",
       "IsFolder": true,
       "Title": "Jenkins"
     }
   ],
-  "Url": "/docs",
   "IsFolder": true,
   "Title": "Docs"
 }
