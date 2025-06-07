@@ -1,210 +1,189 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
+﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
 using System;
-using static MudBlazor.CategoryTypes;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Capybara.Components.ComboInput
 {
-    public partial class IndividualLetterComboInput
+    public partial class IndividualLetterComboInput : IDisposable
     {
+        [Inject] private IJSRuntime JSRuntime { get; set; } = default!;
+
         [Parameter, NotNull]
         public string StringInit { get; set; } = "";
+
         [Parameter]
         public EventCallback<bool> OnWordOk { get; set; }
-        [Parameter]
 
+        [Parameter]
         public EventCallback<int> OnHintAsked { get; set; }
+
         [Parameter]
         public bool HintAvaiable { get; set; }
 
-
         private string[] InputValues { get; set; } = new string[0];
-        [NotNull]
-        private ElementReference[]? InputRefs { get; set; } = default!;
+        private ElementReference[] InputRefs { get; set; } = default!;
         private string[] InputClasses { get; set; } = new string[0];
         private bool[] InputDisabled { get; set; } = new bool[0];
         private bool AllInputsCorrect { get; set; }
-        // private bool FirstRender { get; set; } = true;
-        private bool ElementsRendered { get; set; } = false;
-        protected override async Task OnParametersSetAsync()
+        private bool _isFocused = false;
+        private bool _shouldFocusAfterRender = false; // 新增标志
+
+        protected override void OnParametersSet()
         {
-
-            InputValues = new string[StringInit.Length];
-            foreach (var item in StringInit.Select((value, i) => (value, i)))
-            {
-                if (char.ToString(item.value).Equals("-") || char.IsWhiteSpace(item.value))
-                {
-                    InputValues[item.i] = item.value.ToString();
-                }
-            }
-            InputRefs = new ElementReference[StringInit.Length];
-
-            InputDisabled = Enumerable.Repeat(false, StringInit.Length).ToArray();
-            foreach (var item in StringInit.Select((value, i) => (value, i)))
-            {
-                if (char.ToString(item.value).Equals("-") || char.IsWhiteSpace(item.value))
-                {
-                    InputDisabled[item.i] = true;
-                }
-            }
-            InputClasses = Enumerable.Repeat("default", StringInit.Length).ToArray();
-            AllInputsCorrect = false;
-
-            ElementsRendered = false;
-
-            await base.OnParametersSetAsync();
+            // 当StringInit变化时（新词组加载）设置焦点标志
+            _shouldFocusAfterRender = true;
+            InitializeArrays();
         }
 
+        private void InitializeArrays()
+        {
+            InputValues = new string[StringInit.Length];
+            InputRefs = new ElementReference[StringInit.Length];
+            InputClasses = new string[StringInit.Length];
+            InputDisabled = new bool[StringInit.Length];
 
+            for (int i = 0; i < StringInit.Length; i++)
+            {
+                char c = StringInit[i];
+                bool isSpecial = c == '-' || char.IsWhiteSpace(c);
+
+                InputValues[i] = isSpecial ? c.ToString() : "";
+                InputClasses[i] = "default";
+                InputDisabled[i] = isSpecial;
+            }
+        }
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-
-            ElementsRendered = true;
-            //Console.WriteLine(ElementsRendered);
-
-            await Task.WhenAny(FocusFirstEmptyInput());
-        
-            await Task.Delay(10);
-
-
-            await FocusFirstEmptyInput();
-            //await base.OnAfterRenderAsync(firstRender);
-
+            if (firstRender || _shouldFocusAfterRender)
+            {
+                _shouldFocusAfterRender = false;
+                await Task.Delay(50); // 确保DOM更新完成
+                await FocusFirstEmptyInput();
+            }
         }
 
-
-
-        private async Task HandleInput(ChangeEventArgs e, int index)
+        private async void HandleInput(ChangeEventArgs e, int index)
         {
-      
-            var input = e.Value?.ToString();
-            if (input?.Length == 1 && (input[0] == StringInit[index] || char.ToLower(input[0]) == char.ToLower(StringInit[index])))
+            if (_isFocused) return;
+            _isFocused = true;
+
+            var input = e.Value?.ToString()?.Trim();
+            if (string.IsNullOrEmpty(input))
+            {
+                _isFocused = false;
+                return;
+            }
+
+            if (input.Length == 1 && IsCorrectChar(input[0], StringInit[index]))
             {
                 InputValues[index] = input;
                 InputClasses[index] = "correct";
                 InputDisabled[index] = true;
 
-                if (index == StringInit.Length - 1)
+                if (CheckAllCorrect())
                 {
-                    AllInputsCorrect = true;
-                    foreach (var val in InputValues)
-                    {
-                        if (string.IsNullOrEmpty(val))
-                        {
-                            ElementsRendered = false;
-                            AllInputsCorrect = false;
-                            break;
-                        }
-                    }
-
-                    if (AllInputsCorrect)
-                    {
-                        await OnWordOk.InvokeAsync(AllInputsCorrect);
-                        ElementsRendered = false;
-                        await InvokeAsync(StateHasChanged);
-                        return;
-                    }
-                    else
-                    {
-                        ElementsRendered = false;
-                        await FocusFirstEmptyInput();
-                        return;
-                    }
+                    // 完成当前词组
+                    await OnWordOk.InvokeAsync(true);
+                    // 不需要在这里设置焦点，因为参数变化会触发OnParametersSet
                 }
-
-                if (index < StringInit.Length - 1)
+                else
                 {
-                    ElementsRendered = false;
-                    await FocusFirstEmptyInput();
+                    await FocusNextEmptyInput(index);
                 }
             }
             else
             {
-                ElementsRendered = false;
-
                 InputValues[index] = string.Empty;
                 InputClasses[index] = "incorrect";
+                await InputRefs[index].FocusAsync(); // 保持当前焦点
             }
-            ElementsRendered = false;
-            await InvokeAsync(StateHasChanged);
+
+            StateHasChanged();
+            _isFocused = false;
         }
 
-        private async Task FocusFirstEmptyInput()
+        private bool IsCorrectChar(char input, char target)
         {
-            if (!ElementsRendered)
-            {
+            return char.ToLower(input) == char.ToLower(target);
+        }
 
-                return;
+        private bool CheckAllCorrect()
+        {
+            for (int i = 0; i < InputValues.Length; i++)
+            {
+                if (!InputDisabled[i] && string.IsNullOrEmpty(InputValues[i]))
+                    return false;
             }
+            return true;
+        }
+
+        private async Task FocusNextEmptyInput(int currentIndex)
+        {
             try
             {
-                if (InputRefs?.Length <= 0 || InputRefs is null)
+                int nextIndex = currentIndex + 1;
+                while (nextIndex < InputValues.Length)
                 {
-
-                    Console.WriteLine("InputRefs?.Length <= 0 || InputRefs is null");
-                }
-                else
-                {
-                    for (int i = 0; i < InputValues.Length; i++)
+                    if (!InputDisabled[nextIndex] && string.IsNullOrEmpty(InputValues[nextIndex]))
                     {
-                        if (string.IsNullOrEmpty(InputValues[i]) && !InputDisabled[i])
-                        {
-                            await InputRefs[i].MudFocusFirstAsync();                    
-                            break;
+                        await InputRefs[nextIndex].FocusAsync();
+                        return;
+                    }
+                    nextIndex++;
+                }
 
-                        }
+                // 如果后面没有空项，向前找
+                for (int i = 0; i < currentIndex; i++)
+                {
+                    if (!InputDisabled[i] && string.IsNullOrEmpty(InputValues[i]))
+                    {
+                        await InputRefs[i].FocusAsync();
+                        return;
                     }
                 }
             }
             catch (Exception ex)
             {
-
-                Console.WriteLine(ex.Message.ToString());
-                throw ex;
+                Console.WriteLine($"Focus error: {ex.Message}");
             }
-
         }
+
+        private async Task FocusFirstEmptyInput()
+        {
+            try
+            {
+                for (int i = 0; i < InputValues.Length; i++)
+                {
+                    if (!InputDisabled[i] && string.IsNullOrEmpty(InputValues[i]))
+                    {
+                        await InputRefs[i].FocusAsync();
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Initial focus error: {ex.Message}");
+            }
+        }
+
         private string GetInputClass(int index)
         {
-            if (AllInputsCorrect)
-            {
-                return "all-correct";
-            }
-            return InputClasses[index];
+            return AllInputsCorrect ? "all-correct" : InputClasses[index];
         }
-        private async Task ProvideHint()
-        {
-            // Get indices of inputs that are not yet correct and not disabled
-            var availableIndices = Enumerable.Range(0, StringInit.Length)
-                                             .Where(i => InputValues[i] == null || InputValues[i] == string.Empty)
-                                             .Where(i => !InputDisabled[i])
-                                             .ToList();
 
-            if (availableIndices.Count > 0)
-            {
-                Random rnd = new Random();
-                var randomIndex = availableIndices[rnd.Next(availableIndices.Count)];
 
-                // Set the correct letter at this index
-                InputValues[randomIndex] = StringInit[randomIndex].ToString();
-                InputClasses[randomIndex] = "correct";
-                InputDisabled[randomIndex] = true;
-                // Disable the input
 
-                await InvokeAsync(StateHasChanged);
-            }
-            await OnHintAsked.InvokeAsync(10);
-
-        }
-        void ValidationStateChanged(object sender, ValidationStateChangedEventArgs e)
-        {
-            StateHasChanged();
-        }
         public void Dispose()
         {
-            //ValidationStateChanged;
+           
         }
     }
-
 }
+
+
