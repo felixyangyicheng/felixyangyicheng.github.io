@@ -1,51 +1,51 @@
 {
-  "IsFolder": true,
   "Children": [
     {
-      "IsFolder": true,
       "Children": {
-        "IsFolder": false,
         "Children": [],
-        "Url": "/docs/amd_ollama/amd_rocm_ollama_rx6500xt-fr",
-        "Title": "amd rocm ollama rx6500xt fr"
+        "Title": "amd rocm ollama rx6500xt fr",
+        "IsFolder": false,
+        "Url": "/docs/amd_ollama/amd_rocm_ollama_rx6500xt-fr"
       },
-      "Url": "",
-      "Title": "AMD Ollama"
+      "Title": "AMD Ollama",
+      "IsFolder": true,
+      "Url": ""
     },
     {
-      "IsFolder": true,
       "Children": {
-        "IsFolder": false,
         "Children": [],
-        "Url": "/docs/caddyserver/basiccaddyfilesample-fr",
-        "Title": "BasicCaddyfileSample fr"
+        "Title": "BasicCaddyfileSample fr",
+        "IsFolder": false,
+        "Url": "/docs/caddyserver/basiccaddyfilesample-fr"
       },
-      "Url": "",
-      "Title": "CaddyServer"
+      "Title": "CaddyServer",
+      "IsFolder": true,
+      "Url": ""
     },
     {
-      "IsFolder": true,
       "Children": {
-        "IsFolder": false,
         "Children": [],
-        "Url": "/docs/cockpit/cockpit_installation-fr",
-        "Title": "Cockpit installation fr"
+        "Title": "Cockpit installation fr",
+        "IsFolder": false,
+        "Url": "/docs/cockpit/cockpit_installation-fr"
       },
-      "Url": "",
-      "Title": "Cockpit"
+      "Title": "Cockpit",
+      "IsFolder": true,
+      "Url": ""
     },
     {
-      "IsFolder": true,
       "Children": {
-        "IsFolder": false,
         "Children": [],
-        "Url": "/docs/jenkins/bashsample_automateddockercomposedeployment-fr",
-        "Title": "BashSample AutomatedDockerComposeDeployment fr"
+        "Title": "BashSample AutomatedDockerComposeDeployment fr",
+        "IsFolder": false,
+        "Url": "/docs/jenkins/bashsample_automateddockercomposedeployment-fr"
       },
-      "Url": "",
-      "Title": "Jenkins"
+      "Title": "Jenkins",
+      "IsFolder": true,
+      "Url": ""
     }
   ],
-  "Url": "/docs",
-  "Title": "Docs"
+  "Title": "Docs",
+  "IsFolder": true,
+  "Url": "/docs"
 }
