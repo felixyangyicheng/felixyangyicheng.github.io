@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "Ev93aHzZ",
+  "version": "crKg2lth",
   "assets": [
     {
       "hash": "sha256-vbjalYoljVOXJ39G6uRXbZM2Tb2XGLlWqaeJ2B3YI/Q=",
@@ -866,8 +866,8 @@ self.assetsManifest = {
       "url": "_framework/BootstrapBlazor.iw0ne907k1.wasm"
     },
     {
-      "hash": "sha256-BAD5WhPM3wgZaFSVJxyCqvi1ELoT9Ry1HlBZ5dxXuLg=",
-      "url": "_framework/Capybara.05d2lz3a1n.wasm"
+      "hash": "sha256-PALLN80HrdBw/Hkr1mlbmpo4Rc74y44QP/b0jvByMvc=",
+      "url": "_framework/Capybara.8pb8hh8oec.wasm"
     },
     {
       "hash": "sha256-m1clnNkH9MWKagZ5xgNYhltiEVusx+YuE3qJ+37d7GY=",
@@ -1334,7 +1334,7 @@ self.assetsManifest = {
       "url": "_framework/de/Heron.MudCalendar.resources.hzhvbx2f6j.wasm"
     },
     {
-      "hash": "sha256-/NgVknuhmEi2MtTOdoCWy71tU0ogZ+L94r0goUS0w84=",
+      "hash": "sha256-S/aZLps+IZIBBakbACp1KC8v6APwgTNhH+0aVQ8fFEw=",
       "url": "_framework/dotnet.js"
     },
     {
@@ -1474,7 +1474,7 @@ self.assetsManifest = {
       "url": "_framework/zxing.cslsbo1ipr.wasm"
     },
     {
-      "hash": "sha256-JiS2uAZ4FPYs+3ltxm/I8RndEVsqexc1q0jWbXc95D4=",
+      "hash": "sha256-3jmFyfEmMPFw0NmiFfc5kpxmnbFaAHEzY/e5JecSzx8=",
       "url": "appsettings.json"
     },
     {
@@ -1490,7 +1490,7 @@ self.assetsManifest = {
       "url": "css/bootstrap/bootstrap.min.css.map"
     },
     {
-      "hash": "sha256-WkKY2XReW0SO8Pc2C/zzTG2usNxZy06D6tdkOFjiwS4=",
+      "hash": "sha256-9Fvcw4UKLaXV4gopar7oABRynIms1FO0/0T+tNld/AE=",
       "url": "docs/nav-structure.json"
     },
     {
