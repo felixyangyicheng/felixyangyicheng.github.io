@@ -63,19 +63,39 @@
     border: 2px solid blue;
 }
 
+
+/* 错误状态样式 */
+.error[b-pp2zsstjj9] {
+    border-color: #ff4d4f !important;
+    background-color: #fff1f0 !important;
+    animation: shake-b-pp2zsstjj9 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+/* 摇晃动画 */
+@keyframes shake-b-pp2zsstjj9 {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+/* 正确状态样式 */
 .correct[b-pp2zsstjj9] {
-    border: 2px solid green;
-    background-color: rgba(37, 195, 61, 0.34);
+    border-color: #52c41a !important;
+    background-color: #f6ffed !important;
 }
 
+/* 所有正确状态 */
 .all-correct[b-pp2zsstjj9] {
-    background-color: rgba(37, 195, 61, 0.34);
-    border: 5px solid green;
-}
-
-.incorrect[b-pp2zsstjj9] {
-    border: 2px solid red;
-    background-color: rgba(255, 47, 70, 0.45);
+    border-color: #1890ff !important;
+    background-color: #e6f7ff !important;
 }
 /* /Components/Dominos/Piece.razor.rz.scp.css */
 body[b-7loz76w1nx] {
