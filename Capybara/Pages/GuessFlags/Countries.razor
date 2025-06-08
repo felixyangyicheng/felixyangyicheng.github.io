@@ -1,0 +1,84 @@
+﻿@page "/countriesquiz"
+@inject HttpClient _httpClient
+@inject IJSRuntime JSRuntime
+<style>
+    .viewed {
+        overflow-y: scroll;
+        min-height: 30vh;
+        max-height: 80vh;
+    }
+</style>
+<br/>
+
+
+<MudContainer>
+    <MudGrid>
+        @if (ListToGuess == null)
+        {
+          <Pulse></Pulse>
+        }
+        @if (ListToGuess?.Count == 0)
+        {
+            <p></p>
+            <MudButton Color="Color.Secondary" OnClick="NewGame">New game ?</MudButton>
+            <p></p>
+        }
+        else
+        {
+            <MudItem xs="12" md="6">
+
+                @if (rnd.Next(countryAndFlags.Count()) % 2 == 0 && CountryToGuess.Official.Count > 0)
+                {
+
+                    <MudImage Width="150" src="@CountryToGuess.Official[0]" />
+                }
+                else if (CountryToGuess.Proposed.Count > 0)
+                {
+
+                    <MudImage Width="150" src="@CountryToGuess.Proposed[0]" />
+                }
+                else
+                {
+                    <MudImage Width="150" src="@CountryToGuess.Official[0]" />
+
+                }
+                <IndividualLetterComboInput OnHintAsked="Decrement" OnWordOk="NextFlag" HintAvaiable="@(Points>0)" StringInit="@CountryToGuess.Region"></IndividualLetterComboInput>
+                <h3>Correct/Total: @(Points / 10)/10</h3>
+                <h3>left: @(ListToGuess?.Count)</h3>
+            </MudItem>
+        }
+        <MudItem xs="12" md="6">
+
+            <div class="viewed" id="viewed">
+                @if (FlagsViewed != null)
+                {
+
+                    @foreach (var i in FlagsViewed)
+                    {
+                        <MudGrid>
+                            <MudItem xs="8">
+
+                                @if (i.Proposed.Count > 0)
+                                {
+
+                                    <MudImage Src="@i.Proposed[0]" />
+                                }
+                                @if (i.Official.Count > 0)
+                                {
+
+                                    <MudImage Src="@i.Official[0]" />
+                                }
+                            </MudItem>
+                            <MudItem xs="4">
+
+                                <p>@i.Region</p>
+                            </MudItem>
+                        </MudGrid>
+                    }
+                }
+
+            </div>
+        </MudItem>
+
+    </MudGrid>
+</MudContainer>
