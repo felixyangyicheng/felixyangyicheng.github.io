@@ -31,9 +31,12 @@ namespace Capybara.Components.ComboInput
         private bool AllInputsCorrect { get; set; }
         private bool _isFocused = false;
         private bool _shouldFocusAfterRender = false; // 新增标志
+        private CancellationTokenSource[] _errorTimers = Array.Empty<CancellationTokenSource>();
 
         protected override void OnParametersSet()
         {
+            // 取消所有之前的错误计时器
+            CancelAllErrorTimers();
             // 当StringInit变化时（新词组加载）设置焦点标志
             _shouldFocusAfterRender = true;
             InitializeArrays();
@@ -45,6 +48,7 @@ namespace Capybara.Components.ComboInput
             InputRefs = new ElementReference[StringInit.Length];
             InputClasses = new string[StringInit.Length];
             InputDisabled = new bool[StringInit.Length];
+            _errorTimers = new CancellationTokenSource[StringInit.Length];
 
             for (int i = 0; i < StringInit.Length; i++)
             {
@@ -54,6 +58,7 @@ namespace Capybara.Components.ComboInput
                 InputValues[i] = isSpecial ? c.ToString() : "";
                 InputClasses[i] = "default";
                 InputDisabled[i] = isSpecial;
+                _errorTimers[i] = new CancellationTokenSource();
             }
         }
 
@@ -78,6 +83,10 @@ namespace Capybara.Components.ComboInput
                 _isFocused = false;
                 return;
             }
+            // 取消该输入框之前的错误计时器（如果有）
+            _errorTimers[index]?.Cancel();
+            _errorTimers[index] = new CancellationTokenSource();
+            var token = _errorTimers[index].Token;
 
             if (input.Length == 1 && IsCorrectChar(input[0], StringInit[index]))
             {
@@ -87,9 +96,7 @@ namespace Capybara.Components.ComboInput
 
                 if (CheckAllCorrect())
                 {
-                    // 完成当前词组
                     await OnWordOk.InvokeAsync(true);
-                    // 不需要在这里设置焦点，因为参数变化会触发OnParametersSet
                 }
                 else
                 {
@@ -98,13 +105,43 @@ namespace Capybara.Components.ComboInput
             }
             else
             {
-                InputValues[index] = string.Empty;
-                InputClasses[index] = "incorrect";
-                await InputRefs[index].FocusAsync(); // 保持当前焦点
+                // 设置错误状态（摇晃+红色）
+                InputClasses[index] = "error";
+                InputValues[index] = input; // 临时显示错误输入
+
+                // 触发状态更新以应用错误样式
+                StateHasChanged();
+
+                try
+                {
+                    // 1秒后清除错误输入
+                    await Task.Delay(1000, token);
+
+                    if (!token.IsCancellationRequested)
+                    {
+                        InputValues[index] = string.Empty;
+                        InputClasses[index] = "incorrect";
+                        StateHasChanged();
+
+                        // 重新聚焦到当前输入框
+                        await InputRefs[index].FocusAsync();
+                    }
+                }
+                catch (TaskCanceledException)
+                {
+                    // 计时器被取消是正常情况
+                }
             }
 
-            StateHasChanged();
             _isFocused = false;
+        }
+        private void CancelAllErrorTimers()
+        {
+            foreach (var timer in _errorTimers)
+            {
+                timer?.Cancel();
+                timer?.Dispose();
+            }
         }
 
         private bool IsCorrectChar(char input, char target)
@@ -121,6 +158,7 @@ namespace Capybara.Components.ComboInput
             }
             return true;
         }
+
 
         private async Task FocusNextEmptyInput(int currentIndex)
         {
@@ -153,6 +191,7 @@ namespace Capybara.Components.ComboInput
             }
         }
 
+
         private async Task FocusFirstEmptyInput()
         {
             try
@@ -172,17 +211,11 @@ namespace Capybara.Components.ComboInput
             }
         }
 
-        private string GetInputClass(int index)
-        {
-            return AllInputsCorrect ? "all-correct" : InputClasses[index];
-        }
-
-
-
         public void Dispose()
         {
-           
+            CancelAllErrorTimers();
         }
+
     }
 }
 
