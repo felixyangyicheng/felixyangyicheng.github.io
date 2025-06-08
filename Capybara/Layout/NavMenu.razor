@@ -4,8 +4,12 @@
     <MudDivider Class="my-2" />
     <MudNavLink Href="/" IconColor="Color.Info" Icon="@Icons.Custom.FileFormats.FilePdf">Accueil</MudNavLink>
     <MudNavGroup Title="Jeux" Icon="@Icons.Material.Filled.Games" Expanded="false">
-        <MudNavLink Href="/guessflag" IconColor="Color.Info" Icon="@Icons.Material.Filled.Games">Guess Flags</MudNavLink>
-        <MudNavLink Href="/guessbreed" IconColor="Color.Info" Icon="@Icons.Material.Filled.Pets">Guess breeds</MudNavLink>
+        <MudNavGroup Title="Drapeaux Quiz" Icon="@Icons.Material.Filled.Flag" Expanded="false">
+            <MudNavLink Href="/guessflag" IconColor="Color.Info" Icon="@Icons.Material.Filled.Games">Départements</MudNavLink>
+            <MudNavLink Href="/countriesquiz" IconColor="Color.Info" Icon="@Icons.Material.Filled.Games">Pays</MudNavLink>
+        </MudNavGroup>
+
+        <MudNavLink Href="/guessbreed" IconColor="Color.Info" Icon="@Icons.Material.Filled.Pets">Chiens quiz</MudNavLink>
     </MudNavGroup>
     <MudNavGroup Title="Utilité" Icon="@Icons.Material.Rounded.Functions" Expanded="false">
         <MudNavLink Href="/SpeechSynthesis" IconColor="Color.Info" Icon="@Icons.Material.Rounded.ChatBubbleOutline">Speech Synthesis</MudNavLink>
