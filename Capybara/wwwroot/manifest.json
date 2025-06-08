@@ -7,7 +7,7 @@
   "theme_color": "#03173d",
   "icons": [
     {
-      "src": "img/icon-512.png",
+      "src": "img/bike.png",
       "type": "image/png",
       "sizes": "512x512"
     }
