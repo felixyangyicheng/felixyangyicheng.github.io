@@ -34,6 +34,8 @@ global using Heron.MudCalendar;
 global using ZXingBlazor.Components;
 global using System.Timers;
 global using Capybara.HashCheckService;
+global using Capybara.Services;
+global using Capybara.Models.VPIC;
 
 
 global using Color = MudBlazor.Color;
