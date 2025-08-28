@@ -5,5 +5,5 @@
         public int Count { get; set; }
         public string Message { get; set; } = "";
         public string SearchCriteria { get; set; } = "";
-        public List<T> Results { get; set; } = new();
+        public T? Results { get; set; } 
     }

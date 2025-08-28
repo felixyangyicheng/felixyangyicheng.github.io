@@ -17,20 +17,20 @@ public class MakerService :  IMakerService
         VpicAPI = _configuration.GetValue<string>("vpicApiRootPath") ?? throw new ArgumentNullException(nameof(VpicAPI));
     }
 
-    public async Task<Response<List<Maker>>> GetAllMakers()
+    public async Task<Response<List<Maker>>> GetAllMakersAsync()
     {
 
         Response<List<Maker>> response = (await _httpClient.GetFromJsonAsync<Response<List<Maker>>>($"{VpicAPI}/getallmakes?format=json"))?? throw new NoNullAllowedException("http response is null");
         return response;
     }
 
-    public async Task<Response<List<Maker>>> GetMakersForVehicleType()
+    public async Task<Response<List<Maker>>> GetMakersForVehicleTypeAsync()
     {
         Response<List<Maker>> response = (await _httpClient.GetFromJsonAsync<Response<List<Maker>>>($"{VpicAPI}/GetMakesForVehicleType/Motorcycle?format=json")) ?? throw new NoNullAllowedException("http response is null");
         return response; 
     }
 
-    public async Task<Response<List<Model>>> GetModelsForMakers(string brand)
+    public async Task<Response<List<Model>>> GetModelsForMakersAsync(string brand)
     {
 
         Response<List<Model>> response = (await _httpClient.GetFromJsonAsync<Response<List<Model>>>($"{VpicAPI}/getmodelsformake/{brand}?format=json")) ?? throw new NoNullAllowedException("http response is null");
