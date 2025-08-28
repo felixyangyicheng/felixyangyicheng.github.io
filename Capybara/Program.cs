@@ -40,7 +40,7 @@ builder.Services.AddApexCharts(e =>
 builder.Services.AddPWAUpdater();
 builder.Services.AddBootstrapBlazor();
 builder.Services.AddSingleton<HashServiceFactory>();
-builder.Services.AddScoped<IMakerService, MakerService>();
+builder.Services.AddTransient<IMakerService, MakerService>();
 builder.Services.AddSpeechSynthesis();
 
         builder.Services.AddMudServices(config =>

@@ -22,24 +22,24 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Blazor-ApexCharts" Version="6.0.1" />
+        <PackageReference Include="Blazor-ApexCharts" Version="6.0.2" />
 
-		<PackageReference Include="BootstrapBlazor" Version="9.7.1-beta06" />
+		<PackageReference Include="BootstrapBlazor" Version="9.9.3" />
 		<PackageReference Include="BootstrapBlazor.Markdown" Version="9.0.2" />
 		<PackageReference Include="BootstrapBlazor.WebAPI" Version="9.0.0" />
-		<PackageReference Include="CodeBeam.MudBlazor.Extensions" Version="8.2.1" />
+		<PackageReference Include="CodeBeam.MudBlazor.Extensions" Version="8.2.4" />
 		<PackageReference Include="Heron.MudCalendar" Version="3.2.0" />
-		<PackageReference Include="JiuLing.CommonLibs" Version="1.7.5" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.0-preview.5.25277.114" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.0-preview.4.25258.110" PrivateAssets="all" />
-        <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="10.0.0-preview.5.25277.114" />
-        <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="10.0.0-preview.5.25277.114" />
-        <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.0-preview.5.25277.114" />
-	    <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.0-preview.5.25277.114" />    
-		<PackageReference Include="MudBlazor" Version="8.7.0" />
+		<PackageReference Include="JiuLing.CommonLibs" Version="1.7.7" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.0-preview.7.25380.108" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.0-preview.7.25380.108" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="10.0.0-preview.7.25380.108" />
+        <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="10.0.0-preview.7.25380.108" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.0-preview.7.25380.108" />
+	    <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.0-preview.7.25380.108" />    
+		<PackageReference Include="MudBlazor" Version="8.11.0" />
         <PackageReference Include="BlazorPro.Spinkit" Version="1.2.0" />
         <PackageReference Include="ReactorBlazorQRCodeScanner" Version="1.0.10" />
-        <PackageReference Include="System.Text.Json" Version="10.0.0-preview.5.25277.114" />
+
         <PackageReference Include="Tewr.Blazor.FileReader" Version="3.4.0.24340" />
         <PackageReference Include="ToolBelt.Blazor.SpeechSynthesis" Version="10.3.1" />
         <PackageReference Include="ToolBelt.Web.CssClassInlineBuilder" Version="3.1.0.1" />
