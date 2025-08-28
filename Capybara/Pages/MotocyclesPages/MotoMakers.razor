@@ -7,18 +7,17 @@
 else
 {
     <p>Total: @MakersResponse.Count</p>
+    @if (ModelsResponse.Count <= 0)
+    {
+        <p>Veuillez sélectionner une marque</p>
+    }
     foreach (var maker in MakersResponse.Results)
     {
-        <MudButton @onclick="e => FindModel(maker.Make_Name)">@maker.Make_Name</MudButton>
-        @if (ModelsResponse.Count <= 0)
-        {
-            <p>Veuillez sélectionner une marque</p>
-        }
-        else
-        {
+        <MudButton Variant="Variant.Outlined" Color="Color.Primary" @onclick="e => FindModel(maker.Make_Name)">@maker.Make_Name</MudButton>
+
             if (ModelsResponse.Results is null || ModelsResponse.Results.Count == 0)
             {
-                <p>Aucun résultat</p>
+                
             }else
             {
                     
@@ -27,6 +26,6 @@ else
                     <p>@model.Make_Name</p>
                 }
             }
-        }
+        
     }
 }

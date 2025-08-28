@@ -18,7 +18,7 @@ public partial class MotoMakers
     protected Response<List<Maker>> MakersResponse { get; set; } = new();
     protected override async Task OnInitializedAsync()
     {
-        MakersResponse = await makerService.GetAllMakersAsync();
+        MakersResponse = await makerService.GetMakersForVehicleTypeAsync();
 
 
         

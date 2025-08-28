@@ -20,24 +20,21 @@ public class MakerService :  IMakerService
     public async Task<Response<List<Maker>>> GetAllMakersAsync()
     {
         string url = $"{VpicAPI}/getallmakes?format=json";
-        Console.WriteLine(url);
-        string result= await _httpClient.GetStringAsync(url);
-        Console.WriteLine(result);
-
         Response<List<Maker>> response = (await _httpClient.GetFromJsonAsync<Response<List<Maker>>>(url))?? throw new NoNullAllowedException("http response is null");
         return response;
     }
 
     public async Task<Response<List<Maker>>> GetMakersForVehicleTypeAsync()
     {
-        Response<List<Maker>> response = (await _httpClient.GetFromJsonAsync<Response<List<Maker>>>($"{VpicAPI}/GetMakesForVehicleType/Motorcycle?format=json")) ?? throw new NoNullAllowedException("http response is null");
+        string url = $"{VpicAPI}/GetMakesForVehicleType/Motorcycle?format=json";
+        Response<List<Maker>> response = (await _httpClient.GetFromJsonAsync<Response<List<Maker>>>(url)) ?? throw new NoNullAllowedException("http response is null");
         return response; 
     }
 
     public async Task<Response<List<Model>>> GetModelsForMakersAsync(string brand)
     {
-
-        Response<List<Model>> response = (await _httpClient.GetFromJsonAsync<Response<List<Model>>>($"{VpicAPI}/getmodelsformake/{brand}?format=json")) ?? throw new NoNullAllowedException("http response is null");
+        string url = $"{VpicAPI}/getmodelsformake/{brand}?format=json";
+        Response <List<Model>> response = (await _httpClient.GetFromJsonAsync<Response<List<Model>>>(url)) ?? throw new NoNullAllowedException("http response is null");
         return response;
     }
 }
