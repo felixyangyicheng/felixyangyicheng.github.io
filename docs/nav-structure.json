@@ -1,51 +1,51 @@
 {
+  "IsFolder": true,
+  "Url": "/docs",
+  "Title": "Docs",
   "Children": [
     {
+      "IsFolder": true,
+      "Url": "",
+      "Title": "AMD Ollama",
       "Children": {
-        "Children": [],
+        "IsFolder": false,
         "Url": "/docs/amd_ollama/amd_rocm_ollama_rx6500xt-fr",
-        "IsFolder": false,
-        "Title": "amd rocm ollama rx6500xt fr"
-      },
-      "Url": "",
-      "IsFolder": true,
-      "Title": "AMD Ollama"
+        "Title": "amd rocm ollama rx6500xt fr",
+        "Children": []
+      }
     },
     {
+      "IsFolder": true,
+      "Url": "",
+      "Title": "CaddyServer",
       "Children": {
-        "Children": [],
+        "IsFolder": false,
         "Url": "/docs/caddyserver/basiccaddyfilesample-fr",
-        "IsFolder": false,
-        "Title": "BasicCaddyfileSample fr"
-      },
-      "Url": "",
-      "IsFolder": true,
-      "Title": "CaddyServer"
+        "Title": "BasicCaddyfileSample fr",
+        "Children": []
+      }
     },
     {
+      "IsFolder": true,
+      "Url": "",
+      "Title": "Cockpit",
       "Children": {
-        "Children": [],
+        "IsFolder": false,
         "Url": "/docs/cockpit/cockpit_installation-fr",
-        "IsFolder": false,
-        "Title": "Cockpit installation fr"
-      },
-      "Url": "",
-      "IsFolder": true,
-      "Title": "Cockpit"
+        "Title": "Cockpit installation fr",
+        "Children": []
+      }
     },
     {
-      "Children": {
-        "Children": [],
-        "Url": "/docs/jenkins/bashsample_automateddockercomposedeployment-fr",
-        "IsFolder": false,
-        "Title": "BashSample AutomatedDockerComposeDeployment fr"
-      },
-      "Url": "",
       "IsFolder": true,
-      "Title": "Jenkins"
+      "Url": "",
+      "Title": "Jenkins",
+      "Children": {
+        "IsFolder": false,
+        "Url": "/docs/jenkins/bashsample_automateddockercomposedeployment-fr",
+        "Title": "BashSample AutomatedDockerComposeDeployment fr",
+        "Children": []
+      }
     }
-  ],
-  "Url": "/docs",
-  "IsFolder": true,
-  "Title": "Docs"
+  ]
 }
