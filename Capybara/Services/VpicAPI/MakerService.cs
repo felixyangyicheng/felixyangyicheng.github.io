@@ -1,7 +1,10 @@
-﻿using Capybara.Models.VPIC;
+﻿using ApexCharts;
+using BlazorComponentUtilities;
+using Capybara.Models.VPIC;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Data;
+using static MudBlazor.Icons.Custom;
 
 namespace Capybara.Services.VpicAPI;
 
@@ -29,6 +32,28 @@ public class MakerService :  IMakerService
         string url = $"{VpicAPI}/GetMakesForVehicleType/Motorcycle?format=json";
         Response<List<Maker>> response = (await _httpClient.GetFromJsonAsync<Response<List<Maker>>>(url)) ?? throw new NoNullAllowedException("http response is null");
         return response; 
+    }
+
+    public async Task<Response<List<Model>>> GetModelsForMakeIdYearAsync(int makeId, int? modelyear, string? vehicleType)
+    {
+        string url = $"{VpicAPI}/GetModelsForMakeIdYear/makeid/{makeId}";
+        if (modelyear!=null)
+        {
+            url=url+($"/modelyear/{modelyear}");
+        }
+        if (!String.IsNullOrEmpty(vehicleType))
+        {
+            url = url + ($"/vehicleType/{vehicleType}");
+        }
+        else
+        {
+            url = url + ($"/vehicleType/motorcycle");
+        }
+        url = url + "?format=json";
+
+        Console.WriteLine(url);
+        Response <List<Model>> response = (await _httpClient.GetFromJsonAsync<Response<List<Model>>>(url)) ?? throw new NoNullAllowedException("http response is null");
+        return response;
     }
 
     public async Task<Response<List<Model>>> GetModelsForMakersAsync(string brand)

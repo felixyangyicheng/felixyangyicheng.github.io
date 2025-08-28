@@ -1,31 +1,77 @@
 ﻿@page "/motomakers"
 
+   <MudContainer>
 @if (MakersResponse.Results is null)
 {
     <Plane></Plane>
 }
 else
 {
-    <p>Total: @MakersResponse.Count</p>
-    @if (ModelsResponse.Count <= 0)
-    {
-        <p>Veuillez sélectionner une marque</p>
-    }
-    foreach (var maker in MakersResponse.Results)
-    {
-        <MudButton Variant="Variant.Outlined" Color="Color.Primary" @onclick="e => FindModel(maker.Make_Name)">@maker.Make_Name</MudButton>
-
-            if (ModelsResponse.Results is null || ModelsResponse.Results.Count == 0)
-            {
-                
-            }else
-            {
-                    
-                foreach (var model in ModelsResponse.Results)
-                {
-                    <p>@model.Make_Name</p>
-                }
+        <style>
+            .selected {
+                background-color: #1E88E5 !important;
             }
-        
-    }
+
+                .selected > td {
+                    color: white !important;
+                }
+
+                    .selected > td .mud-input {
+                        color: white !important;
+                    }
+        </style>
+
+
+        <MudGrid>
+            <MudItem xs="12" md="6" lg="6" xl="6">
+
+
+                <MudTable Items="@MakersView" Dense="true" Hover="true" Bordered="true" Striped="true" Breakpoint="Breakpoint.Sm" @ref="makerTable"
+                          OnRowClick="RowClickEvent" T="Maker" Filter="new Func<Maker,bool>(FilterFuncMotoMaker)" RowClass="cursor-pointer" RowClassFunc="@SelectedRowClassFunc">
+                    <ToolBarContent>
+                        <MudText Typo="Typo.h6">Marque des motos</MudText>
+                        <MudSpacer />
+                        <MudTextField @bind-Value="searchStringMakerName" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+                    </ToolBarContent>
+                    <HeaderContent>
+                        <MudTh>Nom de marque</MudTh>
+
+                    
+
+                    </HeaderContent>
+                    <RowTemplate>
+                        <MudTd DataLabel="MakerName">@context.MakeName</MudTd>
+
+
+                    </RowTemplate>
+                    <PagerContent>
+                        <MudTablePager />
+                    </PagerContent>
+                </MudTable>
+
+
+            </MudItem>
+            <MudItem xs="12" md="6" lg="6" xl="6">
+                <MudTable Items="@ModelsView" Dense="true" Hover="true" Bordered="true" Striped="true" Breakpoint="Breakpoint.Sm" @ref="modelTable"
+                          T="Model">
+                    <HeaderContent>
+                        <MudTh>Model</MudTh>
+
+
+
+                    </HeaderContent>
+                    <RowTemplate>
+                        <MudTd DataLabel="ModelName">@context.Model_Name</MudTd>
+
+
+                    </RowTemplate>
+                    <PagerContent>
+                        <MudTablePager />
+                    </PagerContent>
+                </MudTable>
+            </MudItem>
+        </MudGrid>
+
+    
 }
+   </MudContainer>
