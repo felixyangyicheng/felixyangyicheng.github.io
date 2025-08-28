@@ -1,6 +1,5 @@
 ﻿import Data from "./data.js"
 import EventHandler from "./event-handler.js"
-import { readFileAsync } from "./utility.js"
 
 export function init(id) {
     const el = document.getElementById(id)
@@ -48,7 +47,8 @@ export function init(id) {
             inputFile.files = fileList
             const event = new Event('change', { bubbles: true })
             inputFile.dispatchEvent(event)
-        } catch (e) {
+        }
+        catch (e) {
             console.error(e)
         }
     })
@@ -83,17 +83,21 @@ export function init(id) {
     })
 }
 
-export async function getPreviewUrl(id, fileName) {
+export function preview(previewerId, index) {
+    const prev = Data.get(previewerId);
+    if (prev) {
+        prev.viewer.show(index);
+    }
+}
+
+export function getPreviewUrl(id, fileName) {
     let url = '';
     const upload = Data.get(id);
     const { files } = upload;
     if (files) {
         const file = [...files].find(v => v.name === fileName);
         if (file) {
-            const data = await readFileAsync(file);
-            if (data) {
-                url = URL.createObjectURL(data);
-            }
+            url = URL.createObjectURL(file);
         }
     }
     return url;
@@ -112,9 +116,10 @@ export function dispose(id) {
         EventHandler.off(document, 'dragover', preventHandler)
 
         EventHandler.off(el, 'click')
-        EventHandler.off(el, 'drop')
         EventHandler.off(el, 'paste')
-        EventHandler.off(inputFile, 'change')
+
+        EventHandler.off(inputFile, 'change');
+
         EventHandler.off(body, 'dragleave')
         EventHandler.off(body, 'drop')
         EventHandler.off(body, 'dragenter')
