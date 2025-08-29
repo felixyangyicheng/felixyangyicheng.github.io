@@ -1,11 +1,4 @@
-﻿using ApexCharts;
-using BlazorComponentUtilities;
-using Capybara.Models.VPIC;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Data;
-using static MudBlazor.Icons.Custom;
-
+﻿
 namespace Capybara.Services.VpicAPI;
 
 public class MakerService :  IMakerService
@@ -51,7 +44,6 @@ public class MakerService :  IMakerService
         }
         url = url + "?format=json";
 
-        Console.WriteLine(url);
         Response <List<Model>> response = (await _httpClient.GetFromJsonAsync<Response<List<Model>>>(url)) ?? throw new NoNullAllowedException("http response is null");
         return response;
     }

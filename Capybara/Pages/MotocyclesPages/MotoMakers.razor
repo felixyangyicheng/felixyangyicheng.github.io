@@ -30,6 +30,11 @@ else
                           OnRowClick="RowClickEvent" T="Maker" Filter="new Func<Maker,bool>(FilterFuncMotoMaker)" RowClass="cursor-pointer" RowClassFunc="@SelectedRowClassFunc">
                     <ToolBarContent>
                         <MudText Typo="Typo.h6">Marque des motos</MudText>
+                        @if (_processing)
+                        {
+                            <MudSpacer />
+                            <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                        }
                         <MudSpacer />
                         <MudTextField @bind-Value="searchStringMakerName" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
                     </ToolBarContent>
@@ -53,11 +58,17 @@ else
             </MudItem>
             <MudItem xs="12" md="6" lg="6" xl="6">
                 <MudTable Items="@ModelsView" Dense="true" Hover="true" Bordered="true" Striped="true" Breakpoint="Breakpoint.Sm" @ref="modelTable"
+                          Filter="new Func<Model,bool>(FilterFuncMotoModel)" 
                           T="Model">
                     <HeaderContent>
                         <MudTh>Model</MudTh>
-
-
+                        @if (_processing)
+                        {
+                            <MudSpacer />
+                            <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                        }
+                        <MudSpacer />
+                        <MudTextField @bind-Value="searchStringMakerName" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
 
                     </HeaderContent>
                     <RowTemplate>

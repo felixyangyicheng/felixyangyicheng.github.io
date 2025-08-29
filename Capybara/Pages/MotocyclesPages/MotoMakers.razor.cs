@@ -54,7 +54,13 @@ public partial class MotoMakers
     /// </summary>
     /// <param name="mk"></param>
     /// <returns></returns>
-    private bool FilterFuncMotoMaker(Maker mk) => FilterFunc(mk, searchStringMakerName);
+    private bool FilterFuncMotoMaker(Maker mk) => FilterFuncMaker(mk, searchStringMakerName);
+    /// <summary>
+    /// Délégation
+    /// </summary>
+    /// <param name="md"></param>
+    /// <returns></returns>
+    private bool FilterFuncMotoModel(Model md) => FilterFuncModel(md, searchStringMakerName);
 
     /// <summary>
     /// Fonction filtre nom de marque
@@ -62,11 +68,26 @@ public partial class MotoMakers
     /// <param name="maker"></param>
     /// <param name="searchString"></param>
     /// <returns></returns>
-    private bool FilterFunc(Maker maker, string searchString)
+    private bool FilterFuncMaker(Maker maker, string searchString)
     {
         if (string.IsNullOrWhiteSpace(searchString))
             return true;
         if (maker.MakeName.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        return false;
+    }
+    /// <summary>
+    /// Fonction filtre nom de modele
+    /// </summary>
+    /// <param name="model"></param>
+    /// <param name="searchString"></param>
+    /// <returns></returns>
+    private bool FilterFuncModel(Model model, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (model.Model_Name.Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
 
         return false;
