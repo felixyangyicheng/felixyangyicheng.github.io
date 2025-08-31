@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "ZQ7P9v7R",
+  "version": "ir7VIGdj",
   "assets": [
     {
       "hash": "sha256-vbjalYoljVOXJ39G6uRXbZM2Tb2XGLlWqaeJ2B3YI/Q=",
@@ -870,8 +870,8 @@ self.assetsManifest = {
       "url": "_framework/BootstrapBlazor.WebAPI.1cl339xwip.wasm"
     },
     {
-      "hash": "sha256-hPVO+VrDJOjkUL8TvwItRFIAbS3hABiAvkZVznddkGA=",
-      "url": "_framework/Capybara.sc3yxham2p.wasm"
+      "hash": "sha256-ReltDC1Yr+yMoo8l/LIGT/0zJSYO5Ux8GdFOnUBs4XI=",
+      "url": "_framework/Capybara.jy2no0h6hh.wasm"
     },
     {
       "hash": "sha256-OOHKHO/zGKg8QCze4D8F1zrytSf38wBkExNfl5143nc=",
@@ -1338,7 +1338,7 @@ self.assetsManifest = {
       "url": "_framework/de/Heron.MudCalendar.resources.hzhvbx2f6j.wasm"
     },
     {
-      "hash": "sha256-7WwG30XXG+5dBvAwuif5NS3zwJ6AR8ZCYwUPKVYmYWY=",
+      "hash": "sha256-GQc1ITx9j3EEyqXS4/WA7AvMZHa2RMyTxzh7OjthbRs=",
       "url": "_framework/dotnet.js"
     },
     {
@@ -1494,7 +1494,7 @@ self.assetsManifest = {
       "url": "css/bootstrap/bootstrap.min.css.map"
     },
     {
-      "hash": "sha256-PAe1SP3So1BWBj1E1VGcA5YmlkdPqI/1hDa5AX5m/PI=",
+      "hash": "sha256-hy+5docqnPYwppaFUCkE8YFU9GwiM7GbX9Yqo/xdvys=",
       "url": "docs/nav-structure.json"
     },
     {
