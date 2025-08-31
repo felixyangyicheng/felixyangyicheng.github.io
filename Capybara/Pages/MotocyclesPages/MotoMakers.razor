@@ -39,13 +39,13 @@ else
                         <MudTextField @bind-Value="searchStringMakerName" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
                     </ToolBarContent>
                     <HeaderContent>
-                        <MudTh>Nom de marque</MudTh>
+                        <MudTh>Marque</MudTh>
 
                     
 
                     </HeaderContent>
                     <RowTemplate>
-                        <MudTd DataLabel="MakerName">@context.MakeName</MudTd>
+                        <MudTd DataLabel="">@context.MakeName</MudTd>
 
 
                     </RowTemplate>
@@ -60,19 +60,25 @@ else
                 <MudTable Items="@ModelsView" Dense="true" Hover="true" Bordered="true" Striped="true" Breakpoint="Breakpoint.Sm" @ref="modelTable"
                           Filter="new Func<Model,bool>(FilterFuncMotoModel)" 
                           T="Model">
-                    <HeaderContent>
-                        <MudTh>Model</MudTh>
+                    <ToolBarContent>
+                        <MudText Typo="Typo.h6">Modèle</MudText>
+
                         @if (_processing)
                         {
                             <MudSpacer />
                             <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
                         }
                         <MudSpacer />
-                        <MudTextField @bind-Value="searchStringMakerName" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+                        <MudTextField @bind-Value="searchStringModelName" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+
+                    </ToolBarContent>
+
+                    <HeaderContent>
+                        <MudTh>Modèle</MudTh>
 
                     </HeaderContent>
                     <RowTemplate>
-                        <MudTd DataLabel="ModelName">@context.Model_Name</MudTd>
+                        <MudTd DataLabel="">@context.Model_Name</MudTd>
 
 
                     </RowTemplate>

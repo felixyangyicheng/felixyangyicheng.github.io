@@ -1,7 +1,4 @@
-﻿using Capybara.Services.VpicAPI;
-using MudBlazor;
-using static MudBlazor.CategoryTypes;
-
+﻿
 namespace Capybara.Pages.MotocyclesPages;
 
 public partial class MotoMakers
@@ -40,6 +37,7 @@ public partial class MotoMakers
 
     private string MakerName = "";
     private string searchStringMakerName = "";
+    private string searchStringModelName = "";
     private Maker SelectedMaker { get; set; } = new();
     private int selectedRowNumber = -1;
     private MudTable<Maker> makerTable = default!;
@@ -119,9 +117,7 @@ public partial class MotoMakers
         if (MakerName == tableRowClickEventArgs.Item?.MakeName)
         {
             SelectedMaker = new Maker();
-
             MakerName = string.Empty;
-
         }
         else
         {
@@ -179,13 +175,7 @@ public partial class MotoMakers
     }
 
 
-    protected void SearchChanged(string searchText)
-    {
-        if (!string.IsNullOrEmpty(searchText))
-        {
-            StateHasChanged();
-        }
-    }
+
     #endregion
 
 }

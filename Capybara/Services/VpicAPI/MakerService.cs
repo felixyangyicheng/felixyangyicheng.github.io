@@ -3,15 +3,21 @@ namespace Capybara.Services.VpicAPI;
 
 public class MakerService :  IMakerService
 {
+
+    #region properties
+
     protected string VpicAPI ="";
 
     protected HttpClient _httpClient = new HttpClient();
+    #endregion
+    #region contructor
     public MakerService(IConfiguration configuration, HttpClient httpClient) 
-    {
-       
+    {       
         _httpClient = httpClient;
         VpicAPI = configuration.GetValue<string>("vpicApiRootPath") ?? throw new ArgumentNullException(nameof(VpicAPI));
     }
+    #endregion
+    #region Méthods
 
     public async Task<Response<List<Maker>>> GetAllMakersAsync()
     {
@@ -54,4 +60,6 @@ public class MakerService :  IMakerService
         Response <List<Model>> response = (await _httpClient.GetFromJsonAsync<Response<List<Model>>>(url)) ?? throw new NoNullAllowedException("http response is null");
         return response;
     }
+    #endregion
+
 }
