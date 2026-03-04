@@ -1,4 +1,4 @@
-﻿import { getDescribedElement, getDescribedOwner, hackTooltip, hackPopover, isDisabled, registerBootstrapBlazorModule } from "./utility.js"
+import { getDescribedElement, getDescribedOwner, hackTooltip, hackPopover, isDisabled, registerBootstrapBlazorModule } from "./utility.js"
 import EventHandler from "./event-handler.js"
 
 const Popover = {
@@ -15,7 +15,8 @@ const Popover = {
                     return isDisabled(el) || isDisabled(el.parentNode) || isDisabled(el.querySelector('.form-control'))
                 },
                 initCallback: null,
-                hideCallback: null
+                hideCallback: null,
+                shownCallback: null
             },
             ...(config || {})
         }
@@ -73,7 +74,7 @@ const Popover = {
         popover.triggerHideCallback = () => {
             if (popover.hideCallback) {
                 popover.hideCallback();
-            };
+            }
         }
 
         if (popover.isPopover) {
@@ -105,7 +106,11 @@ const Popover = {
                         popover.hasDisplayNone = true;
                         content.classList.remove("d-none")
                     }
-                    body.append(content)
+                    body.append(content);
+
+                    if (popover.shownCallback != null) {
+                        popover.shownCallback();
+                    }
                 }
             }
 

@@ -2,16 +2,16 @@
 import Viewer from "../../modules/viewer.js"
 
 export function init(id, prevList, config) {
-    const el = document.getElementById(id)
+    const el = document.getElementById(id);
     if (el === null) {
-        return
+        return;
     }
 
     const viewer = {
         el,
         viewer: Viewer.init(el, prevList, config)
-    }
-    Data.set(id, viewer)
+    };
+    Data.set(id, viewer);
 }
 
 export function update(id, prevList) {
@@ -29,6 +29,6 @@ export function dispose(id) {
     Data.remove(id)
 
     if (viewer) {
-        Viewer.dispose(viewer.viewer)
+        Viewer.dispose(viewer.viewer);
     }
 }

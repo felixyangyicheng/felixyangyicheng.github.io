@@ -1,4 +1,4 @@
-﻿import Data from "../../modules/data.js"
+import Data from "../../modules/data.js"
 import EventHandler from "../../modules/event-handler.js"
 
 const selectCell = (el, index) => {
@@ -12,7 +12,7 @@ const selectCell = (el, index) => {
     cell.focus();
 }
 
-export function init(id) {
+export function init(id, invoke) {
     const el = document.getElementById(id)
     if (el === null) {
         return
@@ -33,7 +33,6 @@ export function init(id) {
         EventHandler.on(c, 'keydown', e => {
             const current = e.target;
             if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)) {
-                // numbers, backup last status
                 ip.prevValues[index] = c.value
                 if (c.value === "0") {
                     c.value = ""
@@ -65,15 +64,15 @@ export function init(id) {
                     selectCell(el, index - 1)
                 }
             }
-            else if (current.selectionStart === current.value.length && (e.code === 'Space' || e.code === 'ArrowRight')) {
+            else if (current.selectionStart === current.value.length && (e.key === 'Space' || e.key === 'ArrowRight')) {
                 e.preventDefault()
                 selectCell(el, index + 1)
             }
-            else if (current.selectionStart === 0 && e.code === 'ArrowLeft') {
+            else if (current.selectionStart === 0 && e.key === 'ArrowLeft') {
                 e.preventDefault()
                 selectCell(el, index - 1)
             }
-            else if (e.key === 'Delete' || e.key === 'Tab' || e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+            else if (e.composed || e.key === 'Delete' || e.key === 'Tab' || e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
 
             }
             else {
@@ -89,6 +88,37 @@ export function init(id) {
                 }
             }
         })
+
+        EventHandler.on(c, 'paste', e => {
+            e.preventDefault();
+            const raw = (e.clipboardData || window.clipboardData)?.getData('text') ?? '';
+            if (!raw) {
+                return;
+            }
+
+            const ipRegex = /\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b/;
+            const match = raw.match(ipRegex);
+            const parts = match ? match[0] : null;
+            if (parts === null) {
+                return;
+            }
+
+            const cells = el.querySelectorAll(".ipv4-cell");
+            let pos = 0;
+            const args = [];
+            parts.split('.').forEach(p => {
+                if (pos > 3) {
+                    return;
+                }
+                const num = parseInt(p, 10);
+                args.push(num);
+                cells[pos].value = num.toString();
+                ip.prevValues[pos] = cells[pos].value;
+                pos++;
+            });
+
+            invoke.invokeMethodAsync("TriggerUpdate", ...args);
+        });
     })
 }
 
