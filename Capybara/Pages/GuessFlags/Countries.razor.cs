@@ -100,7 +100,7 @@ namespace Capybara.Pages.GuessFlags
             }
 
 
-            StateHasChanged();
+   
         }
         #endregion
     }

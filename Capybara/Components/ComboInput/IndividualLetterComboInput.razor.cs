@@ -24,28 +24,23 @@ namespace Capybara.Components.ComboInput
         [Parameter]
         public bool HintAvaiable { get; set; }
 
-        private string[] InputValues { get; set; } = new string[0];
-        private ElementReference[] InputRefs { get; set; } = default!;
-        private string[] InputClasses { get; set; } = new string[0];
-        private bool[] InputDisabled { get; set; } = new bool[0];
-        private bool AllInputsCorrect { get; set; }
-        private bool _isFocused = false;
-        private bool _shouldFocusAfterRender = false; // 新增标志
+        private string[] InputValues { get; set; } = Array.Empty<string>();
+        private string[] InputClasses { get; set; } = Array.Empty<string>();
+        private bool[] InputDisabled { get; set; } = Array.Empty<bool>();
+        private int? _pendingFocusIndex = null;
+        private bool _shouldFocusAfterRender = false;
         private CancellationTokenSource[] _errorTimers = Array.Empty<CancellationTokenSource>();
 
         protected override void OnParametersSet()
         {
-            // 取消所有之前的错误计时器
             CancelAllErrorTimers();
-            // 当StringInit变化时（新词组加载）设置焦点标志
-            _shouldFocusAfterRender = true;
+            _shouldFocusAfterRender = true;   // 新词加载必须聚焦
             InitializeArrays();
         }
 
         private void InitializeArrays()
         {
             InputValues = new string[StringInit.Length];
-            InputRefs = new ElementReference[StringInit.Length];
             InputClasses = new string[StringInit.Length];
             InputDisabled = new bool[StringInit.Length];
             _errorTimers = new CancellationTokenSource[StringInit.Length];
@@ -54,7 +49,6 @@ namespace Capybara.Components.ComboInput
             {
                 char c = StringInit[i];
                 bool isSpecial = c == '-' || char.IsWhiteSpace(c);
-
                 InputValues[i] = isSpecial ? c.ToString() : "";
                 InputClasses[i] = "default";
                 InputDisabled[i] = isSpecial;
@@ -67,23 +61,65 @@ namespace Capybara.Components.ComboInput
             if (firstRender || _shouldFocusAfterRender)
             {
                 _shouldFocusAfterRender = false;
-                await Task.Delay(50); // 确保DOM更新完成
-                await FocusFirstEmptyInput();
+                var idx = FindFirstEmptyIndex();
+                if (idx.HasValue)
+                    await FocusIndexAsync(idx.Value);
+                return;
+            }
+
+            if (_pendingFocusIndex.HasValue)
+            {
+                await FocusIndexAsync(_pendingFocusIndex.Value);
+                _pendingFocusIndex = null;
             }
         }
 
-        private async void HandleInput(ChangeEventArgs e, int index)
+        private int? FindFirstEmptyIndex()
         {
-            if (_isFocused) return;
-            _isFocused = true;
+            for (int i = 0; i < InputValues.Length; i++)
+                if (!InputDisabled[i] && string.IsNullOrEmpty(InputValues[i]))
+                    return i;
+            return null;
+        }
 
-            var input = e.Value?.ToString()?.Trim();
-            if (string.IsNullOrEmpty(input))
+        private int? FindNextEmptyIndex(int currentIndex)
+        {
+            for (int i = currentIndex + 1; i < InputValues.Length; i++)
+                if (!InputDisabled[i] && string.IsNullOrEmpty(InputValues[i])) return i;
+
+            for (int i = 0; i < currentIndex; i++)
+                if (!InputDisabled[i] && string.IsNullOrEmpty(InputValues[i])) return i;
+
+            return null;
+        }
+
+        // ============== 关键修复：带重试的 JS focus ==============
+        private async Task FocusIndexAsync(int index)
+        {
+            if (index < 0 || index >= InputValues.Length) return;
+
+            string id = $"letter-{index}";
+
+            for (int attempt = 0; attempt < 8; attempt++)   // 最多等 ~200ms
             {
-                _isFocused = false;
-                return;
+                try
+                {
+                    await JSRuntime.InvokeVoidAsync("eval", $"document.getElementById('{id}').focus()");
+                    return; // 成功就退出
+                }
+                catch
+                {
+                    await Task.Delay(25); // DOM 还没准备好就等一下
+                }
             }
-            // 取消该输入框之前的错误计时器（如果有）
+            Console.WriteLine($"[Focus] 无法聚焦 letter-{index}（已重试）");
+        }
+
+        private async Task HandleInput(ChangeEventArgs e, int index)
+        {
+            var input = e.Value?.ToString()?.Trim();
+            if (string.IsNullOrEmpty(input)) return;
+
             _errorTimers[index]?.Cancel();
             _errorTimers[index] = new CancellationTokenSource();
             var token = _errorTimers[index].Token;
@@ -100,41 +136,37 @@ namespace Capybara.Components.ComboInput
                 }
                 else
                 {
-                    await FocusNextEmptyInput(index);
+                    var nextIdx = FindNextEmptyIndex(index);
+                    if (nextIdx.HasValue)
+                    {
+                        _pendingFocusIndex = nextIdx.Value;
+                        StateHasChanged();
+                    }
                 }
             }
             else
             {
-                // 设置错误状态（摇晃+红色）
                 InputClasses[index] = "error";
-                InputValues[index] = input; // 临时显示错误输入
-
-                // 触发状态更新以应用错误样式
+                InputValues[index] = input;
                 StateHasChanged();
 
                 try
                 {
-                    // 1秒后清除错误输入
                     await Task.Delay(1000, token);
-
                     if (!token.IsCancellationRequested)
                     {
                         InputValues[index] = string.Empty;
                         InputClasses[index] = "incorrect";
-                        StateHasChanged();
+                        InputDisabled[index] = false;
 
-                        // 重新聚焦到当前输入框
-                        await InputRefs[index].FocusAsync();
+                        _pendingFocusIndex = index;
+                        StateHasChanged();
                     }
                 }
-                catch (TaskCanceledException)
-                {
-                    // 计时器被取消是正常情况
-                }
+                catch (TaskCanceledException) { }
             }
-
-            _isFocused = false;
         }
+
         private void CancelAllErrorTimers()
         {
             foreach (var timer in _errorTimers)
@@ -144,79 +176,16 @@ namespace Capybara.Components.ComboInput
             }
         }
 
-        private bool IsCorrectChar(char input, char target)
-        {
-            return char.ToLower(input) == char.ToLower(target);
-        }
+        private bool IsCorrectChar(char input, char target) => char.ToLower(input) == char.ToLower(target);
 
         private bool CheckAllCorrect()
         {
             for (int i = 0; i < InputValues.Length; i++)
-            {
                 if (!InputDisabled[i] && string.IsNullOrEmpty(InputValues[i]))
                     return false;
-            }
             return true;
         }
 
-
-        private async Task FocusNextEmptyInput(int currentIndex)
-        {
-            try
-            {
-                int nextIndex = currentIndex + 1;
-                while (nextIndex < InputValues.Length)
-                {
-                    if (!InputDisabled[nextIndex] && string.IsNullOrEmpty(InputValues[nextIndex]))
-                    {
-                        await InputRefs[nextIndex].FocusAsync();
-                        return;
-                    }
-                    nextIndex++;
-                }
-
-                // 如果后面没有空项，向前找
-                for (int i = 0; i < currentIndex; i++)
-                {
-                    if (!InputDisabled[i] && string.IsNullOrEmpty(InputValues[i]))
-                    {
-                        await InputRefs[i].FocusAsync();
-                        return;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Focus error: {ex.Message}");
-            }
-        }
-
-
-        private async Task FocusFirstEmptyInput()
-        {
-            try
-            {
-                for (int i = 0; i < InputValues.Length; i++)
-                {
-                    if (!InputDisabled[i] && string.IsNullOrEmpty(InputValues[i]))
-                    {
-                        await InputRefs[i].FocusAsync();
-                        return;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Initial focus error: {ex.Message}");
-            }
-        }
-
-        public void Dispose()
-        {
-            CancelAllErrorTimers();
-        }
-
+        public void Dispose() => CancelAllErrorTimers();
     }
 }
-
-
