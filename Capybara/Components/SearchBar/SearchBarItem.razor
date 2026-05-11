@@ -1,0 +1,4 @@
+﻿<section style="margin-bottom: 10px " class="d-flex p-2">
+    <input type="text" class="form-control" placeholder="@PlaceHolder"
+           @bind-value="@SearchTerm" @bind-value:event="oninput" @onfocusout="async () => await OnSearchChanged.InvokeAsync(SearchTerm)" />
+</section>

@@ -1,0 +1,79 @@
+﻿@typeparam T
+
+<table class="table table-dark">
+    <thead>
+        @TableHeader
+    </thead>
+    <tbody>
+        @foreach (var i in CurrentDisplay)
+        {
+           
+                
+                @ItemTemplate(i)
+            
+
+        }
+
+    </tbody>
+    <tfoot>
+
+        @TableFooter
+
+        <tr>
+
+            @if (TotalPages() > 1)
+            {
+
+                if (CurrentPage == 1)
+                {
+                    <td>
+
+                        <MudButton disabled Color="Color.Primary" Size="Size.Large">Begin</MudButton>
+                    </td>
+                    <td>
+                        <MudButton disabled Color="Color.Primary" Size="Size.Large">Last</MudButton>
+                    </td>
+
+                }
+                else
+                {
+                    <td>
+                        <MudButton @onclick="@MoveFirst" title="Move First" Color="Color.Primary" Size="Size.Large">Begin</MudButton>
+                    </td>
+                    <td>
+
+                        <MudButton @onclick="@MoveBack" title="Move Back" Color="Color.Primary" Size="Size.Large">Last</MudButton>
+                    </td>
+                }
+                <td>
+
+                    <span>@CurrentPage of @TotalPages() </span>
+                </td>
+                @if (!AtLastPage())
+                {
+                    <td>
+
+                        <MudButton @onclick="@MoveNext" title="Move Next" Color="Color.Primary" Size="Size.Large">Next</MudButton>
+                    </td>
+                    <td>
+
+                        <MudButton @onclick="@MoveLast" title="Move Last" Color="Color.Primary" Size="Size.Large">End</MudButton>
+                    </td>
+                }
+                else
+                {
+                    <td>
+
+                        <MudButton disabled Color="Color.Primary" Size="Size.Large">Next</MudButton>
+                    </td>
+                    <td>
+
+                        <MudButton disabled Color="Color.Primary" Size="Size.Large">End</MudButton>
+                    </td>
+                }
+
+            }
+
+        </tr>
+    </tfoot>
+</table>

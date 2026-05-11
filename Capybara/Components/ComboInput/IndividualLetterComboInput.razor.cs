@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using Microsoft.JSInterop;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -10,8 +9,6 @@ namespace Capybara.Components.ComboInput
 {
     public partial class IndividualLetterComboInput : IDisposable
     {
-        [Inject] private IJSRuntime JSRuntime { get; set; } = default!;
-
         [Parameter, NotNull]
         public string StringInit { get; set; } = "";
 
@@ -24,37 +21,41 @@ namespace Capybara.Components.ComboInput
         [Parameter]
         public bool HintAvaiable { get; set; }
 
-        private string[] InputValues { get; set; } = new string[0];
-        private ElementReference[] InputRefs { get; set; } = default!;
-        private string[] InputClasses { get; set; } = new string[0];
-        private bool[] InputDisabled { get; set; } = new bool[0];
-        private bool AllInputsCorrect { get; set; }
-        private bool _isFocused = false;
-        private bool _shouldFocusAfterRender = false; // 新增标志
+        private string[] InputValues { get; set; } = Array.Empty<string>();
+        private string[] InputClasses { get; set; } = Array.Empty<string>();
+        private bool[] InputDisabled { get; set; } = Array.Empty<bool>();
+        private int? _pendingFocusIndex = null;
+        private bool _shouldFocusAfterRender = false;
         private CancellationTokenSource[] _errorTimers = Array.Empty<CancellationTokenSource>();
+        private ElementReference[] InputRefs { get; set; } = Array.Empty<ElementReference>();
+        private string? _initializedWord;
 
         protected override void OnParametersSet()
         {
-            // 取消所有之前的错误计时器
+            // 父组件重新渲染时不要重置输入框，否则用户快速输入时会丢失焦点和已输入内容。
+            if (StringInit == _initializedWord)
+            {
+                return;
+            }
+
             CancelAllErrorTimers();
-            // 当StringInit变化时（新词组加载）设置焦点标志
-            _shouldFocusAfterRender = true;
+            _shouldFocusAfterRender = true;   // 新词加载必须聚焦
+            _initializedWord = StringInit;
             InitializeArrays();
         }
 
         private void InitializeArrays()
         {
             InputValues = new string[StringInit.Length];
-            InputRefs = new ElementReference[StringInit.Length];
             InputClasses = new string[StringInit.Length];
             InputDisabled = new bool[StringInit.Length];
+            InputRefs = new ElementReference[StringInit.Length];
             _errorTimers = new CancellationTokenSource[StringInit.Length];
 
             for (int i = 0; i < StringInit.Length; i++)
             {
                 char c = StringInit[i];
                 bool isSpecial = c == '-' || char.IsWhiteSpace(c);
-
                 InputValues[i] = isSpecial ? c.ToString() : "";
                 InputClasses[i] = "default";
                 InputDisabled[i] = isSpecial;
@@ -67,23 +68,62 @@ namespace Capybara.Components.ComboInput
             if (firstRender || _shouldFocusAfterRender)
             {
                 _shouldFocusAfterRender = false;
-                await Task.Delay(50); // 确保DOM更新完成
-                await FocusFirstEmptyInput();
+                var idx = FindFirstEmptyIndex();
+                if (idx.HasValue)
+                    await FocusIndexAsync(idx.Value);
+                return;
+            }
+
+            if (_pendingFocusIndex.HasValue)
+            {
+                await FocusIndexAsync(_pendingFocusIndex.Value);
+                _pendingFocusIndex = null;
             }
         }
 
-        private async void HandleInput(ChangeEventArgs e, int index)
+        private int? FindFirstEmptyIndex()
         {
-            if (_isFocused) return;
-            _isFocused = true;
+            for (int i = 0; i < InputValues.Length; i++)
+                if (!InputDisabled[i] && string.IsNullOrEmpty(InputValues[i]))
+                    return i;
+            return null;
+        }
 
-            var input = e.Value?.ToString()?.Trim();
-            if (string.IsNullOrEmpty(input))
+        private int? FindNextEmptyIndex(int currentIndex)
+        {
+            for (int i = currentIndex + 1; i < InputValues.Length; i++)
+                if (!InputDisabled[i] && string.IsNullOrEmpty(InputValues[i])) return i;
+
+            for (int i = 0; i < currentIndex; i++)
+                if (!InputDisabled[i] && string.IsNullOrEmpty(InputValues[i])) return i;
+
+            return null;
+        }
+
+        private async Task FocusIndexAsync(int index)
+        {
+            if (index < 0 || index >= InputValues.Length) return;
+
+            // 使用 Blazor 的 ElementReference 聚焦，避免 eval 查找不存在的 id 导致焦点丢失。
+            for (int attempt = 0; attempt < 6; attempt++)
             {
-                _isFocused = false;
-                return;
+                try
+                {
+                    await InputRefs[index].FocusAsync();
+                    return;
+                }
+                catch
+                {
+                    await Task.Delay(20);
+                }
             }
-            // 取消该输入框之前的错误计时器（如果有）
+        }
+
+        private async Task HandleInput(ChangeEventArgs e, int index)
+        {
+            var input = e.Value?.ToString()?.Trim();
+            if (string.IsNullOrEmpty(input)) return;
+
             _errorTimers[index]?.Cancel();
             _errorTimers[index] = new CancellationTokenSource();
             var token = _errorTimers[index].Token;
@@ -100,41 +140,56 @@ namespace Capybara.Components.ComboInput
                 }
                 else
                 {
-                    await FocusNextEmptyInput(index);
+                    var nextIdx = FindNextEmptyIndex(index);
+                    if (nextIdx.HasValue)
+                    {
+                        _pendingFocusIndex = nextIdx.Value;
+                        // 立即尝试聚焦下一格；如果 DOM 还没更新，OnAfterRenderAsync 会再次补偿。
+                        await FocusIndexAsync(nextIdx.Value);
+                        StateHasChanged();
+                    }
                 }
             }
             else
             {
-                // 设置错误状态（摇晃+红色）
                 InputClasses[index] = "error";
-                InputValues[index] = input; // 临时显示错误输入
-
-                // 触发状态更新以应用错误样式
+                InputValues[index] = input;
                 StateHasChanged();
 
                 try
                 {
-                    // 1秒后清除错误输入
                     await Task.Delay(1000, token);
-
                     if (!token.IsCancellationRequested)
                     {
                         InputValues[index] = string.Empty;
                         InputClasses[index] = "incorrect";
-                        StateHasChanged();
+                        InputDisabled[index] = false;
 
-                        // 重新聚焦到当前输入框
-                        await InputRefs[index].FocusAsync();
+                        _pendingFocusIndex = index;
+                        StateHasChanged();
                     }
                 }
-                catch (TaskCanceledException)
-                {
-                    // 计时器被取消是正常情况
-                }
+                catch (TaskCanceledException) { }
+            }
+        }
+
+        private async Task HandleKeyDown(KeyboardEventArgs e, int index)
+        {
+            // 快速输入时，浏览器可能还停留在刚被禁用的格子；这里把该按键转交给下一格。
+            if (string.IsNullOrEmpty(e.Key) || e.Key.Length != 1 || !InputDisabled[index])
+            {
+                return;
             }
 
-            _isFocused = false;
+            var nextIdx = FindNextEmptyIndex(index);
+            if (!nextIdx.HasValue)
+            {
+                return;
+            }
+
+            await HandleInput(new ChangeEventArgs { Value = e.Key }, nextIdx.Value);
         }
+
         private void CancelAllErrorTimers()
         {
             foreach (var timer in _errorTimers)
@@ -144,79 +199,16 @@ namespace Capybara.Components.ComboInput
             }
         }
 
-        private bool IsCorrectChar(char input, char target)
-        {
-            return char.ToLower(input) == char.ToLower(target);
-        }
+        private bool IsCorrectChar(char input, char target) => char.ToLower(input) == char.ToLower(target);
 
         private bool CheckAllCorrect()
         {
             for (int i = 0; i < InputValues.Length; i++)
-            {
                 if (!InputDisabled[i] && string.IsNullOrEmpty(InputValues[i]))
                     return false;
-            }
             return true;
         }
 
-
-        private async Task FocusNextEmptyInput(int currentIndex)
-        {
-            try
-            {
-                int nextIndex = currentIndex + 1;
-                while (nextIndex < InputValues.Length)
-                {
-                    if (!InputDisabled[nextIndex] && string.IsNullOrEmpty(InputValues[nextIndex]))
-                    {
-                        await InputRefs[nextIndex].FocusAsync();
-                        return;
-                    }
-                    nextIndex++;
-                }
-
-                // 如果后面没有空项，向前找
-                for (int i = 0; i < currentIndex; i++)
-                {
-                    if (!InputDisabled[i] && string.IsNullOrEmpty(InputValues[i]))
-                    {
-                        await InputRefs[i].FocusAsync();
-                        return;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Focus error: {ex.Message}");
-            }
-        }
-
-
-        private async Task FocusFirstEmptyInput()
-        {
-            try
-            {
-                for (int i = 0; i < InputValues.Length; i++)
-                {
-                    if (!InputDisabled[i] && string.IsNullOrEmpty(InputValues[i]))
-                    {
-                        await InputRefs[i].FocusAsync();
-                        return;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Initial focus error: {ex.Message}");
-            }
-        }
-
-        public void Dispose()
-        {
-            CancelAllErrorTimers();
-        }
-
+        public void Dispose() => CancelAllErrorTimers();
     }
 }
-
-

@@ -1,4 +1,5 @@
 ﻿global using System;
+global using System.Data;
 global using System.Collections.Generic;
 global using System.Diagnostics.CodeAnalysis;
 global using System.Linq;
@@ -34,6 +35,9 @@ global using Heron.MudCalendar;
 global using ZXingBlazor.Components;
 global using System.Timers;
 global using Capybara.HashCheckService;
+global using Capybara.Services;
+global using Capybara.Models.VPIC;
+global using Capybara.Services.VpicAPI;
 
 
 global using Color = MudBlazor.Color;

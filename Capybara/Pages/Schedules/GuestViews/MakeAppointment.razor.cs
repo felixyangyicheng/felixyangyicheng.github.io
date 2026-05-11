@@ -1,6 +1,8 @@
 ﻿
 
 
+using BootstrapBlazor.Components;
+
 namespace Capybara.Pages.Schedules.GuestViews
 {
 	public partial class MakeAppointment

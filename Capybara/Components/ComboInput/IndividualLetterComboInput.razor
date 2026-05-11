@@ -29,7 +29,7 @@
                         <input @key="@item"
                                @ref="InputRefs[item.i]" maxlength="1"
                                @oninput="@(e => HandleInput(e, item.i))"
-                              
+                               @onkeydown="@(e => HandleKeyDown(e, item.i))"
                                disabled="@InputDisabled[item.i]"
                                value="@InputValues[item.i]"
                                type="text" class="form-control case @(InputClasses[item.i])" />

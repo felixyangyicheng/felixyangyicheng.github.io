@@ -62,7 +62,7 @@ namespace Capybara.Pages.FileTransfer
             var result = await _hub.InvokeAsync<string>("JoinRoom", RoomId);
             if (result != "ok")
             {
-                await Dialog.ShowMessageBox("Avertissement", result, yesText: "Confirmer");
+                await Dialog.ShowMessageBoxAsync("Avertissement", result, yesText: "Confirmer");
                 NavigationManager.NavigateTo($"/file-transfer");
                 return;
             }

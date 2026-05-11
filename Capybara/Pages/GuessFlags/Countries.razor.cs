@@ -38,6 +38,8 @@ namespace Capybara.Pages.GuessFlags
         {
             string path = configuration.GetValue<string>("countryCode") ?? throw new ArgumentNullException(nameof(path));
             json = await _httpClient.GetStringAsync($"{path}");
+            // 国家列表只需要在 JSON 加载后初始化一次，避免每次参数刷新都重建列表并影响输入框焦点。
+            InitializeCountries();
             await base.OnInitializedAsync();
         }
         #endregion
@@ -49,9 +51,11 @@ namespace Capybara.Pages.GuessFlags
         #endregion
         #region On AfterRender Async
 
-        protected override void OnParametersSet()
+        private void InitializeCountries()
         {
             countryDict = JsonSerializer.Deserialize<Dictionary<string, string>>(json) ?? throw new ArgumentNullException("json null");
+            // 清空后再填充，防止重新初始化时出现重复国家。
+            countryAndFlags.Clear();
 
             foreach (var kvp in countryDict)
             {
@@ -68,9 +72,6 @@ namespace Capybara.Pages.GuessFlags
                 }
 
             }
-
-
-            base.OnParametersSet();
         }
         #endregion
         private async Task NewGame()
