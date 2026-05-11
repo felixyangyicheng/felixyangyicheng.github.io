@@ -1,10 +1,13 @@
-﻿using static System.Net.WebRequestMethods;
+﻿using Capybara.Components.Charts;
+using static System.Net.WebRequestMethods;
 
 namespace Capybara.Pages.GuessFlags
 {
     public partial class Countries
     {
         #region DI
+        [Inject, NotNull] IDialogService? DialogService { get; set; }
+
         [Inject, NotNull] IConfiguration? configuration { get; set; }
 
         #endregion
@@ -13,56 +16,65 @@ namespace Capybara.Pages.GuessFlags
         public List<FlagModel>? countryAndFlags { get; set; } = new List<FlagModel>();
         [NotNull]
         public List<FlagModel>? ListToGuess { get; set; } = new List<FlagModel>();
-        public List<FlagModel>? FlagsViewed { get; set; } = new List<FlagModel>();
+        public List<FlagResult>? FlagsViewed { get; set; } = new();
         [NotNull]
 
         public FlagModel CountryToGuess { get; set; } = new();
         public Random rnd { get; set; } = new Random();
         public IndividualLetterComboInput input { get; set; } = new();
+        public SimpleStatisticComponent chart { get; set; } = new();
         public Dictionary<string, string> countryDict = new();
+        private List<StatisticModel> GuessResult { get; set; } = new();
+
+
+        protected CountDownBar timer = new CountDownBar();
         public string json = "";
         public int Points { get; set; } = 0;
         #endregion
         #region Methods
+        #region On Initialized Async
+
         protected override async Task OnInitializedAsync()
         {
-
             string path = configuration.GetValue<string>("countryCode") ?? throw new ArgumentNullException(nameof(path));
-
-            json =await _httpClient.GetStringAsync($"{path}");
-
-
+            json = await _httpClient.GetStringAsync($"{path}");
             await base.OnInitializedAsync();
         }
+        #endregion
+        #region On AfterRender Async
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            await base.OnAfterRenderAsync(firstRender);
+        }
+        #endregion
+        #region On AfterRender Async
 
         protected override void OnParametersSet()
         {
             countryDict = JsonSerializer.Deserialize<Dictionary<string, string>>(json) ?? throw new ArgumentNullException("json null");
-           
+
             foreach (var kvp in countryDict)
             {
-                FlagModel fm = new FlagModel();
-                fm.Region = kvp.Value;
-                fm.Code = kvp.Key;
-                fm.Official = new();
-                fm.Official.Add($"https://flagcdn.com/192x144/{kvp.Key}.png"); 
-                
-                countryAndFlags.Add(fm);
+                if (!kvp.Key.Contains("-"))
+                {
+
+                    FlagModel fm = new FlagModel();
+                    fm.Region = kvp.Value;
+                    fm.Code = kvp.Key;
+                    fm.Official = new();
+                    fm.Official.Add($"https://flagcdn.com/192x144/{kvp.Key}.png");
+
+                    countryAndFlags.Add(fm);
+                }
 
             }
 
-#if DEBUG
-            foreach (var item in countryAndFlags)
-            {
-                Console.WriteLine($"{item.Code}");
-            }
-#endif
-             base.OnParametersSet();
+
+            base.OnParametersSet();
         }
+        #endregion
         private async Task NewGame()
         {
-
-     
             FlagsViewed = new();
             if (countryAndFlags != null)
             {
@@ -73,34 +85,62 @@ namespace Capybara.Pages.GuessFlags
                 }
             }
         }
-        protected void Decrement()
+        protected void Decrement(int hint)
         {
 
         }
-
-        private void NextFlag(bool correctGuess)
+        private async Task TimerOutCallback()
         {
-            if (correctGuess)
+            await NextFlag(false);
+        }
+        private async Task NextFlag(bool correctGuess)
+        {
+
+
+            if (ListToGuess != null && ListToGuess.Count > 0)
             {
-                Points += 10;
-                if (ListToGuess != null && ListToGuess.Count > 0)
+                FlagResult result = new();
+                result.Region = CountryToGuess.Region;
+                result.Code = CountryToGuess.Code;
+                result.Correct = correctGuess;
+                result.Order = ListToGuess.Count;
+                DialogOptions options = new DialogOptions() { MaxWidth = MaxWidth.Medium, FullWidth = true, Position = DialogPosition.TopCenter };
+                var parameters = new DialogParameters<FlagResultDialog>();
+                parameters.Add(x => x.Result, result);
+                var dialog = await DialogService.ShowAsync<FlagResultDialog>("Result", parameters, options);
+                var r = await dialog.Result;
+
+                FlagsViewed?.Add(result);
+                FlagsViewed = FlagsViewed?.OrderBy(x => x.Order).ToList();
+
+                StatisticModel stat = new StatisticModel { Title = CountryToGuess.Region };
+
+                stat.Ok = FlagsViewed?.Count(x => x.Correct == true);
+                stat.Ko = FlagsViewed?.Count(x => x.Correct == false);
+                GuessResult.Clear();
+                GuessResult.Add(stat);
+
+                ListToGuess.RemoveAt(0);
+                await InvokeAsync(StateHasChanged);
+
+                if (ListToGuess.Count > 0)
                 {
-                    FlagsViewed?.Add(CountryToGuess);
-                    ListToGuess.RemoveAt(0);
-                    StateHasChanged();
-                    if (ListToGuess.Count > 0)
-                    {
-                        CountryToGuess = ListToGuess[0];
-                    }
-                    else
-                    {
-                        CountryToGuess = new FlagModel(); // Or handle end of list case
-                    }
+                    CountryToGuess = ListToGuess[0];
+                }
+                else
+                {
+                    DialogOptions o = new DialogOptions() { MaxWidth = MaxWidth.Medium, FullWidth = true, Position = DialogPosition.TopCenter };
+                    var p = new DialogParameters<ResultChartDialog>();
+                    p.Add(x => x.GuessResult, GuessResult);
+                    var d = await DialogService.ShowAsync<ResultChartDialog>("Result", p, o);
+
+                    CountryToGuess = new FlagModel(); // Or handle end of list case
                 }
             }
 
 
-            StateHasChanged();
+
+            await InvokeAsync(StateHasChanged);
         }
         #endregion
     }

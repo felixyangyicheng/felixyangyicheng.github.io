@@ -4,6 +4,12 @@
     {
         public int Value1 { get; set; }
         public int Value2 { get; set; }
+        public int PlaceOrder { get; set; }
+        public bool IsReversed { get; set; }
+
+        public Domino()
+        {
+        }
 
         public Domino(int value1, int value2)
         {

@@ -25,6 +25,7 @@
         }
         else
         {
+               @*  <CountDownBar @ref="timer" TimerOut="TimerOutCallback" /> *@
             <MudItem xs="12" md="6">
 
                 @if (rnd.Next(countryAndFlags.Count()) % 2 == 0 && CountryToGuess.Official.Count > 0)
@@ -79,6 +80,8 @@
 
             </div>
         </MudItem>
-
+        <MudItem xs="12" sm="12" md="6">
+            
+        </MudItem>
     </MudGrid>
 </MudContainer>

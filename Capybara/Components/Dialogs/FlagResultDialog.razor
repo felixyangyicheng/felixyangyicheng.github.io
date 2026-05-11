@@ -1,0 +1,61 @@
+﻿
+
+<MudDialog>
+    <TitleContent>
+        <MudText Typo="Typo.h6">
+
+
+                @if (Result.Correct == false)
+                {
+                    <MudChip Color="Color.Error" T="string" Icon="@Icons.Material.Filled.Close">KO</MudChip>
+                }
+                else
+                {
+                <MudChip Color="Color.Success" T="string"  Icon="@Icons.Material.Filled.Check">OK</MudChip>
+                }
+                @Result.Region
+  
+        </MudText>
+    </TitleContent>
+    <DialogContent>
+
+        <MudImage Height="100" Src="@Result.Official[0]"></MudImage>
+       
+    </DialogContent>
+
+</MudDialog>
+
+@code{
+    [NotNull, CascadingParameter] IMudDialogInstance MudDialog { get; set; }=default!;
+
+    [Parameter] public FlagResult Result { get; set; } = new FlagResult();
+    private static System.Timers.Timer aTimer { get; set; } = new();
+    private double counter = 0.5;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        StartTimer();
+        await base.OnParametersSetAsync();
+    }
+    public void StartTimer()
+    {
+        aTimer = new System.Timers.Timer(500);
+        aTimer.Elapsed += CountDownTimer;
+        aTimer.Enabled = true;
+    }
+
+    public void CountDownTimer(Object source, System.Timers.ElapsedEventArgs e)
+    {
+        if (counter > 0)
+        {
+            counter -= 0.5;
+        }
+        else
+        {
+            aTimer.Enabled = false;
+            MudDialog.Close();
+
+        }
+        InvokeAsync(StateHasChanged);
+    }
+}

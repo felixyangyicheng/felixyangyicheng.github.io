@@ -18,7 +18,7 @@
     [NotNull, CascadingParameter] IMudDialogInstance? MudDialog { get; set; }
 
   
-    [Parameter] public List<StatisticModel> GuessResult { get; set; } = default!;
+    [Parameter] public List<StatisticModel> GuessResult { get; set; } = new();
     private ApexChart<StatisticModel> _barChart { get; set; } = new();
 
     private ApexChartOptions<StatisticModel> _barCharOptions { get; set; } = new ApexChartOptions<StatisticModel>

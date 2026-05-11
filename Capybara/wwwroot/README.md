@@ -1,6 +1,5 @@
 # Portfolio
 
-![Build Status](https://github.com/felixyangyicheng/felixyangyicheng.github.io/actions/workflows/pages.yml/badge.svg)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
 Bienvenue sur le dépôt source de mon portfolio personnel, développé avec **Blazor WebAssembly** et déployé automatiquement via **GitHub Pages**. Le site est conçu comme une **Progressive Web App (PWA)**, intégrant des fonctionnalités modernes telles que le mode hors-ligne, les notifications push, et la synthèse vocale.

@@ -1,7 +1,6 @@
 ﻿@page "/piece"
-@inject IConfiguration Configuration
 <div class="pieceBorder @Class">
-    <img class="individualValue" src="@DominoImage(Domino.Value1)" />
-    <img class="individualValue" src="@DominoImage(Domino.Value2)" />
+    <img class="individualValue" src="@DominoImage(Domino.Value1)" alt="@Domino.Value1" />
+    <img class="individualValue" src="@DominoImage(Domino.Value2)" alt="@Domino.Value2" />
 </div>
 
