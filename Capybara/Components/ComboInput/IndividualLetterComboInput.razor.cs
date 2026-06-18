@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using Microsoft.JSInterop;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -10,8 +9,6 @@ namespace Capybara.Components.ComboInput
 {
     public partial class IndividualLetterComboInput : IDisposable
     {
-        [Inject] private IJSRuntime JSRuntime { get; set; } = default!;
-
         [Parameter, NotNull]
         public string StringInit { get; set; } = "";
 
@@ -30,11 +27,20 @@ namespace Capybara.Components.ComboInput
         private int? _pendingFocusIndex = null;
         private bool _shouldFocusAfterRender = false;
         private CancellationTokenSource[] _errorTimers = Array.Empty<CancellationTokenSource>();
+        private ElementReference[] InputRefs { get; set; } = Array.Empty<ElementReference>();
+        private string? _initializedWord;
 
         protected override void OnParametersSet()
         {
+            // 父组件重新渲染时不要重置输入框，否则用户快速输入时会丢失焦点和已输入内容。
+            if (StringInit == _initializedWord)
+            {
+                return;
+            }
+
             CancelAllErrorTimers();
             _shouldFocusAfterRender = true;   // 新词加载必须聚焦
+            _initializedWord = StringInit;
             InitializeArrays();
         }
 
@@ -43,6 +49,7 @@ namespace Capybara.Components.ComboInput
             InputValues = new string[StringInit.Length];
             InputClasses = new string[StringInit.Length];
             InputDisabled = new bool[StringInit.Length];
+            InputRefs = new ElementReference[StringInit.Length];
             _errorTimers = new CancellationTokenSource[StringInit.Length];
 
             for (int i = 0; i < StringInit.Length; i++)
@@ -97,21 +104,19 @@ namespace Capybara.Components.ComboInput
         {
             if (index < 0 || index >= InputValues.Length) return;
 
-            string id = $"letter-{index}";
-
-            for (int attempt = 0; attempt < 8; attempt++)   // 最多等 ~200ms
+            // 使用 Blazor 的 ElementReference 聚焦，避免 eval 查找不存在的 id 导致焦点丢失。
+            for (int attempt = 0; attempt < 6; attempt++)
             {
                 try
                 {
-                    await JSRuntime.InvokeVoidAsync("capybaraFocus", id);
+                    await InputRefs[index].FocusAsync();
                     return;
                 }
                 catch
                 {
-                    await Task.Delay(25);
+                    await Task.Delay(20);
                 }
             }
-            Console.WriteLine($"[Focus] 无法聚焦 letter-{index}（已重试）");
         }
 
         private async Task HandleInput(ChangeEventArgs e, int index)
@@ -139,6 +144,8 @@ namespace Capybara.Components.ComboInput
                     if (nextIdx.HasValue)
                     {
                         _pendingFocusIndex = nextIdx.Value;
+                        // 立即尝试聚焦下一格；如果 DOM 还没更新，OnAfterRenderAsync 会再次补偿。
+                        await FocusIndexAsync(nextIdx.Value);
                         StateHasChanged();
                     }
                 }
@@ -164,6 +171,23 @@ namespace Capybara.Components.ComboInput
                 }
                 catch (TaskCanceledException) { }
             }
+        }
+
+        private async Task HandleKeyDown(KeyboardEventArgs e, int index)
+        {
+            // 快速输入时，浏览器可能还停留在刚被禁用的格子；这里把该按键转交给下一格。
+            if (string.IsNullOrEmpty(e.Key) || e.Key.Length != 1 || !InputDisabled[index])
+            {
+                return;
+            }
+
+            var nextIdx = FindNextEmptyIndex(index);
+            if (!nextIdx.HasValue)
+            {
+                return;
+            }
+
+            await HandleInput(new ChangeEventArgs { Value = e.Key }, nextIdx.Value);
         }
 
         private void CancelAllErrorTimers()

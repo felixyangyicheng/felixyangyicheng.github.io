@@ -8,4 +8,9 @@
         public List<string> Proposed { get; set; } = new List<string>();
         public List<string> Details { get; set; } = new List<string>();
     }
+    public class FlagResult:FlagModel
+    {
+        public bool Correct { get; set; }
+        public int Order { get; set; }
+    }
 }

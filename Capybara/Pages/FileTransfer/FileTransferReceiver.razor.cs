@@ -112,7 +112,7 @@ namespace Capybara.Pages.FileTransfer
             {
                 return;
             }
-            file.FileContext = new List<byte>();
+            file.FileContext = Array.Empty<byte>();
             file.State = FileTransferStateEnum.Sending;
             _files.Add(file);
             await InvokeAsync(StateHasChanged);
@@ -127,15 +127,15 @@ namespace Capybara.Pages.FileTransfer
         private async Task OnFileReceivingAsync(byte[] buffer)
         {
             var file = _files.First(x => x.State == FileTransferStateEnum.Sending);
-            file.FileContext.AddRange(buffer);
-            file.TransferProgress = (double)file.FileContext.Count / file.FileSize * 100;
+            file.FileContext = buffer;
+            file.TransferProgress = (double)file.FileContext.Length / file.FileSize * 100;
             await InvokeAsync(StateHasChanged);
         }
 
         private async Task OnFileReceived()
         {
             var file = _files.First(x => x.State == FileTransferStateEnum.Sending);
-            var sha1 = await HashServiceFactory.Create(HashTypeEnum.SHA1).ComputeHashAsync(file.FileContext.ToArray(), false);
+            var sha1 = await HashServiceFactory.Create(HashTypeEnum.SHA1).ComputeHashAsync(file.FileContext, false);
             if (file.SHA1 != sha1)
             {
                 file.Message = "Échec de la vérification du fichier";
@@ -151,7 +151,7 @@ namespace Capybara.Pages.FileTransfer
 
         private async Task DownloadFileAsync(string fileName)
         {
-            await JSRuntime.InvokeVoidAsync("saveToFileWithBufferAndName", fileName, _files.First(x => x.FileName == fileName).FileContext.ToArray());
+            await JSRuntime.InvokeVoidAsync("saveToFileWithBufferAndName", fileName, _files.First(x => x.FileName == fileName).FileContext);
         }
 
         public void Dispose()

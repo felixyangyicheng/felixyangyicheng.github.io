@@ -3,7 +3,7 @@
 namespace Capybara.Models;
 internal class FileTransferInfo : FileMetadata
 {
-    public List<byte> FileContext { get; set; } = new List<byte>();
+    public byte[] FileContext { get; set; } = Array.Empty<byte>();
     public FileTransferStateEnum State { get; set; }
     public double TransferProgress { get; set; }
     public double UploadProgress { get; set; }

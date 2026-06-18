@@ -23,7 +23,8 @@
         <MudItem xs="12" md="8">
             @if (ListToGuess == null)
             {
-                <p>loading..</p>
+                <Pulse />
+
             }
             @if (ListToGuess?.Count == 0)
             {

@@ -124,7 +124,7 @@
                 StateHasChanged();
             }
 
-            file.FileContext = new List<byte>(buffer);
+            file.FileContext = buffer;
             file.FileSize = buffer.Length;
             var hashService = HashServiceFactory.Create(HashTypeEnum.SHA1);
             file.SHA1 = await hashService.ComputeHashAsync(buffer, false);
@@ -184,7 +184,7 @@
             var ms = new MemoryStream();
             await f.OpenReadStream(maxFileSize).CopyToAsync(ms);
             var buffer = ms.ToArray();
-            file.FileContext = new List<byte>(buffer);
+            file.FileContext = buffer;
             file.FileSize = buffer.Length;
             var hashService = HashServiceFactory.Create(HashTypeEnum.SHA1);
             file.SHA1 = await hashService.ComputeHashAsync(buffer, false);
@@ -256,7 +256,7 @@
 					await JSRuntime.InvokeVoidAsync("sendFileInfo", JsonSerializer.Serialize(fileMetadata));
 
 					// Send the actual file data in chunks
-					await JSRuntime.InvokeVoidAsync("sendFile", file.FileContext.ToArray());
+					await JSRuntime.InvokeVoidAsync("sendFile", file.FileContext);
 				}
 				else if (_connectionType == ConnectionTypeEnum.ServiceRelay)
 				{
@@ -279,18 +279,18 @@
 		{
 			int totalBytesSent = 0;
 
-			for (int offset = 0; offset < file.FileContext.Count; offset += _chunkSize)
+			for (int offset = 0; offset < file.FileContext.Length; offset += _chunkSize)
 			{
-				int remainingBytes = file.FileContext.Count - offset;
+				int remainingBytes = file.FileContext.Length - offset;
 				int chunkToSend = Math.Min(_chunkSize, remainingBytes);
 				byte[] chunk = new byte[chunkToSend];
-				file.FileContext.CopyTo(offset, chunk, 0, chunkToSend);
+				Array.Copy(file.FileContext, offset, chunk, 0, chunkToSend);
 
 				// Send the chunk via SignalR
 				await _hub.InvokeAsync("SendFile", chunk);
 
 				totalBytesSent += chunkToSend;
-				file.TransferProgress = (double)totalBytesSent / file.FileContext.Count * 100;
+				file.TransferProgress = (double)totalBytesSent / file.FileContext.Length * 100;
 
 				await InvokeAsync(StateHasChanged);
 				await Task.Delay(10); // Optional delay to control pacing
@@ -312,7 +312,7 @@
                     if (_connectionType == ConnectionTypeEnum.WebRTC)
                     {
                         await JSRuntime.InvokeVoidAsync("sendFileInfo", JsonSerializer.Serialize(fileMetadata));
-                        await JSRuntime.InvokeVoidAsync("sendFile", file.FileContext.ToArray());
+                        await JSRuntime.InvokeVoidAsync("sendFile", file.FileContext);
                     }
                     else if (_connectionType == ConnectionTypeEnum.ServiceRelay)
                     {
@@ -335,17 +335,17 @@
             var file = _files.First(x => x.State == FileTransferStateEnum.Sending);
             int totalBytesSent = 0;
 
-            for (int offset = 0; offset < file.FileContext.Count; offset += _chunkSize)
+            for (int offset = 0; offset < file.FileContext.Length; offset += _chunkSize)
             {
-                int remainingBytes = file.FileContext.Count - offset;
+                int remainingBytes = file.FileContext.Length - offset;
                 int chunkToSend = Math.Min(_chunkSize, remainingBytes);
                 byte[] chunk = new byte[chunkToSend];
-                file.FileContext.CopyTo(offset, chunk, 0, chunkToSend);
+                Array.Copy(file.FileContext, offset, chunk, 0, chunkToSend);
 
                 await _hub.InvokeAsync("SendFile", chunk);
 
                 totalBytesSent += chunkToSend;
-                file.TransferProgress = (double)totalBytesSent / file.FileContext.Count * 100; ;
+                file.TransferProgress = (double)totalBytesSent / file.FileContext.Length * 100; ;
 
                 await InvokeAsync(StateHasChanged);
                 await Task.Delay(10);

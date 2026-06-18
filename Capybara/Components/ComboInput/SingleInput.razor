@@ -132,7 +132,7 @@
 
         if (availableIndices.Count > 0)
         {
-            Random rnd = new Random();
+            Random rnd = Random.Shared;
             var randomIndex = availableIndices[rnd.Next(availableIndices.Count)];
 
             // Set the correct letter at this index

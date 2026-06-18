@@ -9,9 +9,9 @@
 		<BlazorWebAssemblyPreserveCollationData>false</BlazorWebAssemblyPreserveCollationData>
 		<BlazorWasmPrerenderingDeleteLoadingContents>true</BlazorWasmPrerenderingDeleteLoadingContents>	
 		<BlazorWasmPrerenderingMode>WebAssemblyPrerendered</BlazorWasmPrerenderingMode>
-		<!--<PublishTrimmed>true</PublishTrimmed>-->
-		<!--<RunAOTCompilation>true</RunAOTCompilation>
-		<WasmStripILAfterAOT>true</WasmStripILAfterAOT>-->
+		<PublishTrimmed Condition="'$(Configuration)' == 'Release'">true</PublishTrimmed>
+		<RunAOTCompilation Condition="'$(Configuration)' == 'Release'">true</RunAOTCompilation>
+		<WasmStripILAfterAOT Condition="'$(Configuration)' == 'Release'">true</WasmStripILAfterAOT>
     </PropertyGroup>
 
     <ItemGroup>

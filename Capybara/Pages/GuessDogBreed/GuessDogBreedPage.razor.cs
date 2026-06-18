@@ -89,7 +89,7 @@ namespace Capybara.Pages.GuessDogBreed
 				DogBreedsViewed = DogBreedsViewed?.OrderBy(x => x.Order).ToList();
 
 
-				StatisticModel stat = new StatisticModel { Title = "Résultat" };
+				StatisticModel stat = new StatisticModel { Title = DogBreedToGuess.BreedName };
 
 
 				stat.Ok = DogBreedsViewed?.Count(x => x.Correct == true);
