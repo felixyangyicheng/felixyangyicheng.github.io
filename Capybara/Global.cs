@@ -16,12 +16,10 @@ global using Capybara.Components.CountDownBars;
 global using MudBlazor.Services;
 global using MudBlazor;
 global using Toolbelt.Blazor.Extensions.DependencyInjection;
-global using Tewr.Blazor.FileReader;
 global using Capybara.Models;
 global using System.Net.Http.Json;
 global using ApexCharts;
 global using Capybara.Components.Dialogs;
-global using JiuLing.CommonLibs.ExtensionMethods;
 global using Microsoft.AspNetCore.SignalR.Client;
 global using Microsoft.JSInterop;
 global using Capybara.Models.Enums;
@@ -38,7 +36,6 @@ global using Capybara.HashCheckService;
 global using Capybara.Services;
 global using Capybara.Models.VPIC;
 global using Capybara.Services.VpicAPI;
-
 
 global using Color = MudBlazor.Color;
 global using Console = System.Console;

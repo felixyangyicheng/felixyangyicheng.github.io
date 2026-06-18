@@ -17,7 +17,7 @@
     protected double Progress { get; set; } = 100;
 
     [Parameter]
-    public EventCallback<Task> TimerOut { get; set; }
+    public EventCallback TimerOut { get; set; }
 
     public void Start(int secondsToRun)
     {
@@ -40,26 +40,33 @@
 
     protected override void OnInitialized()
     {
-        _timer = new System.Timers.Timer(_secondsToRun*100);
+        _timer = new System.Timers.Timer(1000);
         _timer.Elapsed += OnTimedEvent;
         _timer.AutoReset = true;
     }
 
     private async void OnTimedEvent(object? sender, System.Timers.ElapsedEventArgs e)
     {
-        _secondsToRun--;
-
-        await InvokeAsync(() =>
+        try
         {
-            Time = TimeSpan.FromSeconds(Math.Max(_secondsToRun, 0)).ToString(@"mm\:ss");
-            Progress = (_secondsToRun / (double)_initialSeconds) * 100;
-              StateHasChanged();
-        });
+            _secondsToRun--;
 
-        if (_secondsToRun <= 0)
+            await InvokeAsync(() =>
+            {
+                Time = TimeSpan.FromSeconds(Math.Max(_secondsToRun, 0)).ToString(@"mm\:ss");
+                Progress = (_secondsToRun / (double)_initialSeconds) * 100;
+                StateHasChanged();
+            });
+
+            if (_secondsToRun <= 0)
+            {
+                _timer.Stop();
+                await TimerOut.InvokeAsync();
+            }
+        }
+        catch (Exception ex)
         {
-            _timer.Stop();
-            await TimerOut.InvokeAsync();
+            System.Console.Error.WriteLine($"[CountDownBar] Timer error: {ex.Message}");
         }
     }
 

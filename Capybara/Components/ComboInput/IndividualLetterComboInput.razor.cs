@@ -93,7 +93,6 @@ namespace Capybara.Components.ComboInput
             return null;
         }
 
-        // ============== 关键修复：带重试的 JS focus ==============
         private async Task FocusIndexAsync(int index)
         {
             if (index < 0 || index >= InputValues.Length) return;
@@ -104,12 +103,12 @@ namespace Capybara.Components.ComboInput
             {
                 try
                 {
-                    await JSRuntime.InvokeVoidAsync("eval", $"document.getElementById('{id}').focus()");
-                    return; // 成功就退出
+                    await JSRuntime.InvokeVoidAsync("capybaraFocus", id);
+                    return;
                 }
                 catch
                 {
-                    await Task.Delay(25); // DOM 还没准备好就等一下
+                    await Task.Delay(25);
                 }
             }
             Console.WriteLine($"[Focus] 无法聚焦 letter-{index}（已重试）");

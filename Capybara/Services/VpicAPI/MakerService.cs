@@ -1,15 +1,15 @@
 ﻿
 namespace Capybara.Services.VpicAPI;
 
-public class MakerService :  IMakerService
+public class MakerService : IMakerService
 {
-
     #region properties
 
-    protected string VpicAPI ="";
+    protected readonly string VpicAPI;
 
-    protected HttpClient _httpClient = new HttpClient();
+    protected HttpClient _httpClient;
     #endregion
+
     #region contructor
     public MakerService(IConfiguration configuration, HttpClient httpClient) 
     {       
@@ -17,12 +17,12 @@ public class MakerService :  IMakerService
         VpicAPI = configuration.GetValue<string>("vpicApiRootPath") ?? throw new ArgumentNullException(nameof(VpicAPI));
     }
     #endregion
-    #region Méthods
 
+    #region Méthods
     public async Task<Response<List<Maker>>> GetAllMakersAsync()
     {
         string url = $"{VpicAPI}/getallmakes?format=json";
-        Response<List<Maker>> response = (await _httpClient.GetFromJsonAsync<Response<List<Maker>>>(url))?? throw new NoNullAllowedException("http response is null");
+        Response<List<Maker>> response = (await _httpClient.GetFromJsonAsync<Response<List<Maker>>>(url)) ?? throw new NoNullAllowedException("http response is null");
         return response;
     }
 
@@ -36,11 +36,11 @@ public class MakerService :  IMakerService
     public async Task<Response<List<Model>>> GetModelsForMakeIdYearAsync(int makeId, int? modelyear, string? vehicleType)
     {
         string url = $"{VpicAPI}/GetModelsForMakeIdYear/makeid/{makeId}";
-        if (modelyear!=null)
+        if (modelyear != null)
         {
-            url=url+($"/modelyear/{modelyear}");
+            url = url + ($"/modelyear/{modelyear}");
         }
-        if (!String.IsNullOrEmpty(vehicleType))
+        if (!string.IsNullOrEmpty(vehicleType))
         {
             url = url + ($"/vehicleType/{vehicleType}");
         }
@@ -50,16 +50,15 @@ public class MakerService :  IMakerService
         }
         url = url + "?format=json";
 
-        Response <List<Model>> response = (await _httpClient.GetFromJsonAsync<Response<List<Model>>>(url)) ?? throw new NoNullAllowedException("http response is null");
+        Response<List<Model>> response = (await _httpClient.GetFromJsonAsync<Response<List<Model>>>(url)) ?? throw new NoNullAllowedException("http response is null");
         return response;
     }
 
     public async Task<Response<List<Model>>> GetModelsForMakersAsync(string brand)
     {
         string url = $"{VpicAPI}/getmodelsformake/{brand}?format=json";
-        Response <List<Model>> response = (await _httpClient.GetFromJsonAsync<Response<List<Model>>>(url)) ?? throw new NoNullAllowedException("http response is null");
+        Response<List<Model>> response = (await _httpClient.GetFromJsonAsync<Response<List<Model>>>(url)) ?? throw new NoNullAllowedException("http response is null");
         return response;
     }
     #endregion
-
 }

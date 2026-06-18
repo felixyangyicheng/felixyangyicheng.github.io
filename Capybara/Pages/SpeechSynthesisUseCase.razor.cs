@@ -89,9 +89,9 @@ namespace Capybara.Pages
 
         async Task OnClickSpeakButton()
         {
-            var utterancet = new SpeechSynthesisUtterance();
-            this.SetupUtterancet(utterancet);
-            await this.SpeechSynthesis.SpeakAsync(utterancet);
+            var utterance = new SpeechSynthesisUtterance();
+            this.SetupUtterancet(utterance);
+            await this.SpeechSynthesis.SpeakAsync(utterance);
         }
 
         async Task OnClickSpeakByCachedButton()
@@ -100,14 +100,14 @@ namespace Capybara.Pages
             await this.SpeechSynthesis.SpeakAsync(this.CachedUtterancet);
         }
 
-        void SetupUtterancet(SpeechSynthesisUtterance utterancet)
+        void SetupUtterancet(SpeechSynthesisUtterance utterance)
         {
-            utterancet.Text = this.Text;
-            utterancet.Lang = this.Lang;
-            utterancet.Pitch = this.Pitch;
-            utterancet.Rate = this.Rate;
-            utterancet.Volume = this.Volume;
-            utterancet.Voice = this.GetVoice();
+            utterance.Text = this.Text;
+            utterance.Lang = this.Lang;
+            utterance.Pitch = this.Pitch;
+            utterance.Rate = this.Rate;
+            utterance.Volume = this.Volume;
+            utterance.Voice = this.GetVoice();
         }
 
         async Task OnClickPauseButton()

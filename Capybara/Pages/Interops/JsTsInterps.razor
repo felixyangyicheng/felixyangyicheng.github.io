@@ -1,4 +1,5 @@
 ﻿@page "/interops"
+<PageTitle>JS Interop</PageTitle>
 @inject IJSRuntime JS
 @implements IAsyncDisposable
 
@@ -48,19 +49,19 @@
         }
     }
 
-    async void ModulelAlert()
+    async Task ModulelAlert()
     {
         await module.InvokeVoidAsync("ModulAlert", "Modulel Alert");
     }
 
-    async void ModulelPrompt()
+    async Task ModulelPrompt()
     {
         string answer = await module.InvokeAsync<string>("ModulePrompt", "Module Prompt say what?");
         Message = $"Prompt:{(string.IsNullOrEmpty(answer) ? "nothing" : answer)}";
         StateHasChanged();
     }
 
-    async void Prompt()
+    async Task Prompt()
     {
 
         string answer = await JS.InvokeAsync<string>("prompt", "say what?");
@@ -70,7 +71,7 @@
     }
 
 
-    async void ScriptPrompt()
+    async Task ScriptPrompt()
     {
         string answer = await JS.InvokeAsync<string>("ScriptPrompt", "say what?");
         Message = $"Prompt:{(string.IsNullOrEmpty(answer) ? "nothing" : answer)}";
@@ -78,13 +79,13 @@
         StateHasChanged();
     }
 
-    async void ScriptAlert()
+    async Task ScriptAlert()
     {
         await JS.InvokeVoidAsync("ScriptAlert", "Script Alert");
     }
 
 
-    async void HelloAlert()
+    async Task HelloAlert()
     {
         await hello.InvokeVoidAsync("HelloInstance.hello");
         await hello.InvokeVoidAsync("Hello.goodbye");

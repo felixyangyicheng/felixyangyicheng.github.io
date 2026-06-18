@@ -18,7 +18,7 @@
 
     private async Task RegisterForUpdateAvailableNotification()
     {
-        await _jsRuntime.InvokeAsync<object>(
+        await _jsRuntime.InvokeVoidAsync(
             identifier: "registerForUpdateAvailableNotification",
             DotNetObjectReference.Create(this),
             nameof(OnUpdateAvailable));

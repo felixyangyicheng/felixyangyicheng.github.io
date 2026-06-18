@@ -30,8 +30,8 @@
     [NotNull, CascadingParameter] IMudDialogInstance MudDialog { get; set; }=default!;
 
     [Parameter] public DogBreedResult Result { get; set; } = new DogBreedResult();
-    private static System.Timers.Timer aTimer { get; set; } = new();
-    private double counter = 0.5;
+    private System.Timers.Timer? _timer;
+    private double _counter = 0.5;
 
     protected override async Task OnParametersSetAsync()
     {
@@ -40,21 +40,28 @@
     }
     public void StartTimer()
     {
-        aTimer = new System.Timers.Timer(500);
-        aTimer.Elapsed += CountDownTimer;
-        aTimer.Enabled = true;
+        _timer?.Dispose();
+        _timer = new System.Timers.Timer(500);
+        _timer.Elapsed += CountDownTimer;
+        _timer.AutoReset = true;
+        _timer.Enabled = true;
     }
 
-    public void CountDownTimer(Object source, System.Timers.ElapsedEventArgs e)
+    private void CountDownTimer(object? source, System.Timers.ElapsedEventArgs e)
     {
-        if (counter > 0)
+        if (_counter > 0)
         {
-            counter -= 0.5;
+            _counter -= 0.5;
         }
         else
         {
-            aTimer.Enabled = false;
-            MudDialog.Close();
+            if (_timer is not null)
+            {
+                _timer.Enabled = false;
+                _timer.Dispose();
+                _timer = null;
+            }
+            InvokeAsync(MudDialog.Close);
 
         }
         InvokeAsync(StateHasChanged);

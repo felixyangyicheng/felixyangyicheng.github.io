@@ -1,4 +1,7 @@
 ﻿@page "/SpeechSynthesis"
+<PageTitle>Speech Synthesis</PageTitle>
+
+@using static Toolbelt.Web.CssClassInlineBuilder
 
 @inject HttpClient Http
 
@@ -15,7 +18,7 @@
             <img src="https://img.shields.io/nuget/v/Toolbelt.Blazor.SpeechSynthesis.svg" alt="NuGet Package" />
         </a>
         <p>
-            <MudTextField T="string" AutoGrow Lines="10" 
+            <MudTextField T="string" Lines="10" 
                 Label="Insert text that you when to generate synthesis voice" 
                 Variant="Variant.Outlined" @bind-Value="@Text" ></MudTextField>
         </p>

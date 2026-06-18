@@ -1,6 +1,4 @@
-﻿using System.Buffers.Text;
-
-namespace Capybara.Models.RoadSecurityTheory
+﻿namespace Capybara.Models.RoadSecurityTheory
 {
     public class RoadSecurityTheoryQuestion
     {

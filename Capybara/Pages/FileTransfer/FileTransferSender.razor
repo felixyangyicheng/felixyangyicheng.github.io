@@ -7,7 +7,6 @@
 @using Capybara.Models
 @using Capybara.Shared.Dialogs
 @using System.Text.Json
-@using System.Collections.Concurrent
 @using MudExtensions
 
 
@@ -18,7 +17,7 @@
 @inject HashServiceFactory HashServiceFactory
 @inject NavigationManager NavigationManager
 
-<PageTitle>Transfer de fichiers</PageTitle>
+<PageTitle>File Transfer - Send</PageTitle>
 
 <DialogLoading IsVisible="@_isLoading" ContentText="@_loadingMessage"></DialogLoading>
 

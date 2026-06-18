@@ -37,6 +37,8 @@ namespace Capybara.Pages.GuessFlags
 
         protected override void OnParametersSet()
         {
+            if (string.IsNullOrEmpty(json)) return;
+
             countryDict = JsonSerializer.Deserialize<Dictionary<string, string>>(json) ?? throw new ArgumentNullException("json null");
            
             foreach (var kvp in countryDict)
@@ -57,7 +59,6 @@ namespace Capybara.Pages.GuessFlags
                 Console.WriteLine($"{item.Code}");
             }
 #endif
-             base.OnParametersSet();
         }
         private async Task NewGame()
         {

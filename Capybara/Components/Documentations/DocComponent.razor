@@ -1,8 +1,9 @@
 ﻿@page "/tutos/{TypeName}/{MarkDownName}"
+<PageTitle>Documentation</PageTitle>
 @inject IConfiguration _configuration
 
 <MudContainer>
-    @if (loading)
+    @if (Loading)
     {
 
         <Pulse />
@@ -20,8 +21,7 @@
     public string? TypeName { get; set; } = "";
     private string? MarkdownString { get; set; } = "### README.md";
     private string? HtmlString { get; set; }
-    private bool loading { get; set; }
-    StringBuilder rawStringBuilder = new StringBuilder("");
+    private bool Loading { get; set; }
     [NotNull]
     private Markdown? MarkdownSetValue { get; set; }
 
@@ -33,26 +33,18 @@
     }
     protected override async Task OnParametersSetAsync()
     {
-        loading = true;
-        HttpClient client = new HttpClient();
-        client.BaseAddress = new Uri($"{_configuration["raw.githubusercontent.master"]}/{TypeName}/{MarkDownName}.md");
-        var result = await client.GetAsync("");
-        using (StreamReader readtext = new StreamReader(await result.Content.ReadAsStreamAsync()))
+        Loading = true;
+        try
         {
-            while (!readtext.EndOfStream)
-            {
-                rawStringBuilder.Append("\r " + readtext.ReadLine());
-            }
-            loading = false;
+            using var httpClient = new HttpClient();
+            var url = $"{_configuration["raw.githubusercontent.master"]}/{TypeName}/{MarkDownName}.md";
+            var content = await httpClient.GetStringAsync(url);
+            await MarkdownSetValue.SetValue(content);
         }
-
-        await Task.Delay(600);
-        await MarkdownSetValue.SetValue(rawStringBuilder.ToString());
-
-        StateHasChanged();
-
+        finally
+        {
+            Loading = false;
+            StateHasChanged();
+        }
     }
-
-
-
 }

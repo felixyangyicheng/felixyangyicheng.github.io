@@ -13,13 +13,10 @@
 
         public int TotalValue => Value1 + Value2; 
 
-        
-
         public bool CanBePlacedNextTo(Domino other)
         {
-            return true;
+            return Value1 == other.Value1 || Value1 == other.Value2
+                || Value2 == other.Value1 || Value2 == other.Value2;
         }
-
-
     }
 }

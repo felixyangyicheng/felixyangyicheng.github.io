@@ -153,3 +153,62 @@ Retrouvez-moi sur :
 
 > *“Un jour, nos routes se croiseront, c'est de la programmation orienté d'Oseille”* – Fameux IT Man Yish.
 
+
+---
+
+## 📝 Changelog
+
+### 2025-06-18 — v2.0
+
+**⬆️ .NET 11 Preview 5 Upgrade**
+- `net10.0` → `net11.0` 目标框架
+- 所有 Microsoft 包升级到 `11.0.0-preview.5.26302.115`
+- 添加 `global.json` 锁定 SDK
+- GitHub Actions workflow 更新为 `11.0.1xx-preview`
+
+**🐛 Bug 修复**
+- `CountDownBar`: 计时器间隔 `_secondsToRun*100` 修复为 `1000ms`；`async void` 添加错误处理
+- `AboutMe`: CSS 动画名 `backOutDow` → `backOutDown`（最后两个轮播项动画恢复）
+- `Counter`: `async void` 定时器添加 try-catch
+- `JsTsInterps`: 6 个 JS 互调处理器 `async void` → `async Task`（避免 Blazor 运行时崩溃）
+- `FileTransferSender`: 移除死代码 `UploadFiles` + 孤立语句
+- `DocComponent`: 移除 600ms `Task.Delay` 竞态 + `new HttpClient()` 泄漏
+- `Countries`: 修复初始化竞态条件 + 移除冗余 `base.OnParametersSet()` 调用
+
+**🔧 代码清理**
+- `AppComponentBase`: 移除 6 个未使用注入/属性（ToastService, ICookie, IStorage, Changed, IsBusy, ShowBottomMessage）
+- `Domino`: `CanBePlacedNextTo()` 实现真正匹配逻辑（原始终返回 true）
+- `Global.cs` / `_Imports.razor`: 移除 9 个未使用的全局 using
+- `ResultChartDialog`: 移除未使用字段 `_barChart`, `_barCharOptions`
+- `CountDownBar`: `EventCallback<Task>` → `EventCallback`
+- `QuaternarySelection`: `new Random()` 每次渲染 → `static readonly`
+- `MakerService`: 移除冗余 HttpClient 初始化器 + VpicAPI 改为 readonly
+- `RoadSecurityTheoryQuestion`: 移除未使用的 `System.Buffers.Text`
+- `Piece.razor` / `SingleInput.razor`: 移除子组件上错误的 `@page` 路由
+- `FileTransfer/Home.razor`: 删除整个被注释的文件
+- `FileTransferSender`: 移除重复的 `@using System.Collections.Concurrent`
+
+**🔒 安全修复**
+- `IndividualLetterComboInput`: `eval()` JS 互调 → `window.capybaraFocus` 安全函数
+
+**⚡ 性能优化**
+- `Home.razor`: `new HttpClient()` 每渲染泄漏 → `using var` + `ReadToEndAsync`
+- `Program.cs`: ApexCharts `Debug=true` → `#if DEBUG` 条件编译
+- `index.html`: 移除以 `<script>` 错误加载的 `place_flags.json` 和 `races_chien.json`
+- `bootstrap.min.css`: 移除 449KB 生产环境不应存在的 `.map` 引用
+- `dog_breeds.json`: 移除未使用的 53KB 文件
+
+**🎨 UI / 无障碍**
+- 20 个页面添加 `<PageTitle>` 标签
+- `AboutMe`: 轮播图 `alt` 属性改为描述性文本
+- `SpeechSynthesis`: 移除无效的 `AutoGrow` 属性
+- `UpdateAvailableDetector`: `InvokeAsync<object>` → `InvokeVoidAsync`
+
+**📦 依赖管理**
+- 移除未使用包: `BootstrapBlazor.WebAPI`, `JiuLing.CommonLibs`, `Tewr.Blazor.FileReader`, `Microsoft.Extensions.Caching.Memory`, `Microsoft.Extensions.Hosting`
+- `ToolBelt.Web.CssClassInlineBuilder` / `CodeBeam.MudBlazor.Extensions` 添加回（实际被使用）
+
+**📝 命名修正**
+- `utterancet` → `utterance`（SpeechSynthesisUseCase 中 10 处）
+
+> *"Un jour, nos routes se croiseront, c'est de la programmation orienté d'Oseille"* – Fameux IT Man Yish.

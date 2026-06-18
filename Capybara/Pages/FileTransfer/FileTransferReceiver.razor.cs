@@ -107,7 +107,7 @@ namespace Capybara.Pages.FileTransfer
 
         private async Task OnReceiveFileInfo(string fileInfo)
         {
-            var file = fileInfo.ToObject<FileTransferInfo>();
+            var file = JsonSerializer.Deserialize<FileTransferInfo>(fileInfo);
             if (file == null)
             {
                 return;

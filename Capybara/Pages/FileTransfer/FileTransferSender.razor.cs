@@ -165,33 +165,6 @@
             await InvokeAsync(StateHasChanged);
         }
 
-        private async void UploadFiles(IReadOnlyList<IBrowserFile> browserFiles)
-        {
-         
-            IList<IBrowserFile> files = new List<IBrowserFile>();
-
-            foreach (var browserFile in browserFiles)
-            {
-                if (_files.Any(x => x.FileName == browserFile.Name))
-                {
-                    var options = new DialogOptions()
-                    {
-                        NoHeader = true
-                    };
-                    var parameters = new DialogParameters();
-                    parameters.Add("ContentText", "Impossible d'ajouter le fichier de façon répétée");
-                    await Dialog.ShowAsync<DialogOk>("Avertissement", parameters, options);
-                    return;
-                }
-                files.Add(browserFile);
-            }
-
-            await LoadingAsync("Traitement du fichier en cours...");
-            var uploadTasks = browserFiles.Select(async file => await OnUploadReadStreamAsync(file));
-            await Task.WhenAll(uploadTasks);
-            await LoadingCompletedAsync();
-        }
-
         protected async Task OnUploadReadStreamAsync(IBrowserFile f)
         {
             long maxFileSize = 100000000;
